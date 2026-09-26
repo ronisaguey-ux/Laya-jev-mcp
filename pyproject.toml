@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "layajev-mcp"
+version = "0.1.0"
+description = "MCP server that gives any LLM agent calibrated probabilities over its own options — Laya locally, TypeSafe Jev remotely, behind one tool."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "ronisaguey-ux" }]
+keywords = ["mcp", "llm", "decision", "laya", "jev", "typesafe", "agent"]
+
+# Deliberately zero hard dependencies. The MCP transport is hand-rolled over stdio
+# and the Jev backend speaks HTTP through urllib, so the server runs anywhere Python
+# does. Laya is an OPTIONAL extra because it pulls torch and the checkpoints.
+dependencies = []
+
+[project.optional-dependencies]
+laya = ["laya"]
+# The upstream Laya MCP server, if you also want its raw primitives. This package
+# deliberately does not duplicate them — see README.
+laya-mcp = ["laya[mcp]"]
+
+[project.scripts]
+layajev-mcp = "layajev.mcp_server:main"
+layajev = "layajev.cli:main"
+
+[tool.setuptools]
+packages = ["layajev"]
+
+[tool.setuptools.package-data]
+layajev = ["py.typed"]
