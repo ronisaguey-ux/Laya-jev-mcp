@@ -145,3 +145,34 @@ did not learn the staleness rule from 42 samples.
 **D1.2.1 and D10.1.2 did not move at all**, which is honest: on a state the base model
 already classifies with low confidence, an adapter trained on four epochs of 32 rows has
 nothing new to say. That is a data problem, not a trainer problem.
+
+## Blocker: the walk escalates on every state, so the adapters are unreachable
+
+Measured through the real `tree_walk.walk` on five varied states:
+
+| state | escalated | why |
+|---|---|---|
+| completion claim, no evidence | True | T1_overlord: leader 0.464 below the 0.65 threshold |
+| completion claim, with evidence | True | T1_overlord: leader 0.516 below the 0.65 threshold |
+| live drawdown breach | True | leading option 0.780 with a 0.653 margin |
+| capital allocation question | True | T1_overlord leader 0.263; margin 0.033 over D4 |
+| data quality question | True | T3_specialist: no leaf cleared its bar (best D5.1.3 at 0.547) |
+
+Five of five escalate. Two things follow, and the first is the important one:
+
+1. **T1 has no adapter.** Ten leaf adapters exist and every one of them sits at T3. T1 runs
+   first, and it escalates before T3 is ever reached, so the trained adapters cannot be
+   reached at all by the current walk. A T1 adapter over the 10 domains is what makes them
+   reachable - and T1 is itself a narrow question ("which domain is this state in"), which
+   is exactly the shape Laya handles.
+
+2. The base model's T1 leader sits at 0.263-0.516 against a 0.65 threshold, so even a good
+   T3 answer could not surface. The drawdown case is the exception worth noting: it
+   produced a 0.780 leader with a 0.653 margin and STILL escalated, so that third state's
+   failure is at a different tier - worth reading before assuming the threshold is the
+   whole story.
+
+Do not fix this by lowering the threshold. The threshold is doing its job: a 0.464 leader
+on "is this work actually finished" is not an answer worth acting on, and the walk handing
+it back to the calling agent is the correct behaviour. The fix is a T1 adapter, then a T2
+adapter, then re-measure.
