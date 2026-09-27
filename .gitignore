@@ -4,3 +4,7 @@ __pycache__/
 oculus_swarm/datasets/
 oculus_swarm/datasets/*.api-archive/
 oculus_swarm/harvest_progress.json
+
+# LoRA adapters are regenerated artifacts (~17.6MB each, one per leaf/tier).
+# Rebuild with: oculus_swarm/train_on_dataset.py --leaf <ID>
+oculus_swarm/adapters/
