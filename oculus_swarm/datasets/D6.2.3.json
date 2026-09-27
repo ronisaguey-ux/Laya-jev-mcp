@@ -9,10 +9,10 @@
   "needs_sot_update": "the contract should be amended, which is a human decision"
  },
  "label_counts": {
-  "conforms": 2,
-  "violates": 2,
-  "unspecified": 2,
-  "needs_sot_update": 2
+  "conforms": 8,
+  "violates": 8,
+  "unspecified": 8,
+  "needs_sot_update": 8
  },
  "samples": [
   {
@@ -52,6 +52,126 @@
   },
   {
    "state": "The change keeps the documented behaviour but the document's wording is ambiguous about it.",
+   "label": "needs_sot_update",
+   "option_text": "the contract should be amended, which is a human decision"
+  },
+  {
+   "state": "The implementation matches the specified genome slot layout.",
+   "label": "conforms",
+   "option_text": "it matches the documented contract"
+  },
+  {
+   "state": "The change follows the documented fitness metric set exactly.",
+   "label": "conforms",
+   "option_text": "it matches the documented contract"
+  },
+  {
+   "state": "The behaviour matches the specification line for line.",
+   "label": "conforms",
+   "option_text": "it matches the documented contract"
+  },
+  {
+   "state": "The change implements the documented interface without deviation.",
+   "label": "conforms",
+   "option_text": "it matches the documented contract"
+  },
+  {
+   "state": "The contract's requirements are all satisfied as written.",
+   "label": "conforms",
+   "option_text": "it matches the documented contract"
+  },
+  {
+   "state": "The change agrees with every clause the specification states.",
+   "label": "conforms",
+   "option_text": "it matches the documented contract"
+  },
+  {
+   "state": "The change reorders genome slots the specification fixes.",
+   "label": "violates",
+   "option_text": "it contradicts the source of truth and must not land"
+  },
+  {
+   "state": "The change removes a required metric from the fitness set.",
+   "label": "violates",
+   "option_text": "it contradicts the source of truth and must not land"
+  },
+  {
+   "state": "The change contradicts the documented asset universe rule.",
+   "label": "violates",
+   "option_text": "it contradicts the source of truth and must not land"
+  },
+  {
+   "state": "The change breaks an invariant the specification states as non-negotiable.",
+   "label": "violates",
+   "option_text": "it contradicts the source of truth and must not land"
+  },
+  {
+   "state": "The implementation does the opposite of what the contract requires.",
+   "label": "violates",
+   "option_text": "it contradicts the source of truth and must not land"
+  },
+  {
+   "state": "The change adds a behaviour the specification explicitly forbids.",
+   "label": "violates",
+   "option_text": "it contradicts the source of truth and must not land"
+  },
+  {
+   "state": "The specification does not cover this instrument class.",
+   "label": "unspecified",
+   "option_text": "the source of truth does not cover this case"
+  },
+  {
+   "state": "Nothing in the contract addresses this scenario.",
+   "label": "unspecified",
+   "option_text": "the source of truth does not cover this case"
+  },
+  {
+   "state": "The change implements behaviour the specification neither names nor excludes.",
+   "label": "unspecified",
+   "option_text": "the source of truth does not cover this case"
+  },
+  {
+   "state": "The document has no clause governing this decision.",
+   "label": "unspecified",
+   "option_text": "the source of truth does not cover this case"
+  },
+  {
+   "state": "The specification's scope does not reach this case.",
+   "label": "unspecified",
+   "option_text": "the source of truth does not cover this case"
+  },
+  {
+   "state": "The contract is simply silent here.",
+   "label": "unspecified",
+   "option_text": "the source of truth does not cover this case"
+  },
+  {
+   "state": "The specification's wording permits two readings and the code picks one.",
+   "label": "needs_sot_update",
+   "option_text": "the contract should be amended, which is a human decision"
+  },
+  {
+   "state": "The contract describes an older interface than the one now in use.",
+   "label": "needs_sot_update",
+   "option_text": "the contract should be amended, which is a human decision"
+  },
+  {
+   "state": "The behaviour is right and the specification's example is stale.",
+   "label": "needs_sot_update",
+   "option_text": "the contract should be amended, which is a human decision"
+  },
+  {
+   "state": "The document contradicts itself on this point and should be resolved.",
+   "label": "needs_sot_update",
+   "option_text": "the contract should be amended, which is a human decision"
+  },
+  {
+   "state": "The specification's stated exception no longer applies.",
+   "label": "needs_sot_update",
+   "option_text": "the contract should be amended, which is a human decision"
+  },
+  {
+   "state": "The contract needs an amendment to match the correct behaviour.",
    "label": "needs_sot_update",
    "option_text": "the contract should be amended, which is a human decision"
   }

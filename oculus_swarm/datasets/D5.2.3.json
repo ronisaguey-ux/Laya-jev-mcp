@@ -9,10 +9,10 @@
   "none": "no source is trustworthy enough; do not compute"
  },
  "label_counts": {
-  "primary": 2,
-  "secondary": 2,
-  "reconcile": 2,
-  "none": 2
+  "primary": 8,
+  "secondary": 8,
+  "reconcile": 8,
+  "none": 8
  },
  "samples": [
   {
@@ -52,6 +52,126 @@
   },
   {
    "state": "Neither source has produced a message since the session opened.",
+   "label": "none",
+   "option_text": "no source is trustworthy enough; do not compute"
+  },
+  {
+   "state": "The primary feed is current, complete and consistent with the venue.",
+   "label": "primary",
+   "option_text": "use the primary source; it is healthy"
+  },
+  {
+   "state": "The primary source passes every check and no alternative is needed.",
+   "label": "primary",
+   "option_text": "use the primary source; it is healthy"
+  },
+  {
+   "state": "The primary is live and well formed.",
+   "label": "primary",
+   "option_text": "use the primary source; it is healthy"
+  },
+  {
+   "state": "The primary feed matches the venue's own record exactly.",
+   "label": "primary",
+   "option_text": "use the primary source; it is healthy"
+  },
+  {
+   "state": "The primary source is current and the secondary is down.",
+   "label": "primary",
+   "option_text": "use the primary source; it is healthy"
+  },
+  {
+   "state": "The primary passes all integrity checks.",
+   "label": "primary",
+   "option_text": "use the primary source; it is healthy"
+  },
+  {
+   "state": "The primary is corrupt and the secondary is verified against the venue.",
+   "label": "secondary",
+   "option_text": "the primary is suspect; use the secondary"
+  },
+  {
+   "state": "The primary source failed and the secondary is complete.",
+   "label": "secondary",
+   "option_text": "the primary is suspect; use the secondary"
+  },
+  {
+   "state": "The primary is unreachable and the secondary is current.",
+   "label": "secondary",
+   "option_text": "the primary is suspect; use the secondary"
+  },
+  {
+   "state": "The primary's checksums fail and the secondary's pass.",
+   "label": "secondary",
+   "option_text": "the primary is suspect; use the secondary"
+  },
+  {
+   "state": "The primary feed stopped and the secondary has been running throughout.",
+   "label": "secondary",
+   "option_text": "the primary is suspect; use the secondary"
+  },
+  {
+   "state": "The secondary is authoritative because the primary is stale.",
+   "label": "secondary",
+   "option_text": "the primary is suspect; use the secondary"
+  },
+  {
+   "state": "The two feeds disagree on volume for the same bar.",
+   "label": "reconcile",
+   "option_text": "the sources disagree; reconcile before computing"
+  },
+  {
+   "state": "Both sources are current and their prices differ beyond the spread.",
+   "label": "reconcile",
+   "option_text": "the sources disagree; reconcile before computing"
+  },
+  {
+   "state": "The feeds disagree about whether a gap occurred.",
+   "label": "reconcile",
+   "option_text": "the sources disagree; reconcile before computing"
+  },
+  {
+   "state": "Both are healthy and neither is a superset of the other.",
+   "label": "reconcile",
+   "option_text": "the sources disagree; reconcile before computing"
+  },
+  {
+   "state": "The two sources conflict on a value that matters and both look well formed.",
+   "label": "reconcile",
+   "option_text": "the sources disagree; reconcile before computing"
+  },
+  {
+   "state": "Both feeds are live and disagree, with no third source available.",
+   "label": "reconcile",
+   "option_text": "the sources disagree; reconcile before computing"
+  },
+  {
+   "state": "Both sources are corrupt in different ways.",
+   "label": "none",
+   "option_text": "no source is trustworthy enough; do not compute"
+  },
+  {
+   "state": "No source is current and none can be verified.",
+   "label": "none",
+   "option_text": "no source is trustworthy enough; do not compute"
+  },
+  {
+   "state": "Both feeds fail their integrity checks.",
+   "label": "none",
+   "option_text": "no source is trustworthy enough; do not compute"
+  },
+  {
+   "state": "Neither source can be trusted for the current window.",
+   "label": "none",
+   "option_text": "no source is trustworthy enough; do not compute"
+  },
+  {
+   "state": "All available sources are stale or broken.",
+   "label": "none",
+   "option_text": "no source is trustworthy enough; do not compute"
+  },
+  {
+   "state": "No source is usable and no reconciliation is possible.",
    "label": "none",
    "option_text": "no source is trustworthy enough; do not compute"
   }

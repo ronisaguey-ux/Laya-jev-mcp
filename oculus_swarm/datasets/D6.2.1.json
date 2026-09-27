@@ -9,10 +9,10 @@
   "human_decision": "a human must decide; the trade-off is not automatic"
  },
  "label_counts": {
-  "rollback": 2,
-  "forward_fix": 2,
-  "hold_and_watch": 2,
-  "human_decision": 2
+  "rollback": 8,
+  "forward_fix": 8,
+  "hold_and_watch": 8,
+  "human_decision": 9
  },
  "samples": [
   {
@@ -52,6 +52,131 @@
   },
   {
    "state": "Rolling back would discard a fix for a data-corruption bug, and the trade-off is not ours to make.",
+   "label": "human_decision",
+   "option_text": "a human must decide; the trade-off is not automatic"
+  },
+  {
+   "state": "The new version loses money on every fold the previous one won.",
+   "label": "rollback",
+   "option_text": "revert now; the regression breaches a required bar"
+  },
+  {
+   "state": "The regression breaches a hard limit and continues to.",
+   "label": "rollback",
+   "option_text": "revert now; the regression breaches a required bar"
+  },
+  {
+   "state": "The change removed a required guard and the failure is reproducible.",
+   "label": "rollback",
+   "option_text": "revert now; the regression breaches a required bar"
+  },
+  {
+   "state": "Every gated metric is below the required bar and the decline is attributable to this change.",
+   "label": "rollback",
+   "option_text": "revert now; the regression breaches a required bar"
+  },
+  {
+   "state": "The regression is severe and the cause is inside the change.",
+   "label": "rollback",
+   "option_text": "revert now; the regression breaches a required bar"
+  },
+  {
+   "state": "The change breaks the strategy's core assumption, not a tuning parameter.",
+   "label": "rollback",
+   "option_text": "revert now; the regression breaches a required bar"
+  },
+  {
+   "state": "One metric moved slightly and the fix is a two-line change.",
+   "label": "forward_fix",
+   "option_text": "keep it and fix forward; the regression is tolerable"
+  },
+  {
+   "state": "The regression is real, bounded and understood.",
+   "label": "forward_fix",
+   "option_text": "keep it and fix forward; the regression is tolerable"
+  },
+  {
+   "state": "The change introduced a minor inefficiency with no effect on results.",
+   "label": "forward_fix",
+   "option_text": "keep it and fix forward; the regression is tolerable"
+  },
+  {
+   "state": "All gates pass and the regression affects a non-critical path.",
+   "label": "forward_fix",
+   "option_text": "keep it and fix forward; the regression is tolerable"
+  },
+  {
+   "state": "The problem is known, small and cheaper to fix than to revert.",
+   "label": "forward_fix",
+   "option_text": "keep it and fix forward; the regression is tolerable"
+  },
+  {
+   "state": "The regression touches reporting only.",
+   "label": "forward_fix",
+   "option_text": "keep it and fix forward; the regression is tolerable"
+  },
+  {
+   "state": "The regression is inside the noise band and more data would decide it.",
+   "label": "hold_and_watch",
+   "option_text": "neither yet; gather more evidence first"
+  },
+  {
+   "state": "One fold degraded and the rest are stable.",
+   "label": "hold_and_watch",
+   "option_text": "neither yet; gather more evidence first"
+  },
+  {
+   "state": "The metric moved by less than its own run-to-run variance.",
+   "label": "hold_and_watch",
+   "option_text": "neither yet; gather more evidence first"
+  },
+  {
+   "state": "The change's effect is ambiguous and a longer window would resolve it.",
+   "label": "hold_and_watch",
+   "option_text": "neither yet; gather more evidence first"
+  },
+  {
+   "state": "A single session shows a decline with no trend yet.",
+   "label": "hold_and_watch",
+   "option_text": "neither yet; gather more evidence first"
+  },
+  {
+   "state": "The difference is small and unexplained, so neither action is justified yet.",
+   "label": "hold_and_watch",
+   "option_text": "neither yet; gather more evidence first"
+  },
+  {
+   "state": "The regression costs real edge but reverting would break a live dependency.",
+   "label": "human_decision",
+   "option_text": "a human must decide; the trade-off is not automatic"
+  },
+  {
+   "state": "The change improves one mandate metric and worsens another the mandate also names.",
+   "label": "human_decision",
+   "option_text": "a human must decide; the trade-off is not automatic"
+  },
+  {
+   "state": "The regression is real and the fix requires a decision about acceptable risk.",
+   "label": "human_decision",
+   "option_text": "a human must decide; the trade-off is not automatic"
+  },
+  {
+   "state": "Rolling back would remove a required security fix.",
+   "label": "human_decision",
+   "option_text": "a human must decide; the trade-off is not automatic"
+  },
+  {
+   "state": "The trade-off between the two versions depends on risk appetite.",
+   "label": "human_decision",
+   "option_text": "a human must decide; the trade-off is not automatic"
+  },
+  {
+   "state": "The regression is severe and the change is also required for compliance.",
+   "label": "human_decision",
+   "option_text": "a human must decide; the trade-off is not automatic"
+  },
+  {
+   "state": "Neither action is clearly correct and the owner must choose.",
    "label": "human_decision",
    "option_text": "a human must decide; the trade-off is not automatic"
   }

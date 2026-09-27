@@ -9,10 +9,10 @@
   "split": "work the order in slices to limit impact"
  },
  "label_counts": {
-  "passive": 2,
-  "aggressive": 2,
-  "wait": 2,
-  "split": 2
+  "passive": 8,
+  "aggressive": 8,
+  "wait": 8,
+  "split": 8
  },
  "samples": [
   {
@@ -52,6 +52,126 @@
   },
   {
    "state": "The order exceeds the average minute volume several times over.",
+   "label": "split",
+   "option_text": "work the order in slices to limit impact"
+  },
+  {
+   "state": "The spread is wider than the expected move and there is time to wait.",
+   "label": "passive",
+   "option_text": "post and wait; the spread matters more than the fill certainty"
+  },
+  {
+   "state": "The edge decays slowly and the book is deep enough to rest an order.",
+   "label": "passive",
+   "option_text": "post and wait; the spread matters more than the fill certainty"
+  },
+  {
+   "state": "Posting avoids the spread and the signal is not time-critical on this timescale.",
+   "label": "passive",
+   "option_text": "post and wait; the spread matters more than the fill certainty"
+  },
+  {
+   "state": "Participation is low and the order can sit without adverse selection.",
+   "label": "passive",
+   "option_text": "post and wait; the spread matters more than the fill certainty"
+  },
+  {
+   "state": "The venue pays a rebate and the order is not urgent.",
+   "label": "passive",
+   "option_text": "post and wait; the spread matters more than the fill certainty"
+  },
+  {
+   "state": "The expected move is small relative to the spread, so crossing is expensive.",
+   "label": "passive",
+   "option_text": "post and wait; the spread matters more than the fill certainty"
+  },
+  {
+   "state": "The information is short-lived and certainty of fill matters more than price.",
+   "label": "aggressive",
+   "option_text": "cross the spread; certainty of fill matters more"
+  },
+  {
+   "state": "The order must complete before a scheduled event.",
+   "label": "aggressive",
+   "option_text": "cross the spread; certainty of fill matters more"
+  },
+  {
+   "state": "The move is already underway and waiting would miss it.",
+   "label": "aggressive",
+   "option_text": "cross the spread; certainty of fill matters more"
+  },
+  {
+   "state": "The book is thin and the quote will not survive a passive order.",
+   "label": "aggressive",
+   "option_text": "cross the spread; certainty of fill matters more"
+  },
+  {
+   "state": "The edge is larger than the spread, so crossing is profitable.",
+   "label": "aggressive",
+   "option_text": "cross the spread; certainty of fill matters more"
+  },
+  {
+   "state": "The signal is a microstructure imbalance with a half-life of seconds.",
+   "label": "aggressive",
+   "option_text": "cross the spread; certainty of fill matters more"
+  },
+  {
+   "state": "The spread has widened far beyond its normal range.",
+   "label": "wait",
+   "option_text": "do not send yet; conditions are unfavourable"
+  },
+  {
+   "state": "A scheduled event is minutes away and pricing is unreliable.",
+   "label": "wait",
+   "option_text": "do not send yet; conditions are unfavourable"
+  },
+  {
+   "state": "The venue is degraded and order acknowledgement is unreliable.",
+   "label": "wait",
+   "option_text": "do not send yet; conditions are unfavourable"
+  },
+  {
+   "state": "The book is empty on one side and any fill would be at an arbitrary price.",
+   "label": "wait",
+   "option_text": "do not send yet; conditions are unfavourable"
+  },
+  {
+   "state": "A data outage has made the current price untrustworthy.",
+   "label": "wait",
+   "option_text": "do not send yet; conditions are unfavourable"
+  },
+  {
+   "state": "Conditions are abnormal and waiting is the only sane action.",
+   "label": "wait",
+   "option_text": "do not send yet; conditions are unfavourable"
+  },
+  {
+   "state": "The participation rate would exceed a tenth of the book if sent whole.",
+   "label": "split",
+   "option_text": "work the order in slices to limit impact"
+  },
+  {
+   "state": "The order is large enough that a single fill would move the price.",
+   "label": "split",
+   "option_text": "work the order in slices to limit impact"
+  },
+  {
+   "state": "The visible depth cannot absorb the order in one go.",
+   "label": "split",
+   "option_text": "work the order in slices to limit impact"
+  },
+  {
+   "state": "Market impact would dominate the edge if the order were sent whole.",
+   "label": "split",
+   "option_text": "work the order in slices to limit impact"
+  },
+  {
+   "state": "The order is several multiples of the typical trade size.",
+   "label": "split",
+   "option_text": "work the order in slices to limit impact"
+  },
+  {
+   "state": "The book at the touch is a fraction of the order.",
    "label": "split",
    "option_text": "work the order in slices to limit impact"
   }

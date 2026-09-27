@@ -8,9 +8,9 @@
   "needs_review": "ambiguous; a human should inspect the raw record"
  },
  "label_counts": {
-  "real_move": 3,
-  "data_error": 2,
-  "needs_review": 3
+  "real_move": 8,
+  "data_error": 8,
+  "needs_review": 8
  },
  "samples": [
   {
@@ -50,6 +50,86 @@
   },
   {
    "state": "Two sources disagree on the tick's price by forty basis points with no third source to break the tie.",
+   "label": "needs_review",
+   "option_text": "ambiguous; a human should inspect the raw record"
+  },
+  {
+   "state": "The print is corroborated by the consolidated tape and by the next bar.",
+   "label": "real_move",
+   "option_text": "a genuine market move; keep it"
+  },
+  {
+   "state": "The move appears on two independent sources with consistent volume.",
+   "label": "real_move",
+   "option_text": "a genuine market move; keep it"
+  },
+  {
+   "state": "A news event explains the print and the venue's record confirms it.",
+   "label": "real_move",
+   "option_text": "a genuine market move; keep it"
+  },
+  {
+   "state": "The spike persisted for several bars with volume to match.",
+   "label": "real_move",
+   "option_text": "a genuine market move; keep it"
+  },
+  {
+   "state": "Both feeds show the move and it is consistent with the session's range.",
+   "label": "real_move",
+   "option_text": "a genuine market move; keep it"
+  },
+  {
+   "state": "The value is negative for an instrument that cannot trade below zero.",
+   "label": "data_error",
+   "option_text": "a bad print; exclude it from computation"
+  },
+  {
+   "state": "The price is three orders of magnitude from its neighbours and appears once.",
+   "label": "data_error",
+   "option_text": "a bad print; exclude it from computation"
+  },
+  {
+   "state": "A single venue shows a price the consolidated tape never saw.",
+   "label": "data_error",
+   "option_text": "a bad print; exclude it from computation"
+  },
+  {
+   "state": "The print breaks an arithmetic identity every bar must satisfy.",
+   "label": "data_error",
+   "option_text": "a bad print; exclude it from computation"
+  },
+  {
+   "state": "The volume is negative.",
+   "label": "data_error",
+   "option_text": "a bad print; exclude it from computation"
+  },
+  {
+   "state": "The timestamp is out of order and the price does not fit either neighbour.",
+   "label": "data_error",
+   "option_text": "a bad print; exclude it from computation"
+  },
+  {
+   "state": "The print is large but not impossible and only one feed recorded it.",
+   "label": "needs_review",
+   "option_text": "ambiguous; a human should inspect the raw record"
+  },
+  {
+   "state": "The move is unusual for the time of day and nothing corroborates or refutes it.",
+   "label": "needs_review",
+   "option_text": "ambiguous; a human should inspect the raw record"
+  },
+  {
+   "state": "The price is inside the day's range but the volume is unexplained.",
+   "label": "needs_review",
+   "option_text": "ambiguous; a human should inspect the raw record"
+  },
+  {
+   "state": "One source shows the print and the others are silent, with no way to arbitrate.",
+   "label": "needs_review",
+   "option_text": "ambiguous; a human should inspect the raw record"
+  },
+  {
+   "state": "The value could be a real move or a bad print and the evidence is balanced.",
    "label": "needs_review",
    "option_text": "ambiguous; a human should inspect the raw record"
   }

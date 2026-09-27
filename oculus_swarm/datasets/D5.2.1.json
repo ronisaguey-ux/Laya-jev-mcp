@@ -9,10 +9,10 @@
   "unknown": "feed health cannot be determined; assume it is down"
  },
  "label_counts": {
-  "healthy": 2,
-  "degraded": 2,
-  "disconnected": 2,
-  "unknown": 2
+  "healthy": 8,
+  "degraded": 8,
+  "disconnected": 8,
+  "unknown": 8
  },
  "samples": [
   {
@@ -52,6 +52,126 @@
   },
   {
    "state": "The monitoring process itself is down, so nothing can be said about the feed.",
+   "label": "unknown",
+   "option_text": "feed health cannot be determined; assume it is down"
+  },
+  {
+   "state": "Latency is low, messages parse, and no gaps are present.",
+   "label": "healthy",
+   "option_text": "messages are arriving on time and well formed"
+  },
+  {
+   "state": "Every monitored property of the feed is nominal.",
+   "label": "healthy",
+   "option_text": "messages are arriving on time and well formed"
+  },
+  {
+   "state": "Messages arrive on time, in order, and well formed.",
+   "label": "healthy",
+   "option_text": "messages are arriving on time and well formed"
+  },
+  {
+   "state": "The connection is stable and the message rate matches the venue's expectation.",
+   "label": "healthy",
+   "option_text": "messages are arriving on time and well formed"
+  },
+  {
+   "state": "No errors, no gaps and current data.",
+   "label": "healthy",
+   "option_text": "messages are arriving on time and well formed"
+  },
+  {
+   "state": "The feed reports healthy on every check the monitor runs.",
+   "label": "healthy",
+   "option_text": "messages are arriving on time and well formed"
+  },
+  {
+   "state": "Messages arrive late but parse correctly.",
+   "label": "degraded",
+   "option_text": "messages arrive late or out of order but are usable"
+  },
+  {
+   "state": "The feed is delivering data with jitter and occasional reordering.",
+   "label": "degraded",
+   "option_text": "messages arrive late or out of order but are usable"
+  },
+  {
+   "state": "Latency has tripled and messages occasionally arrive out of order.",
+   "label": "degraded",
+   "option_text": "messages arrive late or out of order but are usable"
+  },
+  {
+   "state": "Some messages are malformed but the stream continues.",
+   "label": "degraded",
+   "option_text": "messages arrive late or out of order but are usable"
+  },
+  {
+   "state": "The connection drops and recovers repeatedly.",
+   "label": "degraded",
+   "option_text": "messages arrive late or out of order but are usable"
+  },
+  {
+   "state": "Data arrives with a delay and sequence numbers occasionally skip.",
+   "label": "degraded",
+   "option_text": "messages arrive late or out of order but are usable"
+  },
+  {
+   "state": "The socket is closed and reconnection is failing.",
+   "label": "disconnected",
+   "option_text": "the feed is down; work from the last known good state"
+  },
+  {
+   "state": "The feed has produced nothing since the session opened.",
+   "label": "disconnected",
+   "option_text": "the feed is down; work from the last known good state"
+  },
+  {
+   "state": "The connection error is persistent and no data is arriving.",
+   "label": "disconnected",
+   "option_text": "the feed is down; work from the last known good state"
+  },
+  {
+   "state": "The venue is unreachable and the collector is retrying.",
+   "label": "disconnected",
+   "option_text": "the feed is down; work from the last known good state"
+  },
+  {
+   "state": "The session was terminated by the remote and has not re-established.",
+   "label": "disconnected",
+   "option_text": "the feed is down; work from the last known good state"
+  },
+  {
+   "state": "Nothing is arriving and the socket state is closed.",
+   "label": "disconnected",
+   "option_text": "the feed is down; work from the last known good state"
+  },
+  {
+   "state": "No health information is available from any layer.",
+   "label": "unknown",
+   "option_text": "feed health cannot be determined; assume it is down"
+  },
+  {
+   "state": "The collector has stopped reporting and its status cannot be determined.",
+   "label": "unknown",
+   "option_text": "feed health cannot be determined; assume it is down"
+  },
+  {
+   "state": "The health check errors before it can establish anything.",
+   "label": "unknown",
+   "option_text": "feed health cannot be determined; assume it is down"
+  },
+  {
+   "state": "Nothing can be established about the feed's state.",
+   "label": "unknown",
+   "option_text": "feed health cannot be determined; assume it is down"
+  },
+  {
+   "state": "The monitor is unreachable and the feed's condition is unknown.",
+   "label": "unknown",
+   "option_text": "feed health cannot be determined; assume it is down"
+  },
+  {
+   "state": "No measurement of the feed is available.",
    "label": "unknown",
    "option_text": "feed health cannot be determined; assume it is down"
   }

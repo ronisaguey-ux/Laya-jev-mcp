@@ -9,10 +9,10 @@
   "benign_noise": "ordinary variation; nothing to act on"
  },
  "label_counts": {
-  "market_event": 2,
-  "system_fault": 2,
-  "upstream_issue": 2,
-  "benign_noise": 2
+  "market_event": 8,
+  "system_fault": 8,
+  "upstream_issue": 8,
+  "benign_noise": 8
  },
  "samples": [
   {
@@ -52,6 +52,126 @@
   },
   {
    "state": "One bar is a few ticks wider than its neighbours and the next bar reverses it.",
+   "label": "benign_noise",
+   "option_text": "ordinary variation; nothing to act on"
+  },
+  {
+   "state": "An earnings surprise moved the instrument and its peers together.",
+   "label": "market_event",
+   "option_text": "a genuine market event that must be handled as such"
+  },
+  {
+   "state": "A macro release shifted several related markets at once.",
+   "label": "market_event",
+   "option_text": "a genuine market event that must be handled as such"
+  },
+  {
+   "state": "A geopolitical event moved safe-haven assets together.",
+   "label": "market_event",
+   "option_text": "a genuine market event that must be handled as such"
+  },
+  {
+   "state": "The move is broad, correlated and explained by a scheduled event.",
+   "label": "market_event",
+   "option_text": "a genuine market event that must be handled as such"
+  },
+  {
+   "state": "Several instruments moved in a connected way at the same timestamp.",
+   "label": "market_event",
+   "option_text": "a genuine market event that must be handled as such"
+  },
+  {
+   "state": "The anomaly coincides with a documented market event.",
+   "label": "market_event",
+   "option_text": "a genuine market event that must be handled as such"
+  },
+  {
+   "state": "The pipeline wrote a partial batch because the writer crashed mid-run.",
+   "label": "system_fault",
+   "option_text": "an internal fault in our own pipeline"
+  },
+  {
+   "state": "Our own clock skew produced timestamps in the future.",
+   "label": "system_fault",
+   "option_text": "an internal fault in our own pipeline"
+  },
+  {
+   "state": "A schema change in our loader misread a column.",
+   "label": "system_fault",
+   "option_text": "an internal fault in our own pipeline"
+  },
+  {
+   "state": "The deduplication step removed rows it should have kept.",
+   "label": "system_fault",
+   "option_text": "an internal fault in our own pipeline"
+  },
+  {
+   "state": "Our own aggregator lost the last bucket of every session.",
+   "label": "system_fault",
+   "option_text": "an internal fault in our own pipeline"
+  },
+  {
+   "state": "An internal retry duplicated a batch.",
+   "label": "system_fault",
+   "option_text": "an internal fault in our own pipeline"
+  },
+  {
+   "state": "The data provider published a corrupted file that other subscribers also received.",
+   "label": "upstream_issue",
+   "option_text": "a problem at the venue or data provider"
+  },
+  {
+   "state": "The venue rejected every order for a period and other participants saw the same.",
+   "label": "upstream_issue",
+   "option_text": "a problem at the venue or data provider"
+  },
+  {
+   "state": "The exchange's own status page reports an incident matching the anomaly.",
+   "label": "upstream_issue",
+   "option_text": "a problem at the venue or data provider"
+  },
+  {
+   "state": "Authentication began failing against the venue with no change on our side.",
+   "label": "upstream_issue",
+   "option_text": "a problem at the venue or data provider"
+  },
+  {
+   "state": "The provider's feed changed format without notice.",
+   "label": "upstream_issue",
+   "option_text": "a problem at the venue or data provider"
+  },
+  {
+   "state": "A venue-side clock error shifted every timestamp it sent.",
+   "label": "upstream_issue",
+   "option_text": "a problem at the venue or data provider"
+  },
+  {
+   "state": "A small volume spike with no price consequence.",
+   "label": "benign_noise",
+   "option_text": "ordinary variation; nothing to act on"
+  },
+  {
+   "state": "One instrument moved marginally more than usual and reverted within the bar.",
+   "label": "benign_noise",
+   "option_text": "ordinary variation; nothing to act on"
+  },
+  {
+   "state": "A single outlier inside the normal distribution.",
+   "label": "benign_noise",
+   "option_text": "ordinary variation; nothing to act on"
+  },
+  {
+   "state": "Ordinary variation with no correlated or scheduled cause.",
+   "label": "benign_noise",
+   "option_text": "ordinary variation; nothing to act on"
+  },
+  {
+   "state": "A minor gap in an illiquid period.",
+   "label": "benign_noise",
+   "option_text": "ordinary variation; nothing to act on"
+  },
+  {
+   "state": "Normal market noise that requires no action.",
    "label": "benign_noise",
    "option_text": "ordinary variation; nothing to act on"
   }

@@ -9,10 +9,10 @@
   "disconnect": "connectivity was lost; positions must be reconciled before anything else"
  },
  "label_counts": {
-  "rejected_retryable": 2,
-  "rejected_fatal": 2,
-  "partial_fill": 2,
-  "disconnect": 2
+  "rejected_retryable": 8,
+  "rejected_fatal": 8,
+  "partial_fill": 8,
+  "disconnect": 8
  },
  "samples": [
   {
@@ -52,6 +52,126 @@
   },
   {
    "state": "The session was lost after the order was acknowledged but before the fill was confirmed.",
+   "label": "disconnect",
+   "option_text": "connectivity was lost; positions must be reconciled before anything else"
+  },
+  {
+   "state": "The venue rejected the order during a brief gateway error.",
+   "label": "rejected_retryable",
+   "option_text": "the venue rejected it and it can safely be retried"
+  },
+  {
+   "state": "The order was rejected for a reason that will not hold on retry.",
+   "label": "rejected_retryable",
+   "option_text": "the venue rejected it and it can safely be retried"
+  },
+  {
+   "state": "The rejection cites a temporary condition.",
+   "label": "rejected_retryable",
+   "option_text": "the venue rejected it and it can safely be retried"
+  },
+  {
+   "state": "The venue returned a retryable code and the state has since changed.",
+   "label": "rejected_retryable",
+   "option_text": "the venue rejected it and it can safely be retried"
+  },
+  {
+   "state": "The order was rejected because the market was momentarily crossed.",
+   "label": "rejected_retryable",
+   "option_text": "the venue rejected it and it can safely be retried"
+  },
+  {
+   "state": "The rejection is transient and the same order succeeded minutes later.",
+   "label": "rejected_retryable",
+   "option_text": "the venue rejected it and it can safely be retried"
+  },
+  {
+   "state": "The account is not permitted to trade this instrument.",
+   "label": "rejected_fatal",
+   "option_text": "the venue rejected it and retrying would repeat the failure"
+  },
+  {
+   "state": "The order was rejected for insufficient permissions.",
+   "label": "rejected_fatal",
+   "option_text": "the venue rejected it and retrying would repeat the failure"
+  },
+  {
+   "state": "The symbol is delisted and no retry will change that.",
+   "label": "rejected_fatal",
+   "option_text": "the venue rejected it and retrying would repeat the failure"
+  },
+  {
+   "state": "The rejection cites a rule violation that the order cannot satisfy.",
+   "label": "rejected_fatal",
+   "option_text": "the venue rejected it and retrying would repeat the failure"
+  },
+  {
+   "state": "The venue rejected the order as a duplicate of one already filled.",
+   "label": "rejected_fatal",
+   "option_text": "the venue rejected it and retrying would repeat the failure"
+  },
+  {
+   "state": "The account has been disabled by the venue.",
+   "label": "rejected_fatal",
+   "option_text": "the venue rejected it and retrying would repeat the failure"
+  },
+  {
+   "state": "Half the order executed and the remainder is still open.",
+   "label": "partial_fill",
+   "option_text": "the order filled only partly and the remainder needs a decision"
+  },
+  {
+   "state": "The order filled partially and the rest was cancelled by the venue.",
+   "label": "partial_fill",
+   "option_text": "the order filled only partly and the remainder needs a decision"
+  },
+  {
+   "state": "Two of five contracts filled.",
+   "label": "partial_fill",
+   "option_text": "the order filled only partly and the remainder needs a decision"
+  },
+  {
+   "state": "The order executed in part at two different prices.",
+   "label": "partial_fill",
+   "option_text": "the order filled only partly and the remainder needs a decision"
+  },
+  {
+   "state": "A third of the size filled and the remainder needs a decision.",
+   "label": "partial_fill",
+   "option_text": "the order filled only partly and the remainder needs a decision"
+  },
+  {
+   "state": "The fill is incomplete and the remaining quantity is still live.",
+   "label": "partial_fill",
+   "option_text": "the order filled only partly and the remainder needs a decision"
+  },
+  {
+   "state": "The trading process was killed mid-session and its in-memory order state is gone.",
+   "label": "disconnect",
+   "option_text": "connectivity was lost; positions must be reconciled before anything else"
+  },
+  {
+   "state": "Connectivity was lost with orders working and no acknowledgements received.",
+   "label": "disconnect",
+   "option_text": "connectivity was lost; positions must be reconciled before anything else"
+  },
+  {
+   "state": "The gateway timed out after the order was sent.",
+   "label": "disconnect",
+   "option_text": "connectivity was lost; positions must be reconciled before anything else"
+  },
+  {
+   "state": "The connection dropped during the order's lifecycle and the outcome is unknown.",
+   "label": "disconnect",
+   "option_text": "connectivity was lost; positions must be reconciled before anything else"
+  },
+  {
+   "state": "The venue became unreachable after submission.",
+   "label": "disconnect",
+   "option_text": "connectivity was lost; positions must be reconciled before anything else"
+  },
+  {
+   "state": "The session ended abnormally with orders in flight.",
    "label": "disconnect",
    "option_text": "connectivity was lost; positions must be reconciled before anything else"
   }

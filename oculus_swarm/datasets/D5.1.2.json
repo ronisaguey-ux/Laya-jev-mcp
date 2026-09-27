@@ -9,10 +9,10 @@
   "unknown": "the gap cannot be classified; treat as missing data"
  },
  "label_counts": {
-  "expected": 2,
-  "feed_dropout": 2,
-  "genuine_move": 2,
-  "unknown": 2
+  "expected": 8,
+  "feed_dropout": 8,
+  "genuine_move": 8,
+  "unknown": 8
  },
  "samples": [
   {
@@ -52,6 +52,126 @@
   },
   {
    "state": "The gap is short, could be a session break or a dropout, and the calendar file is missing.",
+   "label": "unknown",
+   "option_text": "the gap cannot be classified; treat as missing data"
+  },
+  {
+   "state": "The break corresponds to a scheduled exchange holiday.",
+   "label": "expected",
+   "option_text": "the gap matches a known market closure"
+  },
+  {
+   "state": "The gap aligns with the venue's published session hours.",
+   "label": "expected",
+   "option_text": "the gap matches a known market closure"
+  },
+  {
+   "state": "The missing period is the instrument's normal overnight close.",
+   "label": "expected",
+   "option_text": "the gap matches a known market closure"
+  },
+  {
+   "state": "The calendar shows a halt for that window and the gap matches it exactly.",
+   "label": "expected",
+   "option_text": "the gap matches a known market closure"
+  },
+  {
+   "state": "The break is the weekend and the venue's own calendar lists it.",
+   "label": "expected",
+   "option_text": "the gap matches a known market closure"
+  },
+  {
+   "state": "The gap matches a known settlement period.",
+   "label": "expected",
+   "option_text": "the gap matches a known market closure"
+  },
+  {
+   "state": "The gap starts exactly when a reconnect was logged.",
+   "label": "feed_dropout",
+   "option_text": "the gap looks like a data outage, not a real market pause"
+  },
+  {
+   "state": "The missing window is inside trading hours and no venue event explains it.",
+   "label": "feed_dropout",
+   "option_text": "the gap looks like a data outage, not a real market pause"
+  },
+  {
+   "state": "The price resumes where it left off, which a real market move would not.",
+   "label": "feed_dropout",
+   "option_text": "the gap looks like a data outage, not a real market pause"
+  },
+  {
+   "state": "The gap affects every instrument on the same feed simultaneously.",
+   "label": "feed_dropout",
+   "option_text": "the gap looks like a data outage, not a real market pause"
+  },
+  {
+   "state": "No calendar event exists for that window and trading was continuous elsewhere.",
+   "label": "feed_dropout",
+   "option_text": "the gap looks like a data outage, not a real market pause"
+  },
+  {
+   "state": "The break coincides with a collector restart.",
+   "label": "feed_dropout",
+   "option_text": "the gap looks like a data outage, not a real market pause"
+  },
+  {
+   "state": "The venue's tape shows prints during the gap that our feed missed.",
+   "label": "genuine_move",
+   "option_text": "the gap is a real price move, not missing data"
+  },
+  {
+   "state": "The move is corroborated by a related instrument and by volume.",
+   "label": "genuine_move",
+   "option_text": "the gap is a real price move, not missing data"
+  },
+  {
+   "state": "A central bank decision occurred inside the window and the price moved accordingly.",
+   "label": "genuine_move",
+   "option_text": "the gap is a real price move, not missing data"
+  },
+  {
+   "state": "The gap contains a documented circuit-breaker halt with the price resuming on the new level.",
+   "label": "genuine_move",
+   "option_text": "the gap is a real price move, not missing data"
+  },
+  {
+   "state": "Trades are visible in the venue's record for the missing period.",
+   "label": "genuine_move",
+   "option_text": "the gap is a real price move, not missing data"
+  },
+  {
+   "state": "The price moved and the consolidated feed confirms activity throughout.",
+   "label": "genuine_move",
+   "option_text": "the gap is a real price move, not missing data"
+  },
+  {
+   "state": "No third source exists to say whether trading occurred in the window.",
+   "label": "unknown",
+   "option_text": "the gap cannot be classified; treat as missing data"
+  },
+  {
+   "state": "The instrument trades on a venue whose hours are not published.",
+   "label": "unknown",
+   "option_text": "the gap cannot be classified; treat as missing data"
+  },
+  {
+   "state": "The gap could be a holiday or a feed failure and nothing available distinguishes them.",
+   "label": "unknown",
+   "option_text": "the gap cannot be classified; treat as missing data"
+  },
+  {
+   "state": "The window has no calendar entry and no secondary feed to compare against.",
+   "label": "unknown",
+   "option_text": "the gap cannot be classified; treat as missing data"
+  },
+  {
+   "state": "It is unclear whether the market was open during the missing period.",
+   "label": "unknown",
+   "option_text": "the gap cannot be classified; treat as missing data"
+  },
+  {
+   "state": "Neither the calendar nor another source covers that window.",
    "label": "unknown",
    "option_text": "the gap cannot be classified; treat as missing data"
   }

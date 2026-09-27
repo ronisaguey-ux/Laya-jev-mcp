@@ -9,10 +9,10 @@
   "venue_unknown": "the venue cannot be queried; assume mismatch"
  },
  "label_counts": {
-  "matched": 2,
-  "mismatch": 2,
-  "stale_local": 2,
-  "venue_unknown": 2
+  "matched": 8,
+  "mismatch": 8,
+  "stale_local": 8,
+  "venue_unknown": 8
  },
  "samples": [
   {
@@ -52,6 +52,126 @@
   },
   {
    "state": "The venue is in maintenance and returns no position data at all.",
+   "label": "venue_unknown",
+   "option_text": "the venue cannot be queried; assume mismatch"
+  },
+  {
+   "state": "The venue's statement matches our book exactly.",
+   "label": "matched",
+   "option_text": "local and venue positions agree"
+  },
+  {
+   "state": "Every position and cash balance reconciles without adjustment.",
+   "label": "matched",
+   "option_text": "local and venue positions agree"
+  },
+  {
+   "state": "Our records and the venue's agree on every field.",
+   "label": "matched",
+   "option_text": "local and venue positions agree"
+  },
+  {
+   "state": "The comparison found no differences.",
+   "label": "matched",
+   "option_text": "local and venue positions agree"
+  },
+  {
+   "state": "Both sides report identical positions and balances.",
+   "label": "matched",
+   "option_text": "local and venue positions agree"
+  },
+  {
+   "state": "Reconciliation is clean.",
+   "label": "matched",
+   "option_text": "local and venue positions agree"
+  },
+  {
+   "state": "The venue reports a cash balance four thousand lower than our ledger.",
+   "label": "mismatch",
+   "option_text": "they disagree and the difference must be resolved before trading"
+  },
+  {
+   "state": "Our book shows flat on an instrument the venue says is long.",
+   "label": "mismatch",
+   "option_text": "they disagree and the difference must be resolved before trading"
+  },
+  {
+   "state": "Fees charged by the venue exceed the ledger's by a small but persistent amount.",
+   "label": "mismatch",
+   "option_text": "they disagree and the difference must be resolved before trading"
+  },
+  {
+   "state": "The venue shows a position our book never opened.",
+   "label": "mismatch",
+   "option_text": "they disagree and the difference must be resolved before trading"
+  },
+  {
+   "state": "Our quantity differs from the venue's on three instruments.",
+   "label": "mismatch",
+   "option_text": "they disagree and the difference must be resolved before trading"
+  },
+  {
+   "state": "The two sides disagree and the difference must be resolved.",
+   "label": "mismatch",
+   "option_text": "they disagree and the difference must be resolved before trading"
+  },
+  {
+   "state": "Our snapshot predates the most recent fills.",
+   "label": "stale_local",
+   "option_text": "our view is stale; refresh before deciding"
+  },
+  {
+   "state": "The local book has not been updated since the last restart.",
+   "label": "stale_local",
+   "option_text": "our view is stale; refresh before deciding"
+  },
+  {
+   "state": "Our view is behind by several hours of trading.",
+   "label": "stale_local",
+   "option_text": "our view is stale; refresh before deciding"
+  },
+  {
+   "state": "The ledger has not ingested the latest fills.",
+   "label": "stale_local",
+   "option_text": "our view is stale; refresh before deciding"
+  },
+  {
+   "state": "The local state is from an earlier session.",
+   "label": "stale_local",
+   "option_text": "our view is stale; refresh before deciding"
+  },
+  {
+   "state": "Our record is older than the venue's and has not been refreshed.",
+   "label": "stale_local",
+   "option_text": "our view is stale; refresh before deciding"
+  },
+  {
+   "state": "The venue cannot be queried and no statement is available.",
+   "label": "venue_unknown",
+   "option_text": "the venue cannot be queried; assume mismatch"
+  },
+  {
+   "state": "The venue's API is returning errors for every position request.",
+   "label": "venue_unknown",
+   "option_text": "the venue cannot be queried; assume mismatch"
+  },
+  {
+   "state": "No response can be obtained from the venue.",
+   "label": "venue_unknown",
+   "option_text": "the venue cannot be queried; assume mismatch"
+  },
+  {
+   "state": "The venue is unreachable so no comparison is possible.",
+   "label": "venue_unknown",
+   "option_text": "the venue cannot be queried; assume mismatch"
+  },
+  {
+   "state": "The venue's statement has not been produced for today.",
+   "label": "venue_unknown",
+   "option_text": "the venue cannot be queried; assume mismatch"
+  },
+  {
+   "state": "The venue's endpoint is down and its state is unknown.",
    "label": "venue_unknown",
    "option_text": "the venue cannot be queried; assume mismatch"
   }

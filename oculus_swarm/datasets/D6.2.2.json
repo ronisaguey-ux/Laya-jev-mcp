@@ -9,10 +9,10 @@
   "forbidden": "crosses an architecture boundary; do not apply"
  },
  "label_counts": {
-  "low_risk": 2,
-  "moderate_risk": 2,
-  "high_risk": 2,
-  "forbidden": 2
+  "low_risk": 8,
+  "moderate_risk": 8,
+  "high_risk": 8,
+  "forbidden": 8
  },
  "samples": [
   {
@@ -52,6 +52,126 @@
   },
   {
    "state": "The change would let the backtester call live venue code.",
+   "label": "forbidden",
+   "option_text": "crosses an architecture boundary; do not apply"
+  },
+  {
+   "state": "The change edits a constant that only one module reads.",
+   "label": "low_risk",
+   "option_text": "isolated and reversible; apply it"
+  },
+  {
+   "state": "The diff is confined to a test file.",
+   "label": "low_risk",
+   "option_text": "isolated and reversible; apply it"
+  },
+  {
+   "state": "The change is isolated, reversible and touches nothing shared.",
+   "label": "low_risk",
+   "option_text": "isolated and reversible; apply it"
+  },
+  {
+   "state": "The edit is a docstring correction.",
+   "label": "low_risk",
+   "option_text": "isolated and reversible; apply it"
+  },
+  {
+   "state": "The change modifies a local variable inside one function.",
+   "label": "low_risk",
+   "option_text": "isolated and reversible; apply it"
+  },
+  {
+   "state": "The diff is one line in a leaf module.",
+   "label": "low_risk",
+   "option_text": "isolated and reversible; apply it"
+  },
+  {
+   "state": "The change modifies a utility that four modules import.",
+   "label": "moderate_risk",
+   "option_text": "touches shared behaviour; apply with a staged rollout"
+  },
+  {
+   "state": "The change touches a widely used interface without changing its signature.",
+   "label": "moderate_risk",
+   "option_text": "touches shared behaviour; apply with a staged rollout"
+  },
+  {
+   "state": "The change affects a shared cache whose invalidation other code assumes.",
+   "label": "moderate_risk",
+   "option_text": "touches shared behaviour; apply with a staged rollout"
+  },
+  {
+   "state": "The change edits configuration read by several components.",
+   "label": "moderate_risk",
+   "option_text": "touches shared behaviour; apply with a staged rollout"
+  },
+  {
+   "state": "The change alters ordering behaviour other code depends on implicitly.",
+   "label": "moderate_risk",
+   "option_text": "touches shared behaviour; apply with a staged rollout"
+  },
+  {
+   "state": "The change modifies a helper used across a package.",
+   "label": "moderate_risk",
+   "option_text": "touches shared behaviour; apply with a staged rollout"
+  },
+  {
+   "state": "The change modifies the risk limit that gates live exposure.",
+   "label": "high_risk",
+   "option_text": "touches money or state; require review before applying"
+  },
+  {
+   "state": "The change edits the credential handling path.",
+   "label": "high_risk",
+   "option_text": "touches money or state; require review before applying"
+  },
+  {
+   "state": "The change alters how positions are reconciled with the venue.",
+   "label": "high_risk",
+   "option_text": "touches money or state; require review before applying"
+  },
+  {
+   "state": "The change touches the persistence layer that stores trading state.",
+   "label": "high_risk",
+   "option_text": "touches money or state; require review before applying"
+  },
+  {
+   "state": "The change modifies the code that decides whether to send an order.",
+   "label": "high_risk",
+   "option_text": "touches money or state; require review before applying"
+  },
+  {
+   "state": "The change edits the daily loss calculation.",
+   "label": "high_risk",
+   "option_text": "touches money or state; require review before applying"
+  },
+  {
+   "state": "The change would have the research path write to the production database.",
+   "label": "forbidden",
+   "option_text": "crosses an architecture boundary; do not apply"
+  },
+  {
+   "state": "The change would make a pure module depend on a network client.",
+   "label": "forbidden",
+   "option_text": "crosses an architecture boundary; do not apply"
+  },
+  {
+   "state": "The change would let the strategy layer place orders directly.",
+   "label": "forbidden",
+   "option_text": "crosses an architecture boundary; do not apply"
+  },
+  {
+   "state": "The change would have the immutable specification imported into a mutating pipeline.",
+   "label": "forbidden",
+   "option_text": "crosses an architecture boundary; do not apply"
+  },
+  {
+   "state": "The change would allow live trading from the backtest harness.",
+   "label": "forbidden",
+   "option_text": "crosses an architecture boundary; do not apply"
+  },
+  {
+   "state": "The change crosses a boundary the architecture does not permit.",
    "label": "forbidden",
    "option_text": "crosses an architecture boundary; do not apply"
   }

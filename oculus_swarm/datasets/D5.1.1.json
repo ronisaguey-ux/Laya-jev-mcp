@@ -9,10 +9,10 @@
   "repaired": "it had gaps that were repaired; use with reduced confidence"
  },
  "label_counts": {
-  "trustworthy": 2,
-  "stale": 2,
-  "corrupt": 2,
-  "repaired": 2
+  "trustworthy": 9,
+  "stale": 8,
+  "corrupt": 8,
+  "repaired": 8
  },
  "samples": [
   {
@@ -52,6 +52,131 @@
   },
   {
    "state": "A holiday gap was backfilled from the prior session's close, which the loader flagged.",
+   "label": "repaired",
+   "option_text": "it had gaps that were repaired; use with reduced confidence"
+  },
+  {
+   "state": "Row counts match the venue's own statement and the session checksum agrees.",
+   "label": "trustworthy",
+   "option_text": "it passes the checks; compute on it"
+  },
+  {
+   "state": "The newest row is two seconds old and the sequence numbers are contiguous.",
+   "label": "trustworthy",
+   "option_text": "it passes the checks; compute on it"
+  },
+  {
+   "state": "Checksums, counts and timestamps all agree with the source.",
+   "label": "trustworthy",
+   "option_text": "it passes the checks; compute on it"
+  },
+  {
+   "state": "The series parses, the range is plausible, and the feed is current.",
+   "label": "trustworthy",
+   "option_text": "it passes the checks; compute on it"
+  },
+  {
+   "state": "No gaps, no duplicates and no out-of-range values in the window.",
+   "label": "trustworthy",
+   "option_text": "it passes the checks; compute on it"
+  },
+  {
+   "state": "The venue's own file matches ours row for row.",
+   "label": "trustworthy",
+   "option_text": "it passes the checks; compute on it"
+  },
+  {
+   "state": "Everything checks out and the data is current to within one tick interval.",
+   "label": "trustworthy",
+   "option_text": "it passes the checks; compute on it"
+  },
+  {
+   "state": "The feed's last update predates the session open.",
+   "label": "stale",
+   "option_text": "it has not updated when it should have; do not compute on it"
+  },
+  {
+   "state": "The timestamp on the newest row is an hour behind the current time.",
+   "label": "stale",
+   "option_text": "it has not updated when it should have; do not compute on it"
+  },
+  {
+   "state": "Heartbeats continue but no new price has arrived for eight minutes.",
+   "label": "stale",
+   "option_text": "it has not updated when it should have; do not compute on it"
+  },
+  {
+   "state": "The data stopped updating at the same moment a reconnect was logged.",
+   "label": "stale",
+   "option_text": "it has not updated when it should have; do not compute on it"
+  },
+  {
+   "state": "The window ends before the period it should cover.",
+   "label": "stale",
+   "option_text": "it has not updated when it should have; do not compute on it"
+  },
+  {
+   "state": "The collector is running and the last row is older than the feed's expected interval.",
+   "label": "stale",
+   "option_text": "it has not updated when it should have; do not compute on it"
+  },
+  {
+   "state": "A price is nine orders of magnitude away from its neighbours.",
+   "label": "corrupt",
+   "option_text": "it fails integrity checks; quarantine it"
+  },
+  {
+   "state": "The file's own checksum does not match its contents.",
+   "label": "corrupt",
+   "option_text": "it fails integrity checks; quarantine it"
+  },
+  {
+   "state": "The volume column contains text on four rows.",
+   "label": "corrupt",
+   "option_text": "it fails integrity checks; quarantine it"
+  },
+  {
+   "state": "The bar's high is below both its open and its close.",
+   "label": "corrupt",
+   "option_text": "it fails integrity checks; quarantine it"
+  },
+  {
+   "state": "Two rows claim the same timestamp with different and incompatible prices.",
+   "label": "corrupt",
+   "option_text": "it fails integrity checks; quarantine it"
+  },
+  {
+   "state": "The price field is zero for an entire session that traded.",
+   "label": "corrupt",
+   "option_text": "it fails integrity checks; quarantine it"
+  },
+  {
+   "state": "Missing bars were forward-filled and the loader recorded how many.",
+   "label": "repaired",
+   "option_text": "it had gaps that were repaired; use with reduced confidence"
+  },
+  {
+   "state": "The gap was closed with the previous close and the repair is marked in the metadata.",
+   "label": "repaired",
+   "option_text": "it had gaps that were repaired; use with reduced confidence"
+  },
+  {
+   "state": "Three hours were reconstructed from a secondary source and flagged as such.",
+   "label": "repaired",
+   "option_text": "it had gaps that were repaired; use with reduced confidence"
+  },
+  {
+   "state": "The missing segment was filled and the fill method is recorded per row.",
+   "label": "repaired",
+   "option_text": "it had gaps that were repaired; use with reduced confidence"
+  },
+  {
+   "state": "A partial session was completed by interpolation and the file says so.",
+   "label": "repaired",
+   "option_text": "it had gaps that were repaired; use with reduced confidence"
+  },
+  {
+   "state": "Gaps were backfilled and the provenance of the filled rows is marked.",
    "label": "repaired",
    "option_text": "it had gaps that were repaired; use with reduced confidence"
   }
