@@ -9,10 +9,10 @@
   "unverifiable": "the claim cannot be checked from the evidence given"
  },
  "label_counts": {
-  "supported": 2,
-  "unsupported": 2,
-  "contradicted": 2,
-  "unverifiable": 2
+  "supported": 8,
+  "unsupported": 8,
+  "contradicted": 8,
+  "unverifiable": 8
  },
  "samples": [
   {
@@ -52,6 +52,126 @@
   },
   {
    "state": "The claim concerns a venue's internal state, which we have no access to.",
+   "label": "unverifiable",
+   "option_text": "the claim cannot be checked from the evidence given"
+  },
+  {
+   "state": "Every claim in the report is followed by the raw output that produced it.",
+   "label": "supported",
+   "option_text": "the artefact shows what the claim says it shows"
+  },
+  {
+   "state": "The artefact demonstrates what the claim says it demonstrates.",
+   "label": "supported",
+   "option_text": "the artefact shows what the claim says it shows"
+  },
+  {
+   "state": "The report's assertion matches the file's current contents.",
+   "label": "supported",
+   "option_text": "the artefact shows what the claim says it shows"
+  },
+  {
+   "state": "The evidence attached is sufficient and directly relevant.",
+   "label": "supported",
+   "option_text": "the artefact shows what the claim says it shows"
+  },
+  {
+   "state": "The claim and the artefact agree in detail.",
+   "label": "supported",
+   "option_text": "the artefact shows what the claim says it shows"
+  },
+  {
+   "state": "The proof is present and shows the stated result.",
+   "label": "supported",
+   "option_text": "the artefact shows what the claim says it shows"
+  },
+  {
+   "state": "The report asserts a performance improvement with no measurement attached.",
+   "label": "unsupported",
+   "option_text": "the claim goes beyond what the evidence shows"
+  },
+  {
+   "state": "The claim goes beyond what the attached evidence covers.",
+   "label": "unsupported",
+   "option_text": "the claim goes beyond what the evidence shows"
+  },
+  {
+   "state": "The report says the change is safe without naming a test.",
+   "label": "unsupported",
+   "option_text": "the claim goes beyond what the evidence shows"
+  },
+  {
+   "state": "The evidence is about a different revision than the claim.",
+   "label": "unsupported",
+   "option_text": "the claim goes beyond what the evidence shows"
+  },
+  {
+   "state": "The assertion is stronger than what was measured.",
+   "label": "unsupported",
+   "option_text": "the claim goes beyond what the evidence shows"
+  },
+  {
+   "state": "Nothing attached supports the conclusion drawn.",
+   "label": "unsupported",
+   "option_text": "the claim goes beyond what the evidence shows"
+  },
+  {
+   "state": "The summary says the tests pass and the attached output shows a failure.",
+   "label": "contradicted",
+   "option_text": "the artefact shows the opposite of the claim"
+  },
+  {
+   "state": "The claim and the artefact say opposite things.",
+   "label": "contradicted",
+   "option_text": "the artefact shows the opposite of the claim"
+  },
+  {
+   "state": "The report asserts a value that the attached output contradicts.",
+   "label": "contradicted",
+   "option_text": "the artefact shows the opposite of the claim"
+  },
+  {
+   "state": "The evidence disproves the conclusion it was attached to support.",
+   "label": "contradicted",
+   "option_text": "the artefact shows the opposite of the claim"
+  },
+  {
+   "state": "The artefact shows the reverse of what the report states.",
+   "label": "contradicted",
+   "option_text": "the artefact shows the opposite of the claim"
+  },
+  {
+   "state": "The attached output directly contradicts the summary.",
+   "label": "contradicted",
+   "option_text": "the artefact shows the opposite of the claim"
+  },
+  {
+   "state": "The assertion is about a system that cannot be reached from here.",
+   "label": "unverifiable",
+   "option_text": "the claim cannot be checked from the evidence given"
+  },
+  {
+   "state": "No evidence exists that could confirm or deny the claim.",
+   "label": "unverifiable",
+   "option_text": "the claim cannot be checked from the evidence given"
+  },
+  {
+   "state": "The report cites a source that is not available to check.",
+   "label": "unverifiable",
+   "option_text": "the claim cannot be checked from the evidence given"
+  },
+  {
+   "state": "The claim depends on information outside the repository entirely.",
+   "label": "unverifiable",
+   "option_text": "the claim cannot be checked from the evidence given"
+  },
+  {
+   "state": "Nothing attached bears on the claim either way.",
+   "label": "unverifiable",
+   "option_text": "the claim cannot be checked from the evidence given"
+  },
+  {
+   "state": "The statement cannot be checked with the tools available.",
    "label": "unverifiable",
    "option_text": "the claim cannot be checked from the evidence given"
   }

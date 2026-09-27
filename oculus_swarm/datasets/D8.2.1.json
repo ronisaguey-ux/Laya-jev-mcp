@@ -9,10 +9,10 @@
   "retire_yellow": "it cannot be done as specified; close it with the reason"
  },
  "label_counts": {
-  "retry": 2,
-  "escalate": 2,
-  "retire_green": 2,
-  "retire_yellow": 2
+  "retry": 8,
+  "escalate": 8,
+  "retire_green": 8,
+  "retire_yellow": 8
  },
  "samples": [
   {
@@ -52,6 +52,126 @@
   },
   {
    "state": "The plan's target path does not exist under any prefix and the step is unworkable as written.",
+   "label": "retire_yellow",
+   "option_text": "it cannot be done as specified; close it with the reason"
+  },
+  {
+   "state": "The call failed on a transient network error with no work lost.",
+   "label": "retry",
+   "option_text": "a real attempt failed on a transient cause; try again"
+  },
+  {
+   "state": "The venue returned a retryable code and the state has since changed.",
+   "label": "retry",
+   "option_text": "a real attempt failed on a transient cause; try again"
+  },
+  {
+   "state": "A brief rate limit cleared and the request would now succeed.",
+   "label": "retry",
+   "option_text": "a real attempt failed on a transient cause; try again"
+  },
+  {
+   "state": "The failure was a dropped connection with no side effects.",
+   "label": "retry",
+   "option_text": "a real attempt failed on a transient cause; try again"
+  },
+  {
+   "state": "The step failed on a temporary condition that no longer holds.",
+   "label": "retry",
+   "option_text": "a real attempt failed on a transient cause; try again"
+  },
+  {
+   "state": "Nothing was attempted successfully and the cause has passed.",
+   "label": "retry",
+   "option_text": "a real attempt failed on a transient cause; try again"
+  },
+  {
+   "state": "The task requires a decision the rules reserve for a human.",
+   "label": "escalate",
+   "option_text": "the worker cannot do it; a human or stronger model must"
+  },
+  {
+   "state": "The step depends on a business trade-off the documentation does not settle.",
+   "label": "escalate",
+   "option_text": "the worker cannot do it; a human or stronger model must"
+  },
+  {
+   "state": "Every available worker has failed on a task that is clearly in scope.",
+   "label": "escalate",
+   "option_text": "the worker cannot do it; a human or stronger model must"
+  },
+  {
+   "state": "The blocker is outside the system's authority to resolve.",
+   "label": "escalate",
+   "option_text": "the worker cannot do it; a human or stronger model must"
+  },
+  {
+   "state": "The decision needs information the engine does not have access to.",
+   "label": "escalate",
+   "option_text": "the worker cannot do it; a human or stronger model must"
+  },
+  {
+   "state": "The step is well specified, in scope, and impossible for any available worker.",
+   "label": "escalate",
+   "option_text": "the worker cannot do it; a human or stronger model must"
+  },
+  {
+   "state": "Every requested change is verifiably on disk.",
+   "label": "retire_green",
+   "option_text": "the work is verifiably present; close it as done"
+  },
+  {
+   "state": "The tests named by the step pass and the diff matches the request.",
+   "label": "retire_green",
+   "option_text": "the work is verifiably present; close it as done"
+  },
+  {
+   "state": "The change is present and a commit exists that stamps it.",
+   "label": "retire_green",
+   "option_text": "the work is verifiably present; close it as done"
+  },
+  {
+   "state": "The step's described outcome is present and readable in the target file.",
+   "label": "retire_green",
+   "option_text": "the work is verifiably present; close it as done"
+  },
+  {
+   "state": "Verified on disk: the requested state is the current state.",
+   "label": "retire_green",
+   "option_text": "the work is verifiably present; close it as done"
+  },
+  {
+   "state": "The work is demonstrably done.",
+   "label": "retire_green",
+   "option_text": "the work is verifiably present; close it as done"
+  },
+  {
+   "state": "The step's described defect was fixed by an earlier step and cannot be reproduced.",
+   "label": "retire_yellow",
+   "option_text": "it cannot be done as specified; close it with the reason"
+  },
+  {
+   "state": "The task is not actionable: the subsystem it names has been removed.",
+   "label": "retire_yellow",
+   "option_text": "it cannot be done as specified; close it with the reason"
+  },
+  {
+   "state": "The step's premise is stale and the current code contradicts it.",
+   "label": "retire_yellow",
+   "option_text": "it cannot be done as specified; close it with the reason"
+  },
+  {
+   "state": "The work cannot be done as specified because the specification is wrong.",
+   "label": "retire_yellow",
+   "option_text": "it cannot be done as specified; close it with the reason"
+  },
+  {
+   "state": "The target does not exist and no resolution applies.",
+   "label": "retire_yellow",
+   "option_text": "it cannot be done as specified; close it with the reason"
+  },
+  {
+   "state": "The described behaviour is correct as it stands and the step asks to change it wrongly.",
    "label": "retire_yellow",
    "option_text": "it cannot be done as specified; close it with the reason"
   }

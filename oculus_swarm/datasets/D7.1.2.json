@@ -9,10 +9,10 @@
   "already_done": "the work it describes is already present"
  },
  "label_counts": {
-  "ready": 2,
-  "underspecified": 2,
-  "contradictory": 2,
-  "already_done": 2
+  "ready": 9,
+  "underspecified": 8,
+  "contradictory": 8,
+  "already_done": 8
  },
  "samples": [
   {
@@ -52,6 +52,131 @@
   },
   {
    "state": "The brief describes a module that the tree already contains under the same name.",
+   "label": "already_done",
+   "option_text": "the work it describes is already present"
+  },
+  {
+   "state": "The brief names the file, the function and the expected behaviour after the change.",
+   "label": "ready",
+   "option_text": "it names the files, the change and the done condition"
+  },
+  {
+   "state": "The step states the file, the current output and the output it should produce.",
+   "label": "ready",
+   "option_text": "it names the files, the change and the done condition"
+  },
+  {
+   "state": "The brief includes a reproduction command and the change it wants.",
+   "label": "ready",
+   "option_text": "it names the files, the change and the done condition"
+  },
+  {
+   "state": "The instruction names the target path and the done condition.",
+   "label": "ready",
+   "option_text": "it names the files, the change and the done condition"
+  },
+  {
+   "state": "The step gives the file, the old value and the new value.",
+   "label": "ready",
+   "option_text": "it names the files, the change and the done condition"
+  },
+  {
+   "state": "The brief describes the defect, its location and the test that will prove it fixed.",
+   "label": "ready",
+   "option_text": "it names the files, the change and the done condition"
+  },
+  {
+   "state": "The task names every file to change and what each should look like afterwards.",
+   "label": "ready",
+   "option_text": "it names the files, the change and the done condition"
+  },
+  {
+   "state": "The instruction says to improve performance without naming a target.",
+   "label": "underspecified",
+   "option_text": "it is missing the target or the done condition"
+  },
+  {
+   "state": "The step names a module but no function and no expected behaviour.",
+   "label": "underspecified",
+   "option_text": "it is missing the target or the done condition"
+  },
+  {
+   "state": "The brief gives a symptom with no file and no reproduction.",
+   "label": "underspecified",
+   "option_text": "it is missing the target or the done condition"
+  },
+  {
+   "state": "The instruction references a component that the tree does not contain.",
+   "label": "underspecified",
+   "option_text": "it is missing the target or the done condition"
+  },
+  {
+   "state": "The task says to handle errors better without saying which errors.",
+   "label": "underspecified",
+   "option_text": "it is missing the target or the done condition"
+  },
+  {
+   "state": "The brief names no file, no symbol and no done condition.",
+   "label": "underspecified",
+   "option_text": "it is missing the target or the done condition"
+  },
+  {
+   "state": "The step asks for a pure function and for it to read the clock.",
+   "label": "contradictory",
+   "option_text": "its parts cannot all be satisfied at once"
+  },
+  {
+   "state": "The instruction requires zero downtime and a schema change that needs a restart.",
+   "label": "contradictory",
+   "option_text": "its parts cannot all be satisfied at once"
+  },
+  {
+   "state": "The brief asks to remove a dependency and to keep using its API.",
+   "label": "contradictory",
+   "option_text": "its parts cannot all be satisfied at once"
+  },
+  {
+   "state": "The task requires the change to be backward compatible and to change the signature.",
+   "label": "contradictory",
+   "option_text": "its parts cannot all be satisfied at once"
+  },
+  {
+   "state": "The step asks for the file to stay under 200 lines while adding 400 lines to it.",
+   "label": "contradictory",
+   "option_text": "its parts cannot all be satisfied at once"
+  },
+  {
+   "state": "The instruction requires no new dependencies and to use a library not installed.",
+   "label": "contradictory",
+   "option_text": "its parts cannot all be satisfied at once"
+  },
+  {
+   "state": "The requested validation already exists and runs on the described path.",
+   "label": "already_done",
+   "option_text": "the work it describes is already present"
+  },
+  {
+   "state": "The step asks to add a test that is already in the suite unchanged.",
+   "label": "already_done",
+   "option_text": "the work it describes is already present"
+  },
+  {
+   "state": "The described defect was fixed by an earlier step and the file no longer shows it.",
+   "label": "already_done",
+   "option_text": "the work it describes is already present"
+  },
+  {
+   "state": "The instruction asks for behaviour the current code already has.",
+   "label": "already_done",
+   "option_text": "the work it describes is already present"
+  },
+  {
+   "state": "The requested configuration key is already set to the asked-for value.",
+   "label": "already_done",
+   "option_text": "the work it describes is already present"
+  },
+  {
+   "state": "The change the brief describes is already present on disk.",
    "label": "already_done",
    "option_text": "the work it describes is already present"
   }

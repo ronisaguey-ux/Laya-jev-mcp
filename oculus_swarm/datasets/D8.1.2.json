@@ -9,10 +9,10 @@
   "critical": "it can lose money, leak credentials, or halt trading"
  },
  "label_counts": {
-  "cosmetic": 2,
-  "minor": 2,
-  "serious": 2,
-  "critical": 2
+  "cosmetic": 8,
+  "minor": 8,
+  "serious": 8,
+  "critical": 9
  },
  "samples": [
   {
@@ -52,6 +52,131 @@
   },
   {
    "state": "An allowlist that can be widened by a request parameter.",
+   "label": "critical",
+   "option_text": "it can lose money, leak credentials, or halt trading"
+  },
+  {
+   "state": "A comment that no longer matches the code's style.",
+   "label": "cosmetic",
+   "option_text": "style or tidiness; nothing breaks"
+  },
+  {
+   "state": "A log message with inconsistent punctuation.",
+   "label": "cosmetic",
+   "option_text": "style or tidiness; nothing breaks"
+  },
+  {
+   "state": "An unused variable name that is slightly misleading.",
+   "label": "cosmetic",
+   "option_text": "style or tidiness; nothing breaks"
+  },
+  {
+   "state": "Ordering of keys in a config file.",
+   "label": "cosmetic",
+   "option_text": "style or tidiness; nothing breaks"
+  },
+  {
+   "state": "A docstring missing a period.",
+   "label": "cosmetic",
+   "option_text": "style or tidiness; nothing breaks"
+  },
+  {
+   "state": "Formatting that the linter flags but nothing consumes.",
+   "label": "cosmetic",
+   "option_text": "style or tidiness; nothing breaks"
+  },
+  {
+   "state": "A retry that does not back off, causing an extra request.",
+   "label": "minor",
+   "option_text": "a real defect with no money or data consequence"
+  },
+  {
+   "state": "A log line that reports a slightly wrong count.",
+   "label": "minor",
+   "option_text": "a real defect with no money or data consequence"
+  },
+  {
+   "state": "An error message that omits which field failed validation.",
+   "label": "minor",
+   "option_text": "a real defect with no money or data consequence"
+  },
+  {
+   "state": "A cache with no size bound that grows slowly.",
+   "label": "minor",
+   "option_text": "a real defect with no money or data consequence"
+  },
+  {
+   "state": "A test that asserts less than it appears to.",
+   "label": "minor",
+   "option_text": "a real defect with no money or data consequence"
+  },
+  {
+   "state": "A helper that handles one edge case incorrectly with no downstream effect.",
+   "label": "minor",
+   "option_text": "a real defect with no money or data consequence"
+  },
+  {
+   "state": "A validation that passes on empty input and writes a blank record.",
+   "label": "serious",
+   "option_text": "it can corrupt data, state or a result"
+  },
+  {
+   "state": "A parser that silently truncates input longer than expected.",
+   "label": "serious",
+   "option_text": "it can corrupt data, state or a result"
+  },
+  {
+   "state": "A deduplication step that removes rows it should keep.",
+   "label": "serious",
+   "option_text": "it can corrupt data, state or a result"
+  },
+  {
+   "state": "An error swallowed so a failure is recorded as success.",
+   "label": "serious",
+   "option_text": "it can corrupt data, state or a result"
+  },
+  {
+   "state": "A cache keyed without the parameter that changes the result.",
+   "label": "serious",
+   "option_text": "it can corrupt data, state or a result"
+  },
+  {
+   "state": "A concurrent write path with no serialisation, corrupting shared state.",
+   "label": "serious",
+   "option_text": "it can corrupt data, state or a result"
+  },
+  {
+   "state": "A path that logs an API key on every failed request.",
+   "label": "critical",
+   "option_text": "it can lose money, leak credentials, or halt trading"
+  },
+  {
+   "state": "A command that runs attacker-controlled input through a shell.",
+   "label": "critical",
+   "option_text": "it can lose money, leak credentials, or halt trading"
+  },
+  {
+   "state": "A credential committed to the repository.",
+   "label": "critical",
+   "option_text": "it can lose money, leak credentials, or halt trading"
+  },
+  {
+   "state": "A kill switch that cannot fire because of an inverted condition.",
+   "label": "critical",
+   "option_text": "it can lose money, leak credentials, or halt trading"
+  },
+  {
+   "state": "A position size computed from unvalidated input.",
+   "label": "critical",
+   "option_text": "it can lose money, leak credentials, or halt trading"
+  },
+  {
+   "state": "A path traversal that reads outside the intended directory.",
+   "label": "critical",
+   "option_text": "it can lose money, leak credentials, or halt trading"
+  },
+  {
+   "state": "An authentication check that returns true when its input is malformed.",
    "label": "critical",
    "option_text": "it can lose money, leak credentials, or halt trading"
   }

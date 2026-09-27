@@ -9,10 +9,10 @@
   "single_thread": "do one at a time; the risk of collision is high"
  },
  "label_counts": {
-  "independent": 2,
-  "serial_required": 2,
-  "batch_safe": 2,
-  "single_thread": 2
+  "independent": 8,
+  "serial_required": 8,
+  "batch_safe": 8,
+  "single_thread": 8
  },
  "samples": [
   {
@@ -52,6 +52,126 @@
   },
   {
    "state": "Each step would rewrite the same core module that everything else imports.",
+   "label": "single_thread",
+   "option_text": "do one at a time; the risk of collision is high"
+  },
+  {
+   "state": "No two steps edit the same module and none shares a generated artefact.",
+   "label": "independent",
+   "option_text": "they touch disjoint files and can run together"
+  },
+  {
+   "state": "The files are entirely separate and no step consumes another's output.",
+   "label": "independent",
+   "option_text": "they touch disjoint files and can run together"
+  },
+  {
+   "state": "Each step works in its own package with no cross imports.",
+   "label": "independent",
+   "option_text": "they touch disjoint files and can run together"
+  },
+  {
+   "state": "The changes are in different languages and different directories.",
+   "label": "independent",
+   "option_text": "they touch disjoint files and can run together"
+  },
+  {
+   "state": "No step's output is another's input.",
+   "label": "independent",
+   "option_text": "they touch disjoint files and can run together"
+  },
+  {
+   "state": "The paths do not overlap and nothing is regenerated in common.",
+   "label": "independent",
+   "option_text": "they touch disjoint files and can run together"
+  },
+  {
+   "state": "Each step edits the same function from a different direction.",
+   "label": "serial_required",
+   "option_text": "they touch the same files and must be ordered"
+  },
+  {
+   "state": "All the steps modify a single shared data file.",
+   "label": "serial_required",
+   "option_text": "they touch the same files and must be ordered"
+  },
+  {
+   "state": "The steps each expect the previous one's rename to have landed.",
+   "label": "serial_required",
+   "option_text": "they touch the same files and must be ordered"
+  },
+  {
+   "state": "Every step writes to the same state file.",
+   "label": "serial_required",
+   "option_text": "they touch the same files and must be ordered"
+  },
+  {
+   "state": "The steps form a sequence where each depends on the last.",
+   "label": "serial_required",
+   "option_text": "they touch the same files and must be ordered"
+  },
+  {
+   "state": "One step moves a file the others then edit.",
+   "label": "serial_required",
+   "option_text": "they touch the same files and must be ordered"
+  },
+  {
+   "state": "The files are separate and the steps share a read-only input.",
+   "label": "batch_safe",
+   "option_text": "they are independent enough to batch with care"
+  },
+  {
+   "state": "The steps do not overlap except for a generated file that can be rebuilt once at the end.",
+   "label": "batch_safe",
+   "option_text": "they are independent enough to batch with care"
+  },
+  {
+   "state": "Each step edits its own file and one of them updates a shared manifest.",
+   "label": "batch_safe",
+   "option_text": "they are independent enough to batch with care"
+  },
+  {
+   "state": "The work is separable with the exception of a single lock file.",
+   "label": "batch_safe",
+   "option_text": "they are independent enough to batch with care"
+  },
+  {
+   "state": "No step depends on another's output and one regenerates a common cache.",
+   "label": "batch_safe",
+   "option_text": "they are independent enough to batch with care"
+  },
+  {
+   "state": "The steps can run together as long as a final rebuild is run.",
+   "label": "batch_safe",
+   "option_text": "they are independent enough to batch with care"
+  },
+  {
+   "state": "All the steps modify one file in different places.",
+   "label": "single_thread",
+   "option_text": "do one at a time; the risk of collision is high"
+  },
+  {
+   "state": "The steps each assume the file is in its original state.",
+   "label": "single_thread",
+   "option_text": "do one at a time; the risk of collision is high"
+  },
+  {
+   "state": "Every step restructures the same package.",
+   "label": "single_thread",
+   "option_text": "do one at a time; the risk of collision is high"
+  },
+  {
+   "state": "The steps each rewrite the same interface used by all the others.",
+   "label": "single_thread",
+   "option_text": "do one at a time; the risk of collision is high"
+  },
+  {
+   "state": "One shared module is the target of every step.",
+   "label": "single_thread",
+   "option_text": "do one at a time; the risk of collision is high"
+  },
+  {
+   "state": "Running them together would corrupt the same file repeatedly.",
    "label": "single_thread",
    "option_text": "do one at a time; the risk of collision is high"
   }

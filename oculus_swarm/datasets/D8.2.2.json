@@ -9,10 +9,10 @@
   "code_defect": "our own engine or tooling broke, not the task"
  },
  "label_counts": {
-  "transient": 2,
-  "worker_incapable": 2,
-  "bad_instruction": 2,
-  "code_defect": 2
+  "transient": 8,
+  "worker_incapable": 8,
+  "bad_instruction": 8,
+  "code_defect": 8
  },
  "samples": [
   {
@@ -52,6 +52,126 @@
   },
   {
    "state": "The git helper refused to commit because a URL comparison was case-sensitive.",
+   "label": "code_defect",
+   "option_text": "our own engine or tooling broke, not the task"
+  },
+  {
+   "state": "The connection dropped and recovered with no state lost.",
+   "label": "transient",
+   "option_text": "a timeout, a rate limit or a dropped connection"
+  },
+  {
+   "state": "A 503 from the venue resolved on the next attempt.",
+   "label": "transient",
+   "option_text": "a timeout, a rate limit or a dropped connection"
+  },
+  {
+   "state": "The failure lasted seconds and the same request then succeeded.",
+   "label": "transient",
+   "option_text": "a timeout, a rate limit or a dropped connection"
+  },
+  {
+   "state": "A network partition resolved on its own.",
+   "label": "transient",
+   "option_text": "a timeout, a rate limit or a dropped connection"
+  },
+  {
+   "state": "The error was a socket timeout with the peer still healthy.",
+   "label": "transient",
+   "option_text": "a timeout, a rate limit or a dropped connection"
+  },
+  {
+   "state": "Nothing about the task caused the failure.",
+   "label": "transient",
+   "option_text": "a timeout, a rate limit or a dropped connection"
+  },
+  {
+   "state": "Every available worker returned the same cannot-fix on a well-specified task.",
+   "label": "worker_incapable",
+   "option_text": "the worker was not able to do this kind of task"
+  },
+  {
+   "state": "The model kept proposing syntax the parser rejects.",
+   "label": "worker_incapable",
+   "option_text": "the worker was not able to do this kind of task"
+  },
+  {
+   "state": "The lane could not hold a file larger than its window even with the fetch tool.",
+   "label": "worker_incapable",
+   "option_text": "the worker was not able to do this kind of task"
+  },
+  {
+   "state": "The worker's replies were consistently truncated before the edit.",
+   "label": "worker_incapable",
+   "option_text": "the worker was not able to do this kind of task"
+  },
+  {
+   "state": "The task needed reasoning the model demonstrably does not perform.",
+   "label": "worker_incapable",
+   "option_text": "the worker was not able to do this kind of task"
+  },
+  {
+   "state": "The worker failed while a stronger one succeeded on an identical task.",
+   "label": "worker_incapable",
+   "option_text": "the worker was not able to do this kind of task"
+  },
+  {
+   "state": "The instruction contradicts a constraint stated in the same sentence.",
+   "label": "bad_instruction",
+   "option_text": "the task itself was wrong or underspecified"
+  },
+  {
+   "state": "The task describes a defect that reading the file disproves.",
+   "label": "bad_instruction",
+   "option_text": "the task itself was wrong or underspecified"
+  },
+  {
+   "state": "The brief's premise was true when written and is no longer.",
+   "label": "bad_instruction",
+   "option_text": "the task itself was wrong or underspecified"
+  },
+  {
+   "state": "The step asks for behaviour the architecture forbids.",
+   "label": "bad_instruction",
+   "option_text": "the task itself was wrong or underspecified"
+  },
+  {
+   "state": "The instruction names a target that resolves to nothing.",
+   "label": "bad_instruction",
+   "option_text": "the task itself was wrong or underspecified"
+  },
+  {
+   "state": "The task is impossible as written, not as attempted.",
+   "label": "bad_instruction",
+   "option_text": "the task itself was wrong or underspecified"
+  },
+  {
+   "state": "The engine's merge wrote a stale in-memory copy over a newer disk state.",
+   "label": "code_defect",
+   "option_text": "our own engine or tooling broke, not the task"
+  },
+  {
+   "state": "The path resolver dropped a leading dot and handed the lane no content.",
+   "label": "code_defect",
+   "option_text": "our own engine or tooling broke, not the task"
+  },
+  {
+   "state": "Our own budget arithmetic let one call spend four times its allowance.",
+   "label": "code_defect",
+   "option_text": "our own engine or tooling broke, not the task"
+  },
+  {
+   "state": "The reader accepted the prompt as the answer and reported an empty reply.",
+   "label": "code_defect",
+   "option_text": "our own engine or tooling broke, not the task"
+  },
+  {
+   "state": "A guard fired on the happy path and broke working sends.",
+   "label": "code_defect",
+   "option_text": "our own engine or tooling broke, not the task"
+  },
+  {
+   "state": "Our tooling produced the failure, not the task and not the worker.",
    "label": "code_defect",
    "option_text": "our own engine or tooling broke, not the task"
   }

@@ -9,10 +9,10 @@
   "ignore": "it is stale or about a different revision"
  },
  "label_counts": {
-  "trust_with_check": 2,
-  "trust_directly": 2,
-  "distrust": 2,
-  "ignore": 2
+  "trust_with_check": 8,
+  "trust_directly": 8,
+  "distrust": 8,
+  "ignore": 8
  },
  "samples": [
   {
@@ -52,6 +52,126 @@
   },
   {
    "state": "The summary predates the merge that rewrote the module it describes.",
+   "label": "ignore",
+   "option_text": "it is stale or about a different revision"
+  },
+  {
+   "state": "A tool reports the files it changed and the list can be compared to the diff.",
+   "label": "trust_with_check",
+   "option_text": "use it as a lead but confirm the key fact"
+  },
+  {
+   "state": "The summary names specific artefacts that can be inspected.",
+   "label": "trust_with_check",
+   "option_text": "use it as a lead but confirm the key fact"
+  },
+  {
+   "state": "A report from a process whose output is reproducible.",
+   "label": "trust_with_check",
+   "option_text": "use it as a lead but confirm the key fact"
+  },
+  {
+   "state": "The summary makes a factual claim about a file that can be read.",
+   "label": "trust_with_check",
+   "option_text": "use it as a lead but confirm the key fact"
+  },
+  {
+   "state": "A generated overview that names its sources.",
+   "label": "trust_with_check",
+   "option_text": "use it as a lead but confirm the key fact"
+  },
+  {
+   "state": "The description is plausible and verifiable at low cost.",
+   "label": "trust_with_check",
+   "option_text": "use it as a lead but confirm the key fact"
+  },
+  {
+   "state": "A compiler reports the errors it found, which are reproducible.",
+   "label": "trust_directly",
+   "option_text": "it is a mechanical report from a tool, not a model's prose"
+  },
+  {
+   "state": "The output is a listing produced by the filesystem itself.",
+   "label": "trust_directly",
+   "option_text": "it is a mechanical report from a tool, not a model's prose"
+  },
+  {
+   "state": "A deterministic tool's own report of what it did.",
+   "label": "trust_directly",
+   "option_text": "it is a mechanical report from a tool, not a model's prose"
+  },
+  {
+   "state": "The text is a version string read from the artefact.",
+   "label": "trust_directly",
+   "option_text": "it is a mechanical report from a tool, not a model's prose"
+  },
+  {
+   "state": "A count produced by the same command that was asked for it.",
+   "label": "trust_directly",
+   "option_text": "it is a mechanical report from a tool, not a model's prose"
+  },
+  {
+   "state": "The output is mechanical and reproducible by running the tool again.",
+   "label": "trust_directly",
+   "option_text": "it is a mechanical report from a tool, not a model's prose"
+  },
+  {
+   "state": "A model reports that its own tests pass.",
+   "label": "distrust",
+   "option_text": "a model summary of its own work; verify independently"
+  },
+  {
+   "state": "A summary of work written by the worker that did the work.",
+   "label": "distrust",
+   "option_text": "a model summary of its own work; verify independently"
+  },
+  {
+   "state": "A lane states that an edit landed without the engine having read the file.",
+   "label": "distrust",
+   "option_text": "a model summary of its own work; verify independently"
+  },
+  {
+   "state": "A model's assessment of its own output quality.",
+   "label": "distrust",
+   "option_text": "a model summary of its own work; verify independently"
+  },
+  {
+   "state": "A self-report of correctness from the process being evaluated.",
+   "label": "distrust",
+   "option_text": "a model summary of its own work; verify independently"
+  },
+  {
+   "state": "The claim comes from the party with an interest in it being true.",
+   "label": "distrust",
+   "option_text": "a model summary of its own work; verify independently"
+  },
+  {
+   "state": "The text concerns a file that has since been deleted.",
+   "label": "ignore",
+   "option_text": "it is stale or about a different revision"
+  },
+  {
+   "state": "The report is from before the change it claims to describe.",
+   "label": "ignore",
+   "option_text": "it is stale or about a different revision"
+  },
+  {
+   "state": "The summary describes a different project's state.",
+   "label": "ignore",
+   "option_text": "it is stale or about a different revision"
+  },
+  {
+   "state": "The text was generated before the bug it discusses was fixed.",
+   "label": "ignore",
+   "option_text": "it is stale or about a different revision"
+  },
+  {
+   "state": "The summary refers to a configuration no longer in use.",
+   "label": "ignore",
+   "option_text": "it is stale or about a different revision"
+  },
+  {
+   "state": "The report is stale and about a superseded revision.",
    "label": "ignore",
    "option_text": "it is stale or about a different revision"
   }

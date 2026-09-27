@@ -9,10 +9,10 @@
   "one_is_wrong": "one is demonstrably wrong on the evidence"
  },
  "label_counts": {
-  "real_conflict": 2,
-  "wording_only": 2,
-  "different_scope": 2,
-  "one_is_wrong": 2
+  "real_conflict": 8,
+  "wording_only": 8,
+  "different_scope": 8,
+  "one_is_wrong": 8
  },
  "samples": [
   {
@@ -52,6 +52,126 @@
   },
   {
    "state": "An agent claims the tests pass while the pasted output shows a failure.",
+   "label": "one_is_wrong",
+   "option_text": "one is demonstrably wrong on the evidence"
+  },
+  {
+   "state": "Two agents reach opposite conclusions about the same file's contents.",
+   "label": "real_conflict",
+   "option_text": "the agents reached genuinely incompatible conclusions"
+  },
+  {
+   "state": "One report says the tests pass and another says they fail, both about the same run.",
+   "label": "real_conflict",
+   "option_text": "the agents reached genuinely incompatible conclusions"
+  },
+  {
+   "state": "Two audits disagree about whether a boundary is crossed.",
+   "label": "real_conflict",
+   "option_text": "the agents reached genuinely incompatible conclusions"
+  },
+  {
+   "state": "The conclusions cannot both be true and both are asserted with evidence.",
+   "label": "real_conflict",
+   "option_text": "the agents reached genuinely incompatible conclusions"
+  },
+  {
+   "state": "Two agents claim the same symbol has different callers, from the same grep.",
+   "label": "real_conflict",
+   "option_text": "the agents reached genuinely incompatible conclusions"
+  },
+  {
+   "state": "The findings are mutually exclusive about the same artefact.",
+   "label": "real_conflict",
+   "option_text": "the agents reached genuinely incompatible conclusions"
+  },
+  {
+   "state": "One report calls it a missing import and the other calls it an undefined name.",
+   "label": "wording_only",
+   "option_text": "they agree and are describing it differently"
+  },
+  {
+   "state": "Two agents describe the same defect with different vocabulary.",
+   "label": "wording_only",
+   "option_text": "they agree and are describing it differently"
+  },
+  {
+   "state": "The conclusions are identical and the sentences differ.",
+   "label": "wording_only",
+   "option_text": "they agree and are describing it differently"
+  },
+  {
+   "state": "One says the value is stale and the other says it is out of date.",
+   "label": "wording_only",
+   "option_text": "they agree and are describing it differently"
+  },
+  {
+   "state": "Both find the same three callers and label them differently.",
+   "label": "wording_only",
+   "option_text": "they agree and are describing it differently"
+  },
+  {
+   "state": "The reports agree in substance and disagree only in wording.",
+   "label": "wording_only",
+   "option_text": "they agree and are describing it differently"
+  },
+  {
+   "state": "One report covers the module and the other covers the package.",
+   "label": "different_scope",
+   "option_text": "they answered different questions; both can be right"
+  },
+  {
+   "state": "The two answers address different questions and are both correct.",
+   "label": "different_scope",
+   "option_text": "they answered different questions; both can be right"
+  },
+  {
+   "state": "One agent examined the current revision and the other a previous one.",
+   "label": "different_scope",
+   "option_text": "they answered different questions; both can be right"
+  },
+  {
+   "state": "The reports cover different time windows and do not overlap.",
+   "label": "different_scope",
+   "option_text": "they answered different questions; both can be right"
+  },
+  {
+   "state": "One agent's scope was the engine and the other's the harness.",
+   "label": "different_scope",
+   "option_text": "they answered different questions; both can be right"
+  },
+  {
+   "state": "Neither answer contradicts the other because they answer different things.",
+   "label": "different_scope",
+   "option_text": "they answered different questions; both can be right"
+  },
+  {
+   "state": "An agent says nothing was written and the file's contents show the new text.",
+   "label": "one_is_wrong",
+   "option_text": "one is demonstrably wrong on the evidence"
+  },
+  {
+   "state": "An agent reports the endpoint returning 200 and a live request returns 500.",
+   "label": "one_is_wrong",
+   "option_text": "one is demonstrably wrong on the evidence"
+  },
+  {
+   "state": "An agent cites a line number that does not exist in the file it quotes.",
+   "label": "one_is_wrong",
+   "option_text": "one is demonstrably wrong on the evidence"
+  },
+  {
+   "state": "An agent's quoted old_string is not present in the file it names.",
+   "label": "one_is_wrong",
+   "option_text": "one is demonstrably wrong on the evidence"
+  },
+  {
+   "state": "An agent claims a function exists that the module does not define.",
+   "label": "one_is_wrong",
+   "option_text": "one is demonstrably wrong on the evidence"
+  },
+  {
+   "state": "One of the two claims is contradicted by the artefact both cite.",
    "label": "one_is_wrong",
    "option_text": "one is demonstrably wrong on the evidence"
   }

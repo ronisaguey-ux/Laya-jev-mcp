@@ -9,10 +9,10 @@
   "prefer_conservative": "take the branch with the smaller blast radius"
  },
  "label_counts": {
-  "evidence_decides": 2,
-  "more_samples": 2,
-  "human_decision": 2,
-  "prefer_conservative": 2
+  "evidence_decides": 8,
+  "more_samples": 8,
+  "human_decision": 8,
+  "prefer_conservative": 8
  },
  "samples": [
   {
@@ -52,6 +52,126 @@
   },
   {
    "state": "Both are plausible and one of them would delete a shared module.",
+   "label": "prefer_conservative",
+   "option_text": "take the branch with the smaller blast radius"
+  },
+  {
+   "state": "The dispute is about a value that one command reveals.",
+   "label": "evidence_decides",
+   "option_text": "check the artefact itself; the fact settles it"
+  },
+  {
+   "state": "Both claims are checkable against the artefact and the check is cheap.",
+   "label": "evidence_decides",
+   "option_text": "check the artefact itself; the fact settles it"
+  },
+  {
+   "state": "The disagreement is about whether a symbol exists, which a grep resolves.",
+   "label": "evidence_decides",
+   "option_text": "check the artefact itself; the fact settles it"
+  },
+  {
+   "state": "The reports conflict on a fact that reading the file settles.",
+   "label": "evidence_decides",
+   "option_text": "check the artefact itself; the fact settles it"
+  },
+  {
+   "state": "One command distinguishes the two claims.",
+   "label": "evidence_decides",
+   "option_text": "check the artefact itself; the fact settles it"
+  },
+  {
+   "state": "The disagreement reduces to a fact that can be read off disk.",
+   "label": "evidence_decides",
+   "option_text": "check the artefact itself; the fact settles it"
+  },
+  {
+   "state": "The disagreement is about performance, which needs more runs to resolve.",
+   "label": "more_samples",
+   "option_text": "gather more runs before deciding"
+  },
+  {
+   "state": "Both are plausible and the current sample cannot separate them.",
+   "label": "more_samples",
+   "option_text": "gather more runs before deciding"
+  },
+  {
+   "state": "The two agents disagree only on intermittently observable behaviour.",
+   "label": "more_samples",
+   "option_text": "gather more runs before deciding"
+  },
+  {
+   "state": "The difference is within the observed variance between runs.",
+   "label": "more_samples",
+   "option_text": "gather more runs before deciding"
+  },
+  {
+   "state": "Neither conclusion reproduces consistently.",
+   "label": "more_samples",
+   "option_text": "gather more runs before deciding"
+  },
+  {
+   "state": "More data would distinguish the two claims.",
+   "label": "more_samples",
+   "option_text": "gather more runs before deciding"
+  },
+  {
+   "state": "Both agents are right about different requirements and the priority is not stated.",
+   "label": "human_decision",
+   "option_text": "escalate; the trade-off is not mechanical"
+  },
+  {
+   "state": "The decision depends on a business constraint the system does not know.",
+   "label": "human_decision",
+   "option_text": "escalate; the trade-off is not mechanical"
+  },
+  {
+   "state": "Neither answer is wrong and the tie-break is a policy question.",
+   "label": "human_decision",
+   "option_text": "escalate; the trade-off is not mechanical"
+  },
+  {
+   "state": "The trade-off involves spending the owner's money.",
+   "label": "human_decision",
+   "option_text": "escalate; the trade-off is not mechanical"
+  },
+  {
+   "state": "The conflict is about what the product should do, not what the code does.",
+   "label": "human_decision",
+   "option_text": "escalate; the trade-off is not mechanical"
+  },
+  {
+   "state": "The resolution requires authority the engines do not have.",
+   "label": "human_decision",
+   "option_text": "escalate; the trade-off is not mechanical"
+  },
+  {
+   "state": "Neither is provably wrong and one carries a much larger blast radius.",
+   "label": "prefer_conservative",
+   "option_text": "take the branch with the smaller blast radius"
+  },
+  {
+   "state": "The disagreement cannot be settled and one option is reversible.",
+   "label": "prefer_conservative",
+   "option_text": "take the branch with the smaller blast radius"
+  },
+  {
+   "state": "Both are supported and one touches the kill switch.",
+   "label": "prefer_conservative",
+   "option_text": "take the branch with the smaller blast radius"
+  },
+  {
+   "state": "The tie-break is safety: choose the branch with the smaller consequence if wrong.",
+   "label": "prefer_conservative",
+   "option_text": "take the branch with the smaller blast radius"
+  },
+  {
+   "state": "One reading would halt trading and the other would not.",
+   "label": "prefer_conservative",
+   "option_text": "take the branch with the smaller blast radius"
+  },
+  {
+   "state": "The unresolvable conflict is between a reversible and an irreversible action.",
    "label": "prefer_conservative",
    "option_text": "take the branch with the smaller blast radius"
   }

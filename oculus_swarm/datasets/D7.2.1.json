@@ -9,10 +9,10 @@
   "hard": "multi-file reasoning, design decisions, or novel debugging"
  },
  "label_counts": {
-  "trivial": 2,
-  "routine": 2,
-  "moderate": 2,
-  "hard": 2
+  "trivial": 8,
+  "routine": 8,
+  "moderate": 8,
+  "hard": 8
  },
  "samples": [
   {
@@ -52,6 +52,126 @@
   },
   {
    "state": "Deciding on a data model that three future features will be built on.",
+   "label": "hard",
+   "option_text": "multi-file reasoning, design decisions, or novel debugging"
+  },
+  {
+   "state": "Correcting a spelling mistake in a docstring.",
+   "label": "trivial",
+   "option_text": "a lookup or a one-line change; no reasoning needed"
+  },
+  {
+   "state": "Removing an unused import.",
+   "label": "trivial",
+   "option_text": "a lookup or a one-line change; no reasoning needed"
+  },
+  {
+   "state": "Renaming a local variable in one function.",
+   "label": "trivial",
+   "option_text": "a lookup or a one-line change; no reasoning needed"
+  },
+  {
+   "state": "Updating one expected string in a test.",
+   "label": "trivial",
+   "option_text": "a lookup or a one-line change; no reasoning needed"
+  },
+  {
+   "state": "Deleting a commented-out line.",
+   "label": "trivial",
+   "option_text": "a lookup or a one-line change; no reasoning needed"
+  },
+  {
+   "state": "Changing a default from one literal to another.",
+   "label": "trivial",
+   "option_text": "a lookup or a one-line change; no reasoning needed"
+  },
+  {
+   "state": "Adding a validation to one function with a test for it.",
+   "label": "routine",
+   "option_text": "a small well-understood change in familiar code"
+  },
+  {
+   "state": "Extending an existing error message to include the value that caused it.",
+   "label": "routine",
+   "option_text": "a small well-understood change in familiar code"
+  },
+  {
+   "state": "Adding a log line at a stated point.",
+   "label": "routine",
+   "option_text": "a small well-understood change in familiar code"
+  },
+  {
+   "state": "Refactoring one helper to remove a duplicated branch.",
+   "label": "routine",
+   "option_text": "a small well-understood change in familiar code"
+  },
+  {
+   "state": "Adding a missing type annotation across a small module.",
+   "label": "routine",
+   "option_text": "a small well-understood change in familiar code"
+  },
+  {
+   "state": "Writing a test for an existing function.",
+   "label": "routine",
+   "option_text": "a small well-understood change in familiar code"
+  },
+  {
+   "state": "Changing a function's signature and updating every caller.",
+   "label": "moderate",
+   "option_text": "several steps, some judgement about approach"
+  },
+  {
+   "state": "Adding a caching layer in front of an existing lookup.",
+   "label": "moderate",
+   "option_text": "several steps, some judgement about approach"
+  },
+  {
+   "state": "Making an existing interface testable without changing its callers.",
+   "label": "moderate",
+   "option_text": "several steps, some judgement about approach"
+  },
+  {
+   "state": "Introducing a new configuration option that several modules read.",
+   "label": "moderate",
+   "option_text": "several steps, some judgement about approach"
+  },
+  {
+   "state": "Replacing a hand-rolled parser with a library.",
+   "label": "moderate",
+   "option_text": "several steps, some judgement about approach"
+  },
+  {
+   "state": "Adding structured error handling across a subsystem.",
+   "label": "moderate",
+   "option_text": "several steps, some judgement about approach"
+  },
+  {
+   "state": "Deciding the boundary between the engine and the execution layer.",
+   "label": "hard",
+   "option_text": "multi-file reasoning, design decisions, or novel debugging"
+  },
+  {
+   "state": "Designing a migration that must not break the live path.",
+   "label": "hard",
+   "option_text": "multi-file reasoning, design decisions, or novel debugging"
+  },
+  {
+   "state": "Working out why two tests contradict each other about intended behaviour.",
+   "label": "hard",
+   "option_text": "multi-file reasoning, design decisions, or novel debugging"
+  },
+  {
+   "state": "Choosing between two caching strategies with different consistency guarantees.",
+   "label": "hard",
+   "option_text": "multi-file reasoning, design decisions, or novel debugging"
+  },
+  {
+   "state": "Re-architecting a module whose callers all assume its current shape.",
+   "label": "hard",
+   "option_text": "multi-file reasoning, design decisions, or novel debugging"
+  },
+  {
+   "state": "Diagnosing a race condition that appears only under concurrent load.",
    "label": "hard",
    "option_text": "multi-file reasoning, design decisions, or novel debugging"
   }

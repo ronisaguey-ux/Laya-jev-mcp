@@ -9,10 +9,10 @@
   "stop_spending": "no further effort is justified; stop it"
  },
  "label_counts": {
-  "proportional": 2,
-  "over_invested": 2,
-  "under_invested": 2,
-  "stop_spending": 2
+  "proportional": 8,
+  "over_invested": 8,
+  "under_invested": 8,
+  "stop_spending": 8
  },
  "samples": [
   {
@@ -52,6 +52,126 @@
   },
   {
    "state": "The same step has failed six times with the same message and nothing new was learned.",
+   "label": "stop_spending",
+   "option_text": "no further effort is justified; stop it"
+  },
+  {
+   "state": "The verification work scaled to the size of the change it checks.",
+   "label": "proportional",
+   "option_text": "the cost is reasonable for what the work is worth"
+  },
+  {
+   "state": "A week on the core engine, which everything else depends on.",
+   "label": "proportional",
+   "option_text": "the cost is reasonable for what the work is worth"
+  },
+  {
+   "state": "Effort matching the blast radius of the module being changed.",
+   "label": "proportional",
+   "option_text": "the cost is reasonable for what the work is worth"
+  },
+  {
+   "state": "The investigation time proportionate to the severity of the finding.",
+   "label": "proportional",
+   "option_text": "the cost is reasonable for what the work is worth"
+  },
+  {
+   "state": "A short fix on a cosmetic issue and a long one on data corruption.",
+   "label": "proportional",
+   "option_text": "the cost is reasonable for what the work is worth"
+  },
+  {
+   "state": "The resources committed matching the value of the outcome.",
+   "label": "proportional",
+   "option_text": "the cost is reasonable for what the work is worth"
+  },
+  {
+   "state": "Three days of investigation into a one-character typo.",
+   "label": "over_invested",
+   "option_text": "more effort has gone in than the outcome warrants"
+  },
+  {
+   "state": "A full redesign of a module that one test uses.",
+   "label": "over_invested",
+   "option_text": "more effort has gone in than the outcome warrants"
+  },
+  {
+   "state": "A performance programme on a function called twice a day.",
+   "label": "over_invested",
+   "option_text": "more effort has gone in than the outcome warrants"
+  },
+  {
+   "state": "A committee review of a comment change.",
+   "label": "over_invested",
+   "option_text": "more effort has gone in than the outcome warrants"
+  },
+  {
+   "state": "Repeated refactoring of code with no defects and no callers.",
+   "label": "over_invested",
+   "option_text": "more effort has gone in than the outcome warrants"
+  },
+  {
+   "state": "Far more effort than the outcome can justify.",
+   "label": "over_invested",
+   "option_text": "more effort has gone in than the outcome warrants"
+  },
+  {
+   "state": "The risk path receiving a fraction of the effort the reporting path gets.",
+   "label": "under_invested",
+   "option_text": "the task is important and is being under-resourced"
+  },
+  {
+   "state": "A money-handling module with no tests.",
+   "label": "under_invested",
+   "option_text": "the task is important and is being under-resourced"
+  },
+  {
+   "state": "The conformance gate left broken while lower-value work continues.",
+   "label": "under_invested",
+   "option_text": "the task is important and is being under-resourced"
+  },
+  {
+   "state": "A critical finding deferred indefinitely in favour of cosmetic ones.",
+   "label": "under_invested",
+   "option_text": "the task is important and is being under-resourced"
+  },
+  {
+   "state": "The engine's error handling given one pass and never revisited.",
+   "label": "under_invested",
+   "option_text": "the task is important and is being under-resourced"
+  },
+  {
+   "state": "An important task staffed as if it were trivial.",
+   "label": "under_invested",
+   "option_text": "the task is important and is being under-resourced"
+  },
+  {
+   "state": "Further attempts on a step whose premise has been disproved.",
+   "label": "stop_spending",
+   "option_text": "no further effort is justified; stop it"
+  },
+  {
+   "state": "Continuing to search for a bug that the evidence says is absent.",
+   "label": "stop_spending",
+   "option_text": "no further effort is justified; stop it"
+  },
+  {
+   "state": "Re-running a lane that has returned the same verdict nine times.",
+   "label": "stop_spending",
+   "option_text": "no further effort is justified; stop it"
+  },
+  {
+   "state": "Spending more on a candidate that cannot pass any gate.",
+   "label": "stop_spending",
+   "option_text": "no further effort is justified; stop it"
+  },
+  {
+   "state": "Attempting again after the approach has been shown impossible.",
+   "label": "stop_spending",
+   "option_text": "no further effort is justified; stop it"
+  },
+  {
+   "state": "No further effort on this task is justified.",
    "label": "stop_spending",
    "option_text": "no further effort is justified; stop it"
   }
