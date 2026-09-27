@@ -82,3 +82,30 @@ zero.
 - One narrow adapter is roughly 10-40 minutes depending on how many other processes are
   competing. The kimi chrome was burning 87% of a core for 2.6 days before it was stopped;
   load fell from 20 to 7.
+
+## Unattended queue: 13 money/irreversible leaves
+
+Trained sequentially by `run_queue.sh`, four epochs, 25% stratified holdout.
+`train` is recall on rows the adapter saw; `held-out` is the number that matters.
+
+| leaf | train | held-out | classes improved |
+|---|---|---|---|
+| D1.2.1 | 0.92 | 0.75 | 1 |
+| D10.1.2 | 1.00 | 0.25 | 0 |
+| D10.1.3 | 1.00 | 0.75 | 1 |
+| D2.2.3 | 1.00 | 0.78 | 2 |
+| D3.2.1 | 1.00 | 0.75 | 2 |
+| D4.1.1 | 1.00 | 0.25 | 1 |
+| D4.1.2 | 1.00 | 0.75 | 2 |
+
+Read this table carefully rather than optimistically:
+
+- `train` at 1.00 with `held-out` at 0.25 (D10.1.2, D4.1.1) is memorisation. Four
+  held-out rows is one row per class, so a single miss costs 0.25. Those two leaves
+  cannot be judged from this run at any confidence.
+- `classes improved: 0` on D10.1.2 means the adapter changed nothing on held-out data,
+  which is the honest outcome for a leaf whose base model already gets that split right.
+- The leaves with four held-out rows per class (D2.2.3 at 7/9, D4.1.2 at 6/8) are the
+  only ones here whose held-out number is a measurement rather than a coin flip.
+
+The queue writes every adapter to `adapters/t3_<LEAF>/`, 17.6MB each, gitignored.
