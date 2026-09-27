@@ -9,10 +9,10 @@
   "boundary_violation": "it crosses an architecture boundary"
  },
  "label_counts": {
-  "in_scope": 2,
-  "scope_creep": 2,
-  "wrong_target": 2,
-  "boundary_violation": 2
+  "in_scope": 10,
+  "scope_creep": 10,
+  "wrong_target": 10,
+  "boundary_violation": 10
  },
  "samples": [
   {
@@ -52,6 +52,166 @@
   },
   {
    "state": "The step asked for a helper in the data layer and the diff makes it import live venue code.",
+   "label": "boundary_violation",
+   "option_text": "it crosses an architecture boundary"
+  },
+  {
+   "state": "The change adds the named test and nothing else.",
+   "label": "in_scope",
+   "option_text": "it does what was asked and nothing else"
+  },
+  {
+   "state": "Only the file the step names was touched, with the requested substitution.",
+   "label": "in_scope",
+   "option_text": "it does what was asked and nothing else"
+  },
+  {
+   "state": "The diff implements exactly the described behaviour and removes nothing else.",
+   "label": "in_scope",
+   "option_text": "it does what was asked and nothing else"
+  },
+  {
+   "state": "The edit is confined to the module the step identified.",
+   "label": "in_scope",
+   "option_text": "it does what was asked and nothing else"
+  },
+  {
+   "state": "Every changed line traces to a sentence in the brief.",
+   "label": "in_scope",
+   "option_text": "it does what was asked and nothing else"
+  },
+  {
+   "state": "The diff is the smallest one that satisfies the request.",
+   "label": "in_scope",
+   "option_text": "it does what was asked and nothing else"
+  },
+  {
+   "state": "The step asked for a validation and the diff adds only that validation.",
+   "label": "in_scope",
+   "option_text": "it does what was asked and nothing else"
+  },
+  {
+   "state": "The change is limited to the function named in the brief.",
+   "label": "in_scope",
+   "option_text": "it does what was asked and nothing else"
+  },
+  {
+   "state": "The requested change is present and so are three unrelated import reorderings.",
+   "label": "scope_creep",
+   "option_text": "it also changed adjacent things that were not asked for"
+  },
+  {
+   "state": "The diff fixes the bug and additionally renames a public method.",
+   "label": "scope_creep",
+   "option_text": "it also changed adjacent things that were not asked for"
+  },
+  {
+   "state": "The step named one file and the diff edits that file plus its neighbours.",
+   "label": "scope_creep",
+   "option_text": "it also changed adjacent things that were not asked for"
+  },
+  {
+   "state": "The change adds a feature and also inlines two helpers nobody asked to change.",
+   "label": "scope_creep",
+   "option_text": "it also changed adjacent things that were not asked for"
+  },
+  {
+   "state": "The diff performs the request and also deletes commented-out code across the module.",
+   "label": "scope_creep",
+   "option_text": "it also changed adjacent things that were not asked for"
+  },
+  {
+   "state": "The requested line changed and the surrounding function was rewritten.",
+   "label": "scope_creep",
+   "option_text": "it also changed adjacent things that were not asked for"
+  },
+  {
+   "state": "The step asked for a config key and the diff also changed its default.",
+   "label": "scope_creep",
+   "option_text": "it also changed adjacent things that were not asked for"
+  },
+  {
+   "state": "The change does what was asked and additionally upgrades a dependency.",
+   "label": "scope_creep",
+   "option_text": "it also changed adjacent things that were not asked for"
+  },
+  {
+   "state": "The brief named one function and the diff changes a different one with a similar name.",
+   "label": "wrong_target",
+   "option_text": "it changed something unrelated to the request"
+  },
+  {
+   "state": "The step asked for a change in the data layer and the diff edits the UI.",
+   "label": "wrong_target",
+   "option_text": "it changed something unrelated to the request"
+  },
+  {
+   "state": "The diff modifies a module the step never mentioned.",
+   "label": "wrong_target",
+   "option_text": "it changed something unrelated to the request"
+  },
+  {
+   "state": "The requested symbol exists elsewhere and the diff edited the wrong copy.",
+   "label": "wrong_target",
+   "option_text": "it changed something unrelated to the request"
+  },
+  {
+   "state": "The step named the engine and the diff lands in the harness.",
+   "label": "wrong_target",
+   "option_text": "it changed something unrelated to the request"
+  },
+  {
+   "state": "The change was applied to the stub rather than the implementation.",
+   "label": "wrong_target",
+   "option_text": "it changed something unrelated to the request"
+  },
+  {
+   "state": "The diff edits the legacy file that shadows nothing.",
+   "label": "wrong_target",
+   "option_text": "it changed something unrelated to the request"
+  },
+  {
+   "state": "The step's target was a package and the diff edits an unrelated package.",
+   "label": "wrong_target",
+   "option_text": "it changed something unrelated to the request"
+  },
+  {
+   "state": "The change makes the backtester depend on the exchange connector.",
+   "label": "boundary_violation",
+   "option_text": "it crosses an architecture boundary"
+  },
+  {
+   "state": "The diff introduces an import from the live path into the research path.",
+   "label": "boundary_violation",
+   "option_text": "it crosses an architecture boundary"
+  },
+  {
+   "state": "The step asked for a validator and the diff edits the order router.",
+   "label": "boundary_violation",
+   "option_text": "it crosses an architecture boundary"
+  },
+  {
+   "state": "The change lets the reporting layer write to the trading state.",
+   "label": "boundary_violation",
+   "option_text": "it crosses an architecture boundary"
+  },
+  {
+   "state": "The diff has the strategy layer call the venue directly.",
+   "label": "boundary_violation",
+   "option_text": "it crosses an architecture boundary"
+  },
+  {
+   "state": "The step asked for a read-only module and the diff has it mutate shared state.",
+   "label": "boundary_violation",
+   "option_text": "it crosses an architecture boundary"
+  },
+  {
+   "state": "The change makes a pure module depend on a network client.",
+   "label": "boundary_violation",
+   "option_text": "it crosses an architecture boundary"
+  },
+  {
+   "state": "The diff has the immutable specification imported into a mutating pipeline.",
    "label": "boundary_violation",
    "option_text": "it crosses an architecture boundary"
   }

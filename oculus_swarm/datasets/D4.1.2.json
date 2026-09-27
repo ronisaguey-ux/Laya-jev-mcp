@@ -9,10 +9,10 @@
   "unclear": "the effect on exposure cannot be determined; treat as an increase"
  },
  "label_counts": {
-  "reduce_exposure": 2,
-  "hold_exposure": 2,
-  "increase_exposure": 2,
-  "unclear": 2
+  "reduce_exposure": 10,
+  "hold_exposure": 10,
+  "increase_exposure": 10,
+  "unclear": 10
  },
  "samples": [
   {
@@ -52,6 +52,166 @@
   },
   {
    "state": "The request says to rebalance but the target weights are missing, so the sign of the change is unknown.",
+   "label": "unclear",
+   "option_text": "the effect on exposure cannot be determined; treat as an increase"
+  },
+  {
+   "state": "The request reduces the position size by a third.",
+   "label": "reduce_exposure",
+   "option_text": "the request lowers or closes exposure, which may proceed"
+  },
+  {
+   "state": "The request tightens a stop and thereby lowers the maximum loss.",
+   "label": "reduce_exposure",
+   "option_text": "the request lowers or closes exposure, which may proceed"
+  },
+  {
+   "state": "The request sells part of a long holding.",
+   "label": "reduce_exposure",
+   "option_text": "the request lowers or closes exposure, which may proceed"
+  },
+  {
+   "state": "The request brings gross exposure down to the target.",
+   "label": "reduce_exposure",
+   "option_text": "the request lowers or closes exposure, which may proceed"
+  },
+  {
+   "state": "The request closes one leg of a spread.",
+   "label": "reduce_exposure",
+   "option_text": "the request lowers or closes exposure, which may proceed"
+  },
+  {
+   "state": "The request covers a short position.",
+   "label": "reduce_exposure",
+   "option_text": "the request lowers or closes exposure, which may proceed"
+  },
+  {
+   "state": "The request reduces the number of instruments held.",
+   "label": "reduce_exposure",
+   "option_text": "the request lowers or closes exposure, which may proceed"
+  },
+  {
+   "state": "The request de-risks the book ahead of an event.",
+   "label": "reduce_exposure",
+   "option_text": "the request lowers or closes exposure, which may proceed"
+  },
+  {
+   "state": "The request updates a comment field with no effect on the book.",
+   "label": "hold_exposure",
+   "option_text": "the request changes nothing and may proceed"
+  },
+  {
+   "state": "The request re-sends the same order with the same size.",
+   "label": "hold_exposure",
+   "option_text": "the request changes nothing and may proceed"
+  },
+  {
+   "state": "The request amends order metadata only.",
+   "label": "hold_exposure",
+   "option_text": "the request changes nothing and may proceed"
+  },
+  {
+   "state": "The request acknowledges a fill that has already been applied.",
+   "label": "hold_exposure",
+   "option_text": "the request changes nothing and may proceed"
+  },
+  {
+   "state": "The request changes the order's time-in-force but not its quantity.",
+   "label": "hold_exposure",
+   "option_text": "the request changes nothing and may proceed"
+  },
+  {
+   "state": "The request is a status query on the current position.",
+   "label": "hold_exposure",
+   "option_text": "the request changes nothing and may proceed"
+  },
+  {
+   "state": "The request re-registers an unchanged strategy configuration.",
+   "label": "hold_exposure",
+   "option_text": "the request changes nothing and may proceed"
+  },
+  {
+   "state": "The request rotates a credential with no trading effect.",
+   "label": "hold_exposure",
+   "option_text": "the request changes nothing and may proceed"
+  },
+  {
+   "state": "The request widens a stop, raising the maximum loss.",
+   "label": "increase_exposure",
+   "option_text": "the request raises exposure and must not be driven by a model score"
+  },
+  {
+   "state": "The request opens a second position in a correlated instrument.",
+   "label": "increase_exposure",
+   "option_text": "the request raises exposure and must not be driven by a model score"
+  },
+  {
+   "state": "The request raises the per-trade risk limit.",
+   "label": "increase_exposure",
+   "option_text": "the request raises exposure and must not be driven by a model score"
+  },
+  {
+   "state": "The request levers an existing holding.",
+   "label": "increase_exposure",
+   "option_text": "the request raises exposure and must not be driven by a model score"
+  },
+  {
+   "state": "The request adds a new leg to a spread.",
+   "label": "increase_exposure",
+   "option_text": "the request raises exposure and must not be driven by a model score"
+  },
+  {
+   "state": "The request increases the target allocation.",
+   "label": "increase_exposure",
+   "option_text": "the request raises exposure and must not be driven by a model score"
+  },
+  {
+   "state": "The request removes a hedge, raising net exposure.",
+   "label": "increase_exposure",
+   "option_text": "the request raises exposure and must not be driven by a model score"
+  },
+  {
+   "state": "The request doubles the order size on the next entry.",
+   "label": "increase_exposure",
+   "option_text": "the request raises exposure and must not be driven by a model score"
+  },
+  {
+   "state": "The request refers to 'the usual size' with no such convention defined.",
+   "label": "unclear",
+   "option_text": "the effect on exposure cannot be determined; treat as an increase"
+  },
+  {
+   "state": "The payload omits the side and the quantity.",
+   "label": "unclear",
+   "option_text": "the effect on exposure cannot be determined; treat as an increase"
+  },
+  {
+   "state": "The request says to adjust the position without naming a direction.",
+   "label": "unclear",
+   "option_text": "the effect on exposure cannot be determined; treat as an increase"
+  },
+  {
+   "state": "The instruction is ambiguous between reducing and adding.",
+   "label": "unclear",
+   "option_text": "the effect on exposure cannot be determined; treat as an increase"
+  },
+  {
+   "state": "The request's target portfolio is not specified.",
+   "label": "unclear",
+   "option_text": "the effect on exposure cannot be determined; treat as an increase"
+  },
+  {
+   "state": "The payload contains a size but no instrument and a direction with no magnitude.",
+   "label": "unclear",
+   "option_text": "the effect on exposure cannot be determined; treat as an increase"
+  },
+  {
+   "state": "The request could increase or decrease exposure depending on an unstated assumption.",
+   "label": "unclear",
+   "option_text": "the effect on exposure cannot be determined; treat as an increase"
+  },
+  {
+   "state": "The instruction's effect on exposure cannot be determined from its text.",
    "label": "unclear",
    "option_text": "the effect on exposure cannot be determined; treat as an increase"
   }

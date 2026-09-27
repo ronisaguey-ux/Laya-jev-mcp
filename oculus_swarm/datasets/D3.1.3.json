@@ -8,9 +8,9 @@
   "confirmed_shift": "the shift is established; the playbook must change"
  },
  "label_counts": {
-  "no_shift": 3,
-  "early_shift": 2,
-  "confirmed_shift": 3
+  "no_shift": 10,
+  "early_shift": 10,
+  "confirmed_shift": 10
  },
  "samples": [
   {
@@ -50,6 +50,116 @@
   },
   {
    "state": "The trend feature crossed its threshold and the volatility feature followed within the same week.",
+   "label": "confirmed_shift",
+   "option_text": "the shift is established; the playbook must change"
+  },
+  {
+   "state": "All six monitored features remain inside their bands and the assignment is unchanged.",
+   "label": "no_shift",
+   "option_text": "the state is unchanged; keep the current playbook"
+  },
+  {
+   "state": "The rolling statistics are stable and the centroid distances are unmoved.",
+   "label": "no_shift",
+   "option_text": "the state is unchanged; keep the current playbook"
+  },
+  {
+   "state": "Nothing has left its band for a month and the reading is the same regime.",
+   "label": "no_shift",
+   "option_text": "the state is unchanged; keep the current playbook"
+  },
+  {
+   "state": "The volatility and correlation measures both sit mid-range.",
+   "label": "no_shift",
+   "option_text": "the state is unchanged; keep the current playbook"
+  },
+  {
+   "state": "The feature vector is closer to its own centroid this week than last.",
+   "label": "no_shift",
+   "option_text": "the state is unchanged; keep the current playbook"
+  },
+  {
+   "state": "No monitored measure has broken out and the model's assignment holds.",
+   "label": "no_shift",
+   "option_text": "the state is unchanged; keep the current playbook"
+  },
+  {
+   "state": "The distributions are unchanged on every test the monitor applies.",
+   "label": "no_shift",
+   "option_text": "the state is unchanged; keep the current playbook"
+  },
+  {
+   "state": "Volatility has widened beyond its band while correlation and trend are unchanged.",
+   "label": "early_shift",
+   "option_text": "early signs of a change; reduce conviction"
+  },
+  {
+   "state": "The assignment is unchanged and two features sit above their ninetieth percentile.",
+   "label": "early_shift",
+   "option_text": "early signs of a change; reduce conviction"
+  },
+  {
+   "state": "One measure has been out of band for three sessions and the others are stable.",
+   "label": "early_shift",
+   "option_text": "early signs of a change; reduce conviction"
+  },
+  {
+   "state": "The centroid distance is growing but the nearest cluster is still the same.",
+   "label": "early_shift",
+   "option_text": "early signs of a change; reduce conviction"
+  },
+  {
+   "state": "A single feature has exceeded its threshold twice this week.",
+   "label": "early_shift",
+   "option_text": "early signs of a change; reduce conviction"
+  },
+  {
+   "state": "Two features are at the edge of their bands with no confirmation yet.",
+   "label": "early_shift",
+   "option_text": "early signs of a change; reduce conviction"
+  },
+  {
+   "state": "The rolling volatility is rising while the level is still inside its range.",
+   "label": "early_shift",
+   "option_text": "early signs of a change; reduce conviction"
+  },
+  {
+   "state": "One breakout has occurred and the regime model has not yet reclassified.",
+   "label": "early_shift",
+   "option_text": "early signs of a change; reduce conviction"
+  },
+  {
+   "state": "The regime model has reclassified and the new assignment has held for two weeks.",
+   "label": "confirmed_shift",
+   "option_text": "the shift is established; the playbook must change"
+  },
+  {
+   "state": "Every monitored feature is outside its prior band and the new levels are stable.",
+   "label": "confirmed_shift",
+   "option_text": "the shift is established; the playbook must change"
+  },
+  {
+   "state": "Both the level and the dispersion of returns have moved and stayed moved.",
+   "label": "confirmed_shift",
+   "option_text": "the shift is established; the playbook must change"
+  },
+  {
+   "state": "The correlation matrix has restructured and the new structure is persisting.",
+   "label": "confirmed_shift",
+   "option_text": "the shift is established; the playbook must change"
+  },
+  {
+   "state": "The assignment changed and the centroid distance confirms the new regime.",
+   "label": "confirmed_shift",
+   "option_text": "the shift is established; the playbook must change"
+  },
+  {
+   "state": "Four features broke out in the same week and none has reverted.",
+   "label": "confirmed_shift",
+   "option_text": "the shift is established; the playbook must change"
+  },
+  {
+   "state": "The new regime has held long enough that the playbook must change.",
    "label": "confirmed_shift",
    "option_text": "the shift is established; the playbook must change"
   }

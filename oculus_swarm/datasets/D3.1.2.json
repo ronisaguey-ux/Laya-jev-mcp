@@ -9,10 +9,10 @@
   "unusable": "do not act on this regime reading at all"
  },
  "label_counts": {
-  "high_confidence": 2,
-  "low_confidence": 2,
-  "model_stale": 2,
-  "unusable": 2
+  "high_confidence": 10,
+  "low_confidence": 10,
+  "model_stale": 10,
+  "unusable": 10
  },
  "samples": [
   {
@@ -52,6 +52,166 @@
   },
   {
    "state": "The fit degenerated to one cluster holding almost every observation.",
+   "label": "unusable",
+   "option_text": "do not act on this regime reading at all"
+  },
+  {
+   "state": "The silhouette has held above 0.6 for a month of refits.",
+   "label": "high_confidence",
+   "option_text": "the clusters are well separated and stable"
+  },
+  {
+   "state": "Cluster sizes are balanced and the boundary between them is wide.",
+   "label": "high_confidence",
+   "option_text": "the clusters are well separated and stable"
+  },
+  {
+   "state": "Two independent feature sets produce the same partition.",
+   "label": "high_confidence",
+   "option_text": "the clusters are well separated and stable"
+  },
+  {
+   "state": "The regime label has not flipped in two hundred sessions.",
+   "label": "high_confidence",
+   "option_text": "the clusters are well separated and stable"
+  },
+  {
+   "state": "Separation between the nearest two clusters is three times their internal spread.",
+   "label": "high_confidence",
+   "option_text": "the clusters are well separated and stable"
+  },
+  {
+   "state": "The model reproduces its assignment on held-out data with the same silhouette.",
+   "label": "high_confidence",
+   "option_text": "the clusters are well separated and stable"
+  },
+  {
+   "state": "Every refit in the last quarter selects the same cluster count.",
+   "label": "high_confidence",
+   "option_text": "the clusters are well separated and stable"
+  },
+  {
+   "state": "The current reading sits deep inside one cluster, far from any boundary.",
+   "label": "high_confidence",
+   "option_text": "the clusters are well separated and stable"
+  },
+  {
+   "state": "The silhouette is below 0.3 and unstable across refits.",
+   "label": "low_confidence",
+   "option_text": "the reading sits between states and is unstable"
+  },
+  {
+   "state": "Two clusters overlap enough that the boundary is inside the noise.",
+   "label": "low_confidence",
+   "option_text": "the reading sits between states and is unstable"
+  },
+  {
+   "state": "The current reading is within one standard deviation of two different centroids.",
+   "label": "low_confidence",
+   "option_text": "the reading sits between states and is unstable"
+  },
+  {
+   "state": "The cluster count changes between refits on identical data.",
+   "label": "low_confidence",
+   "option_text": "the reading sits between states and is unstable"
+  },
+  {
+   "state": "The assignment depends on the random seed used to fit.",
+   "label": "low_confidence",
+   "option_text": "the reading sits between states and is unstable"
+  },
+  {
+   "state": "The candidate regime is barely distinguishable from its nearest neighbour.",
+   "label": "low_confidence",
+   "option_text": "the reading sits between states and is unstable"
+  },
+  {
+   "state": "The reading flipped twice this week while measured volatility stayed flat.",
+   "label": "low_confidence",
+   "option_text": "the reading sits between states and is unstable"
+  },
+  {
+   "state": "Refitting on a rolling window moves the current point between regimes.",
+   "label": "low_confidence",
+   "option_text": "the reading sits between states and is unstable"
+  },
+  {
+   "state": "The model predates a change to the bar construction that alters every feature it reads.",
+   "label": "model_stale",
+   "option_text": "the fitted model is older than the data warrants"
+  },
+  {
+   "state": "The fit is older than the instrument's listing change.",
+   "label": "model_stale",
+   "option_text": "the fitted model is older than the data warrants"
+  },
+  {
+   "state": "The model was trained on a period with a different correlation structure from today's.",
+   "label": "model_stale",
+   "option_text": "the fitted model is older than the data warrants"
+  },
+  {
+   "state": "The regime model has not been refitted since the venue changed its session hours.",
+   "label": "model_stale",
+   "option_text": "the fitted model is older than the data warrants"
+  },
+  {
+   "state": "The features it consumes were redefined after the last fit.",
+   "label": "model_stale",
+   "option_text": "the fitted model is older than the data warrants"
+  },
+  {
+   "state": "The model has never seen the volatility level that has prevailed since March.",
+   "label": "model_stale",
+   "option_text": "the fitted model is older than the data warrants"
+  },
+  {
+   "state": "The last refit predates the strategy's current universe.",
+   "label": "model_stale",
+   "option_text": "the fitted model is older than the data warrants"
+  },
+  {
+   "state": "Its training window ends before the current market regime began.",
+   "label": "model_stale",
+   "option_text": "the fitted model is older than the data warrants"
+  },
+  {
+   "state": "The model returns NaN for the current point.",
+   "label": "unusable",
+   "option_text": "do not act on this regime reading at all"
+  },
+  {
+   "state": "Every observation lands in the same cluster and the silhouette is undefined.",
+   "label": "unusable",
+   "option_text": "do not act on this regime reading at all"
+  },
+  {
+   "state": "The feature inputs are all constant, so the partition carries no information.",
+   "label": "unusable",
+   "option_text": "do not act on this regime reading at all"
+  },
+  {
+   "state": "The model's output is undefined for the current instrument class.",
+   "label": "unusable",
+   "option_text": "do not act on this regime reading at all"
+  },
+  {
+   "state": "The fit produced a cluster count of zero.",
+   "label": "unusable",
+   "option_text": "do not act on this regime reading at all"
+  },
+  {
+   "state": "The regime model errors on the current row and the caller has no fallback.",
+   "label": "unusable",
+   "option_text": "do not act on this regime reading at all"
+  },
+  {
+   "state": "The model's labels no longer correspond to any of the documented regimes.",
+   "label": "unusable",
+   "option_text": "do not act on this regime reading at all"
+  },
+  {
+   "state": "The fit is undefined because the input window is shorter than the model requires.",
    "label": "unusable",
    "option_text": "do not act on this regime reading at all"
   }

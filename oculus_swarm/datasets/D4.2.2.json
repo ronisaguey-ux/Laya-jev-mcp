@@ -9,10 +9,10 @@
   "new_entries_only": "block new entries but let existing positions manage out"
  },
  "label_counts": {
-  "all_strategies": 2,
-  "one_strategy": 2,
-  "one_asset": 2,
-  "new_entries_only": 2
+  "all_strategies": 10,
+  "one_strategy": 10,
+  "one_asset": 10,
+  "new_entries_only": 10
  },
  "samples": [
   {
@@ -52,6 +52,166 @@
   },
   {
    "state": "The portfolio is near its drawdown limit and no individual strategy has breached.",
+   "label": "new_entries_only",
+   "option_text": "block new entries but let existing positions manage out"
+  },
+  {
+   "state": "The halt condition is a venue-wide outage that affects every strategy's execution.",
+   "label": "all_strategies",
+   "option_text": "halt every strategy; the problem is systemic"
+  },
+  {
+   "state": "The corruption is in the shared state every strategy depends on.",
+   "label": "all_strategies",
+   "option_text": "halt every strategy; the problem is systemic"
+  },
+  {
+   "state": "Every strategy's positions are mispriced because the feed is wrong.",
+   "label": "all_strategies",
+   "option_text": "halt every strategy; the problem is systemic"
+  },
+  {
+   "state": "The halt condition is portfolio drawdown at the book level.",
+   "label": "all_strategies",
+   "option_text": "halt every strategy; the problem is systemic"
+  },
+  {
+   "state": "A shared dependency failed and all strategies are affected equally.",
+   "label": "all_strategies",
+   "option_text": "halt every strategy; the problem is systemic"
+  },
+  {
+   "state": "The exchange is down, so no strategy can trade.",
+   "label": "all_strategies",
+   "option_text": "halt every strategy; the problem is systemic"
+  },
+  {
+   "state": "The daily loss limit is breached at the portfolio level.",
+   "label": "all_strategies",
+   "option_text": "halt every strategy; the problem is systemic"
+  },
+  {
+   "state": "A systemic data error invalidates every strategy's signals.",
+   "label": "all_strategies",
+   "option_text": "halt every strategy; the problem is systemic"
+  },
+  {
+   "state": "A single strategy's state machine is corrupted while the others are consistent.",
+   "label": "one_strategy",
+   "option_text": "halt the single strategy implicated"
+  },
+  {
+   "state": "One strategy is failing its own gates and the rest pass.",
+   "label": "one_strategy",
+   "option_text": "halt the single strategy implicated"
+  },
+  {
+   "state": "The fault is confined to one strategy's position sizing.",
+   "label": "one_strategy",
+   "option_text": "halt the single strategy implicated"
+  },
+  {
+   "state": "A single strategy is breaching its own risk limit.",
+   "label": "one_strategy",
+   "option_text": "halt the single strategy implicated"
+  },
+  {
+   "state": "One strategy's signal source is broken while the shared feed is healthy.",
+   "label": "one_strategy",
+   "option_text": "halt the single strategy implicated"
+  },
+  {
+   "state": "The problem is in one strategy's code path only.",
+   "label": "one_strategy",
+   "option_text": "halt the single strategy implicated"
+  },
+  {
+   "state": "A single strategy is over-trading while the others are normal.",
+   "label": "one_strategy",
+   "option_text": "halt the single strategy implicated"
+  },
+  {
+   "state": "One strategy's halt condition fired and no other strategy is affected.",
+   "label": "one_strategy",
+   "option_text": "halt the single strategy implicated"
+  },
+  {
+   "state": "One instrument's spread has widened to the point of untradeability.",
+   "label": "one_asset",
+   "option_text": "halt the single asset implicated"
+  },
+  {
+   "state": "A corporate action has made one instrument's position incomparable.",
+   "label": "one_asset",
+   "option_text": "halt the single asset implicated"
+  },
+  {
+   "state": "One symbol is halted by the exchange while its peers trade normally.",
+   "label": "one_asset",
+   "option_text": "halt the single asset implicated"
+  },
+  {
+   "state": "The corruption is confined to one instrument's price history.",
+   "label": "one_asset",
+   "option_text": "halt the single asset implicated"
+  },
+  {
+   "state": "One asset has gone ex-dividend and its bars are no longer comparable.",
+   "label": "one_asset",
+   "option_text": "halt the single asset implicated"
+  },
+  {
+   "state": "A single instrument's tick size changed and its strategy is miscalibrated.",
+   "label": "one_asset",
+   "option_text": "halt the single asset implicated"
+  },
+  {
+   "state": "One contract is approaching expiry and behaves unlike the rest of the book.",
+   "label": "one_asset",
+   "option_text": "halt the single asset implicated"
+  },
+  {
+   "state": "The bad prints are all confined to a single symbol.",
+   "label": "one_asset",
+   "option_text": "halt the single asset implicated"
+  },
+  {
+   "state": "The condition is a temporary venue issue affecting new orders only.",
+   "label": "new_entries_only",
+   "option_text": "block new entries but let existing positions manage out"
+  },
+  {
+   "state": "The drawdown warrants stopping new risk without forcing liquidation at bad prices.",
+   "label": "new_entries_only",
+   "option_text": "block new entries but let existing positions manage out"
+  },
+  {
+   "state": "The signal quality has degraded but open positions are not yet at a decision point.",
+   "label": "new_entries_only",
+   "option_text": "block new entries but let existing positions manage out"
+  },
+  {
+   "state": "The halt is precautionary and closing positions would realise avoidable losses.",
+   "label": "new_entries_only",
+   "option_text": "block new entries but let existing positions manage out"
+  },
+  {
+   "state": "Liquidity has thinned, making new entries unattractive while exits remain possible.",
+   "label": "new_entries_only",
+   "option_text": "block new entries but let existing positions manage out"
+  },
+  {
+   "state": "The condition is an event pending resolution and entries should wait.",
+   "label": "new_entries_only",
+   "option_text": "block new entries but let existing positions manage out"
+  },
+  {
+   "state": "The book is at its risk budget, so no new risk can be added.",
+   "label": "new_entries_only",
+   "option_text": "block new entries but let existing positions manage out"
+  },
+  {
+   "state": "Uncertainty is high and new positions should not be initiated, but existing ones are sound.",
    "label": "new_entries_only",
    "option_text": "block new entries but let existing positions manage out"
   }

@@ -9,10 +9,10 @@
   "unknown_state": "the loss cannot be established; treat as breached"
  },
  "label_counts": {
-  "within_limit": 2,
-  "approaching_limit": 2,
-  "breached": 2,
-  "unknown_state": 2
+  "within_limit": 10,
+  "approaching_limit": 10,
+  "breached": 10,
+  "unknown_state": 10
  },
  "samples": [
   {
@@ -52,6 +52,166 @@
   },
   {
    "state": "The risk service is unreachable and there is no cached loss figure for today.",
+   "label": "unknown_state",
+   "option_text": "the loss cannot be established; treat as breached"
+  },
+  {
+   "state": "Drawdown today is a fifth of the permitted daily loss.",
+   "label": "within_limit",
+   "option_text": "losses remain inside the daily limit"
+  },
+  {
+   "state": "The session's realised loss is inside the limit with the book near flat.",
+   "label": "within_limit",
+   "option_text": "losses remain inside the daily limit"
+  },
+  {
+   "state": "Losses are at one percent against a three percent daily limit.",
+   "label": "within_limit",
+   "option_text": "losses remain inside the daily limit"
+  },
+  {
+   "state": "No position is down materially and the daily figure is negligible.",
+   "label": "within_limit",
+   "option_text": "losses remain inside the daily limit"
+  },
+  {
+   "state": "Today's realised loss is zero.",
+   "label": "within_limit",
+   "option_text": "losses remain inside the daily limit"
+  },
+  {
+   "state": "The loss is well inside the limit with hours left in the session.",
+   "label": "within_limit",
+   "option_text": "losses remain inside the daily limit"
+  },
+  {
+   "state": "The book is slightly down and far from any threshold.",
+   "label": "within_limit",
+   "option_text": "losses remain inside the daily limit"
+  },
+  {
+   "state": "Daily loss is a quarter of the limit with the book mostly closed.",
+   "label": "within_limit",
+   "option_text": "losses remain inside the daily limit"
+  },
+  {
+   "state": "The daily figure is at ninety percent of the limit and the book is still open.",
+   "label": "approaching_limit",
+   "option_text": "losses are close to the limit; prepare to stop"
+  },
+  {
+   "state": "Losses are within the limit and one more adverse move would breach it.",
+   "label": "approaching_limit",
+   "option_text": "losses are close to the limit; prepare to stop"
+  },
+  {
+   "state": "The daily loss is at 2.7% against 3% with two positions working.",
+   "label": "approaching_limit",
+   "option_text": "losses are close to the limit; prepare to stop"
+  },
+  {
+   "state": "The loss is close enough that the next stop-out would breach the limit.",
+   "label": "approaching_limit",
+   "option_text": "losses are close to the limit; prepare to stop"
+  },
+  {
+   "state": "Ninety-five percent of the daily limit is consumed.",
+   "label": "approaching_limit",
+   "option_text": "losses are close to the limit; prepare to stop"
+  },
+  {
+   "state": "The realised loss is inside the limit and the open risk is not.",
+   "label": "approaching_limit",
+   "option_text": "losses are close to the limit; prepare to stop"
+  },
+  {
+   "state": "The daily figure is near the threshold and volatility is elevated.",
+   "label": "approaching_limit",
+   "option_text": "losses are close to the limit; prepare to stop"
+  },
+  {
+   "state": "The loss is approaching the limit and no further entries are scheduled.",
+   "label": "approaching_limit",
+   "option_text": "losses are close to the limit; prepare to stop"
+  },
+  {
+   "state": "Daily loss has exceeded its cap and trading has not stopped.",
+   "label": "breached",
+   "option_text": "the daily limit is breached and trading must stop"
+  },
+  {
+   "state": "The realised loss is 3.4% against a 3% limit.",
+   "label": "breached",
+   "option_text": "the daily limit is breached and trading must stop"
+  },
+  {
+   "state": "The limit was crossed an hour ago and the position remains open.",
+   "label": "breached",
+   "option_text": "the daily limit is breached and trading must stop"
+  },
+  {
+   "state": "The daily figure is above the cap for the second time this week.",
+   "label": "breached",
+   "option_text": "the daily limit is breached and trading must stop"
+  },
+  {
+   "state": "Losses exceed the permitted daily maximum.",
+   "label": "breached",
+   "option_text": "the daily limit is breached and trading must stop"
+  },
+  {
+   "state": "The limit is breached and no halt has been recorded.",
+   "label": "breached",
+   "option_text": "the daily limit is breached and trading must stop"
+  },
+  {
+   "state": "The session's loss has passed the cap and exposure has not been reduced.",
+   "label": "breached",
+   "option_text": "the daily limit is breached and trading must stop"
+  },
+  {
+   "state": "The daily loss limit is exceeded with positions still working.",
+   "label": "breached",
+   "option_text": "the daily limit is breached and trading must stop"
+  },
+  {
+   "state": "The daily loss figure is stale from before the last fill.",
+   "label": "unknown_state",
+   "option_text": "the loss cannot be established; treat as breached"
+  },
+  {
+   "state": "No loss data is available for the current session.",
+   "label": "unknown_state",
+   "option_text": "the loss cannot be established; treat as breached"
+  },
+  {
+   "state": "The position service returns an error and the daily figure cannot be established.",
+   "label": "unknown_state",
+   "option_text": "the loss cannot be established; treat as breached"
+  },
+  {
+   "state": "The realised loss cannot be computed because fills are missing.",
+   "label": "unknown_state",
+   "option_text": "the loss cannot be established; treat as breached"
+  },
+  {
+   "state": "The risk service timed out and no fallback figure exists.",
+   "label": "unknown_state",
+   "option_text": "the loss cannot be established; treat as breached"
+  },
+  {
+   "state": "The daily loss is undefined because the position feed is down.",
+   "label": "unknown_state",
+   "option_text": "the loss cannot be established; treat as breached"
+  },
+  {
+   "state": "The loss figure's timestamp predates the last two hours of trading.",
+   "label": "unknown_state",
+   "option_text": "the loss cannot be established; treat as breached"
+  },
+  {
+   "state": "There is no reliable measure of today's loss.",
    "label": "unknown_state",
    "option_text": "the loss cannot be established; treat as breached"
   }

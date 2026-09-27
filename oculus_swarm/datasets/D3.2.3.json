@@ -9,10 +9,10 @@
   "no_preference": "the horizon does not change the answer"
  },
  "label_counts": {
-  "fast": 2,
-  "slow": 2,
-  "medium": 2,
-  "no_preference": 2
+  "fast": 10,
+  "slow": 10,
+  "medium": 10,
+  "no_preference": 10
  },
  "samples": [
   {
@@ -52,6 +52,166 @@
   },
   {
    "state": "The question is about which venue to route to, which is horizon-independent.",
+   "label": "no_preference",
+   "option_text": "the horizon does not change the answer"
+  },
+  {
+   "state": "The decision concerns an intraday move and the edge closes before the close.",
+   "label": "fast",
+   "option_text": "a short horizon suits this decision"
+  },
+  {
+   "state": "The order must be worked within the session.",
+   "label": "fast",
+   "option_text": "a short horizon suits this decision"
+  },
+  {
+   "state": "The thesis is event-driven and the event is today.",
+   "label": "fast",
+   "option_text": "a short horizon suits this decision"
+  },
+  {
+   "state": "The signal's half-life is measured in minutes.",
+   "label": "fast",
+   "option_text": "a short horizon suits this decision"
+  },
+  {
+   "state": "The position will be flat by the close by design.",
+   "label": "fast",
+   "option_text": "a short horizon suits this decision"
+  },
+  {
+   "state": "The decision window is the next two hours.",
+   "label": "fast",
+   "option_text": "a short horizon suits this decision"
+  },
+  {
+   "state": "The edge depends on a liquidity imbalance that resolves intraday.",
+   "label": "fast",
+   "option_text": "a short horizon suits this decision"
+  },
+  {
+   "state": "The question is about a single session's participation.",
+   "label": "fast",
+   "option_text": "a short horizon suits this decision"
+  },
+  {
+   "state": "The decision spans several sessions but not weeks.",
+   "label": "medium",
+   "option_text": "an intraday-to-daily horizon suits this decision"
+  },
+  {
+   "state": "The signal is built from daily closes and the position is held for a few days.",
+   "label": "medium",
+   "option_text": "an intraday-to-daily horizon suits this decision"
+  },
+  {
+   "state": "The intent is to hold through the current week.",
+   "label": "medium",
+   "option_text": "an intraday-to-daily horizon suits this decision"
+  },
+  {
+   "state": "The thesis needs two or three sessions to play out.",
+   "label": "medium",
+   "option_text": "an intraday-to-daily horizon suits this decision"
+  },
+  {
+   "state": "The horizon is intraday-to-daily by the strategy's own definition.",
+   "label": "medium",
+   "option_text": "an intraday-to-daily horizon suits this decision"
+  },
+  {
+   "state": "The signal's half-life is a few days.",
+   "label": "medium",
+   "option_text": "an intraday-to-daily horizon suits this decision"
+  },
+  {
+   "state": "The decision concerns a swing position.",
+   "label": "medium",
+   "option_text": "an intraday-to-daily horizon suits this decision"
+  },
+  {
+   "state": "The position is expected to be held for several sessions with stops.",
+   "label": "medium",
+   "option_text": "an intraday-to-daily horizon suits this decision"
+  },
+  {
+   "state": "The thesis is a multi-week regime call.",
+   "label": "slow",
+   "option_text": "a multi-day horizon suits this decision"
+  },
+  {
+   "state": "The position is expected to be held for months.",
+   "label": "slow",
+   "option_text": "a multi-day horizon suits this decision"
+  },
+  {
+   "state": "The signal is a slow-moving fundamental ratio.",
+   "label": "slow",
+   "option_text": "a multi-day horizon suits this decision"
+  },
+  {
+   "state": "The decision concerns a strategic allocation rather than a trade.",
+   "label": "slow",
+   "option_text": "a multi-day horizon suits this decision"
+  },
+  {
+   "state": "The horizon is measured in weeks and the thesis does not decay intraday.",
+   "label": "slow",
+   "option_text": "a multi-day horizon suits this decision"
+  },
+  {
+   "state": "The signal is recomputed monthly.",
+   "label": "slow",
+   "option_text": "a multi-day horizon suits this decision"
+  },
+  {
+   "state": "The position is a core holding with a multi-week horizon.",
+   "label": "slow",
+   "option_text": "a multi-day horizon suits this decision"
+  },
+  {
+   "state": "The decision concerns the portfolio's regime exposure.",
+   "label": "slow",
+   "option_text": "a multi-day horizon suits this decision"
+  },
+  {
+   "state": "The decision is a configuration change that does not depend on time horizon.",
+   "label": "no_preference",
+   "option_text": "the horizon does not change the answer"
+  },
+  {
+   "state": "The question is about data integrity and the horizon is irrelevant.",
+   "label": "no_preference",
+   "option_text": "the horizon does not change the answer"
+  },
+  {
+   "state": "The answer is the same whether sampled hourly or daily.",
+   "label": "no_preference",
+   "option_text": "the horizon does not change the answer"
+  },
+  {
+   "state": "The decision concerns a compliance rule that applies at any horizon.",
+   "label": "no_preference",
+   "option_text": "the horizon does not change the answer"
+  },
+  {
+   "state": "The question is about which source of truth governs and time does not enter it.",
+   "label": "no_preference",
+   "option_text": "the horizon does not change the answer"
+  },
+  {
+   "state": "The horizon does not change the classification.",
+   "label": "no_preference",
+   "option_text": "the horizon does not change the answer"
+  },
+  {
+   "state": "Every timeframe produces the same regime reading.",
+   "label": "no_preference",
+   "option_text": "the horizon does not change the answer"
+  },
+  {
+   "state": "The decision is about scope, not timing.",
    "label": "no_preference",
    "option_text": "the horizon does not change the answer"
   }
