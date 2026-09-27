@@ -37,6 +37,7 @@ from . import __version__
 from .backends import BackendError, JevBackend, LayaBackend, auto_backend, available_backends
 from .decide import DecisionPolicy, decide, decide_many
 from .questions import QuestionError
+from .routing import pick_model, pick_many, router_status
 
 SERVER_NAME = "layajev"
 # The revision this server implements. A client that speaks a newer one still
@@ -261,6 +262,22 @@ def tool_judge(args: Mapping[str, Any]) -> Dict[str, Any]:
     }
 
 
+def tool_pick_model(args: Mapping[str, Any]) -> Dict[str, Any]:
+    """Cheapest model still good enough for one task."""
+    return pick_model(args.get("task", ""), args.get("band", "auto"),
+                      args.get("capabilities"))
+
+
+def tool_pick_many(args: Mapping[str, Any]) -> Dict[str, Any]:
+    """Route several independent tasks in one call."""
+    return pick_many(args.get("tasks", []), args.get("band", "auto"))
+
+
+def tool_router_status(_args: Mapping[str, Any]) -> Dict[str, Any]:
+    """Whether routing is available, and why not when it is not."""
+    return router_status()
+
+
 def tool_backend_status(_args: Mapping[str, Any]) -> Dict[str, Any]:
     backends = available_backends()
     default = None
@@ -404,6 +421,66 @@ def _tools() -> Dict[str, Dict[str, Any]]:
                 "required": ["probability", "decision", "yes", "backend"],
             },
         },
+        "pick_model": {
+            "handler": tool_pick_model,
+            "description": (
+                "Pick the CHEAPEST model that is still good enough for a task, from 14 "
+                "measured models. Not 'best model' and not 'cheapest model': every option "
+                "was scored 1-100 by hand on real academic work at this product's traffic "
+                "mix, and the target is the cheapest one clearing the quality bar. Measured "
+                "on this data, the most expensive model has the WORST quality and the "
+                "goldilocks pick beats a fixed default by ~5 quality points at lower cost. "
+                "`band` is a ceiling the caller chooses: a hard task on 'low' gets the best "
+                "low model; a trivial task on 'high' gets the CHEAPEST high model; 'auto' "
+                "has no ceiling. `capabilities` names a modality the task needs (image, "
+                "audio, video, file) and is a HARD filter applied before cost — a model "
+                "that cannot perceive the input is not a cheap option. If nothing in the "
+                "band can do it, the answer names the cheapest band that would."
+            ),
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "task": {"type": "string",
+                             "description": "The task text. This is what the router reads, so give the real prompt."},
+                    "band": {"type": "string", "enum": ["auto", "low", "medium", "high"],
+                             "description": "Cost ceiling. Default 'auto' (no ceiling)."},
+                    "capabilities": {
+                        "type": "array", "items": {"type": "string"},
+                        "description": "Modalities the task requires: image, audio, video, file. Omit for text.",
+                    },
+                },
+                "required": ["task"],
+            },
+        },
+        "pick_many": {
+            "handler": tool_pick_many,
+            "description": (
+                "Route several independent tasks in one call. Each task is routed on its "
+                "own — the option set and the right answer differ per task, so this is an "
+                "I/O saving rather than a shared forward pass. Use it to plan a batch of "
+                "work before spending anything on it."
+            ),
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "tasks": {"type": "array", "items": {"type": "string"},
+                              "description": "Task texts to route."},
+                    "band": {"type": "string", "enum": ["auto", "low", "medium", "high"]},
+                },
+                "required": ["tasks"],
+            },
+        },
+        "router_status": {
+            "handler": tool_router_status,
+            "description": (
+                "Whether the model router is available in this environment, which bands "
+                "have which models, and the reason when it is NOT available. Call this "
+                "before relying on pick_model in a new environment — the router is a "
+                "separate component and its absence is reported honestly rather than "
+                "answered by guessing."
+            ),
+            "inputSchema": {"type": "object", "properties": {}},
+        },
         "backend_status": {
             "handler": tool_backend_status,
             "description": (
@@ -423,7 +500,12 @@ def list_tool_definitions() -> List[Dict[str, Any]]:
             "name": name,
             "description": spec["description"],
             "inputSchema": spec["inputSchema"],
-            "outputSchema": spec["outputSchema"],
+            # Optional: the decision tools declare a typed result, the routing tools
+            # return a computed answer whose shape depends on whether a band could meet
+            # the capability, so they have no single schema worth publishing. Indexing
+            # it unconditionally made tools/list fail with a KeyError that surfaced as
+            # "internal error" — one missing key breaking the entire tool list.
+            **({"outputSchema": spec["outputSchema"]} if "outputSchema" in spec else {}),
             "annotations": {
                 # Read-only and idempotent: these compute a probability and touch
                 # nothing, so a client should not need to prompt for permission.

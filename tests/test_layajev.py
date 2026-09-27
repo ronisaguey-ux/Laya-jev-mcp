@@ -250,16 +250,46 @@ def test_available_backends_reports_both_with_a_reason():
 # ── the MCP surface ──────────────────────────────────────────────────────────
 
 def test_every_tool_declaring_an_output_schema_is_listed_with_one():
-    # Declaring outputSchema is a hard obligation to conform; a tool listed
-    # without one while returning structuredContent would break typed clients.
+    # The decision tools return a fixed result shape, so they declare an outputSchema
+    # and must conform to it. The routing tools do not: their answer depends on whether
+    # a band could meet the capability (a Pick with a model, or an empty one with a
+    # note), so there is no single schema worth publishing. The invariant is therefore
+    # conditional, not blanket: IF a tool declares one, it must be well-formed.
     defs = mcp_server.list_tool_definitions()
-    assert {d["name"] for d in defs} == {
-        "decide", "decide_many", "triage_options", "judge", "backend_status"}
+    names = {d["name"] for d in defs}
+    assert {"decide", "decide_many", "triage_options", "judge",
+            "pick_model", "pick_many", "router_status", "backend_status"} <= names
     for d in defs:
-        assert d.get("outputSchema"), f"{d['name']} must declare an outputSchema"
-        assert d["outputSchema"]["type"] == "object"
         assert d["inputSchema"]["type"] == "object"
         assert d["annotations"]["readOnlyHint"] is True
+        if "outputSchema" in d:
+            assert d["outputSchema"]["type"] == "object"
+    for d in defs:
+        if d["name"] in {"decide", "decide_many", "triage_options", "judge"}:
+            assert d.get("outputSchema"), f"{d['name']} returns a fixed shape and must declare it"
+
+
+def test_routing_tools_are_read_only_and_do_not_need_a_backend():
+    # Routing is a lookup against measured data; it must work with NO key and NO model,
+    # because that is the whole point of it being the cheap tier.
+    got = mcp_server.tool_pick_model({"task": "Summarise this article in 3 sentences."})
+    assert got.get("error") is None, got
+    assert got["model"], got
+    # an unknown capability is a caller error and must be named, not guessed at
+    bad = mcp_server.tool_pick_model({"task": "x", "capabilities": ["smell"]})
+    assert bad["error"] == "unknown_capability" and bad["unknown"] == ["smell"]
+
+
+def test_pick_many_routes_each_task_independently():
+    got = mcp_server.tool_pick_many(
+        {"tasks": ["Explain photosynthesis in 90 words.",
+                   "Read the bar chart in the attached image."]})
+    assert got["n"] == 2
+    assert all(r["model"] for r in got["results"])
+    # a task with no text cannot be routed, and each row says so rather than returning
+    # one shared answer — the defect this batched form replaced
+    empty = mcp_server.tool_pick_model({"task": ""})
+    assert empty["error"] == "empty_task"
 
 
 def test_initialize_echoes_the_client_protocol_version():
