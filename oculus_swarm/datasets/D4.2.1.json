@@ -9,10 +9,10 @@
   "escalate_human": "a human must decide; the condition is outside the rules"
  },
  "label_counts": {
-  "fire": 3,
-  "arm_only": 1,
-  "do_not_fire": 2,
-  "escalate_human": 2
+  "fire": 6,
+  "arm_only": 4,
+  "do_not_fire": 5,
+  "escalate_human": 5
  },
  "samples": [
   {
@@ -54,6 +54,66 @@
    "state": "The breach is real but it is caused by a corporate action the rules never contemplated.",
    "label": "escalate_human",
    "option_text": "a human must decide; the condition is outside the rules"
+  },
+  {
+   "state": "Portfolio drawdown has crossed the hard halt threshold and the book is still trading.",
+   "label": "fire",
+   "option_text": "halt everything now; the condition is a halt condition"
+  },
+  {
+   "state": "Daily loss is at 95% of the breach level with two hours of the session left.",
+   "label": "arm_only",
+   "option_text": "arm the switch but do not fire; the condition is close"
+  },
+  {
+   "state": "A single limit order was rejected by the venue for insufficient size.",
+   "label": "do_not_fire",
+   "option_text": "the condition is not a halt condition; continue"
+  },
+  {
+   "state": "The halt condition is real but it fired on a feed that has since been proven wrong.",
+   "label": "escalate_human",
+   "option_text": "a human must decide; the condition is outside the rules"
+  },
+  {
+   "state": "The risk service reports negative equity against the floor the rules define as a halt.",
+   "label": "fire",
+   "option_text": "halt everything now; the condition is a halt condition"
+  },
+  {
+   "state": "Volatility has entered the band the rules name as a halt and stayed there for a session.",
+   "label": "fire",
+   "option_text": "halt everything now; the condition is a halt condition"
+  },
+  {
+   "state": "Drawdown is at 88% of the halt threshold and flattening.",
+   "label": "arm_only",
+   "option_text": "arm the switch but do not fire; the condition is close"
+  },
+  {
+   "state": "One strategy is at its loss limit while the portfolio is inside its own.",
+   "label": "arm_only",
+   "option_text": "arm the switch but do not fire; the condition is close"
+  },
+  {
+   "state": "A venue rejected an order because the market was closed for a holiday.",
+   "label": "do_not_fire",
+   "option_text": "the condition is not a halt condition; continue"
+  },
+  {
+   "state": "The condition is a regulatory circuit breaker and the rules never named it.",
+   "label": "escalate_human",
+   "option_text": "a human must decide; the condition is outside the rules"
+  },
+  {
+   "state": "The exposure limit was breached by a corporate action that changed the position overnight.",
+   "label": "escalate_human",
+   "option_text": "a human must decide; the condition is outside the rules"
+  },
+  {
+   "state": "A stale kill-switch flag is set from a prior session that already resolved.",
+   "label": "do_not_fire",
+   "option_text": "the condition is not a halt condition; continue"
   }
  ]
 }

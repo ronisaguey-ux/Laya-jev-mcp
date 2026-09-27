@@ -9,10 +9,10 @@
   "cost_model_suspect": "assumed costs look too optimistic to be real"
  },
  "label_counts": {
-  "clean": 1,
-  "lookahead_suspect": 3,
-  "survivorship_suspect": 2,
-  "cost_model_suspect": 2
+  "clean": 4,
+  "lookahead_suspect": 6,
+  "survivorship_suspect": 5,
+  "cost_model_suspect": 5
  },
  "samples": [
   {
@@ -54,6 +54,66 @@
    "state": "Feature scaling was fitted on the whole sample before the split.",
    "label": "lookahead_suspect",
    "option_text": "the timings look too good; suspect lookahead bias"
+  },
+  {
+   "state": "Entries fill at the next bar's open, signals read closed bars, and fold boundaries were fixed before the run.",
+   "label": "clean",
+   "option_text": "no artifact signature; the result can be read at face value"
+  },
+  {
+   "state": "Feature means and variances were computed over the full sample before the split.",
+   "label": "lookahead_suspect",
+   "option_text": "the timings look too good; suspect lookahead bias"
+  },
+  {
+   "state": "The traded universe is the set of instruments that survived to the present.",
+   "label": "survivorship_suspect",
+   "option_text": "the asset set looks cherry-picked after the fact"
+  },
+  {
+   "state": "Costs are assumed at a flat one basis point on a market whose typical spread is nine.",
+   "label": "cost_model_suspect",
+   "option_text": "assumed costs look too optimistic to be real"
+  },
+  {
+   "state": "The equity curve has no losing week across eight years, which no realistic cost model reproduces.",
+   "label": "lookahead_suspect",
+   "option_text": "the timings look too good; suspect lookahead bias"
+  },
+  {
+   "state": "Returns peak on the exact bar of the release and the fill price equals that bar's close.",
+   "label": "lookahead_suspect",
+   "option_text": "the timings look too good; suspect lookahead bias"
+  },
+  {
+   "state": "Every symbol in the run still trades, and every symbol that was delisted is absent from the files.",
+   "label": "survivorship_suspect",
+   "option_text": "the asset set looks cherry-picked after the fact"
+  },
+  {
+   "state": "Asset selection used the full history's best performers when deciding what to include.",
+   "label": "survivorship_suspect",
+   "option_text": "the asset set looks cherry-picked after the fact"
+  },
+  {
+   "state": "The model assumes zero market impact on orders that exceed the visible size.",
+   "label": "cost_model_suspect",
+   "option_text": "assumed costs look too optimistic to be real"
+  },
+  {
+   "state": "Fills are modelled at the mid price with no fee, on a venue that charges both sides.",
+   "label": "cost_model_suspect",
+   "option_text": "assumed costs look too optimistic to be real"
+  },
+  {
+   "state": "Every check passes: no forward references, a fixed universe, and costs fitted to measured spread.",
+   "label": "clean",
+   "option_text": "no artifact signature; the result can be read at face value"
+  },
+  {
+   "state": "The same universe was declared before the run and used unchanged in the holdout.",
+   "label": "clean",
+   "option_text": "no artifact signature; the result can be read at face value"
   }
  ]
 }

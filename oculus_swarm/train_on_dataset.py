@@ -228,7 +228,7 @@ def main():
     for name, got in (("train", base_tr), ("held-out", base_te)):
         if not got:
             continue
-        hit = sum(v[1] for v in got.values()); n = sum(v[0] for v in got.values())
+        hit = sum(v[0] for v in got.values()); n = sum(v[1] for v in got.values())
         print(f"    {name:<9} {hit}/{n} = {hit/max(1,n):.2f}")
         for k in sorted(got):
             c, nn, r = got[k]

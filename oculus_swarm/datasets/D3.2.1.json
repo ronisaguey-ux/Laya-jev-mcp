@@ -9,10 +9,10 @@
   "needs_review": "eligibility is ambiguous and a human should confirm"
  },
  "label_counts": {
-  "tradeable": 2,
-  "supporting_only": 2,
-  "not_tradeable": 2,
-  "needs_review": 2
+  "tradeable": 5,
+  "supporting_only": 5,
+  "not_tradeable": 5,
+  "needs_review": 5
  },
  "samples": [
   {
@@ -52,6 +52,66 @@
   },
   {
    "state": "Two symbols share the ticker and the data files disagree on which is meant.",
+   "label": "needs_review",
+   "option_text": "eligibility is ambiguous and a human should confirm"
+  },
+  {
+   "state": "Continuous tick data, a tight spread and a healthy feed on a major pair.",
+   "label": "tradeable",
+   "option_text": "eligible now; data and liquidity support trading it"
+  },
+  {
+   "state": "This series conditions a model and is never sent an order.",
+   "label": "supporting_only",
+   "option_text": "it is a supporting series, never traded directly"
+  },
+  {
+   "state": "The venue suspended trading on this instrument.",
+   "label": "not_tradeable",
+   "option_text": "it fails a requirement and must not be traded"
+  },
+  {
+   "state": "Two data files disagree about which instrument this ticker denotes.",
+   "label": "needs_review",
+   "option_text": "eligibility is ambiguous and a human should confirm"
+  },
+  {
+   "state": "Deep book, live data, no restrictions, in scope for the strategy.",
+   "label": "tradeable",
+   "option_text": "eligible now; data and liquidity support trading it"
+  },
+  {
+   "state": "A macro index joined onto bars as context only.",
+   "label": "supporting_only",
+   "option_text": "it is a supporting series, never traded directly"
+  },
+  {
+   "state": "The feed is eleven hours stale and the session has been open throughout.",
+   "label": "not_tradeable",
+   "option_text": "it fails a requirement and must not be traded"
+  },
+  {
+   "state": "The instrument is listed but the venue reports a temporary restriction with no end date.",
+   "label": "needs_review",
+   "option_text": "eligibility is ambiguous and a human should confirm"
+  },
+  {
+   "state": "A futures contract with current data and no venue flags.",
+   "label": "tradeable",
+   "option_text": "eligible now; data and liquidity support trading it"
+  },
+  {
+   "state": "A sentiment series merged into the frame for feature engineering.",
+   "label": "supporting_only",
+   "option_text": "it is a supporting series, never traded directly"
+  },
+  {
+   "state": "The symbol resolves to a delisted instrument in the execution path's own mapping.",
+   "label": "not_tradeable",
+   "option_text": "it fails a requirement and must not be traded"
+  },
+  {
+   "state": "The ticker appears in two exchanges' file sets and the loader picks the first.",
    "label": "needs_review",
    "option_text": "eligibility is ambiguous and a human should confirm"
   }

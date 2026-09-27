@@ -10,11 +10,11 @@
   "tick_bars": "sample by transaction count on the raw tick stream"
  },
  "label_counts": {
-  "temporal": 2,
-  "dollar_bars": 2,
-  "volume_bars": 1,
-  "range_bars": 2,
-  "tick_bars": 1
+  "temporal": 14,
+  "dollar_bars": 14,
+  "volume_bars": 13,
+  "range_bars": 12,
+  "tick_bars": 12
  },
  "samples": [
   {
@@ -56,6 +56,291 @@
    "state": "Every session shows the same activity profile and the series behaves evenly in time.",
    "label": "temporal",
    "option_text": "use a fixed-time bar; the series behaves evenly in time"
+  },
+  {
+   "state": "Activity is uniform across the session and an equal-time sample captures it faithfully.",
+   "label": "temporal",
+   "option_text": "use a fixed-time bar; the series behaves evenly in time"
+  },
+  {
+   "state": "The series behaves evenly in time and the intent is a fixed clock interval.",
+   "label": "temporal",
+   "option_text": "use a fixed-time bar; the series behaves evenly in time"
+  },
+  {
+   "state": "The underlying has no activity clustering and a one-minute grid is representative.",
+   "label": "temporal",
+   "option_text": "use a fixed-time bar; the series behaves evenly in time"
+  },
+  {
+   "state": "The decision is about a fixed reporting window, so time-aligned bars are required.",
+   "label": "temporal",
+   "option_text": "use a fixed-time bar; the series behaves evenly in time"
+  },
+  {
+   "state": "Volume and range both track elapsed time closely on this instrument.",
+   "label": "temporal",
+   "option_text": "use a fixed-time bar; the series behaves evenly in time"
+  },
+  {
+   "state": "The strategy needs bars whose timestamps align to the clock for a scheduled rebalance.",
+   "label": "temporal",
+   "option_text": "use a fixed-time bar; the series behaves evenly in time"
+  },
+  {
+   "state": "There is no intraday activity cycle to correct for.",
+   "label": "temporal",
+   "option_text": "use a fixed-time bar; the series behaves evenly in time"
+  },
+  {
+   "state": "Tick density is flat through the day and the venue publishes on even minute boundaries.",
+   "label": "temporal",
+   "option_text": "use a fixed-time bar; the series behaves evenly in time"
+  },
+  {
+   "state": "The signal is defined on calendar intervals by construction.",
+   "label": "temporal",
+   "option_text": "use a fixed-time bar; the series behaves evenly in time"
+  },
+  {
+   "state": "Every session shows the same activity profile, so time bars are unbiased here.",
+   "label": "temporal",
+   "option_text": "use a fixed-time bar; the series behaves evenly in time"
+  },
+  {
+   "state": "The instrument trades continuously around the clock with no session boundary.",
+   "label": "temporal",
+   "option_text": "use a fixed-time bar; the series behaves evenly in time"
+  },
+  {
+   "state": "An equal-time sample is what the downstream model was trained on.",
+   "label": "temporal",
+   "option_text": "use a fixed-time bar; the series behaves evenly in time"
+  },
+  {
+   "state": "Trade sizes vary by two orders of magnitude through the day, so equal-time bars carry unequal value.",
+   "label": "dollar_bars",
+   "option_text": "sample by traded value; volume is uneven in time"
+  },
+  {
+   "state": "Value traded is the quantity the objective cares about.",
+   "label": "dollar_bars",
+   "option_text": "sample by traded value; volume is uneven in time"
+  },
+  {
+   "state": "Order flow arrives in bursts of very different notional, and the intent is to equalise it.",
+   "label": "dollar_bars",
+   "option_text": "sample by traded value; volume is uneven in time"
+  },
+  {
+   "state": "Volume in shares tracks time well but notional value does not.",
+   "label": "dollar_bars",
+   "option_text": "sample by traded value; volume is uneven in time"
+  },
+  {
+   "state": "The asset trades at a price that has tripled over the sample, so share volume is misleading.",
+   "label": "dollar_bars",
+   "option_text": "sample by traded value; volume is uneven in time"
+  },
+  {
+   "state": "The intent is to sample by traded value rather than by count.",
+   "label": "dollar_bars",
+   "option_text": "sample by traded value; volume is uneven in time"
+  },
+  {
+   "state": "A handful of block trades dominate notional while barely moving the share count.",
+   "label": "dollar_bars",
+   "option_text": "sample by traded value; volume is uneven in time"
+  },
+  {
+   "state": "Equalising notional per bar is the stated requirement.",
+   "label": "dollar_bars",
+   "option_text": "sample by traded value; volume is uneven in time"
+  },
+  {
+   "state": "The instrument's price level changes systematically, so dollar sampling normalises across history.",
+   "label": "dollar_bars",
+   "option_text": "sample by traded value; volume is uneven in time"
+  },
+  {
+   "state": "Notional concentration varies with the session and time bars amplify it.",
+   "label": "dollar_bars",
+   "option_text": "sample by traded value; volume is uneven in time"
+  },
+  {
+   "state": "Sampling by traded value is what the objective names.",
+   "label": "dollar_bars",
+   "option_text": "sample by traded value; volume is uneven in time"
+  },
+  {
+   "state": "The mean trade size changes with volatility, and notional sampling controls for it.",
+   "label": "dollar_bars",
+   "option_text": "sample by traded value; volume is uneven in time"
+  },
+  {
+   "state": "Activity clusters hard around the open and close and the intent is to sample by traded quantity.",
+   "label": "volume_bars",
+   "option_text": "sample by volume; trade intensity is the driver"
+  },
+  {
+   "state": "Trade intensity is the driver of the signal.",
+   "label": "volume_bars",
+   "option_text": "sample by volume; trade intensity is the driver"
+  },
+  {
+   "state": "Share volume is the stated requirement rather than notional.",
+   "label": "volume_bars",
+   "option_text": "sample by volume; trade intensity is the driver"
+  },
+  {
+   "state": "The instrument's price is stable across the sample so share and notional sampling coincide.",
+   "label": "volume_bars",
+   "option_text": "sample by volume; trade intensity is the driver"
+  },
+  {
+   "state": "The objective names traded quantity as the sampling variable.",
+   "label": "volume_bars",
+   "option_text": "sample by volume; trade intensity is the driver"
+  },
+  {
+   "state": "Participation is measured in contracts, and the bar should reflect that.",
+   "label": "volume_bars",
+   "option_text": "sample by volume; trade intensity is the driver"
+  },
+  {
+   "state": "The book thins outside the session's core hours and volume sampling equalises the rows.",
+   "label": "volume_bars",
+   "option_text": "sample by volume; trade intensity is the driver"
+  },
+  {
+   "state": "The strategy's edge scales with participation rate.",
+   "label": "volume_bars",
+   "option_text": "sample by volume; trade intensity is the driver"
+  },
+  {
+   "state": "Sampling by traded quantity is what the brief asks for.",
+   "label": "volume_bars",
+   "option_text": "sample by volume; trade intensity is the driver"
+  },
+  {
+   "state": "Liquidity arrives in uneven bursts measured in units, not value.",
+   "label": "volume_bars",
+   "option_text": "sample by volume; trade intensity is the driver"
+  },
+  {
+   "state": "The venue reports volume in contracts and the model is fitted on it.",
+   "label": "volume_bars",
+   "option_text": "sample by volume; trade intensity is the driver"
+  },
+  {
+   "state": "Trade count per bar is what needs to be constant.",
+   "label": "volume_bars",
+   "option_text": "sample by volume; trade intensity is the driver"
+  },
+  {
+   "state": "The instrument ranges for hours then trends, and the intent is to sample by movement.",
+   "label": "range_bars",
+   "option_text": "sample by price movement; quiet periods are uninformative"
+  },
+  {
+   "state": "Quiet periods carry no information and should not generate rows.",
+   "label": "range_bars",
+   "option_text": "sample by price movement; quiet periods are uninformative"
+  },
+  {
+   "state": "The signal is about volatility regime, so bars of equal price travel are the natural unit.",
+   "label": "range_bars",
+   "option_text": "sample by price movement; quiet periods are uninformative"
+  },
+  {
+   "state": "The objective is to equalise the price distance covered per bar.",
+   "label": "range_bars",
+   "option_text": "sample by price movement; quiet periods are uninformative"
+  },
+  {
+   "state": "Bars built from time contain many empty ranges during the Asian session.",
+   "label": "range_bars",
+   "option_text": "sample by price movement; quiet periods are uninformative"
+  },
+  {
+   "state": "Trading activity is low but the price still drifts, and movement-based sampling captures it.",
+   "label": "range_bars",
+   "option_text": "sample by price movement; quiet periods are uninformative"
+  },
+  {
+   "state": "The strategy reacts to range expansion and needs bars of equal range.",
+   "label": "range_bars",
+   "option_text": "sample by price movement; quiet periods are uninformative"
+  },
+  {
+   "state": "Price travel is the meaningful unit for this decision.",
+   "label": "range_bars",
+   "option_text": "sample by price movement; quiet periods are uninformative"
+  },
+  {
+   "state": "The market alternates between flat and fast and time bars mix the two.",
+   "label": "range_bars",
+   "option_text": "sample by price movement; quiet periods are uninformative"
+  },
+  {
+   "state": "Equalising movement per row is what the design requires.",
+   "label": "range_bars",
+   "option_text": "sample by price movement; quiet periods are uninformative"
+  },
+  {
+   "state": "The decision depends on transaction count rather than on time or value.",
+   "label": "tick_bars",
+   "option_text": "sample by transaction count on the raw tick stream"
+  },
+  {
+   "state": "The objective is a fixed number of prints per bar.",
+   "label": "tick_bars",
+   "option_text": "sample by transaction count on the raw tick stream"
+  },
+  {
+   "state": "Microstructure effects are the subject, so individual transactions are the unit.",
+   "label": "tick_bars",
+   "option_text": "sample by transaction count on the raw tick stream"
+  },
+  {
+   "state": "The venue provides the full tick tape and the brief asks for count-based sampling.",
+   "label": "tick_bars",
+   "option_text": "sample by transaction count on the raw tick stream"
+  },
+  {
+   "state": "Trade arrivals are what the signal counts.",
+   "label": "tick_bars",
+   "option_text": "sample by transaction count on the raw tick stream"
+  },
+  {
+   "state": "Sampling by transaction count is the stated requirement.",
+   "label": "tick_bars",
+   "option_text": "sample by transaction count on the raw tick stream"
+  },
+  {
+   "state": "The model needs an equal number of observations per bar to compare arrival rates.",
+   "label": "tick_bars",
+   "option_text": "sample by transaction count on the raw tick stream"
+  },
+  {
+   "state": "The intent is a tick count per bar rather than a clock interval.",
+   "label": "tick_bars",
+   "option_text": "sample by transaction count on the raw tick stream"
+  },
+  {
+   "state": "Order flow measured in prints is the variable of interest.",
+   "label": "tick_bars",
+   "option_text": "sample by transaction count on the raw tick stream"
+  },
+  {
+   "state": "The tape is available at full resolution and count sampling preserves arrival structure.",
+   "label": "tick_bars",
+   "option_text": "sample by transaction count on the raw tick stream"
+  },
+  {
+   "state": "Number of transactions per bar is what the requirement names.",
+   "label": "tick_bars",
+   "option_text": "sample by transaction count on the raw tick stream"
   }
  ]
 }
