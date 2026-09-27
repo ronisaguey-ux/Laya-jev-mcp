@@ -1,0 +1,870 @@
+{
+  "version": 1,
+  "source_commit": "f87b134f6",
+  "frozen_option_strings": true,
+  "policy_tiers": {
+    "money_safe": {
+      "act_at": 0.92,
+      "margin": 0.3,
+      "noul_act_at": 0.15
+    },
+    "advisor": {
+      "act_at": 0.8,
+      "margin": 0.25,
+      "noul_act_at": 0.3
+    },
+    "nomoney": {
+      "act_at": 0.65,
+      "margin": 0.15,
+      "noul_act_at": 0.5
+    }
+  },
+  "domains": [
+    {
+      "id": "D1",
+      "name": "strategy_evolution",
+      "routes_on": "A genome or population is being scored, ranked, or advanced.",
+      "sub_routers": [
+        {
+          "id": "D1.1",
+          "name": "genome_triage",
+          "leaves": [
+            {
+              "id": "D1.1.1",
+              "title": "genome_promote_verdict",
+              "question": "What should happen to the mutated genome described in `state` next?",
+              "options": {
+                "promote_to_oos": "send it onward to out-of-sample review; in-sample gain looks real",
+                "reject": "discard it; the gain is noise or below the survival threshold",
+                "needs_more_generations": "keep evolving this lineage; it is not converged yet",
+                "quarantine": "hold it aside; the evidence contradicts itself and needs a closer look"
+              },
+              "touched_by": "evolution/genetics.py, evolution/genome.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D1.1.2",
+              "title": "survival_threshold",
+              "question": "Did the genome in `state` clear the survival threshold for its generation?",
+              "options": {
+                "cleared": "fitness is at or above the threshold required this generation",
+                "below": "fitness sits under the threshold and it will not survive",
+                "borderline_review": "it sits on the line; a human should set the bar"
+              },
+              "touched_by": "evolution/genetics.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D1.1.3",
+              "title": "mutation_operator_choice",
+              "question": "Which mutation operator best fits the genome lineage in `state`?",
+              "options": {
+                "weight_perturb": "nudge numeric genes only; structure is sound",
+                "structural": "add or remove a gene; the search is stuck in a local optimum",
+                "crossover": "recombine with another lineage; progress has stalled",
+                "restart_lineage": "abandon this lineage; it is converged or degenerate"
+              },
+              "touched_by": "evolution/genetics.py, evolution/genome.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D1.1.4",
+              "title": "diversity_triage",
+              "question": "Is the population in `state` diverse enough to keep searching?",
+              "options": {
+                "healthy": "spread is adequate; continue as planned",
+                "converged": "the population has collapsed onto one lineage and needs injection",
+                "fragmented": "too few viable members survive; relax selection briefly"
+              },
+              "touched_by": "evolution/genetics.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            }
+          ]
+        },
+        {
+          "id": "D1.2",
+          "name": "champion_admission",
+          "leaves": [
+            {
+              "id": "D1.2.1",
+              "title": "champion_admit_verdict",
+              "question": "Should the candidate in `state` be admitted to the champion registry?",
+              "options": {
+                "admit": "add it to the registry as the current champion",
+                "admit_provisional": "register it as a challenger with a bounded trial",
+                "reject": "do not register it; it does not beat the incumbent",
+                "escalate_human": "the call is contestable and a human should decide"
+              },
+              "touched_by": "evolution/champion_registry.py",
+              "policy": {
+                "act_at": 0.8,
+                "margin": 0.25,
+                "noul_act_at": 0.3
+              },
+              "touches_money": true,
+              "irreversible": true
+            },
+            {
+              "id": "D1.2.2",
+              "title": "champion_replace",
+              "question": "Should the registered champion in `state` be replaced by this challenger?",
+              "options": {
+                "replace": "the challenger is better on every gated metric",
+                "keep_incumbent": "the champion still wins; the challenger is not better",
+                "run_both": "carry both while evidence accumulates",
+                "escalate_human": "the margin is too thin to automate a swap"
+              },
+              "touched_by": "evolution/champion_registry.py",
+              "policy": {
+                "act_at": 0.8,
+                "margin": 0.25,
+                "noul_act_at": 0.3
+              },
+              "touches_money": true,
+              "irreversible": true
+            },
+            {
+              "id": "D1.2.3",
+              "title": "generation_budget",
+              "question": "How should the generation budget in `state` be spent next?",
+              "options": {
+                "continue": "keep the current allocation; progress is steady",
+                "increase_mutation": "spend more on exploration; the search has plateaued",
+                "increase_evaluation": "spend more on validation; results are unstable",
+                "stop": "halt the run; further spend looks wasteful"
+              },
+              "touched_by": "evolution/genetics.py, evolution/evaluators.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D2",
+      "name": "validation_truth",
+      "routes_on": "A result exists and the question is whether to believe it.",
+      "sub_routers": [
+        {
+          "id": "D2.1",
+          "name": "overfit_assessment",
+          "leaves": [
+            {
+              "id": "D2.1.1",
+              "title": "overfit_verdict",
+              "question": "Is the backtest result in `state` robust or curve-fit?",
+              "options": {
+                "robust": "in-sample and out-of-sample agree; the result looks real",
+                "curve_fit": "the edge disappears out of sample; it is fitted to noise",
+                "inconclusive": "the evidence is too thin to call either way",
+                "overfit_mild": "some degradation out of sample but the core survives"
+              },
+              "touched_by": "evolution/oos_metrics.py, oculus/fitness_calculator.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D2.1.2",
+              "title": "is_oos_divergence",
+              "question": "How far do the in-sample and out-of-sample results in `state` diverge?",
+              "options": {
+                "consistent": "the two agree closely; no divergence to explain",
+                "mild_decay": "out-of-sample is weaker but still positive",
+                "severe_decay": "out-of-sample collapses; treat the result as unreliable",
+                "inverted": "out-of-sample outperforms in-sample, which itself is suspicious"
+              },
+              "touched_by": "evolution/oos_metrics.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D2.1.3",
+              "title": "multiple_testing_burden",
+              "question": "Does the number of trials in `state` invalidate this result?",
+              "options": {
+                "acceptable": "the trial count is low enough to trust the edge",
+                "needs_deflation": "a deflated Sharpe adjustment is required before believing it",
+                "too_many_trials": "too many trials to trust any single winner"
+              },
+              "touched_by": "evolution/oos_metrics.py, oculus/fitness_calculator.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            }
+          ]
+        },
+        {
+          "id": "D2.2",
+          "name": "metric_interpretation",
+          "leaves": [
+            {
+              "id": "D2.2.1",
+              "title": "metric_trust",
+              "question": "Which metric in `state` should carry the most weight for this decision?",
+              "options": {
+                "deflated_sharpe": "trust the deflated Sharpe; it already discounts trial count",
+                "profit_factor": "trust profit factor; the shape of the curve is reliable",
+                "ulcer_index": "trust the ulcer index; drawdown behaviour matters most here",
+                "information_ratio": "trust the information ratio; consistency matters most here",
+                "none_reliable": "no metric here is reliable enough to decide on"
+              },
+              "touched_by": "oculus/fitness_calculator.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D2.2.2",
+              "title": "backtest_artifact_check",
+              "question": "Does the result in `state` show a signature of a pipeline artifact rather than an edge?",
+              "options": {
+                "clean": "no artifact signature; the result can be read at face value",
+                "lookahead_suspect": "the timings look too good; suspect lookahead bias",
+                "survivorship_suspect": "the asset set looks cherry-picked after the fact",
+                "cost_model_suspect": "assumed costs look too optimistic to be real"
+              },
+              "touched_by": "evolution/oos_metrics.py, backtester/",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D2.2.3",
+              "title": "oos_review_routing",
+              "question": "Where should the result in `state` go next?",
+              "options": {
+                "accept": "accept it and let it proceed to champion review",
+                "rerun_validation": "re-run validation; the current evidence is incomplete",
+                "reject": "reject it; it fails a required bar",
+                "human_review": "send it to a human; the metrics conflict"
+              },
+              "touched_by": "evolution/oos_metrics.py, evolution/champion_registry.py",
+              "policy": {
+                "act_at": 0.8,
+                "margin": 0.25,
+                "noul_act_at": 0.3
+              },
+              "touches_money": true,
+              "irreversible": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D3",
+      "name": "market_state",
+      "routes_on": "The market or a bar stream needs a state label.",
+      "sub_routers": [
+        {
+          "id": "D3.1",
+          "name": "regime_reading",
+          "leaves": [
+            {
+              "id": "D3.1.1",
+              "title": "regime_label",
+              "question": "Which regime best describes the market state in `state`?",
+              "options": {
+                "trend_up": "a sustained directional move upward",
+                "trend_down": "a sustained directional move downward",
+                "range": "price oscillates without a directional drift",
+                "high_vol_chop": "large moves in both directions with no persistence",
+                "transition": "the character of the market is changing right now"
+              },
+              "touched_by": "oculus/regime.py, oculus/regime_signal.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D3.1.2",
+              "title": "regime_quality",
+              "question": "How much should the regime reading in `state` be trusted?",
+              "options": {
+                "high_confidence": "the clusters are well separated and stable",
+                "low_confidence": "the reading sits between states and is unstable",
+                "model_stale": "the fitted model is older than the data warrants",
+                "unusable": "do not act on this regime reading at all"
+              },
+              "touched_by": "oculus/regime.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D3.1.3",
+              "title": "regime_shift_alert",
+              "question": "Has the market in `state` shifted out of its previous regime?",
+              "options": {
+                "no_shift": "the state is unchanged; keep the current playbook",
+                "early_shift": "early signs of a change; reduce conviction",
+                "confirmed_shift": "the shift is established; the playbook must change"
+              },
+              "touched_by": "oculus/regime.py, oculus/regime_signal.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            }
+          ]
+        },
+        {
+          "id": "D3.2",
+          "name": "asset_suitability",
+          "leaves": [
+            {
+              "id": "D3.2.1",
+              "title": "asset_tradeability",
+              "question": "Is the asset in `state` tradeable under the current conditions?",
+              "options": {
+                "tradeable": "eligible now; data and liquidity support trading it",
+                "supporting_only": "it is a supporting series, never traded directly",
+                "not_tradeable": "it fails a requirement and must not be traded",
+                "needs_review": "eligibility is ambiguous and a human should confirm"
+              },
+              "touched_by": "oculus/asset_universe.py, config/asset_universe.yaml",
+              "policy": {
+                "act_at": 0.92,
+                "margin": 0.3,
+                "noul_act_at": 0.15
+              },
+              "touches_money": true,
+              "irreversible": true
+            },
+            {
+              "id": "D3.2.2",
+              "title": "bar_type_for_asset",
+              "question": "Which bar type should be used for the asset in `state`?",
+              "options": {
+                "temporal": "use a fixed-time bar; the series behaves evenly in time",
+                "dollar_bars": "sample by traded value; volume is uneven in time",
+                "volume_bars": "sample by volume; trade intensity is the driver",
+                "range_bars": "sample by price movement; quiet periods are uninformative",
+                "tick_bars": "sample by transaction count on the raw tick stream"
+              },
+              "touched_by": "oculus/asset_universe.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D3.2.3",
+              "title": "timeframe_fit",
+              "question": "Which timeframe best matches the intent in `state`?",
+              "options": {
+                "fast": "a short horizon suits this decision",
+                "medium": "an intraday-to-daily horizon suits this decision",
+                "slow": "a multi-day horizon suits this decision",
+                "no_preference": "the horizon does not change the answer"
+              },
+              "touched_by": "oculus/asset_universe.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D4",
+      "name": "risk_posture",
+      "routes_on": "Exposure, sizing or a halt is being considered. Every leaf here is money.",
+      "sub_routers": [
+        {
+          "id": "D4.1",
+          "name": "exposure_posture",
+          "leaves": [
+            {
+              "id": "D4.1.1",
+              "title": "risk_posture",
+              "question": "What risk posture fits the conditions in `state`?",
+              "options": {
+                "normal": "no change warranted; conditions are within the ordinary band",
+                "cautious": "reduce conviction and size while conditions are unclear",
+                "de_risk": "cut exposure now; the evidence points to elevated risk",
+                "halt": "stop opening new risk and escalate to a human"
+              },
+              "touched_by": "oculus/regime.py, core/sot_guardrails.py",
+              "policy": {
+                "act_at": 0.92,
+                "margin": 0.3,
+                "noul_act_at": 0.15
+              },
+              "touches_money": true,
+              "irreversible": true
+            },
+            {
+              "id": "D4.1.2",
+              "title": "size_direction_check",
+              "question": "Does the request in `state` increase or reduce exposure?",
+              "options": {
+                "reduce_exposure": "the request lowers or closes exposure, which may proceed",
+                "hold_exposure": "the request changes nothing and may proceed",
+                "increase_exposure": "the request raises exposure and must not be driven by a model score",
+                "unclear": "the effect on exposure cannot be determined; treat as an increase"
+              },
+              "touched_by": "core/sot_guardrails.py",
+              "policy": {
+                "act_at": 0.92,
+                "margin": 0.3,
+                "noul_act_at": 0.15
+              },
+              "touches_money": true,
+              "irreversible": true
+            },
+            {
+              "id": "D4.1.3",
+              "title": "daily_loss_breach",
+              "question": "Has the loss in `state` breached a daily limit?",
+              "options": {
+                "within_limit": "losses remain inside the daily limit",
+                "approaching_limit": "losses are close to the limit; prepare to stop",
+                "breached": "the daily limit is breached and trading must stop",
+                "unknown_state": "the loss cannot be established; treat as breached"
+              },
+              "touched_by": "core/sot_guardrails.py, live/kill_switch.py",
+              "policy": {
+                "act_at": 0.92,
+                "margin": 0.3,
+                "noul_act_at": 0.15
+              },
+              "touches_money": true,
+              "irreversible": true
+            }
+          ]
+        },
+        {
+          "id": "D4.2",
+          "name": "halt_and_kill",
+          "leaves": [
+            {
+              "id": "D4.2.1",
+              "title": "kill_switch_trigger",
+              "question": "Should the kill switch fire for the conditions in `state`?",
+              "options": {
+                "fire": "halt everything now; the condition is a halt condition",
+                "arm_only": "arm the switch but do not fire; the condition is close",
+                "do_not_fire": "the condition is not a halt condition; continue",
+                "escalate_human": "a human must decide; the condition is outside the rules"
+              },
+              "touched_by": "live/kill_switch.py, live/kill_switch_guard.py",
+              "policy": {
+                "act_at": 0.92,
+                "margin": 0.3,
+                "noul_act_at": 0.15
+              },
+              "touches_money": true,
+              "irreversible": true
+            },
+            {
+              "id": "D4.2.2",
+              "title": "halt_scope",
+              "question": "How wide should the halt in `state` be?",
+              "options": {
+                "all_strategies": "halt every strategy; the problem is systemic",
+                "one_strategy": "halt the single strategy implicated",
+                "one_asset": "halt the single asset implicated",
+                "new_entries_only": "block new entries but let existing positions manage out"
+              },
+              "touched_by": "live/kill_switch.py, live/kill_switch_guard.py",
+              "policy": {
+                "act_at": 0.92,
+                "margin": 0.3,
+                "noul_act_at": 0.15
+              },
+              "touches_money": true,
+              "irreversible": true
+            },
+            {
+              "id": "D4.2.3",
+              "title": "resume_decision",
+              "question": "Should trading resume per the conditions in `state`?",
+              "options": {
+                "resume": "the halt condition is cleared; resume normal operation",
+                "resume_reduced": "resume at materially reduced size while it proves out",
+                "stay_halted": "the condition has not cleared; stay halted",
+                "human_only": "only a human may authorise resuming"
+              },
+              "touched_by": "live/kill_switch_guard.py, core/sot_guardrails.py",
+              "policy": {
+                "act_at": 0.92,
+                "margin": 0.3,
+                "noul_act_at": 0.15
+              },
+              "touches_money": true,
+              "irreversible": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D5",
+      "name": "data_integrity",
+      "routes_on": "Bars, ticks or a feed must be judged before anything is computed on them.",
+      "sub_routers": [
+        {
+          "id": "D5.1",
+          "name": "bar_quality",
+          "leaves": [
+            {
+              "id": "D5.1.1",
+              "title": "bar_trust",
+              "question": "Is the bar or series in `state` trustworthy?",
+              "options": {
+                "trustworthy": "it passes the checks; compute on it",
+                "stale": "it has not updated when it should have; do not compute on it",
+                "corrupt": "it fails integrity checks; quarantine it",
+                "repaired": "it had gaps that were repaired; use with reduced confidence"
+              },
+              "touched_by": "oculus/data_validation.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D5.1.2",
+              "title": "gap_classification",
+              "question": "What kind of gap does `state` show?",
+              "options": {
+                "expected": "the gap matches a known market closure",
+                "feed_dropout": "the gap looks like a data outage, not a real market pause",
+                "genuine_move": "the gap is a real price move, not missing data",
+                "unknown": "the gap cannot be classified; treat as missing data"
+              },
+              "touched_by": "oculus/data_validation.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D5.1.3",
+              "title": "outlier_verdict",
+              "question": "Is the extreme value in `state` a real print or an error?",
+              "options": {
+                "real_move": "a genuine market move; keep it",
+                "data_error": "a bad print; exclude it from computation",
+                "needs_review": "ambiguous; a human should inspect the raw record"
+              },
+              "touched_by": "oculus/data_validation.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            }
+          ]
+        },
+        {
+          "id": "D5.2",
+          "name": "feed_health",
+          "leaves": [
+            {
+              "id": "D5.2.1",
+              "title": "feed_health",
+              "question": "What is the state of the feed in `state`?",
+              "options": {
+                "healthy": "messages are arriving on time and well formed",
+                "degraded": "messages arrive late or out of order but are usable",
+                "disconnected": "the feed is down; work from the last known good state",
+                "unknown": "feed health cannot be determined; assume it is down"
+              },
+              "touched_by": "core/websocket_client.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D5.2.2",
+              "title": "anomaly_class",
+              "question": "What class of anomaly is the event in `state`?",
+              "options": {
+                "market_event": "a genuine market event that must be handled as such",
+                "system_fault": "an internal fault in our own pipeline",
+                "upstream_issue": "a problem at the venue or data provider",
+                "benign_noise": "ordinary variation; nothing to act on"
+              },
+              "touched_by": "core/websocket_client.py, monitoring/",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D5.2.3",
+              "title": "data_source_preference",
+              "question": "Which source should be trusted for `state`?",
+              "options": {
+                "primary": "use the primary source; it is healthy",
+                "secondary": "the primary is suspect; use the secondary",
+                "reconcile": "the sources disagree; reconcile before computing",
+                "none": "no source is trustworthy enough; do not compute"
+              },
+              "touched_by": "oculus/data_validation.py, data_pipeline/",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D6",
+      "name": "execution_ops",
+      "routes_on": "An order, a failure or a change needs classifying. Nothing here places an order.",
+      "sub_routers": [
+        {
+          "id": "D6.1",
+          "name": "order_and_fill",
+          "leaves": [
+            {
+              "id": "D6.1.1",
+              "title": "execution_style",
+              "question": "Which execution style suits the intent in `state`? (Classify only \u2014 this leaf never executes.)",
+              "options": {
+                "passive": "post and wait; the spread matters more than the fill certainty",
+                "aggressive": "cross the spread; certainty of fill matters more",
+                "wait": "do not send yet; conditions are unfavourable",
+                "split": "work the order in slices to limit impact"
+              },
+              "touched_by": "live/",
+              "policy": {
+                "act_at": 0.8,
+                "margin": 0.25,
+                "noul_act_at": 0.3
+              },
+              "touches_money": true,
+              "irreversible": false
+            },
+            {
+              "id": "D6.1.2",
+              "title": "failure_triage",
+              "question": "What is the failure in `state` and how urgent is it?",
+              "options": {
+                "rejected_retryable": "the venue rejected it and it can safely be retried",
+                "rejected_fatal": "the venue rejected it and retrying would repeat the failure",
+                "partial_fill": "the order filled only partly and the remainder needs a decision",
+                "disconnect": "connectivity was lost; positions must be reconciled before anything else"
+              },
+              "touched_by": "live/",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D6.1.3",
+              "title": "reconciliation_verdict",
+              "question": "Do our records and the venue records in `state` agree?",
+              "options": {
+                "matched": "local and venue positions agree",
+                "mismatch": "they disagree and the difference must be resolved before trading",
+                "stale_local": "our view is stale; refresh before deciding",
+                "venue_unknown": "the venue cannot be queried; assume mismatch"
+              },
+              "touched_by": "live/",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            }
+          ]
+        },
+        {
+          "id": "D6.2",
+          "name": "change_control",
+          "leaves": [
+            {
+              "id": "D6.2.1",
+              "title": "rollback_verdict",
+              "question": "Is the regression in `state` bad enough to roll back?",
+              "options": {
+                "rollback": "revert now; the regression breaches a required bar",
+                "forward_fix": "keep it and fix forward; the regression is tolerable",
+                "hold_and_watch": "neither yet; gather more evidence first",
+                "human_decision": "a human must decide; the trade-off is not automatic"
+              },
+              "touched_by": "rollback_validator.py, regression_risk_auditor.py",
+              "policy": {
+                "act_at": 0.8,
+                "margin": 0.25,
+                "noul_act_at": 0.3
+              },
+              "touches_money": true,
+              "irreversible": true
+            },
+            {
+              "id": "D6.2.2",
+              "title": "change_risk",
+              "question": "How risky is the change in `state` to apply?",
+              "options": {
+                "low_risk": "isolated and reversible; apply it",
+                "moderate_risk": "touches shared behaviour; apply with a staged rollout",
+                "high_risk": "touches money or state; require review before applying",
+                "forbidden": "crosses an architecture boundary; do not apply"
+              },
+              "touched_by": "ocs/architecture_boundaries.md, .import-linter",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D6.2.3",
+              "title": "sot_conformance_verdict",
+              "question": "Does the change in `state` conform to the source of truth?",
+              "options": {
+                "conforms": "it matches the documented contract",
+                "violates": "it contradicts the source of truth and must not land",
+                "unspecified": "the source of truth does not cover this case",
+                "needs_sot_update": "the contract should be amended, which is a human decision"
+              },
+              "touched_by": "docs/spec/OCULUS_SOURCE_OF_TRUTH_7_23.md, core/sot_guardrails.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "domains": 6,
+    "sub_routers": 12,
+    "leaves": 37
+  },
+  "money_leaves": [
+    "D1.2.1",
+    "D1.2.2",
+    "D2.2.3",
+    "D3.2.1",
+    "D4.1.1",
+    "D4.1.2",
+    "D4.1.3",
+    "D4.2.1",
+    "D4.2.2",
+    "D4.2.3",
+    "D6.1.1",
+    "D6.2.1"
+  ],
+  "irreversible_leaves": [
+    "D1.2.1",
+    "D1.2.2",
+    "D3.2.1",
+    "D4.1.1",
+    "D4.1.2",
+    "D4.1.3",
+    "D4.2.1",
+    "D4.2.2",
+    "D4.2.3",
+    "D6.2.1"
+  ]
+}
