@@ -9,10 +9,10 @@
   "escalate_human": "the margin is too thin to automate a swap"
  },
  "label_counts": {
-  "replace": 2,
-  "keep_incumbent": 2,
-  "run_both": 2,
-  "escalate_human": 2
+  "replace": 12,
+  "keep_incumbent": 12,
+  "run_both": 12,
+  "escalate_human": 12
  },
  "samples": [
   {
@@ -52,6 +52,206 @@
   },
   {
    "state": "The two differ only in the fourth decimal and the challenger's edge vanishes when the worst fold is dropped.",
+   "label": "escalate_human",
+   "option_text": "the margin is too thin to automate a swap"
+  },
+  {
+   "state": "The challenger clears every gate and beats the champion on the holdout by twice the fold spread.",
+   "label": "replace",
+   "option_text": "the challenger is better on every gated metric"
+  },
+  {
+   "state": "Six of six gated metrics favour the challenger and the champion's edge has decayed for three reviews.",
+   "label": "replace",
+   "option_text": "the challenger is better on every gated metric"
+  },
+  {
+   "state": "The challenger's deflated Sharpe is above the bar and the champion's is now below it.",
+   "label": "replace",
+   "option_text": "the challenger is better on every gated metric"
+  },
+  {
+   "state": "The challenger wins on Calmar, profit factor, information ratio and drawdown together.",
+   "label": "replace",
+   "option_text": "the challenger is better on every gated metric"
+  },
+  {
+   "state": "All gates pass and the challenger was validated on data the champion never saw.",
+   "label": "replace",
+   "option_text": "the challenger is better on every gated metric"
+  },
+  {
+   "state": "The challenger's worst fold is better than the champion's median fold.",
+   "label": "replace",
+   "option_text": "the challenger is better on every gated metric"
+  },
+  {
+   "state": "The current champion fails the drawdown gate and the challenger passes it.",
+   "label": "replace",
+   "option_text": "the challenger is better on every gated metric"
+  },
+  {
+   "state": "Both were re-run on identical folds and the challenger wins every one.",
+   "label": "replace",
+   "option_text": "the challenger is better on every gated metric"
+  },
+  {
+   "state": "The challenger's out-of-sample result reproduces on a second independent holdout.",
+   "label": "replace",
+   "option_text": "the challenger is better on every gated metric"
+  },
+  {
+   "state": "The champion's registered parameters no longer match the code that produced them and the challenger's do.",
+   "label": "replace",
+   "option_text": "the challenger is better on every gated metric"
+  },
+  {
+   "state": "The challenger wins on return and loses on drawdown, so the gated set is not uniformly better.",
+   "label": "keep_incumbent",
+   "option_text": "the champion still wins; the challenger is not better"
+  },
+  {
+   "state": "The challenger's advantage disappears once the windows are matched.",
+   "label": "keep_incumbent",
+   "option_text": "the champion still wins; the challenger is not better"
+  },
+  {
+   "state": "The champion clears every gate and the challenger fails the profit factor bar.",
+   "label": "keep_incumbent",
+   "option_text": "the champion still wins; the challenger is not better"
+  },
+  {
+   "state": "The challenger is better in-sample and worse out-of-sample.",
+   "label": "keep_incumbent",
+   "option_text": "the champion still wins; the challenger is not better"
+  },
+  {
+   "state": "The champion's drawdown is materially shallower and the return difference is inside the noise.",
+   "label": "keep_incumbent",
+   "option_text": "the champion still wins; the challenger is not better"
+  },
+  {
+   "state": "The challenger's apparent edge rests on one fold that the champion also wins without it.",
+   "label": "keep_incumbent",
+   "option_text": "the champion still wins; the challenger is not better"
+  },
+  {
+   "state": "The champion passes all gates; the challenger's deflated Sharpe is below the threshold.",
+   "label": "keep_incumbent",
+   "option_text": "the champion still wins; the challenger is not better"
+  },
+  {
+   "state": "The challenger was evaluated with a cost model the champion was not.",
+   "label": "keep_incumbent",
+   "option_text": "the champion still wins; the challenger is not better"
+  },
+  {
+   "state": "The two are level on every gate and the champion has live history behind it.",
+   "label": "keep_incumbent",
+   "option_text": "the champion still wins; the challenger is not better"
+  },
+  {
+   "state": "The challenger's improvement is smaller than the run-to-run variance of the champion.",
+   "label": "keep_incumbent",
+   "option_text": "the champion still wins; the challenger is not better"
+  },
+  {
+   "state": "The challenger is better on the recent regime and the champion on the longer history.",
+   "label": "run_both",
+   "option_text": "carry both while evidence accumulates"
+  },
+  {
+   "state": "Each wins half the gated metrics and the split is stable across folds.",
+   "label": "run_both",
+   "option_text": "carry both while evidence accumulates"
+  },
+  {
+   "state": "The challenger is clearly better in one asset and clearly worse in another.",
+   "label": "run_both",
+   "option_text": "carry both while evidence accumulates"
+  },
+  {
+   "state": "The challenger's edge is real but concentrated in months the champion covers poorly.",
+   "label": "run_both",
+   "option_text": "carry both while evidence accumulates"
+  },
+  {
+   "state": "Both pass every gate and they disagree about which regime they perform in.",
+   "label": "run_both",
+   "option_text": "carry both while evidence accumulates"
+  },
+  {
+   "state": "The challenger needs live evidence to settle a difference inside the noise band.",
+   "label": "run_both",
+   "option_text": "carry both while evidence accumulates"
+  },
+  {
+   "state": "The challenger improves the drawdown while the champion improves the return.",
+   "label": "run_both",
+   "option_text": "carry both while evidence accumulates"
+  },
+  {
+   "state": "Neither dominates and the portfolio combination beats both alone.",
+   "label": "run_both",
+   "option_text": "carry both while evidence accumulates"
+  },
+  {
+   "state": "The challenger's advantage is real but rests on two folds out of twenty.",
+   "label": "run_both",
+   "option_text": "carry both while evidence accumulates"
+  },
+  {
+   "state": "The two are complementary by construction and the gates cannot separate them.",
+   "label": "run_both",
+   "option_text": "carry both while evidence accumulates"
+  },
+  {
+   "state": "The margin is inside the noise band and the challenger replaces a champion with live positions.",
+   "label": "escalate_human",
+   "option_text": "the margin is too thin to automate a swap"
+  },
+  {
+   "state": "The challenger wins on every gate but its edge comes from a single instrument the mandate restricts.",
+   "label": "escalate_human",
+   "option_text": "the margin is too thin to automate a swap"
+  },
+  {
+   "state": "The two disagree on which regime dominates and the data cannot settle it.",
+   "label": "escalate_human",
+   "option_text": "the margin is too thin to automate a swap"
+  },
+  {
+   "state": "Replacing the champion would change the book's exposure in a way the gates do not measure.",
+   "label": "escalate_human",
+   "option_text": "the margin is too thin to automate a swap"
+  },
+  {
+   "state": "The challenger's advantage is real and it depends on a parameter outside the documented range.",
+   "label": "escalate_human",
+   "option_text": "the margin is too thin to automate a swap"
+  },
+  {
+   "state": "The champion is underperforming and every replacement candidate is worse, which is itself the decision.",
+   "label": "escalate_human",
+   "option_text": "the margin is too thin to automate a swap"
+  },
+  {
+   "state": "The metric that separates them is one the source of truth does not define.",
+   "label": "escalate_human",
+   "option_text": "the margin is too thin to automate a swap"
+  },
+  {
+   "state": "The challenger was built on data the mandate does not permit training on.",
+   "label": "escalate_human",
+   "option_text": "the margin is too thin to automate a swap"
+  },
+  {
+   "state": "The comparison is confounded by a change to the pipeline made mid-evaluation.",
+   "label": "escalate_human",
+   "option_text": "the margin is too thin to automate a swap"
+  },
+  {
+   "state": "The margin is decisive on the numbers and the challenger's live behaviour is untested.",
    "label": "escalate_human",
    "option_text": "the margin is too thin to automate a swap"
   }

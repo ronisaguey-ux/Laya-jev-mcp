@@ -10,11 +10,11 @@
   "no_worker": "nothing should take it; it is not actionable"
  },
  "label_counts": {
-  "local_fast_lane": 2,
-  "strong_reasoning_lane": 2,
-  "specialist_tool": 2,
-  "human_owner": 1,
-  "no_worker": 1
+  "local_fast_lane": 14,
+  "strong_reasoning_lane": 14,
+  "specialist_tool": 13,
+  "human_owner": 12,
+  "no_worker": 12
  },
  "samples": [
   {
@@ -56,6 +56,291 @@
    "state": "Reformatting a file with the project's formatter.",
    "label": "specialist_tool",
    "option_text": "a purpose-built tool rather than an agent; deterministic work"
+  },
+  {
+   "state": "A one-line version bump where the file and the new value are both given.",
+   "label": "local_fast_lane",
+   "option_text": "a cheap local lane; the task is narrow and well specified"
+  },
+  {
+   "state": "Renaming a variable inside one function.",
+   "label": "local_fast_lane",
+   "option_text": "a cheap local lane; the task is narrow and well specified"
+  },
+  {
+   "state": "Adding a missing import to a file whose path is stated.",
+   "label": "local_fast_lane",
+   "option_text": "a cheap local lane; the task is narrow and well specified"
+  },
+  {
+   "state": "Updating a constant to the value the documentation already names.",
+   "label": "local_fast_lane",
+   "option_text": "a cheap local lane; the task is narrow and well specified"
+  },
+  {
+   "state": "Removing a duplicate key from a JSON config.",
+   "label": "local_fast_lane",
+   "option_text": "a cheap local lane; the task is narrow and well specified"
+  },
+  {
+   "state": "Fixing a typo in a docstring.",
+   "label": "local_fast_lane",
+   "option_text": "a cheap local lane; the task is narrow and well specified"
+  },
+  {
+   "state": "Changing a default parameter from 30 to 45 as specified.",
+   "label": "local_fast_lane",
+   "option_text": "a cheap local lane; the task is narrow and well specified"
+  },
+  {
+   "state": "Deleting a commented-out block that is no longer referenced.",
+   "label": "local_fast_lane",
+   "option_text": "a cheap local lane; the task is narrow and well specified"
+  },
+  {
+   "state": "Adding a log line at a stated point in a stated function.",
+   "label": "local_fast_lane",
+   "option_text": "a cheap local lane; the task is narrow and well specified"
+  },
+  {
+   "state": "Reordering two imports the linter flagged.",
+   "label": "local_fast_lane",
+   "option_text": "a cheap local lane; the task is narrow and well specified"
+  },
+  {
+   "state": "Replacing a hardcoded path with the environment variable already used elsewhere.",
+   "label": "local_fast_lane",
+   "option_text": "a cheap local lane; the task is narrow and well specified"
+  },
+  {
+   "state": "Updating a test's expected string to match the new message.",
+   "label": "local_fast_lane",
+   "option_text": "a cheap local lane; the task is narrow and well specified"
+  },
+  {
+   "state": "Deciding how to split a 3,000-line module into coherent pieces with a stable API.",
+   "label": "strong_reasoning_lane",
+   "option_text": "a strong model; the task needs real reasoning or design"
+  },
+  {
+   "state": "Diagnosing an intermittent failure that appears only under concurrent load.",
+   "label": "strong_reasoning_lane",
+   "option_text": "a strong model; the task needs real reasoning or design"
+  },
+  {
+   "state": "Choosing between two caching strategies with different consistency guarantees.",
+   "label": "strong_reasoning_lane",
+   "option_text": "a strong model; the task needs real reasoning or design"
+  },
+  {
+   "state": "Designing the schema three future features will be built on.",
+   "label": "strong_reasoning_lane",
+   "option_text": "a strong model; the task needs real reasoning or design"
+  },
+  {
+   "state": "Deciding whether a proposed abstraction is worth its indirection.",
+   "label": "strong_reasoning_lane",
+   "option_text": "a strong model; the task needs real reasoning or design"
+  },
+  {
+   "state": "Tracing a data-corruption bug across four subsystems with no reproduction.",
+   "label": "strong_reasoning_lane",
+   "option_text": "a strong model; the task needs real reasoning or design"
+  },
+  {
+   "state": "Choosing the boundary between the engine and the execution layer.",
+   "label": "strong_reasoning_lane",
+   "option_text": "a strong model; the task needs real reasoning or design"
+  },
+  {
+   "state": "Deciding how to make an existing interface testable without changing its callers.",
+   "label": "strong_reasoning_lane",
+   "option_text": "a strong model; the task needs real reasoning or design"
+  },
+  {
+   "state": "Working out why two tests contradict each other about intended behaviour.",
+   "label": "strong_reasoning_lane",
+   "option_text": "a strong model; the task needs real reasoning or design"
+  },
+  {
+   "state": "Designing the retry and backoff policy for a lane that fails intermittently.",
+   "label": "strong_reasoning_lane",
+   "option_text": "a strong model; the task needs real reasoning or design"
+  },
+  {
+   "state": "Deciding which of two competing sources of truth the code should follow.",
+   "label": "strong_reasoning_lane",
+   "option_text": "a strong model; the task needs real reasoning or design"
+  },
+  {
+   "state": "Planning a migration that must not break the live path.",
+   "label": "strong_reasoning_lane",
+   "option_text": "a strong model; the task needs real reasoning or design"
+  },
+  {
+   "state": "Reformatting a file with the project's own formatter.",
+   "label": "specialist_tool",
+   "option_text": "a purpose-built tool rather than an agent; deterministic work"
+  },
+  {
+   "state": "Running the type checker and listing its findings.",
+   "label": "specialist_tool",
+   "option_text": "a purpose-built tool rather than an agent; deterministic work"
+  },
+  {
+   "state": "Generating the checksum manifest for a directory.",
+   "label": "specialist_tool",
+   "option_text": "a purpose-built tool rather than an agent; deterministic work"
+  },
+  {
+   "state": "Listing every file that imports a given module.",
+   "label": "specialist_tool",
+   "option_text": "a purpose-built tool rather than an agent; deterministic work"
+  },
+  {
+   "state": "Producing the AST of a file to see its top-level definitions.",
+   "label": "specialist_tool",
+   "option_text": "a purpose-built tool rather than an agent; deterministic work"
+  },
+  {
+   "state": "Comparing two directories for content differences.",
+   "label": "specialist_tool",
+   "option_text": "a purpose-built tool rather than an agent; deterministic work"
+  },
+  {
+   "state": "Extracting all TODO comments with their line numbers.",
+   "label": "specialist_tool",
+   "option_text": "a purpose-built tool rather than an agent; deterministic work"
+  },
+  {
+   "state": "Validating a JSON file against its schema.",
+   "label": "specialist_tool",
+   "option_text": "a purpose-built tool rather than an agent; deterministic work"
+  },
+  {
+   "state": "Sorting the keys of a config file alphabetically.",
+   "label": "specialist_tool",
+   "option_text": "a purpose-built tool rather than an agent; deterministic work"
+  },
+  {
+   "state": "Reporting the line count of every file under a path.",
+   "label": "specialist_tool",
+   "option_text": "a purpose-built tool rather than an agent; deterministic work"
+  },
+  {
+   "state": "Finding which test files exercise a given module.",
+   "label": "specialist_tool",
+   "option_text": "a purpose-built tool rather than an agent; deterministic work"
+  },
+  {
+   "state": "Deciding whether to accept a licensing term.",
+   "label": "human_owner",
+   "option_text": "a human; the task needs authority a model does not have"
+  },
+  {
+   "state": "Choosing whether to publish a release under the owner's name.",
+   "label": "human_owner",
+   "option_text": "a human; the task needs authority a model does not have"
+  },
+  {
+   "state": "Approving the deletion of a dataset that cannot be regenerated.",
+   "label": "human_owner",
+   "option_text": "a human; the task needs authority a model does not have"
+  },
+  {
+   "state": "Deciding the risk appetite for a live trading account.",
+   "label": "human_owner",
+   "option_text": "a human; the task needs authority a model does not have"
+  },
+  {
+   "state": "Confirming a change to a credential or key.",
+   "label": "human_owner",
+   "option_text": "a human; the task needs authority a model does not have"
+  },
+  {
+   "state": "Deciding whether to contact an external party.",
+   "label": "human_owner",
+   "option_text": "a human; the task needs authority a model does not have"
+  },
+  {
+   "state": "Approving anything that leaves this machine under the owner's identity.",
+   "label": "human_owner",
+   "option_text": "a human; the task needs authority a model does not have"
+  },
+  {
+   "state": "Choosing which of two conflicting business requirements wins.",
+   "label": "human_owner",
+   "option_text": "a human; the task needs authority a model does not have"
+  },
+  {
+   "state": "Authorising a change to the immutable source of truth.",
+   "label": "human_owner",
+   "option_text": "a human; the task needs authority a model does not have"
+  },
+  {
+   "state": "Approving a write to a production database.",
+   "label": "human_owner",
+   "option_text": "a human; the task needs authority a model does not have"
+  },
+  {
+   "state": "Deciding whether to accept a terms-of-service risk.",
+   "label": "human_owner",
+   "option_text": "a human; the task needs authority a model does not have"
+  },
+  {
+   "state": "The instruction is a question with no actionable change.",
+   "label": "no_worker",
+   "option_text": "nothing should take it; it is not actionable"
+  },
+  {
+   "state": "The brief contains only the word improve.",
+   "label": "no_worker",
+   "option_text": "nothing should take it; it is not actionable"
+  },
+  {
+   "state": "The task refers to a system this machine cannot reach and names no alternative.",
+   "label": "no_worker",
+   "option_text": "nothing should take it; it is not actionable"
+  },
+  {
+   "state": "The request is to decide the owner's preferences for him.",
+   "label": "no_worker",
+   "option_text": "nothing should take it; it is not actionable"
+  },
+  {
+   "state": "The brief describes a goal with no observable done condition.",
+   "label": "no_worker",
+   "option_text": "nothing should take it; it is not actionable"
+  },
+  {
+   "state": "The instruction contradicts a constraint stated in the same sentence.",
+   "label": "no_worker",
+   "option_text": "nothing should take it; it is not actionable"
+  },
+  {
+   "state": "The task is to wait for an external event that has no defined trigger.",
+   "label": "no_worker",
+   "option_text": "nothing should take it; it is not actionable"
+  },
+  {
+   "state": "The request asks for an opinion with no artefact to produce.",
+   "label": "no_worker",
+   "option_text": "nothing should take it; it is not actionable"
+  },
+  {
+   "state": "The brief names a deliverable that already exists unchanged.",
+   "label": "no_worker",
+   "option_text": "nothing should take it; it is not actionable"
+  },
+  {
+   "state": "The instruction is a duplicate of a task already in flight in this batch.",
+   "label": "no_worker",
+   "option_text": "nothing should take it; it is not actionable"
+  },
+  {
+   "state": "The request asks to reverse a decision the owner has already confirmed.",
+   "label": "no_worker",
+   "option_text": "nothing should take it; it is not actionable"
   }
  ]
 }

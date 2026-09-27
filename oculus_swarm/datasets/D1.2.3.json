@@ -9,10 +9,10 @@
   "stop": "halt the run; further spend looks wasteful"
  },
  "label_counts": {
-  "continue": 2,
-  "increase_mutation": 2,
-  "increase_evaluation": 2,
-  "stop": 2
+  "continue": 12,
+  "increase_mutation": 11,
+  "increase_evaluation": 12,
+  "stop": 12
  },
  "samples": [
   {
@@ -52,6 +52,201 @@
   },
   {
    "state": "Every gated metric is worse than the champion it started from, and the trend is monotone down.",
+   "label": "stop",
+   "option_text": "halt the run; further spend looks wasteful"
+  },
+  {
+   "state": "Fitness is rising across generations and diversity measures are stable.",
+   "label": "continue",
+   "option_text": "keep the current allocation; progress is steady"
+  },
+  {
+   "state": "The champion has improved twice in the last fifty generations with no sign of plateau.",
+   "label": "continue",
+   "option_text": "keep the current allocation; progress is steady"
+  },
+  {
+   "state": "Best and median both climb and the population has not collapsed onto one lineage.",
+   "label": "continue",
+   "option_text": "keep the current allocation; progress is steady"
+  },
+  {
+   "state": "Every gated metric is improving and evaluations are reproducible under different seeds.",
+   "label": "continue",
+   "option_text": "keep the current allocation; progress is steady"
+  },
+  {
+   "state": "Progress is steady and the remaining budget is proportionate to the trend.",
+   "label": "continue",
+   "option_text": "keep the current allocation; progress is steady"
+  },
+  {
+   "state": "New lineages keep entering the population and surviving.",
+   "label": "continue",
+   "option_text": "keep the current allocation; progress is steady"
+  },
+  {
+   "state": "The improvement rate has not slowed and the fold-to-fold variance is unchanged.",
+   "label": "continue",
+   "option_text": "keep the current allocation; progress is steady"
+  },
+  {
+   "state": "The last hundred generations produced four distinct competitive solutions.",
+   "label": "continue",
+   "option_text": "keep the current allocation; progress is steady"
+  },
+  {
+   "state": "Fitness improves with each doubling of the population.",
+   "label": "continue",
+   "option_text": "keep the current allocation; progress is steady"
+  },
+  {
+   "state": "Nothing suggests the search has exhausted its region.",
+   "label": "continue",
+   "option_text": "keep the current allocation; progress is steady"
+  },
+  {
+   "state": "The population has converged onto a single lineage and nothing new enters.",
+   "label": "increase_mutation",
+   "option_text": "spend more on exploration; the search has plateaued"
+  },
+  {
+   "state": "Diversity has fallen for ten generations and the best is unchanged.",
+   "label": "increase_mutation",
+   "option_text": "spend more on exploration; the search has plateaued"
+  },
+  {
+   "state": "The search keeps rediscovering the same local optimum from different starts.",
+   "label": "increase_mutation",
+   "option_text": "spend more on exploration; the search has plateaued"
+  },
+  {
+   "state": "Mutation rates are at their floor and the plateau persists.",
+   "label": "increase_mutation",
+   "option_text": "spend more on exploration; the search has plateaued"
+  },
+  {
+   "state": "Every candidate in the population is within a percent of the best.",
+   "label": "increase_mutation",
+   "option_text": "spend more on exploration; the search has plateaued"
+  },
+  {
+   "state": "The improvement curve has gone flat while evaluation count keeps rising.",
+   "label": "increase_mutation",
+   "option_text": "spend more on exploration; the search has plateaued"
+  },
+  {
+   "state": "Crossover produces no offspring better than either parent.",
+   "label": "increase_mutation",
+   "option_text": "spend more on exploration; the search has plateaued"
+  },
+  {
+   "state": "The population's variance has collapsed and fitness is static.",
+   "label": "increase_mutation",
+   "option_text": "spend more on exploration; the search has plateaued"
+  },
+  {
+   "state": "The search has not found a new region in fifty generations.",
+   "label": "increase_mutation",
+   "option_text": "spend more on exploration; the search has plateaued"
+  },
+  {
+   "state": "Generation-to-generation fitness swings by more than the improvement trend.",
+   "label": "increase_evaluation",
+   "option_text": "spend more on validation; results are unstable"
+  },
+  {
+   "state": "The same genome wins under one seed and loses under another.",
+   "label": "increase_evaluation",
+   "option_text": "spend more on validation; results are unstable"
+  },
+  {
+   "state": "The ranking changes when the fold set is resampled.",
+   "label": "increase_evaluation",
+   "option_text": "spend more on validation; results are unstable"
+  },
+  {
+   "state": "Evaluations are noisy enough that the top ten are statistically indistinguishable.",
+   "label": "increase_evaluation",
+   "option_text": "spend more on validation; results are unstable"
+  },
+  {
+   "state": "Fitness variance between seeds exceeds the difference between the best and the median.",
+   "label": "increase_evaluation",
+   "option_text": "spend more on validation; results are unstable"
+  },
+  {
+   "state": "The champion is replaced and re-replaced on consecutive generations.",
+   "label": "increase_evaluation",
+   "option_text": "spend more on validation; results are unstable"
+  },
+  {
+   "state": "Holdout results disagree with in-sample ranking on the same candidates.",
+   "label": "increase_evaluation",
+   "option_text": "spend more on validation; results are unstable"
+  },
+  {
+   "state": "The metric's confidence interval spans the entire top quartile.",
+   "label": "increase_evaluation",
+   "option_text": "spend more on validation; results are unstable"
+  },
+  {
+   "state": "Two runs with identical settings produce materially different champions.",
+   "label": "increase_evaluation",
+   "option_text": "spend more on validation; results are unstable"
+  },
+  {
+   "state": "Evaluation count per candidate is below what the variance requires.",
+   "label": "increase_evaluation",
+   "option_text": "spend more on validation; results are unstable"
+  },
+  {
+   "state": "Fitness has declined for twenty generations and the last three replacements were reverted.",
+   "label": "stop",
+   "option_text": "halt the run; further spend looks wasteful"
+  },
+  {
+   "state": "Every gated metric is below the champion the run started from and the trend is monotone down.",
+   "label": "stop",
+   "option_text": "halt the run; further spend looks wasteful"
+  },
+  {
+   "state": "The budget is nearly spent and no candidate in the population passes any gate.",
+   "label": "stop",
+   "option_text": "halt the run; further spend looks wasteful"
+  },
+  {
+   "state": "The run's best result fails the deflated Sharpe bar with the trial count applied.",
+   "label": "stop",
+   "option_text": "halt the run; further spend looks wasteful"
+  },
+  {
+   "state": "Further generations keep producing worse candidates than the seed population.",
+   "label": "stop",
+   "option_text": "halt the run; further spend looks wasteful"
+  },
+  {
+   "state": "The improvement trend is negative and the plateau has lasted longer than the whole productive phase.",
+   "label": "stop",
+   "option_text": "halt the run; further spend looks wasteful"
+  },
+  {
+   "state": "Every evaluation now fails for the same reason, which is structural.",
+   "label": "stop",
+   "option_text": "halt the run; further spend looks wasteful"
+  },
+  {
+   "state": "The population has degenerated and no candidate is viable.",
+   "label": "stop",
+   "option_text": "halt the run; further spend looks wasteful"
+  },
+  {
+   "state": "The run has spent its budget and the best candidate is worse than the incumbent it must beat.",
+   "label": "stop",
+   "option_text": "halt the run; further spend looks wasteful"
+  },
+  {
+   "state": "Continuing would only increase the multiple-testing burden on an already failed result.",
    "label": "stop",
    "option_text": "halt the run; further spend looks wasteful"
   }
