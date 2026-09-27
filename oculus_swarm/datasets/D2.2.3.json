@@ -9,10 +9,10 @@
   "human_review": "send it to a human; the metrics conflict"
  },
  "label_counts": {
-  "accept": 2,
-  "rerun_validation": 2,
-  "reject": 2,
-  "human_review": 2
+  "accept": 12,
+  "rerun_validation": 10,
+  "reject": 10,
+  "human_review": 10
  },
  "samples": [
   {
@@ -52,6 +52,176 @@
   },
   {
    "state": "Two of the seven fitness metrics are the best ever recorded and the other five are unremarkable.",
+   "label": "human_review",
+   "option_text": "send it to a human; the metrics conflict"
+  },
+  {
+   "state": "Deflated Sharpe clears the bar, out-of-sample metrics hold, costs came from measured spread, and no artifact signature is present.",
+   "label": "accept",
+   "option_text": "accept it and let it proceed to champion review"
+  },
+  {
+   "state": "Every gate passes on pre-registered thresholds and the trial count was declared in advance.",
+   "label": "accept",
+   "option_text": "accept it and let it proceed to champion review"
+  },
+  {
+   "state": "Metrics hold out of sample, the universe was fixed beforehand, and the cost model matches observed fills.",
+   "label": "accept",
+   "option_text": "accept it and let it proceed to champion review"
+  },
+  {
+   "state": "All required bars pass with margin and the pipeline was audited for lookahead.",
+   "label": "accept",
+   "option_text": "accept it and let it proceed to champion review"
+  },
+  {
+   "state": "The result reproduces on a second holdout and every gate passes.",
+   "label": "accept",
+   "option_text": "accept it and let it proceed to champion review"
+  },
+  {
+   "state": "Sharpe, drawdown and profit factor all clear their bars with the trial count applied.",
+   "label": "accept",
+   "option_text": "accept it and let it proceed to champion review"
+  },
+  {
+   "state": "The validation run passed with no artifact warnings and the parameters were declared first.",
+   "label": "accept",
+   "option_text": "accept it and let it proceed to champion review"
+  },
+  {
+   "state": "Gates pass, the result is stable across folds, and the source of the edge is documented.",
+   "label": "accept",
+   "option_text": "accept it and let it proceed to champion review"
+  },
+  {
+   "state": "Every metric passes and the strategy's mechanism is stated in advance of the test.",
+   "label": "accept",
+   "option_text": "accept it and let it proceed to champion review"
+  },
+  {
+   "state": "The result clears its bar on data the pipeline never touched.",
+   "label": "accept",
+   "option_text": "accept it and let it proceed to champion review"
+  },
+  {
+   "state": "The validation run completed against a dataset that has since been corrected.",
+   "label": "rerun_validation",
+   "option_text": "re-run validation; the current evidence is incomplete"
+  },
+  {
+   "state": "Metrics pass but the run predates a change to the cost model.",
+   "label": "rerun_validation",
+   "option_text": "re-run validation; the current evidence is incomplete"
+  },
+  {
+   "state": "The bar is met on the metrics available and one required metric was never computed.",
+   "label": "rerun_validation",
+   "option_text": "re-run validation; the current evidence is incomplete"
+  },
+  {
+   "state": "The holdout is intact and the validation used a seed that no longer reproduces.",
+   "label": "rerun_validation",
+   "option_text": "re-run validation; the current evidence is incomplete"
+  },
+  {
+   "state": "Gates pass and the pipeline has since been fixed for a bug in the bar builder.",
+   "label": "rerun_validation",
+   "option_text": "re-run validation; the current evidence is incomplete"
+  },
+  {
+   "state": "The run is complete but its data snapshot cannot be identified.",
+   "label": "rerun_validation",
+   "option_text": "re-run validation; the current evidence is incomplete"
+  },
+  {
+   "state": "One gate is unmeasurable from the recorded output rather than failed.",
+   "label": "rerun_validation",
+   "option_text": "re-run validation; the current evidence is incomplete"
+  },
+  {
+   "state": "The result predates the fix to the survivorship filter.",
+   "label": "rerun_validation",
+   "option_text": "re-run validation; the current evidence is incomplete"
+  },
+  {
+   "state": "Out-of-sample Sharpe is negative and every gated metric fails.",
+   "label": "reject",
+   "option_text": "reject it; it fails a required bar"
+  },
+  {
+   "state": "The result contradicts a required invariant and cannot land.",
+   "label": "reject",
+   "option_text": "reject it; it fails a required bar"
+  },
+  {
+   "state": "Profit factor is below one on data the pipeline never touched.",
+   "label": "reject",
+   "option_text": "reject it; it fails a required bar"
+  },
+  {
+   "state": "The drawdown exceeds the mandate's limit by a factor of two.",
+   "label": "reject",
+   "option_text": "reject it; it fails a required bar"
+  },
+  {
+   "state": "The trial count invalidates the result entirely, not marginally.",
+   "label": "reject",
+   "option_text": "reject it; it fails a required bar"
+  },
+  {
+   "state": "The apparent edge disappears when measured costs replace assumed ones.",
+   "label": "reject",
+   "option_text": "reject it; it fails a required bar"
+  },
+  {
+   "state": "The strategy fails the out-of-sample bar with no path to passing it.",
+   "label": "reject",
+   "option_text": "reject it; it fails a required bar"
+  },
+  {
+   "state": "A required gate fails and no adjustment changes that.",
+   "label": "reject",
+   "option_text": "reject it; it fails a required bar"
+  },
+  {
+   "state": "The result passes every gate except one that is undefined for this instrument class.",
+   "label": "human_review",
+   "option_text": "send it to a human; the metrics conflict"
+  },
+  {
+   "state": "Metrics conflict and the resolution depends on the mandate's risk appetite.",
+   "label": "human_review",
+   "option_text": "send it to a human; the metrics conflict"
+  },
+  {
+   "state": "The strategy's edge is real and it depends on a market condition the mandate may not permit.",
+   "label": "human_review",
+   "option_text": "send it to a human; the metrics conflict"
+  },
+  {
+   "state": "Gates disagree in a way the documented thresholds do not cover.",
+   "label": "human_review",
+   "option_text": "send it to a human; the metrics conflict"
+  },
+  {
+   "state": "The result is strong on data whose provenance cannot be confirmed.",
+   "label": "human_review",
+   "option_text": "send it to a human; the metrics conflict"
+  },
+  {
+   "state": "One gate passes by a margin far outside anything previously seen.",
+   "label": "human_review",
+   "option_text": "send it to a human; the metrics conflict"
+  },
+  {
+   "state": "The trade-off between two passing candidates is not stated by the rules.",
+   "label": "human_review",
+   "option_text": "send it to a human; the metrics conflict"
+  },
+  {
+   "state": "The evidence supports proceeding and a required approval is outside the automation's scope.",
    "label": "human_review",
    "option_text": "send it to a human; the metrics conflict"
   }

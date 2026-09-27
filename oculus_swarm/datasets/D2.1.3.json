@@ -8,9 +8,9 @@
   "too_many_trials": "too many trials to trust any single winner"
  },
  "label_counts": {
-  "acceptable": 3,
-  "needs_deflation": 2,
-  "too_many_trials": 3
+  "acceptable": 11,
+  "needs_deflation": 10,
+  "too_many_trials": 10
  },
  "samples": [
   {
@@ -50,6 +50,121 @@
   },
   {
    "state": "Each of the last twelve candidates was discarded and the thirteenth is being reported.",
+   "label": "too_many_trials",
+   "option_text": "too many trials to trust any single winner"
+  },
+  {
+   "state": "One strategy family, one parameter set, one holdout, and the choice was made before seeing results.",
+   "label": "acceptable",
+   "option_text": "the trial count is low enough to trust the edge"
+  },
+  {
+   "state": "The parameter count is small, the search was documented, and the holdout was untouched.",
+   "label": "acceptable",
+   "option_text": "the trial count is low enough to trust the edge"
+  },
+  {
+   "state": "Twelve candidates were evaluated and the trial count is disclosed with the result.",
+   "label": "acceptable",
+   "option_text": "the trial count is low enough to trust the edge"
+  },
+  {
+   "state": "One hypothesis, one instrument, one timeframe, declared in advance.",
+   "label": "acceptable",
+   "option_text": "the trial count is low enough to trust the edge"
+  },
+  {
+   "state": "The search space was fixed by theory rather than swept.",
+   "label": "acceptable",
+   "option_text": "the trial count is low enough to trust the edge"
+  },
+  {
+   "state": "The reported result is the only one the pipeline produced for this hypothesis.",
+   "label": "acceptable",
+   "option_text": "the trial count is low enough to trust the edge"
+  },
+  {
+   "state": "Fewer than twenty configurations were tried and all are reported.",
+   "label": "acceptable",
+   "option_text": "the trial count is low enough to trust the edge"
+  },
+  {
+   "state": "The edge survives an adjustment for the trials that were actually run.",
+   "label": "acceptable",
+   "option_text": "the trial count is low enough to trust the edge"
+  },
+  {
+   "state": "A sweep across parameters produced the winner and no correction was made.",
+   "label": "needs_deflation",
+   "option_text": "a deflated Sharpe adjustment is required before believing it"
+  },
+  {
+   "state": "Dozens of variants were compared and only the best appears in the report.",
+   "label": "needs_deflation",
+   "option_text": "a deflated Sharpe adjustment is required before believing it"
+  },
+  {
+   "state": "The reported Sharpe is inside the range that random search would produce at this trial count.",
+   "label": "needs_deflation",
+   "option_text": "a deflated Sharpe adjustment is required before believing it"
+  },
+  {
+   "state": "The result was selected from a grid and the selection is not reflected in the significance.",
+   "label": "needs_deflation",
+   "option_text": "a deflated Sharpe adjustment is required before believing it"
+  },
+  {
+   "state": "More than thirty attempts preceded the reported one and the p-value ignores them.",
+   "label": "needs_deflation",
+   "option_text": "a deflated Sharpe adjustment is required before believing it"
+  },
+  {
+   "state": "The best of many candidates was highlighted without a multiple-testing adjustment.",
+   "label": "needs_deflation",
+   "option_text": "a deflated Sharpe adjustment is required before believing it"
+  },
+  {
+   "state": "The effective number of trials is far above one and the bar was set as if it were one.",
+   "label": "needs_deflation",
+   "option_text": "a deflated Sharpe adjustment is required before believing it"
+  },
+  {
+   "state": "A deflated Sharpe would move this from significant to marginal.",
+   "label": "needs_deflation",
+   "option_text": "a deflated Sharpe adjustment is required before believing it"
+  },
+  {
+   "state": "The search covered thousands of combinations and the trial count exceeds what any adjustment rescues.",
+   "label": "too_many_trials",
+   "option_text": "too many trials to trust any single winner"
+  },
+  {
+   "state": "The reported result is the maximum of a very large search and nothing survives the correction.",
+   "label": "too_many_trials",
+   "option_text": "too many trials to trust any single winner"
+  },
+  {
+   "state": "The pipeline generated and ranked hundreds of candidates and reported the top one.",
+   "label": "too_many_trials",
+   "option_text": "too many trials to trust any single winner"
+  },
+  {
+   "state": "The hypothesis was chosen after seeing which parameter region looked best.",
+   "label": "too_many_trials",
+   "option_text": "too many trials to trust any single winner"
+  },
+  {
+   "state": "The number of trials is large enough that the observed edge is expected under the null.",
+   "label": "too_many_trials",
+   "option_text": "too many trials to trust any single winner"
+  },
+  {
+   "state": "Tuning continued until a passing candidate appeared.",
+   "label": "too_many_trials",
+   "option_text": "too many trials to trust any single winner"
+  },
+  {
+   "state": "The selection process alone explains the reported performance.",
    "label": "too_many_trials",
    "option_text": "too many trials to trust any single winner"
   }
