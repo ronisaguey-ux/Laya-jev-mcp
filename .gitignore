@@ -8,3 +8,6 @@ oculus_swarm/harvest_progress.json
 # LoRA adapters are regenerated artifacts (~17.6MB each, one per leaf/tier).
 # Rebuild with: oculus_swarm/train_on_dataset.py --leaf <ID>
 oculus_swarm/adapters/
+
+# Created by `pip install -e .` for the local layajev package; not source.
+*.egg-info/
