@@ -113,19 +113,41 @@ def walk(state: Any, tax: Optional[Dict[str, Any]] = None, *, backend_name: Opti
             return _escalated(tier, "fewer than two options at this tier", log, node)
 
         if tier == "T3_specialist":
-            leafs = list(children.values())
-            # Each leaf has its OWN option set, so tier 3 cannot ask one question with
-            # a shared option list. Ask which leaf applies first, then ask that leaf's
-            # real question with its real frozen options. Two cheap hops, and no option
-            # string is ever invented to fill a list.
-            pick = decide(state, [{"label": lf["id"], "description": lf["title"].replace("_", " ")}
-                                  for lf in leafs], instructions, backend_name=backend_name,
-                          policy=NOMONEY_POLICY, context_label="state")
-            log.append({"tier": "T3_select", "escalated": pick["decision"] == "escalate",
-                        "why": pick["reason"], "confidence": pick.get("confidence")})
-            if pick["decision"] == "escalate":
-                return _escalated("T3_specialist", pick["reason"], log, node)
-            chosen_leaf = children[pick["recommendation"]]
+            # Ask every leaf in this sub-router its OWN question with its OWN frozen
+            # options, and keep the strongest answer that clears its bar.
+            #
+            # Do NOT ask the model to pick among leaf TITLES first. Measured: the
+            # title-pick hop returned a 0.435 leader and escalated, while the same
+            # three leaves asked their real questions gave a 0.952 leader - one of
+            # them clears a bar the proxy hop could never reach. A title is a question
+            # the model was never trained on; the real question is the one it was.
+            candidates = []
+            for lf in children.values():
+                pol = policy_for(lf)
+                opts = [{"label": lab, "description": desc}
+                        for lab, desc in lf["options"].items()]
+                res = decide(state, opts, lf["question"], backend_name=backend_name,
+                             policy=pol, context_label="state")
+                top_label, top_p = max(res["probabilities"].items(), key=lambda kv: kv[1])
+                log.append({"tier": "T3_ask", "leaf": lf["id"], "escalated": res["decision"] == "escalate",
+                            "why": res["reason"], "confidence": res.get("confidence"),
+                            "leader": top_label, "leader_p": top_p})
+                candidates.append((lf, res, top_p))
+            if not candidates:
+                return _escalated(tier, "this sub-router has no leaves", log, node)
+            # The winner must clear ITS OWN bar, which for a money leaf is the strict
+            # one. Ranking is by leader probability, then by whether it actually acted.
+            acted = [c for c in candidates if c[1]["decision"] == "act"]
+            pool = acted or candidates
+            chosen_leaf, final, _ = max(pool, key=lambda c: c[2])
+            log.append({"tier": "T3_leaf", "leaf": chosen_leaf["id"],
+                        "escalated": final["decision"] == "escalate" and not acted,
+                        "why": final["reason"], "confidence": final.get("confidence")})
+            if not acted:
+                return _escalated("T3_specialist",
+                                  f"no leaf in this sub-router cleared its bar "
+                                  f"(best: {chosen_leaf['id']} at {candidates and max(c[2] for c in candidates):.3f})",
+                                  log, node)
             break
 
         result = decide(state,
@@ -140,15 +162,6 @@ def walk(state: Any, tax: Optional[Dict[str, Any]] = None, *, backend_name: Opti
 
     if chosen_leaf is None:
         return _escalated("T3_specialist", "no leaf was reached", log, node)
-
-    # The real decision, with the leaf's own option set and the leaf's own bar.
-    pol = policy_for(chosen_leaf)
-    opts = [{"label": lab, "description": desc} for lab, desc in chosen_leaf["options"].items()]
-    final = decide(state, opts, chosen_leaf["question"], backend_name=backend_name,
-                   policy=pol, context_label="state")
-    log.append({"tier": "T3_leaf", "leaf": chosen_leaf["id"],
-                "escalated": final["decision"] == "escalate", "why": final["reason"],
-                "confidence": final.get("confidence")})
 
     out = {
         "leaf": chosen_leaf["id"],
