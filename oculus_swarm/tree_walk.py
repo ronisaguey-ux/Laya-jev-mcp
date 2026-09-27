@@ -19,6 +19,14 @@ WHY THE BARS ARE WHAT THEY ARE (brief §3, and this is the whole safety story):
   * FAIL CLOSED. Missing adapter, unreadable taxonomy, unknown band, absent
     probabilities -> the safe branch, never the permissive one.
 
+WHAT ESCALATE MEANS (owner correction, 2026-09-27):
+  Escalation returns the decision to WHOEVER IS DRIVING THE MCP - the caller. If this
+  agent is driving, it lands here; if an audit or cross-eval agent is driving, it lands
+  there. It does NOT mean "wake a human". The caller already holds the context this
+  layer lacks, so handing it back is a routing decision inside the agent, not an alarm.
+  `caller` names who that is, and every escalation carries `escalates_to` so the answer
+  is never left ambiguous.
+
 Laya never executes. There is no order-placing code in this file and there must
 never be: order placement goes only through code with its own deterministic guards,
 position limits and the existing kill switch.
@@ -94,11 +102,12 @@ def _tier_question(tax: Dict[str, Any], tier: str, node: Optional[Mapping[str, A
 
 
 def walk(state: Any, tax: Optional[Dict[str, Any]] = None, *, backend_name: Optional[str] = None,
-         talk: bool = False) -> Dict[str, Any]:
+         caller: Optional[str] = None) -> Dict[str, Any]:
     """Walk domain -> sub-router -> leaf, escalating at the first tier that cannot clear.
 
-    Returns the chosen leaf, the answer, and the escalation log. The log is the only
-    signal that says whether the local models are actually good enough.
+    `caller` names the agent driving this MCP, because an escalation is handed back to
+    it rather than to a human. Returns the chosen leaf, the answer and the escalation
+    log; that log is the only signal that says whether the local models are good enough.
     """
     tax = tax or load_taxonomy()
     log: List[Dict[str, Any]] = []
@@ -110,7 +119,7 @@ def walk(state: Any, tax: Optional[Dict[str, Any]] = None, *, backend_name: Opti
         if len(criteria) < 2:
             # A hop with nothing to choose between is not a decision.
             log.append({"tier": tier, "escalated": True, "why": "fewer than two options"})
-            return _escalated(tier, "fewer than two options at this tier", log, node)
+            return _escalated(tier, "fewer than two options at this tier", log, node, caller)
 
         if tier == "T3_specialist":
             # Ask every leaf in this sub-router its OWN question with its OWN frozen
@@ -144,10 +153,11 @@ def walk(state: Any, tax: Optional[Dict[str, Any]] = None, *, backend_name: Opti
                         "escalated": final["decision"] == "escalate" and not acted,
                         "why": final["reason"], "confidence": final.get("confidence")})
             if not acted:
+                best_p = max((c[2] for c in candidates), default=0.0)
                 return _escalated("T3_specialist",
                                   f"no leaf in this sub-router cleared its bar "
-                                  f"(best: {chosen_leaf['id']} at {candidates and max(c[2] for c in candidates):.3f})",
-                                  log, node)
+                                  f"(best: {chosen_leaf['id']} at {best_p:.3f})",
+                                  log, node, caller)
             break
 
         result = decide(state,
@@ -157,11 +167,11 @@ def walk(state: Any, tax: Optional[Dict[str, Any]] = None, *, backend_name: Opti
         log.append({"tier": tier, "escalated": result["decision"] == "escalate",
                     "why": result["reason"], "confidence": result.get("confidence")})
         if result["decision"] == "escalate":
-            return _escalated(tier, result["reason"], log, node)
+            return _escalated(tier, result["reason"], log, node, caller)
         node = children[result["recommendation"]]
 
     if chosen_leaf is None:
-        return _escalated("T3_specialist", "no leaf was reached", log, node)
+        return _escalated("T3_specialist", "no leaf was reached", log, node, caller)
 
     out = {
         "leaf": chosen_leaf["id"],
@@ -181,9 +191,12 @@ def walk(state: Any, tax: Optional[Dict[str, Any]] = None, *, backend_name: Opti
         "escalated": any(e.get("escalated") for e in log),
     }
     if out["decision"] == "escalate":
-        # Fail closed: name the conservative branch rather than leaving it implicit.
+        # Fail closed: name the conservative branch rather than leaving it implicit, and
+        # say who has to decide, because the caller needs to act on it.
         out["safe_branch"] = CONSERVATIVE.get(str(final["recommendation"]), None)
-        out["tie_break"] = "do nothing"
+        out["escalates_to"] = caller or "caller"
+        out["caller_action_required"] = True
+        out["tie_break"] = "do nothing unless the caller decides otherwise"
     return out
 
 
@@ -191,7 +204,16 @@ def _leaf_options(leaf: Mapping[str, Any]) -> Dict[str, str]:
     return dict(leaf.get("options") or {})
 
 
-def _escalated(tier: str, why: str, log: List[Dict[str, Any]], node: Optional[Mapping[str, Any]]):
+def _escalated(tier: str, why: str, log: List[Dict[str, Any]],
+               node: Optional[Mapping[str, Any]], caller: Optional[str] = None):
+    """Hand the decision back to the caller, not to a human.
+
+    The driving agent holds the context this layer does not, so it is the right place
+    for an uncertain call to land.
+    """
+    for e in log:
+        if e.get("escalated"):
+            e["escalates_to"] = caller or "caller"
     return {
         "leaf": None,
         "decision": "escalate",
@@ -199,9 +221,11 @@ def _escalated(tier: str, why: str, log: List[Dict[str, Any]], node: Optional[Ma
         "escalated_at_tier": tier,
         "escalation_log": log,
         "escalated": True,
+        "escalates_to": caller or "caller",
+        "caller_action_required": True,
         "executes": False,
         "advisory_only": True,
-        "tie_break": "do nothing",
+        "tie_break": "do nothing unless the caller decides otherwise",
     }
 
 

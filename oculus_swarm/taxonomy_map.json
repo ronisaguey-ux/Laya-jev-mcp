@@ -834,12 +834,406 @@
           ]
         }
       ]
+    },
+    {
+      "id": "D7",
+      "name": "agent_routing",
+      "routes_on": "Work exists and the question is who should do it, and how.",
+      "sub_routers": [
+        {
+          "id": "D7.1",
+          "name": "assignment",
+          "leaves": [
+            {
+              "id": "D7.1.1",
+              "title": "agent_choice",
+              "question": "Which kind of worker should take the task in `state`?",
+              "options": {
+                "local_fast_lane": "a cheap local lane; the task is narrow and well specified",
+                "strong_reasoning_lane": "a strong model; the task needs real reasoning or design",
+                "specialist_tool": "a purpose-built tool rather than an agent; deterministic work",
+                "human_owner": "a human; the task needs authority a model does not have",
+                "no_worker": "nothing should take it; it is not actionable"
+              },
+              "touched_by": "AI-coding-orchestrator, orch_lanes.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D7.1.2",
+              "title": "task_specificity",
+              "question": "Is the task in `state` specified well enough to hand to a worker?",
+              "options": {
+                "ready": "it names the files, the change and the done condition",
+                "underspecified": "it is missing the target or the done condition",
+                "contradictory": "its parts cannot all be satisfied at once",
+                "already_done": "the work it describes is already present"
+              },
+              "touched_by": "AI-coding-orchestrator, execute.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D7.1.3",
+              "title": "parallelism_verdict",
+              "question": "Can the items in `state` be worked in parallel?",
+              "options": {
+                "independent": "they touch disjoint files and can run together",
+                "serial_required": "they touch the same files and must be ordered",
+                "batch_safe": "they are independent enough to batch with care",
+                "single_thread": "do one at a time; the risk of collision is high"
+              },
+              "touched_by": "AI-coding-orchestrator, orch_queue.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            }
+          ]
+        },
+        {
+          "id": "D7.2",
+          "name": "effort_band",
+          "leaves": [
+            {
+              "id": "D7.2.1",
+              "title": "task_difficulty",
+              "question": "How hard is the task in `state`?",
+              "options": {
+                "trivial": "a lookup or a one-line change; no reasoning needed",
+                "routine": "a small well-understood change in familiar code",
+                "moderate": "several steps, some judgement about approach",
+                "hard": "multi-file reasoning, design decisions, or novel debugging"
+              },
+              "touched_by": "AI-coding-orchestrator, lane budgets",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D7.2.2",
+              "title": "effort_justified",
+              "question": "Does the effort spent on `state` match the value of the result?",
+              "options": {
+                "proportional": "the cost is reasonable for what the work is worth",
+                "over_invested": "more effort has gone in than the outcome warrants",
+                "under_invested": "the task is important and is being under-resourced",
+                "stop_spending": "no further effort is justified; stop it"
+              },
+              "touched_by": "AI-coding-orchestrator",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D8",
+      "name": "work_triage",
+      "routes_on": "A finding, a failure or a step needs a verdict on what happens to it next.",
+      "sub_routers": [
+        {
+          "id": "D8.1",
+          "name": "finding_verdict",
+          "leaves": [
+            {
+              "id": "D8.1.1",
+              "title": "finding_actionable",
+              "question": "Is the finding in `state` worth acting on?",
+              "options": {
+                "actionable": "a real defect with a concrete fix available",
+                "noise": "not a real problem; exclude it from the work",
+                "already_fixed": "the described problem is already resolved in the code",
+                "needs_investigation": "cannot tell yet whether it is real; dig first"
+              },
+              "touched_by": "audit agents, audits_plans/",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D8.1.2",
+              "title": "finding_severity",
+              "question": "How severe is the finding in `state` if left alone?",
+              "options": {
+                "cosmetic": "style or tidiness; nothing breaks",
+                "minor": "a real defect with no money or data consequence",
+                "serious": "it can corrupt data, state or a result",
+                "critical": "it can lose money, leak credentials, or halt trading"
+              },
+              "touched_by": "audit agents, regression_risk_auditor.py",
+              "policy": {
+                "act_at": 0.8,
+                "margin": 0.25,
+                "noul_act_at": 0.3
+              },
+              "touches_money": true,
+              "irreversible": false
+            }
+          ]
+        },
+        {
+          "id": "D8.2",
+          "name": "step_lifecycle",
+          "leaves": [
+            {
+              "id": "D8.2.1",
+              "title": "step_disposition",
+              "question": "What should happen to the step in `state` now?",
+              "options": {
+                "retry": "a real attempt failed on a transient cause; try again",
+                "escalate": "the worker cannot do it; a human or stronger model must",
+                "retire_green": "the work is verifiably present; close it as done",
+                "retire_yellow": "it cannot be done as specified; close it with the reason"
+              },
+              "touched_by": "AI-coding-orchestrator, execute.py",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D8.2.2",
+              "title": "failure_cause",
+              "question": "Why did the attempt in `state` fail?",
+              "options": {
+                "transient": "a timeout, a rate limit or a dropped connection",
+                "worker_incapable": "the worker was not able to do this kind of task",
+                "bad_instruction": "the task itself was wrong or underspecified",
+                "code_defect": "our own engine or tooling broke, not the task"
+              },
+              "touched_by": "AI-coding-orchestrator, transport errors",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D9",
+      "name": "agent_trust",
+      "routes_on": "A claim, a disagreement or a result needs to be believed or not.",
+      "sub_routers": [
+        {
+          "id": "D9.1",
+          "name": "conflict_resolution",
+          "leaves": [
+            {
+              "id": "D9.1.1",
+              "title": "disagreement_kind",
+              "question": "What kind of disagreement is described in `state`?",
+              "options": {
+                "real_conflict": "the agents reached genuinely incompatible conclusions",
+                "wording_only": "they agree and are describing it differently",
+                "different_scope": "they answered different questions; both can be right",
+                "one_is_wrong": "one is demonstrably wrong on the evidence"
+              },
+              "touched_by": "cross-eval agents",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D9.1.2",
+              "title": "arbitration",
+              "question": "How should the disagreement in `state` be settled?",
+              "options": {
+                "evidence_decides": "check the artefact itself; the fact settles it",
+                "more_samples": "gather more runs before deciding",
+                "human_decision": "escalate; the trade-off is not mechanical",
+                "prefer_conservative": "take the branch with the smaller blast radius"
+              },
+              "touched_by": "cross-eval agents",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            }
+          ]
+        },
+        {
+          "id": "D9.2",
+          "name": "evidence_quality",
+          "leaves": [
+            {
+              "id": "D9.2.1",
+              "title": "claim_supported",
+              "question": "Does the evidence in `state` actually support the claim made with it?",
+              "options": {
+                "supported": "the artefact shows what the claim says it shows",
+                "unsupported": "the claim goes beyond what the evidence shows",
+                "contradicted": "the artefact shows the opposite of the claim",
+                "unverifiable": "the claim cannot be checked from the evidence given"
+              },
+              "touched_by": "review agents, verification contract",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D9.2.2",
+              "title": "completion_truth",
+              "question": "Is the work in `state` actually finished?",
+              "options": {
+                "verified_done": "driven and observed working; the claim rests on a real result",
+                "claimed_only": "reported done with no observation behind it",
+                "partially_done": "some of the promised scope is missing",
+                "skipped_verification": "finished but the check was never run"
+              },
+              "touched_by": "verification contract, oculus-verify",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D9.2.3",
+              "title": "summary_trust",
+              "question": "Should a summary in `state` be taken at face value?",
+              "options": {
+                "trust_with_check": "use it as a lead but confirm the key fact",
+                "trust_directly": "it is a mechanical report from a tool, not a model's prose",
+                "distrust": "a model summary of its own work; verify independently",
+                "ignore": "it is stale or about a different revision"
+              },
+              "touched_by": "verification contract",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D10",
+      "name": "scope_control",
+      "routes_on": "A change or a request needs a boundary verdict.",
+      "sub_routers": [
+        {
+          "id": "D10.1",
+          "name": "change_boundary",
+          "leaves": [
+            {
+              "id": "D10.1.1",
+              "title": "change_scope",
+              "question": "Is the change in `state` inside the scope it was asked to touch?",
+              "options": {
+                "in_scope": "it does what was asked and nothing else",
+                "scope_creep": "it also changed adjacent things that were not asked for",
+                "wrong_target": "it changed something unrelated to the request",
+                "boundary_violation": "it crosses an architecture boundary"
+              },
+              "touched_by": "ocs/architecture_boundaries.md, .import-linter",
+              "policy": {
+                "act_at": 0.65,
+                "margin": 0.15,
+                "noul_act_at": 0.5
+              },
+              "touches_money": false,
+              "irreversible": false
+            },
+            {
+              "id": "D10.1.2",
+              "title": "reversibility",
+              "question": "How reversible is the action in `state`?",
+              "options": {
+                "reversible": "it can be undone completely and cheaply",
+                "costly_to_undo": "it can be undone but at real cost",
+                "irreversible": "it cannot be undone; a human must authorise it",
+                "external_side_effect": "it leaves this machine, so it cannot be recalled"
+              },
+              "touched_by": "outward-facing action policy",
+              "policy": {
+                "act_at": 0.92,
+                "margin": 0.3,
+                "noul_act_at": 0.15
+              },
+              "touches_money": true,
+              "irreversible": false
+            },
+            {
+              "id": "D10.1.3",
+              "title": "authority_check",
+              "question": "Who is allowed to authorise the action in `state`?",
+              "options": {
+                "agent_may_proceed": "within standing authority; no approval needed",
+                "owner_must_decide": "it is the owner's call, not the agent's",
+                "blocked_until_evidence": "no authority until a specific check passes",
+                "forbidden": "not permitted by any standing rule"
+              },
+              "touched_by": "standing rules, owner authority",
+              "policy": {
+                "act_at": 0.92,
+                "margin": 0.3,
+                "noul_act_at": 0.15
+              },
+              "touches_money": true,
+              "irreversible": false
+            }
+          ]
+        }
+      ]
     }
   ],
   "counts": {
-    "domains": 6,
-    "sub_routers": 12,
-    "leaves": 37
+    "domains": 10,
+    "sub_routers": 19,
+    "leaves": 54
   },
   "money_leaves": [
     "D1.2.1",
@@ -853,7 +1247,10 @@
     "D4.2.2",
     "D4.2.3",
     "D6.1.1",
-    "D6.2.1"
+    "D6.2.1",
+    "D8.1.2",
+    "D10.1.2",
+    "D10.1.3"
   ],
   "irreversible_leaves": [
     "D1.2.1",
@@ -866,5 +1263,21 @@
     "D4.2.2",
     "D4.2.3",
     "D6.2.1"
-  ]
+  ],
+  "tiers": {
+    "trading_domains": [
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6"
+    ],
+    "orchestration_domains": [
+      "D7",
+      "D8",
+      "D9",
+      "D10"
+    ]
+  }
 }
