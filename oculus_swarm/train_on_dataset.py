@@ -31,10 +31,11 @@ import torch.nn.functional as F
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 TAXONOMY = os.path.join(HERE, "taxonomy_map.json")
-DATA = os.path.join(HERE, "datasets")
+DATA = os.environ.get("TRAIN_DATA_DIR") or os.path.join(HERE, "datasets")
 ADAPTERS = os.path.join(HERE, "adapters")
 
-BATCH = 16         # measured on this box: 2.44s/row at 16 vs 13.44s at 1
+BATCH = 16         # training: measured on this box, 2.44s/row at 16 vs 13.44s at 1
+EVAL_BATCH = 16    # eval: no backward pass, so batch just as wide
 MAX_LEN = 448
 HEAD_MAX_LEN = 192
 
@@ -128,16 +129,18 @@ def recall(agent, model, tok, leaf, device, samples=None):
         samples = leaf["samples"]
     model.eval()
     with torch.no_grad():
-        for s in samples:
-            built = make_batch(tok, [(leaf, s["state"], s["label"])], device)
+        for i in range(0, len(samples), EVAL_BATCH):
+            chunk = samples[i:i + EVAL_BATCH]
+            built = make_batch(tok, [(leaf, s["state"], s["label"]) for s in chunk], device)
             if built is None:
                 continue
-            ids, att, mp, mm, _targ, _n = built
-            lg = score(model, ids, att, mp, mm, 0, device)[0]
-            pred = labels[int(torch.argmax(lg[:len(labels)]))]
-            hits[s["label"]][0] += 1
-            if pred == s["label"]:
-                hits[s["label"]][1] += 1
+            ids, att, mp, mm, _targ, maxn = built
+            lg = score(model, ids, att, mp, mm, 0, device)
+            for j, s in enumerate(chunk):
+                pred = labels[int(torch.argmax(lg[j][:len(labels)]))]
+                hits[s["label"]][0] += 1
+                if pred == s["label"]:
+                    hits[s["label"]][1] += 1
     model.train()
     return {k: (v[1], v[0], v[1] / v[0] if v[0] else 0.0) for k, v in hits.items()}
 
@@ -188,9 +191,13 @@ def main():
     ap.add_argument("--lr", type=float, default=5e-4)
     ap.add_argument("--rank", type=int, default=16)
     ap.add_argument("--threads", type=int, default=6)
+    ap.add_argument("--data-dir", default=None,
+                    help="dataset directory; defaults to datasets/, use datasets_tier1 or datasets_tier2 for a tier")
     ap.add_argument("--holdout", type=float, default=0.25,
                     help="fraction of EACH class held out; 0 trains on everything")
     args = ap.parse_args()
+    if args.data_dir:
+        globals()["DATA"] = args.data_dir
 
     torch.set_num_threads(args.threads)
     import laya
