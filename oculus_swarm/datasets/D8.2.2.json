@@ -1,0 +1,59 @@
+{
+ "id": "D8.2.2",
+ "kind": "choice",
+ "question": "Why did the attempt in `state` fail?",
+ "options": {
+  "transient": "a timeout, a rate limit or a dropped connection",
+  "worker_incapable": "the worker was not able to do this kind of task",
+  "bad_instruction": "the task itself was wrong or underspecified",
+  "code_defect": "our own engine or tooling broke, not the task"
+ },
+ "label_counts": {
+  "transient": 2,
+  "worker_incapable": 2,
+  "bad_instruction": 2,
+  "code_defect": 2
+ },
+ "samples": [
+  {
+   "state": "The call timed out at the per-lane budget while the gateway stayed reachable.",
+   "label": "transient",
+   "option_text": "a timeout, a rate limit or a dropped connection"
+  },
+  {
+   "state": "The lane answered correctly on simple edits and produced nothing on a multi-file refactor.",
+   "label": "worker_incapable",
+   "option_text": "the worker was not able to do this kind of task"
+  },
+  {
+   "state": "The step named a file that does not exist and gave no done condition.",
+   "label": "bad_instruction",
+   "option_text": "the task itself was wrong or underspecified"
+  },
+  {
+   "state": "Our own apply step raised a syntax error on a well-formed edit.",
+   "label": "code_defect",
+   "option_text": "our own engine or tooling broke, not the task"
+  },
+  {
+   "state": "A rate limit rejected the request and cleared within the minute.",
+   "label": "transient",
+   "option_text": "a timeout, a rate limit or a dropped connection"
+  },
+  {
+   "state": "The lane reasoned itself out of the contract on a hard design question.",
+   "label": "worker_incapable",
+   "option_text": "the worker was not able to do this kind of task"
+  },
+  {
+   "state": "The brief referenced a symbol that was renamed two releases ago.",
+   "label": "bad_instruction",
+   "option_text": "the task itself was wrong or underspecified"
+  },
+  {
+   "state": "The git helper refused to commit because a URL comparison was case-sensitive.",
+   "label": "code_defect",
+   "option_text": "our own engine or tooling broke, not the task"
+  }
+ ]
+}

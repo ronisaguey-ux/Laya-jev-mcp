@@ -1,0 +1,99 @@
+{
+  "id": "D1.2.1",
+  "kind": "leaf",
+  "question": "Should the candidate in `state` be admitted to the champion registry?",
+  "options": {
+    "admit": "add it to the registry as the current champion",
+    "admit_provisional": "register it as a challenger with a bounded trial",
+    "reject": "do not register it; it does not beat the incumbent",
+    "escalate_human": "the call is contestable and a human should decide"
+  },
+  "label_counts": {
+    "admit": 4,
+    "admit_provisional": 4,
+    "reject": 4,
+    "escalate_human": 4
+  },
+  "samples": [
+    {
+      "state": "challenger g4471: OOS Sharpe 2.31 on 1,480 trades vs the incumbent's 1.84, deflated Sharpe 1.94, max drawdown 7.4% vs 11.2%.",
+      "label": "admit",
+      "option_text": "add it to the registry as the current champion"
+    },
+    {
+      "state": "genome 88: beats the incumbent on all seven fitness metrics across two held-out windows, 2,204 trades, no metric regression.",
+      "label": "admit",
+      "option_text": "add it to the registry as the current champion"
+    },
+    {
+      "state": "variant 1203: OOS return 38.9% against the incumbent's 22.1% on the same window, ulcer index lower at 0.041 vs 0.058.",
+      "label": "admit",
+      "option_text": "add it to the registry as the current champion"
+    },
+    {
+      "state": "genome 77b: profit factor 1.92 vs 1.51, information ratio 0.62 vs 0.31, both measured on the identical held-out set of 388 trades.",
+      "label": "admit",
+      "option_text": "add it to the registry as the current champion"
+    },
+    {
+      "state": "challenger m2210: beats the incumbent on 5 of 7 metrics with 1,102 trades but the OOS window is only 6 weeks long.",
+      "label": "admit_provisional",
+      "option_text": "register it as a challenger with a bounded trial"
+    },
+    {
+      "state": "genome 9004: OOS Sharpe 2.02 vs 1.91 on 1,870 trades - a real lead but a margin inside the measurement error.",
+      "label": "admit_provisional",
+      "option_text": "register it as a challenger with a bounded trial"
+    },
+    {
+      "state": "variant 331: higher returns and lower drawdown on 640 trades, but the incumbent has 4,100 trades of live history behind it.",
+      "label": "admit_provisional",
+      "option_text": "register it as a challenger with a bounded trial"
+    },
+    {
+      "state": "genome 155: better on every OOS metric but only 402 trades, and the improvement concentrates in one month.",
+      "label": "admit_provisional",
+      "option_text": "register it as a challenger with a bounded trial"
+    },
+    {
+      "state": "challenger b9902: OOS Sharpe 0.11 vs the incumbent's 1.84 on 1,102 trades - clearly worse in the held-out window.",
+      "label": "reject",
+      "option_text": "do not register it; it does not beat the incumbent"
+    },
+    {
+      "state": "genome 61: OOS return -7.3% against the incumbent's 22.1% on 2,010 trades, and drawdown worse at 31.2%.",
+      "label": "reject",
+      "option_text": "do not register it; it does not beat the incumbent"
+    },
+    {
+      "state": "variant 914: profit factor 0.79 vs 1.51 on 2,205 trades, fails on both profitability and risk metrics.",
+      "label": "reject",
+      "option_text": "do not register it; it does not beat the incumbent"
+    },
+    {
+      "state": "genome 2201: IS Sharpe 2.62 but OOS 0.11 - it does not survive out of sample, so it cannot replace the incumbent.",
+      "label": "reject",
+      "option_text": "do not register it; it does not beat the incumbent"
+    },
+    {
+      "state": "challenger h7730: better on OOS Sharpe and drawdown but with 3,011 trades in the incumbent and 402 in the challenger, no clean comparison exists.",
+      "label": "escalate_human",
+      "option_text": "the call is contestable and a human should decide"
+    },
+    {
+      "state": "genome 5520: beats the incumbent on return, loses on drawdown, and the two windows disagree about which matters more.",
+      "label": "escalate_human",
+      "option_text": "the call is contestable and a human should decide"
+    },
+    {
+      "state": "variant 3308: superior on deflated Sharpe but the challenger's data window is 2 days shorter than configured, so the comparison is unsound.",
+      "label": "escalate_human",
+      "option_text": "the call is contestable and a human should decide"
+    },
+    {
+      "state": "genome 4410: the two candidates tie on fitness to 3 decimal places and the tie-break rule is not defined anywhere.",
+      "label": "escalate_human",
+      "option_text": "the call is contestable and a human should decide"
+    }
+  ]
+}

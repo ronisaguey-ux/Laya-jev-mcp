@@ -1,0 +1,59 @@
+{
+ "id": "D4.2.1",
+ "kind": "choice",
+ "question": "Should the kill switch fire for the conditions in `state`?",
+ "options": {
+  "fire": "halt everything now; the condition is a halt condition",
+  "arm_only": "arm the switch but do not fire; the condition is close",
+  "do_not_fire": "the condition is not a halt condition; continue",
+  "escalate_human": "a human must decide; the condition is outside the rules"
+ },
+ "label_counts": {
+  "fire": 3,
+  "arm_only": 1,
+  "do_not_fire": 2,
+  "escalate_human": 2
+ },
+ "samples": [
+  {
+   "state": "Drawdown has passed the hard threshold defined as a halt condition and keeps widening.",
+   "label": "fire",
+   "option_text": "halt everything now; the condition is a halt condition"
+  },
+  {
+   "state": "Drawdown is at 92% of the halt threshold and the slope is steep but has not crossed.",
+   "label": "arm_only",
+   "option_text": "arm the switch but do not fire; the condition is close"
+  },
+  {
+   "state": "The condition reported is a single losing trade inside normal variation.",
+   "label": "do_not_fire",
+   "option_text": "the condition is not a halt condition; continue"
+  },
+  {
+   "state": "Two halt conditions are both true but the rules were written for markets this venue does not trade.",
+   "label": "escalate_human",
+   "option_text": "a human must decide; the condition is outside the rules"
+  },
+  {
+   "state": "The data feed has produced false prices and the position sizing depends on them, which the rules name as a halt.",
+   "label": "fire",
+   "option_text": "halt everything now; the condition is a halt condition"
+  },
+  {
+   "state": "Volatility has entered the highest band the rules name as a halt condition.",
+   "label": "fire",
+   "option_text": "halt everything now; the condition is a halt condition"
+  },
+  {
+   "state": "Kill switch fired earlier today and the condition has cleared, so no new fire is needed.",
+   "label": "do_not_fire",
+   "option_text": "the condition is not a halt condition; continue"
+  },
+  {
+   "state": "The breach is real but it is caused by a corporate action the rules never contemplated.",
+   "label": "escalate_human",
+   "option_text": "a human must decide; the condition is outside the rules"
+  }
+ ]
+}

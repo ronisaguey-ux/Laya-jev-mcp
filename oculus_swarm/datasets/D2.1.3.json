@@ -1,0 +1,57 @@
+{
+ "id": "D2.1.3",
+ "kind": "choice",
+ "question": "Does the number of trials in `state` invalidate this result?",
+ "options": {
+  "acceptable": "the trial count is low enough to trust the edge",
+  "needs_deflation": "a deflated Sharpe adjustment is required before believing it",
+  "too_many_trials": "too many trials to trust any single winner"
+ },
+ "label_counts": {
+  "acceptable": 3,
+  "needs_deflation": 2,
+  "too_many_trials": 3
+ },
+ "samples": [
+  {
+   "state": "One strategy family, one parameter set, one holdout, and the choice was made before seeing the results.",
+   "label": "acceptable",
+   "option_text": "the trial count is low enough to trust the edge"
+  },
+  {
+   "state": "Fifty-two configurations were tried and the best was reported without adjustment.",
+   "label": "needs_deflation",
+   "option_text": "a deflated Sharpe adjustment is required before believing it"
+  },
+  {
+   "state": "Four thousand variants were swept across assets, timeframes and thresholds before one was selected.",
+   "label": "too_many_trials",
+   "option_text": "too many trials to trust any single winner"
+  },
+  {
+   "state": "A single pre-registered hypothesis was tested once on a single asset.",
+   "label": "acceptable",
+   "option_text": "the trial count is low enough to trust the edge"
+  },
+  {
+   "state": "The deflated Sharpe falls below the threshold once the trial count is applied.",
+   "label": "needs_deflation",
+   "option_text": "a deflated Sharpe adjustment is required before believing it"
+  },
+  {
+   "state": "The parameters were tuned on the same fold that produced the reported number.",
+   "label": "too_many_trials",
+   "option_text": "too many trials to trust any single winner"
+  },
+  {
+   "state": "Three families were compared and the winner had the clearest mechanism before any fitting.",
+   "label": "acceptable",
+   "option_text": "the trial count is low enough to trust the edge"
+  },
+  {
+   "state": "Each of the last twelve candidates was discarded and the thirteenth is being reported.",
+   "label": "too_many_trials",
+   "option_text": "too many trials to trust any single winner"
+  }
+ ]
+}

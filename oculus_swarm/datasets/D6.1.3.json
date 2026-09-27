@@ -1,0 +1,59 @@
+{
+ "id": "D6.1.3",
+ "kind": "choice",
+ "question": "Do our records and the venue records in `state` agree?",
+ "options": {
+  "matched": "local and venue positions agree",
+  "mismatch": "they disagree and the difference must be resolved before trading",
+  "stale_local": "our view is stale; refresh before deciding",
+  "venue_unknown": "the venue cannot be queried; assume mismatch"
+ },
+ "label_counts": {
+  "matched": 2,
+  "mismatch": 2,
+  "stale_local": 2,
+  "venue_unknown": 2
+ },
+ "samples": [
+  {
+   "state": "Local positions, venue positions and available cash all agree line by line after today's fills.",
+   "label": "matched",
+   "option_text": "local and venue positions agree"
+  },
+  {
+   "state": "The venue reports long 400 on an instrument our book shows flat.",
+   "label": "mismatch",
+   "option_text": "they disagree and the difference must be resolved before trading"
+  },
+  {
+   "state": "The last reconciliation snapshot is from before today's session and the book has traded since.",
+   "label": "stale_local",
+   "option_text": "our view is stale; refresh before deciding"
+  },
+  {
+   "state": "The venue's position endpoint is timing out and has been for an hour.",
+   "label": "venue_unknown",
+   "option_text": "the venue cannot be queried; assume mismatch"
+  },
+  {
+   "state": "Both sides show the same quantity on every instrument and the same settled cash.",
+   "label": "matched",
+   "option_text": "local and venue positions agree"
+  },
+  {
+   "state": "Our ledger shows two open orders the venue says were cancelled.",
+   "label": "mismatch",
+   "option_text": "they disagree and the difference must be resolved before trading"
+  },
+  {
+   "state": "The local view was last refreshed at yesterday's close while the venue shows today's activity.",
+   "label": "stale_local",
+   "option_text": "our view is stale; refresh before deciding"
+  },
+  {
+   "state": "The venue is in maintenance and returns no position data at all.",
+   "label": "venue_unknown",
+   "option_text": "the venue cannot be queried; assume mismatch"
+  }
+ ]
+}

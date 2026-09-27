@@ -1,0 +1,82 @@
+[
+  {
+    "state": "genome g4471 gen 14: 1,204 trades, fitness 0.71, all 240 parameters within 12% of the population mean - the structure is already competitive.",
+    "label": "weight_perturb",
+    "option_text": "nudge numeric genes only; structure is sound"
+  },
+  {
+    "state": "lineage 88 gen 12: fitness 0.68 on 1,880 trades, and ablating any single entry condition costs less than 0.02 fitness.",
+    "label": "weight_perturb",
+    "option_text": "nudge numeric genes only; structure is sound"
+  },
+  {
+    "state": "genome b5510 gen 9: 902 trades, fitness 0.64, and the last four generations moved only numeric parameters, all upward.",
+    "label": "weight_perturb",
+    "option_text": "nudge numeric genes only; structure is sound"
+  },
+  {
+    "state": "genome r7710 gen 16: 1,340 trades, fitness 0.70, every structural mutation in the last 6 generations scored below its parent.",
+    "label": "weight_perturb",
+    "option_text": "nudge numeric genes only; structure is sound"
+  },
+  {
+    "state": "genome n1110 gen 21: fitness 0.44 unchanged for 7 generations across 2,100 trades, and all numeric nudges return within noise.",
+    "label": "structural",
+    "option_text": "add or remove a gene; the search is stuck in a local optimum"
+  },
+  {
+    "state": "lineage 604 gen 18: 1,660 trades, fitness stuck at 0.47 for 9 generations while mutations only shift weights.",
+    "label": "structural",
+    "option_text": "add or remove a gene; the search is stuck in a local optimum"
+  },
+  {
+    "state": "genome c2211 gen 24: fitness 0.39 on 1,880 trades, converged, and the population contains no genome using the unexpressed regime slots.",
+    "label": "structural",
+    "option_text": "add or remove a gene; the search is stuck in a local optimum"
+  },
+  {
+    "state": "genome d1170 gen 19: 1,120 trades, fitness 0.41 flat for 8 generations, all 240 parameters present but none ever toggled.",
+    "label": "structural",
+    "option_text": "add or remove a gene; the search is stuck in a local optimum"
+  },
+  {
+    "state": "lineage 331 gen 15: fitness 0.58 on 2,010 trades, and two sibling lineages each carry 0.36 fitness with disjoint strong features.",
+    "label": "crossover",
+    "option_text": "recombine with another lineage; progress has stalled"
+  },
+  {
+    "state": "genome e5510 gen 17: 1,470 trades, fitness 0.55, and its weak regime block is strong in genome f9901 which sits beside it.",
+    "label": "crossover",
+    "option_text": "recombine with another lineage; progress has stalled"
+  },
+  {
+    "state": "genome a3340 gen 20: fitness 0.52 on 1,240 trades, stagnation for 5 generations, and the island holds complementary genomes above 0.50.",
+    "label": "crossover",
+    "option_text": "recombine with another lineage; progress has stalled"
+  },
+  {
+    "state": "lineage 915 gen 14: 1,660 trades, fitness 0.57, and the last crossover attempt produced 0.61 before being lost to the buffer limit.",
+    "label": "crossover",
+    "option_text": "recombine with another lineage; progress has stalled"
+  },
+  {
+    "state": "lineage 771 gen 42: fitness 0.19 after 6,100 trades - the lineage is degenerate and its best member no longer reproduces.",
+    "label": "restart_lineage",
+    "option_text": "abandon this lineage; it is converged or degenerate"
+  },
+  {
+    "state": "genome z7712 gen 38: fitness 0.12 on 4,880 trades, and 91% of the population is a clone of one genome with no variance left.",
+    "label": "restart_lineage",
+    "option_text": "abandon this lineage; it is converged or degenerate"
+  },
+  {
+    "state": "genome q8890 gen 51: fitness 0.08 on 7,200 trades, all members fail the survival threshold and the island is effectively extinct.",
+    "label": "restart_lineage",
+    "option_text": "abandon this lineage; it is converged or degenerate"
+  },
+  {
+    "state": "lineage 228 gen 47: fitness 0.15 on 5,400 trades with zero variance in the last 11 generations despite continued mutation.",
+    "label": "restart_lineage",
+    "option_text": "abandon this lineage; it is converged or degenerate"
+  }
+]

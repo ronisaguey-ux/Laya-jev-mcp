@@ -1,0 +1,59 @@
+{
+ "id": "D6.2.1",
+ "kind": "choice",
+ "question": "Is the regression in `state` bad enough to roll back?",
+ "options": {
+  "rollback": "revert now; the regression breaches a required bar",
+  "forward_fix": "keep it and fix forward; the regression is tolerable",
+  "hold_and_watch": "neither yet; gather more evidence first",
+  "human_decision": "a human must decide; the trade-off is not automatic"
+ },
+ "label_counts": {
+  "rollback": 2,
+  "forward_fix": 2,
+  "hold_and_watch": 2,
+  "human_decision": 2
+ },
+ "samples": [
+  {
+   "state": "The regression breaks a required gate: deflated Sharpe fell below the threshold and remains there.",
+   "label": "rollback",
+   "option_text": "revert now; the regression breaches a required bar"
+  },
+  {
+   "state": "Latency rose by three percent but every required gate still passes and the cause is known.",
+   "label": "forward_fix",
+   "option_text": "keep it and fix forward; the regression is tolerable"
+  },
+  {
+   "state": "One metric moved against us and the other six are unchanged, measured on a single week.",
+   "label": "hold_and_watch",
+   "option_text": "neither yet; gather more evidence first"
+  },
+  {
+   "state": "The regression costs real edge but fixing it forward would change a public interface.",
+   "label": "human_decision",
+   "option_text": "a human must decide; the trade-off is not automatic"
+  },
+  {
+   "state": "The change makes the strategy fail its out-of-sample bar on data it was never fitted to.",
+   "label": "rollback",
+   "option_text": "revert now; the regression breaches a required bar"
+  },
+  {
+   "state": "A cosmetic field was renamed incorrectly; no behaviour changed.",
+   "label": "forward_fix",
+   "option_text": "keep it and fix forward; the regression is tolerable"
+  },
+  {
+   "state": "Slippage worsened slightly in one venue while the others improved.",
+   "label": "hold_and_watch",
+   "option_text": "neither yet; gather more evidence first"
+  },
+  {
+   "state": "Rolling back would discard a fix for a data-corruption bug, and the trade-off is not ours to make.",
+   "label": "human_decision",
+   "option_text": "a human must decide; the trade-off is not automatic"
+  }
+ ]
+}

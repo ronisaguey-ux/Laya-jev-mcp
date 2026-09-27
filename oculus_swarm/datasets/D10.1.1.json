@@ -1,0 +1,59 @@
+{
+ "id": "D10.1.1",
+ "kind": "choice",
+ "question": "Is the change in `state` inside the scope it was asked to touch?",
+ "options": {
+  "in_scope": "it does what was asked and nothing else",
+  "scope_creep": "it also changed adjacent things that were not asked for",
+  "wrong_target": "it changed something unrelated to the request",
+  "boundary_violation": "it crosses an architecture boundary"
+ },
+ "label_counts": {
+  "in_scope": 2,
+  "scope_creep": 2,
+  "wrong_target": 2,
+  "boundary_violation": 2
+ },
+ "samples": [
+  {
+   "state": "The step asked to fix one function and the diff changes only that function.",
+   "label": "in_scope",
+   "option_text": "it does what was asked and nothing else"
+  },
+  {
+   "state": "The step asked for one fix and the diff also renames four unrelated variables.",
+   "label": "scope_creep",
+   "option_text": "it also changed adjacent things that were not asked for"
+  },
+  {
+   "state": "The step named config/loader.py and the diff edits the test suite instead.",
+   "label": "wrong_target",
+   "option_text": "it changed something unrelated to the request"
+  },
+  {
+   "state": "The step asked for a change in the engine and the diff edits the execution layer.",
+   "label": "boundary_violation",
+   "option_text": "it crosses an architecture boundary"
+  },
+  {
+   "state": "The diff matches the described change line for line with no adjacent edits.",
+   "label": "in_scope",
+   "option_text": "it does what was asked and nothing else"
+  },
+  {
+   "state": "The step asked for a validation and the diff also reformats the whole file.",
+   "label": "scope_creep",
+   "option_text": "it also changed adjacent things that were not asked for"
+  },
+  {
+   "state": "The step targeted the reporting module and the diff touches the risk manager.",
+   "label": "wrong_target",
+   "option_text": "it changed something unrelated to the request"
+  },
+  {
+   "state": "The step asked for a helper in the data layer and the diff makes it import live venue code.",
+   "label": "boundary_violation",
+   "option_text": "it crosses an architecture boundary"
+  }
+ ]
+}

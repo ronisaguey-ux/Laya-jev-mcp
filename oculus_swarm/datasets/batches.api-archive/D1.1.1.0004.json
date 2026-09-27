@@ -1,0 +1,447 @@
+[
+  {
+    "state": "Crude oil trend following system achieves Sortino 2.5, but cross-asset correlation spikes to 0.95 with buy-and-hold during drawdown periods",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Equity market neutral strategy reports 12% annualized excess return, yet turnover ratio exceeds 500% annually and transaction cost model suggests negative net alpha after fees",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Volatility targeting genome maintains 15% CAGR with 10% max drawdown, however VIX regime classifier disagrees 3 out of last 4 regimes and position sizing becomes countercyclical",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Crypto options harvesting strategy shows 40% annualized return with negative skew, but gamma exposure analysis indicates convexity loss and delta hedging frequency increases 300%",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "S&P 500 sector rotation model achieves 85% accuracy on 2022-2023, yet recent quarter shows regime overlap where multiple sectors qualify simultaneously and portfolio concentration exceeds 60%",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Fixed income arbitrage genome reports 200bps annualized alpha with 0.1 correlation to rates, but liquidity scores deteriorate below threshold and collateral requirements exceed portfolio VaR",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "SK-991 mutant reports 4.2 annualized return on SPY 15min bars with 340% turnover, yet slippage model flips net P&L from +2.1% to -1.8% under realistic fills.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "MTC-4455 lineage shows 62% win rate on ETH 4H mean reversion but average win is 0.4% and average loss is 2.1%, with 3 cliff draws in last 20 trades.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "FIT-2209 candidate generates 180bps on 10Y Treasury futures calendar spread but only when convexity moves >2.5 SD, failing 7 of last 9 such regimes.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "VOL-8847 specimen prices SPX skew correctly in backtest but breaks when term structure inverts, with risk premia signals contradicting each other across expiries.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "STA-1122 entity shows cointegration p-value 0.001 on GLD/SLV spread but half-life of 4.2 days conflicts with 14-day holding period used for entry.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "MM-5531 variant achieves 92% fill rate on Nasdaq 100 but adverse selection cost spikes 4x when VIX > 25, flipping P&L sign negative in those prints.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Mom-3344 prototype ranks top decile on ES 1H momentum but reverses within 45min 60% of time, with daily close Sharpe negative despite intraday alpha.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "XAR-7712 instance shows alpha 5.3% on TLT but correlation to aggregate bond ETF > 0.95, suggesting factor mimicry not idiosyncratic edge.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "OB-9901 model predicts 3-tick moves on Level 2 data at 58% accuracy but P&L per trade < 1 tick, with paper trading slippage erasing backtest edge.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "SEA-6612 sequence captures 3.1% January effect on XLF over 20 years but last 5 Januaries show losses, recent data directly contradicting historical pattern.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "MAC-4411 strand outputs long USD when Fed hawkish, yet backtest shows best performance during dovish pivots, regime signal conflicting with realized returns.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "OPT-8821 code flags unusual NVDA put flow with 78% directional accuracy on spot but gamma exposure delta hedging creates 2.3% daily drag offsetting premium.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "ETHUSD futures mutation, inception 2024-03-01, cumulative return +41%, Sharpe 1.4, max drawdown 52%, win rate 48%, 180 trades, alpha decays 60% after 2024-05-01, realized volatility 2.8x forecast.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "BTCUSD perpetual mutation, 2024-04-15, profit factor 2.3, gross profit $32k, but 85% of profit from 3 trades, remaining 47 trades negative expectancy, gamma exposure positive while delta neutral target violated daily.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "SPY calendar spread mutation, 2024-05-01, 120 trades, win rate 61%, average win $140, average loss $110, but IV percentile 95, realized correlation to SPY 0.89 after 2024-05-20, vega exposure contradicts delta hedge.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "EURUSD mean reversion mutation, 5m bars, 2024-02-01 to 2024-06-01, Hurst 0.71 trending, 400 trades, profit factor 1.5, but z-score signal fails last 80 trades, spread cost 35% of gross profit, funding negative 250bps.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "NVDA stock mutation, 2024-06-01, cumulative +22%, alpha 3.8%, beta 1.5, information ratio 0.12, 150 trades, last 20 trades negative, volume profile absorption at entry 8 of 10 days, max drawdown 14%.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Gold ETF mutation, 1h timeframe, 2024-04-01 to 2024-06-15, 90 trades, expectancy +$95, but 70% of losses exceed two standard deviations, volume declining on winners, RSI divergence in 80% of losers, ATR expansion 50%.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Crude oil spread mutation, 2024-05-01, gross $28k, net $4k, roll yield -$12k, contango steepened 60%, 35 trades, 74% win rate, but gamma long while vega short, implied vol surface inverted.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "AMZN swap mutation, 2024-04-15, IV rank 15%, 25 trades, net +$6k, put/call ratio 0.8, gamma negative, max pain diverging from strikes, volume imbalance 4:1 against position.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "S&P 500 futures mutation, 1m timeframe, 2024-06-01, cumulative +8%, Sharpe 3.1, but last 30 trades account for 85% of PnL, regime change flag triggered 2024-06-12, intraday drawdown 6%, overnight gap exposure $3k.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "JPY carry trade mutation, 2024-03-01, annualized +15%, funding rate -180bps, USD/JPY skew shifted 12%, correlation to US-JPY 10Y spread inverted 2024-05-01, 200 trades, profit factor 1.7.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "GDX mining mutation, 4h timeframe, 2024-04-10 to 2024-06-20, 55 trades, win rate 60%, profit factor 2.0, but ATR 1.8x baseline, slippage 1.5x, beta to GDX 0.92, alpha disappears after transaction costs.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "VIX futures mutation, 2024-05-01, term structure backwardation 10%, 20 trades, net +$18k, win rate 65%, but contango present 18 of last 20 days, VIX term inverted 2024-06-01, gamma scalping loss -$11k.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "TSLA daily genome achieved an in-sample Sharpe of 2.5, yet the most recent 5-day drawdown hit -12% while the walk-forward max drawdown sits at 15%.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "EURUSD H4 genome reports a net alpha of +4.2% alongside an estimated slippage of 2.1% and a raw win rate of just 51%.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "SPY 15-minute strategy generated an 18% annualized CAGR despite a 45% realized volatility and a 0.95 correlation to the S&P 500 benchmark.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "GLD weekly genome shows a Sortino ratio of 3.1 and a Calmar ratio of 0.8, while the turnover rate reached 400% over the measurement window.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "NVDA options genome posted an in-sample profit factor of 4.2, whereas the most recent 30-day out-of-sample period recorded a profit factor of 0.6.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "IBM futures genome reported an average trade PnL of +$150, but the median trade PnL was -$20 with a 95% win rate limited to positions under 10 contracts.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "XAUUSD 1D genome achieved an alpha of 3.2% but registered negative absolute returns during three consecutive low-volatility regimes lasting over 48 hours each.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "CL 4H genome reported a maximum favorable excursion of +8% against a maximum adverse excursion of -7.9%, yielding a raw win rate of 60% but a net expectancy below zero after commission.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "QQQ daily genome produced a rolling 30-day alpha of +5% alongside a rolling beta of 1.8 and a total volatility of only 12%.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "AMZN 1H genome achieved an in-sample Sharpe of 1.8 and an out-of-sample Sharpe of -0.4, yet the population stability index remained as low as 0.01.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "USDJPY 30M genome generated an annualized return of 22% with a max drawdown of 2% and a Sharpe ratio of 3.5, but the profit factor was only 1.01.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "SOYBEAN futures genome showed an R-squared of 0.95 against its fitted curve while the residual standard error reached 4.2 bushels, and the seasonal pattern broke twice in the last month.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Genome X9-2P, optimized on BTCUSD 1D data from 2022-01-01 to 2023-01-01, achieved an in\u2011sample Sharpe of 2.45, but out\u2011of\u2011sample backtest from 2023-01-01 to 2024-01-01 produced a Sharpe of -0.22, a 38% maximum drawdown, and win rate fell from 68% to 34%; contradictory performance warrants quarantine.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "AAPL weekly momentum model (Genome K-7J) reported a 15% annualized alpha in 2022-Q2, yet the rolling 30\u2011day alpha turned negative for three straight months in 2023, with Sharpe dropping from 1.9 to -0.7 and turnover spiking 120%; conflicting signals trigger quarantine.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "S&P 500 sector rotation strategy (Genome R4-M9) posted a 22% in\u2011sample gain over 2021\u20112022, but walk\u2011forward validation from 2023-Q1 to 2024-Q1 showed a -9% cumulative loss, Beta drift of 0.55, and Sharpe shifting from 1.6 to -0.3; divergent outcomes merit quarantine.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "TSLA 4H mean\u2011reversion genome (G-B3) achieved a 1.8% average profit per trade in 2022, but during the volatile March 2024 period it incurred a 27% drawdown and average loss of -2.4% per trade; contradictory profit/loss under different regimes calls for quarantine.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Gold futures (XAU/USD) 5\u2011minute genome (M-V6) posted a 3.2% CAGR with Sharpe 2.0 up to 2022-06, but OOS test from 2022-07 to 2023-06 resulted in a -4% CAGR, a Correlation of -0.62 with the market, and a risk\u2011adjusted reversal; contradictory signals justify quarantine.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "NVDA options gamma scalping genome (G-L8) recorded a 35% volatility lift and 12% premium capture in 2022, but live trading in 2023 showed a 22% drop in premium income and gamma exposure swing from +0.45 to -0.38; opposite gamma dynamics and revenue decline place it in quarantine.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Multiple\u2011asset crossover strategy (Genome A-C2) displayed a 9% average return across five symbols in 2021, yet in Q1 2024 it lost 5% on three symbols while gaining 3% on two, with portfolio Sharpe moving from 1.6 to -0.3; divergent asset performance warrants quarantine.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "EUR/USD carry genome (G-N5) reported a 2.8% annualized yield in 2020\u20112021, but the 2022\u20112023 backtest shows a -1.5% yield, a 31% max drawdown, and Hurst exponent dropping from 0.62 to 0.21; contradictory trend and fractal behavior trigger quarantine.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "CRYPTO composite genome (H-J9) achieved a 48% CAGR on a basket of altcoins in 2022, yet the subsequent six\u2011month live period produced a 22% loss and transaction cost ratio rose from 0.03 to 0.07; stark backtest vs live reversal merits quarantine.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Microsoft (MSFT) 2\u2011week dual moving average genome (D-P4) recorded a 1.9% CAGR and 73% win rate in 2021, but 2023 saw a win rate of 38%, average loss of -0.5% per trade, and a 24% drawdown; contradictory win\u2011rate and profit reversal justify quarantine.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Russell 2000 RSI\u2011based genome (R-S7) produced a 4.3% Sharpe in\u2011sample over 2021\u20112022, yet walk\u2011forward test from 2023\u2011Q2 to 2024\u2011Q1 resulted in a Sharpe of -0.9 and beta drift of +0.55 relative to the S&P; opposing risk\u2011adjusted outcomes call for quarantine.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Gold\u2011silver ratio arbitrage genome (G-T3) posted a 5% net profit in 2020\u20112021, but the 2023 backtest shows a 7% loss, a drawdown lasting over 180 days, and turnover increase of 200% with inconsistent turnover\u2011adjusted returns; mixed profitability and turnover surge merit quarantine.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "EURUSD 4H mean reversion signal fired on a 2.1 standard deviation move but the rolling 20-period correlation to GBPUSD inverted to -0.72, suggesting conflicting cross-asset behavior",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "QQQ covered call ladder returned 18% annualized yet the put spread cost rose 340bps and max pain shifted 4 points away from the current spot level",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "XLE momentum oscillator read overbought at 82 while sector ETF flows were net negative for 11 consecutive sessions, a divergence that defies typical trend confirmation",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "SPY volatility forecast projected 14% realized vol but the VIX term structure inverted sharply with backwardation exceeding 6 points across all tenors",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Genome S-5N2q generated 3.2 Sharpe over 90 days with only 12 trades and a 40% win rate, the sample size and inconsistency raising reliability concerns",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "SOL 15m grid strategy captured 47 scalp trades but the fee slippage consumed 1.8% per round trip and the bid-ask spread widened 220% at entry",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "TLT duration hedge ratio calibrated at 6.3 years shows negative carry offsetting 80% of the yield pickup while rates continue their descent",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "AAPL option chain implied skew steepened 15 vol points away from the at-the-money yet realized volatility compressed to its lowest since March",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Gold futures basis flipped from contango to backwardation with a 12% annualized roll yield but spot demand metrics show declining jewelry consumption",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Bond ladder reinvestment at 5.1% faces a 0.8 negative convexity gap that erodes gains if the yield curve steepens beyond 75bps in either direction",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "S&P sector momentum score top-ranked energy at 0.91 yet relative strength versus the index deteriorated for 6 weeks with no reversal signal",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "MSFT 1D model reports a 15% annualised return with Sharpe 1.6, but the 2022\u20112023 backtest shows a 20% drawdown, and the recent out-of-sample period yields a -5% return.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Gold 1H strategy exhibits a 12% in-sample alpha over 180 days, yet the realised volatility spiked to 38% in the last 30 days, doubling the expected variance.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "ETHUSD weekly strategy: 30% CAGR in-sample, but the last 90 days have a max drawdown of 45% and the win/loss ratio fell to 0.8 from 1.9.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "TSY 2Y spread model: yields +2.5% excess return, while the recent 5-day rolling beta to the S&P 500 is 1.4, suggesting unintended equity exposure.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "SPX put hedging strategy: delta hedge ratio stabilized at 0.33, but the implied volatility rose 120% in a single week, indicating inconsistent risk profile.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "NASDAQ sector rotation: momentum factor contributes +8% returns, value factor -3%, overall portfolio shows +2% but the attribution shows contradictory signs, raising concerns.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Real estate REIT ETF (VNQ) 3-month momentum: +4.5% gain, yet the revenue growth forecast was revised down 30% and the debt-to-equity ratio increased from 0.6 to 0.9.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "BTCUSDT 15-min sentiment model: 70% positive sentiment spikes, but the price moved -2.3% during the same period, suggesting misalignment.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "US 10Y-2Y curve steepness: +1.2% spread, but the credit default swap spreads on high-yield corporates widened 150 bps, contradictory credit signals.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "AAPL weekly straddle implied vol: 45%, but the underlying's realised volatility over the last week was only 20%, indicating a mismatch.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "S&P 500 4H mean-reversion: +5% anomaly captured, yet the 1-month trend signal indicates a -3% drift, requiring further analysis.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "CL crude oil futures: 10% gain over 60 days, but the open interest dropped 35% and the intra-day spread widened dramatically, casting doubt on the profit sustainability.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "EURUSD 5m scalper achieved 92% win rate with 1:1.05 risk-reward and -0.02% expectancy; max drawdown reached 14% across 800 trades.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "SPY weekly momentum backtest shows 2.1 in-sample Sharpe but 0.3 out-of-sample after 2022 regime shift; alpha turns negative in high-vol regimes.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "TSLA weekly options strangle generated 40% annualized return dependent on IV crush; last 3 days saw simultaneous adverse gamma and theta reversal.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Gold futures signal delivers 3.2% monthly alpha but R-squared 0.89 to GLD with only 2-contract capacity and negative autocorrelation at lag 1.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "BTCUSD 4H strategy posted 12 consecutive wins followed by 5 straight losses; profit factor 1.08 and Z-score 1.9 indicate curve-fit risk.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Sector momentum model flags energy at +2.1% annualized but underperforms in rising-rate environments; correlation to TLT breaks down at -0.9.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "QQQ daily rebalance shows 1.8 Sharpe with 40% of returns in 5 days; left tail 3.2 standard deviations wider than Gaussian assumption.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Natural gas calendar spread returned 15% but contango inversion doubled margin requirements; liquidity dried up during storage report.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "SPY put selling strategy yielded 25% annualized until 2020 crash wiped 38%; recovery incomplete after 18 months and skew flattened.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "EUR/GBP mean reversion hit 60% accuracy with 2-day half-life but structural break post-2016; recent Z-score diverges from historical bands.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Japanese yen carry trade earned 8% annualized at 5x leverage; 3 margin calls in 2024 and correlation to BOJ policy turned positive.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "MSFT covered call delta hedge ratio hit 0.85 but realized volatility 10% above implied; P&L path-dependent and gamma risk unhedged.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  }
+]

@@ -1,0 +1,502 @@
+[
+  {
+    "state": "SOL-USDT 1h genome B-332 after 25 generations records an average profit of $0.03 per contract, yet the variance remains high and the edge is not consistent, so the lineage needs more iterations.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "AAPL 5m strategy K-714 has achieved a cumulative return of 9.5% over 30 generations, but the maximum drawdown is 22% and recent metrics are trending lower; continued evolution is required.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "TSLA 30m genome M-101 is on generation 5 with a fitness improvement of 0.02 per generation, yet it has not yet plateaued, so more generations are recommended.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "SPY 15m variant N-258 after 60 generations shows a 1.9x Sharpe but the win rate dropped from 62% to 55%, indicating the strategy still needs refinement through additional generations.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "ADA-USDT 4h lineage P-400 at generation 18 has a CAGR of 14% but a low drawup ratio and inconsistent returns; the model is not yet converged and should be evolved further.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "DOT-USDT 5m genome Q-777 is on generation 9 with a fitness of 1.05 and a profit factor of 1.1, suggesting a marginal edge that requires more generations to become robust.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "BNB-USDT 1h strategy R-333 reports a 0.6 Sharpe after 33 generations and a wide trade distribution; the lineage is still noisy and should be iterated upon.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "MSTR daily mutated genome S-999 has a 12% gain over 50 generations but a low Sharpe of 0.3 and variable risk metrics; more generations are needed to solidify performance.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "NVDA 15m lineage T-555 shows a 1.3x return after 14 generations but with a high standard deviation and occasional sharp drawdowns, indicating the model is not yet stable and requires further evolution.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "AVAX 30m variant U-888 reached generation 22, fitness 1.15, yet the win rate has slipped to 42% and the profit factor is declining; additional generations are necessary to regain convergence.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "XAUUSD 30m mutated lineage G-204 shows fitness climbing from 1.8 to 2.3 over the last five generations, yet the drawdown window remains open and the equity curve has not stabilized above the benchmark.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "NKD 1H genome N-5517 reports a 78% win rate on in-sample data but the Sharpe ratio across the most recent three generations fluctuates between 0.9 and 1.4 without clear convergence.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "GBPJPY 5m variant G-8891 achieved a 34% in-sample return but the parameter vector shifted by 12% from the prior generation, indicating the optimizer has not found a stable peak.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "AMZN daily genome G-3345 records a progressive fitness increase to 1.95 while the population entropy remains above 0.8 bits, suggesting the lineage has not yet converged to a singular optimal strategy.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "ES 2m lineage G-1122 displays a rolling Sharpe of 1.6 over the latest generation with a 15% standard deviation across adjacent folds, meaning the risk-adjusted return profile is still unstable.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "DXY 4H strategy G-7601 reached generation 34 with fitness at 2.1 but the half-life of the recent mutation decay is 8 generations, implying the effect has not fully propagated through the population.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "MES 15m genome G-4410 shows in-sample alpha of 8.5% with a beta still drifting between 0.3 and 0.7 across rolling windows, so the market exposure is not yet consistent enough to certify.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "QQQ weekly lineage G-512 reports a maximum drawdown that keeps expanding each generation while the return-to-volatility ratio has only improved by 0.2 over six generations.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "IWM 10m mutated genome G-6633 exhibits a fitness plateau at 1.45 for four consecutive generations, but the confidence interval of the Sharpe estimate remains too wide to declare convergence.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "XAGUSD 1H genome G-2991 shows a 55% in-sample success rate with a profit factor of 1.8, yet the recent generation introduced a regime-switch parameter that requires further stabilization across market conditions.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "TLT daily lineage G-7784 reports positive skew but the kurtosis of daily PnL remains elevated at 8.2 and the generation-over-generation parameter drift is 9%, indicating insufficient convergence.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "ADA 15m genome G-3342 achieved a 41% cumulative return with a Sharpe of 1.7, but the last three generations show overlapping fitness distributions and the optimizer has not locked onto a single parameter set.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "BTC-USDT 5m mutated lineage M-0314 reports a Sharpe ratio of 0.55 after 23 generations, a win rate of 51%, and the average gain per trade fell from 0.12% to 0.03% over the last five generations.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "ETHUSDT 15m genome G-1829 shows a Sharpe ratio of 0.38 after 14 generations, a win rate of 46% and a maximum drawdown of 15%; the fitness improvement over the last three generations averages 0.01.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "AAPL 1h lineage L-4522 after 8 generations achieves an R^2 of 0.61 against price moves, yet annualised volatility remains at 28% and the average return per signal is only 0.02%; further evolution is needed.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "TSLA 5m variant V-7635 at generation 31 reports a Sharpe ratio of 0.22, win rate 38% and a trailing standard deviation of 0.14; recent fitness gains have stalled for 10 generations.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "SPY 15m mutated strategy M-2043 after 19 generations has a Sharpe ratio of 0.48, a win rate of 52% and a profit factor of 1.2; the average trade duration increased from 45 minutes to 78 minutes, indicating convergence not yet reached.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "QQQ daily genome D-0987 at generation 12 records an information ratio of 0.71, a market cap correlation of 0.93 and an out\u2011of\u2011sample R^2 of 0.31; convergence not achieved, continue iterating.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "BTC-USDT 1h lineage H-5679 after 27 generations shows a Sharpe ratio of 0.63, win rate 53% and a serial correlation of +0.27 indicating residual dependence; further iterations recommended.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "ADA-USDT 10m genome G-8441 at generation 6 achieves a Sharpe ratio of 0.49, win rate 44% and a maximum consecutive loss count of 7; recovery factor is 1.1, continue evolving.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "NVDA 5m strategy S-3214 after 15 generations reports a Sharpe ratio of 0.33, profit factor 1.05 and a 22% drawdown; recent fitness change is negative for the past 4 generations.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "MSFT 1h mutant M-9552 at generation 22 yields a Sharpe ratio of 0.58, win rate 52% and daily turnover fell from 1.2M to 0.8M; the edge is diminishing, further refinement needed.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "GOLD 15m lineage L-6620 after 10 generations shows a Sharpe ratio of 0.41, a 30% max drawdown and a consistency score of 0.55 (target >0.8); evolution should continue.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "EURUSD 30m genome G-7473 at generation 18 displays a Sharpe ratio of 0.31, win rate 45% and a spread\u2011adjusted cost of 0.008%; convergence not achieved, continue evolving.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "Gold futures 30m mutated genome G-5511 exhibits fitness 1.8 with 14% drawdown across 23 generations; profit factor oscillates between 1.4 and 2.1.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "NVDA 1h lineage N-2209 generated a Sharpe ratio of 1.9 but the last 5 generations show fitness variance exceeding 12% and peak-to-trough regression is unstable.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "EURJPY 15m strategy E-8843 after 31 generations shows net edge of 0.8% monthly but the fitness curve plateaued at generation 19 and recent iterations regressed.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "CL crude oil 5m mutant C-1029 reports average daily return 0.4% with profit factor 1.3, yet the population diversity metric dropped below 0.15 at generation 28 suggesting premature convergence.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "GBP/USD 4h genome G-3392 achieved 11% cumulative gain in-sample but the rolling 10-generation window shows win rate fluctuating between 38% and 64% indicating instability.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "TSLA 30m variant V-7741 has fitness 2.3 at generation 15 but the last 4 generations show declining robustness score and maximum adverse excursion widened by 18%.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "XAUUSD 15m lineage X-4450 reports fitness 1.6 with 22% recovery factor, however the generation-over-generation improvement rate slowed to 0.3% suggesting the search hasn't stabilized.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "MES 1m mutated ancestor M-9912 shows a 9% in-sample CAGR but the fitness landscape has multiple local peaks and the best individual regressed 2 generations ago.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "BNBUSDT 5m strategy B-6123 generated a Sharpe of 1.7 across 38 generations but the population mean fitness is still drifting upward with no clear plateau.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "AMZN daily genome A-2050 shows 92% in-sample accuracy on direction but the parameter stability index is 0.44 and the last 8 generations had conflicting optimal weights.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "SILVER 1h mutant S-8841 achieved a profit factor of 1.9 at generation 22 but the robustness cross-validation score varies by \u00b115% across generations and no stable attractor exists.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "NDX 15m lineage N-5519 reports fitness 2.05 with max drawdown 8%, yet the algorithm hasn't reached the termination fitness threshold and the last 6 generations showed marginal 0.1% improvement each.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "Genome 7K-3321 achieved 1.85 in-sample Sharpe across 847k bars, yet rolling 45-day correlation to SPY reached 0.78 in the final 12 weeks.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Fitness plateau observed after generation 310 with 0.4% gain per epoch, but maximum drawdown expanded 220% from generation 295 onward.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Rolling 60-day alpha on XLE reads +3.1% while same window on XLF shows -5.4%, and combined correlation matrix rank collapses to 2.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "61.2% win rate with 1.4 risk-reward ratio, yet last 14 trades produced 11 consecutive losses averaging -2.8R each.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Intraday signal accuracy 87% on 5-minute bars, daily directional accuracy 48.9%, regime classifier confidence 0.52.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Monthly information coefficient +0.14 across 48 months, but weekly IC -0.09 over identical population using same features.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Max drawdown capped at 7.3% through 2023, however 4 separate 3.5% intraday drawdowns recovered within 12 minutes each.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Long sleeve annualized 8.9%, short sleeve annualized 11.2%, combined correlation -0.41 indicating offsetting rather than diversification.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Factor exposure shifted from momentum to reversal with R-squared 0.89 to market regime, but regime labels not present in training.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "52-week rolling alpha +6.8%, 13-week rolling alpha -2.3%, population turnover 14% per week.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Out-of-sample R-squared 0.64 on 2022 data, -0.11 on 2023 data from same genome without retraining.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Realized volatility 14% versus implied 22%, signal frequency tripled over last 25 generations with no improvement in profit factor.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "BTCUSD 1H strategy shows 340% in-sample return with max drawdown of 0.8%, but correlation to index futures jumped to 0.94 after deployment and Sharpe ratio inverted to -1.2 in the same window.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "AAPL covered calls delta hedge ratio hit 0.85 while implied volatility collapsed 40%, yet the underlying moved 12% opposite to the projected direction over 5 days.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "S&P 500 sector rotation model flags energy overweight with 89% confidence, but crude inventories rose 12% week-over-week and sector ETF volume dried up to 20% of average.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "EURUSD mean reversion strategy triggered at 1.0850 with z-score of -2.3, yet ECB policy divergence widened and spot held the level for 3 days without reverting.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Treasury curve steepener trade shows 15bp carry advantage, but 2s10s spread already compressed to 15bp and Fed dots imply 75bp hikes creating conflicting macro timing.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Gold mining equities screen shows 22 out of 30 stocks with RSI oversold below 30, yet gold itself broke above resistance and miners are short 40% more than yesterday.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Japanese Yen carry trade backtested at 6.2% annualized, but JGB yields inverted 15bps against Bunds overnight while USD/JPY crossed 155 with option skew signaling crash risk.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Small-cap value factor loaded +0.85 on recent momentum signals but book-to-market ratios compressed to 5-year lows and relative volume fell 60%.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Crude oil put spread showing 92% probability of profit based on volatility, yet storage levels at maximum capacity and backwardation inverted to contango.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "EM FX basket shows divergence with 3 standard moves vs USD, yet reserve data reveals 40% of holdings shifted to USD and local debt spreads widened 200bps.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Quantitative equity model generated 45 alpha signals with p-value below 0.01, but portfolio concentration hit 85% in 3 names and turnover doubled weekly.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Volatility targeting system reduced exposure by 40% when VIX spiked, yet underlying equities rallied 5% on same day and VVIX showed term structure inversion.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "AAPL 1H returns show a 2.3% Sharpe ratio over the last 50 bars, yet the maximum drawdown hit 4.1% and skewness is -1.8.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "BTC daily alpha registers +0.45% over the training window, yet the validation window shows -0.2% drift with a 0.87 correlation to the index.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "TSLA weekly momentum signals a breakout with 1.5x average volume, yet the price closed 2% below the VWAP for the same period.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "SPY 15m RSI indicates overbought conditions at 74, while the MACD histogram just flipped positive with rising volume divergence.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "GLD monthly fundamental ratio suggests 5% undervaluation, but the 200-day moving average slope is declining at a 12% monthly rate.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "NVDA 5m win rate sits at 78%, yet the average loss per trade is 3.2x the average gain, yielding a negative expectancy of -0.15%.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "EUR/USD 4H returns generate a 1.8 Sharpe in bull regimes, but show a -0.9 Sharpe during the last three high-volatility timestamp clusters.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "AMZN daily alpha factor ranks top quintile on closing prices, yet the intraday 15m bars show a 0.92 negative correlation to the same factor.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "QQQ hourly mean-reversion model triggers a buy at 2 std dev, but the momentum model flags a short signal with 90% confidence for the same timestamp.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "XLE weekly backtest shows +4.2% cumulative alpha, while the parallel paper trading run for the same period shows -1.8% under identical parameters.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "IWM 30m residuals from the factor model pass the Ljung-Box test on the first lag, but fail badly on lag 5 with a p-value of 0.001.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "CL1 daily strategy reports a 0.3% daily VaR, yet the realized volatility spiked to 6.5% over the last 3-day timestamp window with no corresponding stop hits.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Genome G-7X3k achieves in-sample Sharpe of 3.2 on SPY 2023 data, but directional predictions contradict entry signals 40% of the time with win rate oscillating between 45% and 65% across rolling windows.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Genome M-9P2r backtested at +28% annualized on TSLA 2020-2022, but recent paper trading shows -5% with same parameters, and maximum drawdown estimates vary from 8% to 22% depending on lookback period.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Genome K-4L8m exhibits strong performance in bull regime (Sharpe 4.1) but negative returns in bear regime, with regime classifier confidence at 51% suggesting current market is ambiguous between trending and mean-reverting.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Genome R-2W5q shows VaR of 2% and CVaR of 4% suggesting low risk, yet realized volatility spiked 300% during last flash crash simulation, and beta to QQQ diverges by 0.8 from historical average.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Genome Z-8N1s has top feature being 200-day MA crossover with 0.9 importance, but prediction direction suggests short positions when crossover occurs bullish, indicating feature-target misalignment.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Genome C-3J6v passes walk-forward test on first 80% of data with Sharpe 2.8 but fails on last 20%, with optimal lookback window shifting from 50 to 200 days across splits suggesting structural instability.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Genome H-6F4p shows no overfitting in k-fold CV (train Sharpe 2.9, test 2.7) but information ratio drops to 0.2 when transaction costs exceed 5bps, creating ambiguity on viability at realistic costs.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Genome D-1M9w demonstrates 15% alpha in low-vol regime but 8% drawdown in high-vol regime, with VIX term structure inverted suggesting regime shift uncertainty within next 30 days.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Genome T-5B2n maintains 0.95 correlation with SPY in normal times but correlation collapses to 0.2 during March 2020 stress test, with tail risk metrics suggesting 5% chance of -40% single-day moves.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Genome P-9K7m achieves statistical significance (p<0.01) on daily returns but economic significance of 0.3% monthly after costs, with half-life of decay at 3 days suggesting rapid edge erosion.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Genome Y-4R8c shows stable Sharpe across 2019-2021 but parameter sensitivity analysis indicates 10% change in stop-loss threshold flips PnL from +12% to -8%, indicating threshold criticality.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Genome W-2Q5f has consistent 60% win rate across strategies but position sizing model suggests 3x leverage while risk model limits to 1.5x, with Kelly criterion variance estimate spanning 2x to 5x.",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Genome 9F-4821 shows 2.3 in-sample annualized return with Sharpe 1.8, but walk-forward validation over last 3 months yields negative alpha and maximum drawdown exceeds 25%",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "BTCUSD 4H mean reversion strategy achieves 95% win rate on training data, yet live slippage costs consume 60% of gross profits and position sizing violates risk limits",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "SPY covered call genome reports 14% annualized return with 0.3 beta, however implied volatility regime indicator shows contango inversion and VIX term structure inverts",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "EURUSD scalper achieves 3.1 Sharpe on 2023 data, but 2024 Q1 Sharpe drops to 0.4 and correlation to baseline strategy flips from 0.85 to -0.2",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "ETF momentum model generates 18% cumulative return with positive alpha across 5 sectors, yet residual diagnostics show ARCH effects and regime-switching probability exceeds 70%",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  {
+    "state": "Bond futures hedging genome shows 99% in-sample accuracy, however out-of-sample confusion matrix reveals 40% false positive rate on recent Fed announcement days",
+    "label": "quarantine",
+    "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+  }
+]

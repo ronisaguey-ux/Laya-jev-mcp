@@ -1,0 +1,59 @@
+{
+ "id": "D3.1.2",
+ "kind": "choice",
+ "question": "How much should the regime reading in `state` be trusted?",
+ "options": {
+  "high_confidence": "the clusters are well separated and stable",
+  "low_confidence": "the reading sits between states and is unstable",
+  "model_stale": "the fitted model is older than the data warrants",
+  "unusable": "do not act on this regime reading at all"
+ },
+ "label_counts": {
+  "high_confidence": 2,
+  "low_confidence": 2,
+  "model_stale": 2,
+  "unusable": 2
+ },
+ "samples": [
+  {
+   "state": "Four clusters with a silhouette of 0.71, stable across the last twenty rolling refits.",
+   "label": "high_confidence",
+   "option_text": "the clusters are well separated and stable"
+  },
+  {
+   "state": "The current point sits almost equidistant between two clusters and the assignment flips between refits.",
+   "label": "low_confidence",
+   "option_text": "the reading sits between states and is unstable"
+  },
+  {
+   "state": "The fitted model is nine months old while the data has moved through two volatility regimes since.",
+   "label": "model_stale",
+   "option_text": "the fitted model is older than the data warrants"
+  },
+  {
+   "state": "The clustering failed to converge and the labels are arbitrary on the current data.",
+   "label": "unusable",
+   "option_text": "do not act on this regime reading at all"
+  },
+  {
+   "state": "Assignments have not changed in fifty refits and separation is unchanged.",
+   "label": "high_confidence",
+   "option_text": "the clusters are well separated and stable"
+  },
+  {
+   "state": "The assignment changed three times in the last five refits with no market event to explain it.",
+   "label": "low_confidence",
+   "option_text": "the reading sits between states and is unstable"
+  },
+  {
+   "state": "The regime model was last fitted before the data feed changed provider.",
+   "label": "model_stale",
+   "option_text": "the fitted model is older than the data warrants"
+  },
+  {
+   "state": "The fit degenerated to one cluster holding almost every observation.",
+   "label": "unusable",
+   "option_text": "do not act on this regime reading at all"
+  }
+ ]
+}

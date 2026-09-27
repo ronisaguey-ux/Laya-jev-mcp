@@ -1,0 +1,61 @@
+{
+ "id": "D3.2.2",
+ "kind": "choice",
+ "question": "Which bar type should be used for the asset in `state`?",
+ "options": {
+  "temporal": "use a fixed-time bar; the series behaves evenly in time",
+  "dollar_bars": "sample by traded value; volume is uneven in time",
+  "volume_bars": "sample by volume; trade intensity is the driver",
+  "range_bars": "sample by price movement; quiet periods are uninformative",
+  "tick_bars": "sample by transaction count on the raw tick stream"
+ },
+ "label_counts": {
+  "temporal": 2,
+  "dollar_bars": 2,
+  "volume_bars": 1,
+  "range_bars": 2,
+  "tick_bars": 1
+ },
+ "samples": [
+  {
+   "state": "Sampling evenly in clock time loses nothing because activity is uniform through the session.",
+   "label": "temporal",
+   "option_text": "use a fixed-time bar; the series behaves evenly in time"
+  },
+  {
+   "state": "Trade sizes vary by two orders of magnitude across the day, so equal-time bars carry wildly unequal value.",
+   "label": "dollar_bars",
+   "option_text": "sample by traded value; volume is uneven in time"
+  },
+  {
+   "state": "Activity clusters hard around the open and close, and the intent is to sample by traded quantity.",
+   "label": "volume_bars",
+   "option_text": "sample by volume; trade intensity is the driver"
+  },
+  {
+   "state": "Long stretches of the session have almost no price movement, so time bars waste most of their rows.",
+   "label": "range_bars",
+   "option_text": "sample by price movement; quiet periods are uninformative"
+  },
+  {
+   "state": "The raw tick stream is available and the intent is to sample by number of transactions.",
+   "label": "tick_bars",
+   "option_text": "sample by transaction count on the raw tick stream"
+  },
+  {
+   "state": "The series is an equity index future with a strong intraday activity cycle and a dollar-value objective.",
+   "label": "dollar_bars",
+   "option_text": "sample by traded value; volume is uneven in time"
+  },
+  {
+   "state": "Each bar should hold a comparable amount of price travel rather than a comparable amount of time.",
+   "label": "range_bars",
+   "option_text": "sample by price movement; quiet periods are uninformative"
+  },
+  {
+   "state": "Every session shows the same activity profile and the series behaves evenly in time.",
+   "label": "temporal",
+   "option_text": "use a fixed-time bar; the series behaves evenly in time"
+  }
+ ]
+}

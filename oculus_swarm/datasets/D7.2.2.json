@@ -1,0 +1,59 @@
+{
+ "id": "D7.2.2",
+ "kind": "choice",
+ "question": "Does the effort spent on `state` match the value of the result?",
+ "options": {
+  "proportional": "the cost is reasonable for what the work is worth",
+  "over_invested": "more effort has gone in than the outcome warrants",
+  "under_invested": "the task is important and is being under-resourced",
+  "stop_spending": "no further effort is justified; stop it"
+ },
+ "label_counts": {
+  "proportional": 2,
+  "over_invested": 2,
+  "under_invested": 2,
+  "stop_spending": 2
+ },
+ "samples": [
+  {
+   "state": "An hour of work on a defect that corrupts every stored result.",
+   "label": "proportional",
+   "option_text": "the cost is reasonable for what the work is worth"
+  },
+  {
+   "state": "Six attempts at a cosmetic alignment in a comment nobody reads.",
+   "label": "over_invested",
+   "option_text": "more effort has gone in than the outcome warrants"
+  },
+  {
+   "state": "A failing safety check given one trivial attempt before being abandoned.",
+   "label": "under_invested",
+   "option_text": "the task is important and is being under-resourced"
+  },
+  {
+   "state": "The tenth retry of a step whose described defect does not exist in the code.",
+   "label": "stop_spending",
+   "option_text": "no further effort is justified; stop it"
+  },
+  {
+   "state": "Two days on the money path matching the effort the risk warrants.",
+   "label": "proportional",
+   "option_text": "the cost is reasonable for what the work is worth"
+  },
+  {
+   "state": "Rewriting a helper for the fourth time to polish its naming.",
+   "label": "over_invested",
+   "option_text": "more effort has gone in than the outcome warrants"
+  },
+  {
+   "state": "The verification layer that every result depends on is being worked on last.",
+   "label": "under_invested",
+   "option_text": "the task is important and is being under-resourced"
+  },
+  {
+   "state": "The same step has failed six times with the same message and nothing new was learned.",
+   "label": "stop_spending",
+   "option_text": "no further effort is justified; stop it"
+  }
+ ]
+}

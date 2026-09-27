@@ -1,0 +1,59 @@
+{
+ "id": "D4.2.2",
+ "kind": "choice",
+ "question": "How wide should the halt in `state` be?",
+ "options": {
+  "all_strategies": "halt every strategy; the problem is systemic",
+  "one_strategy": "halt the single strategy implicated",
+  "one_asset": "halt the single asset implicated",
+  "new_entries_only": "block new entries but let existing positions manage out"
+ },
+ "label_counts": {
+  "all_strategies": 2,
+  "one_strategy": 2,
+  "one_asset": 2,
+  "new_entries_only": 2
+ },
+ "samples": [
+  {
+   "state": "The bad data fed every strategy through the shared bar builder, so the fault is systemic.",
+   "label": "all_strategies",
+   "option_text": "halt every strategy; the problem is systemic"
+  },
+  {
+   "state": "One strategy's parameter set produced the loss and the others never touched the instrument.",
+   "label": "one_strategy",
+   "option_text": "halt the single strategy implicated"
+  },
+  {
+   "state": "A single instrument's feed went bad while the same strategy traded others cleanly.",
+   "label": "one_asset",
+   "option_text": "halt the single asset implicated"
+  },
+  {
+   "state": "The halt condition is a volatility spike that will resolve; existing positions should be allowed to work out.",
+   "label": "new_entries_only",
+   "option_text": "block new entries but let existing positions manage out"
+  },
+  {
+   "state": "The risk engine returned wrong exposure for the whole book and every strategy read it.",
+   "label": "all_strategies",
+   "option_text": "halt every strategy; the problem is systemic"
+  },
+  {
+   "state": "The loss traces to one strategy's exit rule on one asset, and the same rule is used nowhere else.",
+   "label": "one_strategy",
+   "option_text": "halt the single strategy implicated"
+  },
+  {
+   "state": "A venue outage affects only the instruments listed on it.",
+   "label": "one_asset",
+   "option_text": "halt the single asset implicated"
+  },
+  {
+   "state": "The portfolio is near its drawdown limit and no individual strategy has breached.",
+   "label": "new_entries_only",
+   "option_text": "block new entries but let existing positions manage out"
+  }
+ ]
+}

@@ -1,0 +1,502 @@
+[
+  {
+    "state": "NG (natural gas) 4h genome F8r7 produced a net profit of 0.03% over 124 executions, yet the average loss per losing trade exceeded the average win per winning trade.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "USD/CAD daily genome H3j9 posted a 0.07% return after 500 trades, while the win rate was 31% and the expectancy was negative.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "NAS100 5m scalp genome G2p5 achieved a 0.01% CAGR on 850 trades, with a max drawdown of 4.2% and a win\u2011loss ratio of 0.6.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "XAU/USD 1h genome K7n1 closed the period down 0.05% after 210 trades, with a gross profit of $12k and gross loss of $28k.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "ETH/USD 15m genome L4m3 yielded a 0.03% net gain on 199 trades, but the Sharpe ratio was -0.12 and the %RVR (risk\u2011adjusted return) was below the survival threshold.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "WTI crude oil 30m genome P2q6 recorded a 0.18% profit over 62 trades, yet the Calmar ratio was 0.33 and the profit factor was 1.04, indicating marginal performance.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "GBP/USD 4h genome R9s8 showed a 0.05% increase after 287 trades, yet 73% of those trades were losers and the average win was half the average loss.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "BCH/USD daily genome S1t2 produced a 0.10% return after only 3 trades, with a high volatility measurement and a standard error that exceeds the threshold for reliability.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "SPY weekly variance genome U6v9 captured a 0.6% gain over 12 contracts, but 75% of the positions were losers and the average loss was -$120 vs a $50 average win.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Coffee futures 1h genome V3w4 realized a 0.01% net profit after 84 trades, with a win rate of 38% and a profit factor of 0.92 (below 1).",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "TSLA 15-minute intraday variant, 143 trades, gross 2.1%, transaction cost 1.8%, net 0.3%, max 2.8% drawdown, Sharpe 0.4. Reject because fee-adjusted alpha is near zero and drawdown exceeds tolerance.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "SPY weekly momentum genome across six windows, CAGR 12%, last two out-of-sample months negative, correlation to buy-and-hold 0.94, no regime robustness. Reject as curve-fit noise.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "EURUSD H1 breakout, 89 trades, win rate 52%, average R 0.15, profit factor 1.04, sample confined to 2022 only. Reject; edge too thin and single-year backtest unreliable.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "QQQ daily pairs strategy, 312 signals, gross 6.2%, slippage plus commission 5.1%, remaining 1.1%, Sortino 0.6. Reject; cost erosion leaves insufficient margin above threshold.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "CL crude oil 30-minute genome, 45 trades, expectancy $43, stdev $180, skew -2.4, worst drawdown 22%. Reject due to catastrophic tail risk within sample.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "AAPL weekly genome, 2019-2021 CAGR 9%, 2022-2024 walk-forward CAGR -1.2%, correlation decay evident. Reject; past edge no longer persistent.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "NKD 5-minute mean reversion, 5600 trades, gross 3.4%, broker slippage 2.9%, net 0.5%, beta 1.1. Reject; residual alpha at noise level after realistic execution.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "GC gold monthly genome, 48 months, CAGR 5%, max drawdown -34%, 18-month recovery, Sharpe 0.25. Reject; drawdown exceeds risk budget despite positive CAGR.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "EURJPY daily carry genome, 2200 pips gross, swap 1800 pips, funding cost 2100 pips, net -300 pips, 2023 only. Reject; funding erosion makes strategy unprofitable.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "ZN 10-Year Treasury 2-hour genome, 78 setups, win rate 55%, avg win 0.8pts, avg loss 1.1pts, expectancy -0.15pts per trade. Reject; mathematical edge negative.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "VIX term structure weekly genome, 45 rolls, annualized 7%, stdev 22%, Sharpe 0.32, downside deviation 18%. Reject; risk-adjusted return insufficient for volatility budget.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "ES S&P 500 E-mini 30-minute genome, 1100 bars, net 0.02% per bar annualized, alpha 0.0003, t-stat 1.1, p-value 0.14. Reject; statistical significance absent, noise dominated.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "BTC-USDT 15m genome M-4821 shows a 62% win rate over 1200 trades with a profit factor of 1.34 but drawdown fluctuates between 8% and 14% across the last 5 generations indicating lineage instability.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "AAPL daily strategy G-7712 achieved a 14% cumulative return in the last 200 bars with a Sharpe of 1.1 yet the equity curve exhibits three distinct directional regimes without convergence.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "ES 5m mutated lineage G-9930 reports a 58% win rate and 1.8 profit factor on 800 recent trades yet the average trade duration drifted from 12 minutes to 47 minutes over the past 6 generations.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "EURUSD 1h genome M-5519 records a 2.1% return per week with 55% win rate across 400 samples but the Sharpe ratio swings from 0.9 to 1.7 every 50 iterations.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "CL 30m strategy G-2245 generated 8% net profit over 3 months with a max drawdown of 6% yet the optimal parameters shifted from RSI 14/30 to RSI 9/20 between generations 40 and 45.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "ETH-USDT 4h genome M-1103 holds a 1.55 profit factor on 600 trades but fitness scores vary by \u00b118% across parallel populations with no monotonic improvement trend.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "SPY 15m mutated line G-8821 shows 67% accuracy in the last 1000 predictions yet the confusion matrix flips between long and short biases every 200 trades.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "GC daily genome M-6674 achieves 12% annualized return with Sharpe 1.4 but the convergence metric plateaus at 0.42 while the target threshold is 0.85.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "GBPJPY 5m strategy G-3310 posts a 61% win rate on 2000 ticks with profit factor 1.4 yet the entry signal distribution remains uniform across the session rather than clustering.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "SOL-USDT 1h genome M-4402 reaches 15% return over 50 generations but fitness improvement has stalled at generation 32 with no further reduction in drawdown.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "QQQ weekly mutated lineage G-5522 reports alpha of 2.3% with t-stat 1.9 but the beta oscillates between 0.8 and 1.4 across the last 8 generations.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "NASDAQ 30m genome M-7789 yields 10% net profit with 1.6 profit factor however the holding period standard deviation increased from 2.1 to 5.8 minutes over recent generations.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "BTC-USD 15-minute regime at generation 47 of 100, population mean return 0.08% per trade with widening confidence interval, best fitness improving 0.3% over last 5 gens but stability metric below 0.4.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "EUR/USD 1-hour lineage generation 12, Sharpe ratio swinging between 1.1 and 0.7 across sub-periods, max drawdown still expanding, no convergence in equity curve slope.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "AAPL 5-minute variant generation 89, fitness plateau at 0.54 for 12 consecutive generations, volatility of returns increasing 18% since generation 70.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "TSLA 4-hour cluster generation 23, negative skewness of -1.2 despite positive mean return of 0.12%, lineage not converged due to unstable tail behavior.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "Gold futures daily generation 56 of 80, drawdown ratio improving slowly from 1.8 to 1.5 over last 10 generations, fitness variance still above threshold.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "SPY 30-minute organism generation 34, out-of-sample consistency at 0.31, in-sample edge 2.4% but walk-forward results diverging, requires additional generations.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "ETH 5-minute genome generation 15, fitness score 0.62 unchanged for 6 generations, population diversity dropping too fast indicating premature convergence risk.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "Crude oil 1-hour strand generation 67, correlation matrix entries shifting over 0.3 between generations, no stable edge pattern, lineage not yet converged.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "NVDA 15-minute mutant generation 41, mean return decaying from 0.15% to 0.09% over last 8 generations, variance ratio exceeding 1.5, not converged.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "S&P 500 daily lineage generation 19, high inter-lineage divergence with fitness standard deviation 0.22, best performer showing 3.1% return but inconsistent across subsamples.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "AMZN 30-minute variant generation 53, in-sample edge shrinking from 3.2% to 2.1% over last 15 generations, requires further evolution before validation.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "Silver 4-hour cluster generation 28, mutation count rising to 47 active variants, fitness unstable between 0.41 and 0.58, lineage not converged.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "EURUSD 1H genome after 45 generations shows fitness 1.34 but fitness variance across last 10 cohorts remains 0.18 above convergence threshold; in-sample alpha 2.1% monthly with drawdown 6.2%.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "TSLA 5min strategy mutated 12 generations, hit rate improved from 51% to 54%, but profit factor still oscillates between 1.05 and 1.22 across recent windows; max drawdown 9%.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "SPY 15min genome generation 67 reports in-sample CAGR 18% but walk-forward stability index 0.42; correlation to benchmark shifted 0.15 over last 5 generations.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "BTCUSD 4H mutated lineage fitness plateau at 0.89 Sharpe after 30 generations, yet entropy of trade outcomes increased 12% last 5 epochs; out-of-sample guardrails not triggered.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "Gold future 1D strategy after 22 generations shows profit factor 1.6 but expectancy variance across rolling 100 trades remains 340% above baseline; win rate 58%.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "Nikkei 30-min genome generation 55, in-sample gain 3.2% monthly, but regime detection accuracy only 61% and parameter drift measured 0.08 since last evaluation.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "VIX futures straddle mutated 18 generations, Sharpe 1.12 with 14% drawdown, but Greeks hedging ratio still drifting 2% per generation; convergence metric 0.55.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "S&P 500 sectors rotated genome 40 generations, alpha 1.9% monthly but sector correlation matrix condition number worsening; fitness improvement last 5 gens <0.5%.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "Crude oil 1H strategy generation 33, in-sample return 156% but equity curve R-squared vs generation trend 0.31; recent 10 generations show fitness standard deviation 0.21.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "EM local currency pairs genome 28 generations, Sharpe 0.97 but half-life of mean reversion signal shortened 40% in last 10 generations; not converged.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "Aggregate bond portfolio mutated 25 generations, yield curve alpha 89bps but duration hedge ratio still shifting -0.3 per generation; convergence lag 12 gens.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "Hang Seng 5min strategy generation 50, profit factor 1.4 but number of trades per week doubled in last 5 generations; stability metric 0.48 below 0.7 threshold.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "ETHUSDT 5m genome at generation 47 shows fitness 1.34 trending up from 1.12 with population variance 0.18 against a 1.5 threshold.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "AAPL daily lineage generation 23 has profit factor 1.8 rising from 1.4 while Sharpe 1.2 remains below the 2.0 target.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "SPY 15m best genome fitness 2.1 at generation 12 of 50 still climbing 4% per generation.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "TSLA 1h genome generation 31 shows win rate 58% improving from 52% with population variance narrowing slowly.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "BTCUSD weekly fitness 1.9 at generation 8 up from 1.7 in prior generation against a 2.5 target with diversity index 0.4.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "NVDA 30m population 100 best fitness 2.4 median 1.9 gap closing at generation 19.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "Gold 4h profit factor 1.5 at generation 14 improved from 1.2 with max drawdown compressing 12% to 9%.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "S&P 500 daily generation 38 fitness 2.05 versus 1.95 three generations ago convergence metric 0.78 target 0.9.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "MSFT 1h genome lineage fitness 1.72 at generation 26 improving steadily 2% per generation.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "AMZN weekly generation 42 fitness 2.8 approaching 3.0 target last improvement +0.15.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "ETH-15m fitness 1.8\u21922.1 over 34/100 generations; population std 0.45, gene drift active, no plateau.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "SPY daily generation 12/50 Sharpe 1.2 improving but walk-forward variance 6.2% across last 4 epochs.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "BTC-1h generation 67/200 max drawdown 18%\u219212% profit factor 1.9\u21922.3 still volatile.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "TLT-30m gen 23/80 fitness slowly rising 1.1\u21921.35 diversity index 0.7 convergence not reached.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "EUR-USD 1d gen 15/60 profit factor 1.9\u21922.3 gene expression unstable across last 6 mutations.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "MES-1m gen 56/200 in-sample +12% but walk-forward variance 8% over last 10 generations.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "The EV/EBITDA mean-reversion genome on XLE reached fitness 1.34 at generation 47, up from 1.28, but 3 of the last 5 generations showed walk-forward degradation.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "BTC/USDT 15-minute momentum genome achieved Sharpe 2.1 yet Calmar 0.8, with stop-loss parameters drifting across the last 5 generations.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "USD/JPY carry trade genome posts 14% annualized return at generation 12 of 20 planned, while maximum drawdown continues expanding.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "QQQ factor genome records info ratio 0.9 but tracking error rose 18% over the last 3 generations, indicating instability.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "SPY volatility targeting genome shows profit factor 1.6 with win rate oscillating between 52% and 61% across recent generations.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "AAPL options skew genome jumped 12% in fitness after plateauing for 6 generations, requiring further evaluation before convergence.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "TY interest rate curve genome delivers Sharpe 1.8 yet the out-of-sample gap widened by 0.4 over the last 4 generations.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "XLK sector rotation genome yields 11% annualized return with Calmar 1.2, but recent generations exhibit regime sensitivity.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "ES microstructure genome generates 0.8% monthly alpha at generation 28 while transaction cost ratio climbs steadily.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "CL commodity trend genome on 60-minute bars reaches Sortino 1.4 at generation 15 of 30, with drawdown still recovering.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "IBM/MSFT stat-arb genome shows mean reversion strength declining, with 4 of the last 6 generations posting weaker z-score persistence.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "Global risk parity genome at generation 8 shows improving diversification ratio but correlation matrix remains unstable across asset subsets.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "Gold futures 30m lineage G-156, fitness 1.87 trending up from 1.42 over 8 gens but still oscillating \u00b10.31",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "TSLA 1H strategy mutated 34 generation, cumulative return +23% but max drawdown -18% and rolling 5-gen Sharpe 0.45",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "NVDA daily genome N-908, 12th generation, profit factor 1.34 with recent 3 generations each above 1.28 but no clear plateau",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "MSFT 5min lineage G-201, R\u00b2 of fitness curve vs generation only 0.62, recent delta +0.08 per gen last 4 gens",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "EURUSD 4H variant G-77, 5 consecutive gens positive but equity curve concave, still accelerating upward after 77 iterations",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "AMZN 15min genome M-334, 19th generation, in-sample Sharpe 1.92 but last 3 gens ranged 1.88-2.01, stdev 0.06",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "Crude oil 5m mutated lineage generation 56, CAGR 34% but rolling sortino 0.8 and fitness improvement slope 0.03/gen still positive",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "SPY 1H variant generation 145, cumulative alpha 4.2% but recent 10-gens fitness variance 0.41, no inflection point detected",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "GBP/USD 15m genome G-412, 9th generation, win rate 61% improving 2% per gen, profit factor 1.56 trending but not stabilizing",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "S&P 500 E-mini 30m lineage G-88, R-squared of rolling returns 0.58, fitness 2.34 up from 1.95, still gaining 0.05 per gen",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "ETHBTC 4H strategy mutated 27 generation, 26 of 27 gens profitable but equity line staircase pattern, max equity run 14% below peak",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "QQQ 5min genome Q-555, generation 33, annualized return 28%, fitness 1.78 trending upward but rolling 5-gen window stdev 0.22",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "BTC-USDT 5m genome J-456 shows a 1.2x cumulative return after 8 generations, fitness 1.10, but the max drawdown remains above 15%, indicating further evolution is required.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  },
+  {
+    "state": "ETH-USDT 15m mutated lineage G-987 is at generation 12 with a Sharpe ratio of 0.78 and a win rate of 49%, still fluctuating; additional generations are needed to stabilize performance.",
+    "label": "needs_more_generations",
+    "option_text": "keep evolving this lineage; it is not converged yet"
+  }
+]

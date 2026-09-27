@@ -1,0 +1,59 @@
+{
+ "id": "D9.2.1",
+ "kind": "choice",
+ "question": "Does the evidence in `state` actually support the claim made with it?",
+ "options": {
+  "supported": "the artefact shows what the claim says it shows",
+  "unsupported": "the claim goes beyond what the evidence shows",
+  "contradicted": "the artefact shows the opposite of the claim",
+  "unverifiable": "the claim cannot be checked from the evidence given"
+ },
+ "label_counts": {
+  "supported": 2,
+  "unsupported": 2,
+  "contradicted": 2,
+  "unverifiable": 2
+ },
+ "samples": [
+  {
+   "state": "The attached command output shows the endpoint returning 200 with the expected body.",
+   "label": "supported",
+   "option_text": "the artefact shows what the claim says it shows"
+  },
+  {
+   "state": "The agent reports the feature works end to end but attaches only a unit test that asserts a file exists.",
+   "label": "unsupported",
+   "option_text": "the claim goes beyond what the evidence shows"
+  },
+  {
+   "state": "The report claims the file is absent and the attached listing shows it present.",
+   "label": "contradicted",
+   "option_text": "the artefact shows the opposite of the claim"
+  },
+  {
+   "state": "The claim refers to production behaviour and no artefact from production is attached.",
+   "label": "unverifiable",
+   "option_text": "the claim cannot be checked from the evidence given"
+  },
+  {
+   "state": "The diff shows exactly the change the summary describes.",
+   "label": "supported",
+   "option_text": "the artefact shows what the claim says it shows"
+  },
+  {
+   "state": "The summary says the suite is green based on a run of a single test file.",
+   "label": "unsupported",
+   "option_text": "the claim goes beyond what the evidence shows"
+  },
+  {
+   "state": "The agent says nothing was written and the file's contents are attached showing the new text.",
+   "label": "contradicted",
+   "option_text": "the artefact shows the opposite of the claim"
+  },
+  {
+   "state": "The claim concerns a venue's internal state, which we have no access to.",
+   "label": "unverifiable",
+   "option_text": "the claim cannot be checked from the evidence given"
+  }
+ ]
+}

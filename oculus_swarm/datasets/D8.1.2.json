@@ -1,0 +1,59 @@
+{
+ "id": "D8.1.2",
+ "kind": "choice",
+ "question": "How severe is the finding in `state` if left alone?",
+ "options": {
+  "cosmetic": "style or tidiness; nothing breaks",
+  "minor": "a real defect with no money or data consequence",
+  "serious": "it can corrupt data, state or a result",
+  "critical": "it can lose money, leak credentials, or halt trading"
+ },
+ "label_counts": {
+  "cosmetic": 2,
+  "minor": 2,
+  "serious": 2,
+  "critical": 2
+ },
+ "samples": [
+  {
+   "state": "A trailing whitespace difference in a markdown table.",
+   "label": "cosmetic",
+   "option_text": "style or tidiness; nothing breaks"
+  },
+  {
+   "state": "An unused import that lint flags but nothing calls.",
+   "label": "minor",
+   "option_text": "a real defect with no money or data consequence"
+  },
+  {
+   "state": "A migration that writes to the wrong table when a run is interrupted.",
+   "label": "serious",
+   "option_text": "it can corrupt data, state or a result"
+  },
+  {
+   "state": "A path that logs the API key on every failed request.",
+   "label": "critical",
+   "option_text": "it can lose money, leak credentials, or halt trading"
+  },
+  {
+   "state": "Inconsistent capitalisation in a section heading.",
+   "label": "cosmetic",
+   "option_text": "style or tidiness; nothing breaks"
+  },
+  {
+   "state": "An off-by-one in a pagination helper that duplicates one row at page boundaries.",
+   "label": "minor",
+   "option_text": "a real defect with no money or data consequence"
+  },
+  {
+   "state": "A lock that is released before the write it guards completes.",
+   "label": "serious",
+   "option_text": "it can corrupt data, state or a result"
+  },
+  {
+   "state": "An allowlist that can be widened by a request parameter.",
+   "label": "critical",
+   "option_text": "it can lose money, leak credentials, or halt trading"
+  }
+ ]
+}

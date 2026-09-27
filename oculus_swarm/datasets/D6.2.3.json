@@ -1,0 +1,59 @@
+{
+ "id": "D6.2.3",
+ "kind": "choice",
+ "question": "Does the change in `state` conform to the source of truth?",
+ "options": {
+  "conforms": "it matches the documented contract",
+  "violates": "it contradicts the source of truth and must not land",
+  "unspecified": "the source of truth does not cover this case",
+  "needs_sot_update": "the contract should be amended, which is a human decision"
+ },
+ "label_counts": {
+  "conforms": 2,
+  "violates": 2,
+  "unspecified": 2,
+  "needs_sot_update": 2
+ },
+ "samples": [
+  {
+   "state": "The change implements the contract exactly as the source of truth documents it.",
+   "label": "conforms",
+   "option_text": "it matches the documented contract"
+  },
+  {
+   "state": "The change contradicts a pinned invariant in the source of truth.",
+   "label": "violates",
+   "option_text": "it contradicts the source of truth and must not land"
+  },
+  {
+   "state": "The source of truth is silent on this case, so nothing forbids or requires it.",
+   "label": "unspecified",
+   "option_text": "the source of truth does not cover this case"
+  },
+  {
+   "state": "The implementation is correct but the contract as written is wrong and should say so.",
+   "label": "needs_sot_update",
+   "option_text": "the contract should be amended, which is a human decision"
+  },
+  {
+   "state": "The change adds the documented 9 bar types in the documented order.",
+   "label": "conforms",
+   "option_text": "it matches the documented contract"
+  },
+  {
+   "state": "The change introduces a tenth bar type the constitution does not allow.",
+   "label": "violates",
+   "option_text": "it contradicts the source of truth and must not land"
+  },
+  {
+   "state": "The change defines behaviour for a case the document never anticipated.",
+   "label": "unspecified",
+   "option_text": "the source of truth does not cover this case"
+  },
+  {
+   "state": "The change keeps the documented behaviour but the document's wording is ambiguous about it.",
+   "label": "needs_sot_update",
+   "option_text": "the contract should be amended, which is a human decision"
+  }
+ ]
+}

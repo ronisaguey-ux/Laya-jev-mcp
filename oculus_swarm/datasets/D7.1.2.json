@@ -1,0 +1,59 @@
+{
+ "id": "D7.1.2",
+ "kind": "choice",
+ "question": "Is the task in `state` specified well enough to hand to a worker?",
+ "options": {
+  "ready": "it names the files, the change and the done condition",
+  "underspecified": "it is missing the target or the done condition",
+  "contradictory": "its parts cannot all be satisfied at once",
+  "already_done": "the work it describes is already present"
+ },
+ "label_counts": {
+  "ready": 2,
+  "underspecified": 2,
+  "contradictory": 2,
+  "already_done": 2
+ },
+ "samples": [
+  {
+   "state": "The brief names the file, the exact function and the behaviour expected afterwards.",
+   "label": "ready",
+   "option_text": "it names the files, the change and the done condition"
+  },
+  {
+   "state": "The brief says to fix the login bug and gives no file or symbol.",
+   "label": "underspecified",
+   "option_text": "it is missing the target or the done condition"
+  },
+  {
+   "state": "The brief requires the function to remain synchronous and to be moved to a worker.",
+   "label": "contradictory",
+   "option_text": "its parts cannot all be satisfied at once"
+  },
+  {
+   "state": "The brief asks for a helper that is already present with the described signature.",
+   "label": "already_done",
+   "option_text": "the work it describes is already present"
+  },
+  {
+   "state": "The brief gives the failing test's name and the assertion that should hold.",
+   "label": "ready",
+   "option_text": "it names the files, the change and the done condition"
+  },
+  {
+   "state": "The brief refers to a config key that exists nowhere in the repository.",
+   "label": "underspecified",
+   "option_text": "it is missing the target or the done condition"
+  },
+  {
+   "state": "The brief says to add caching while also requiring no state to persist between calls.",
+   "label": "contradictory",
+   "option_text": "its parts cannot all be satisfied at once"
+  },
+  {
+   "state": "The brief describes a module that the tree already contains under the same name.",
+   "label": "already_done",
+   "option_text": "the work it describes is already present"
+  }
+ ]
+}

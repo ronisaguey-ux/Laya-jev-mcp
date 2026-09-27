@@ -1,0 +1,259 @@
+{
+  "id": "D1.1.1",
+  "kind": "leaf",
+  "question": "What should happen to the mutated genome described in `state` next?",
+  "options": {
+    "promote_to_oos": "send it onward to out-of-sample review; in-sample gain looks real",
+    "reject": "discard it; the gain is noise or below the survival threshold",
+    "needs_more_generations": "keep evolving this lineage; it is not converged yet",
+    "quarantine": "hold it aside; the evidence contradicts itself and needs a closer look"
+  },
+  "label_counts": {
+    "promote_to_oos": 12,
+    "reject": 12,
+    "needs_more_generations": 12,
+    "quarantine": 12
+  },
+  "samples": [
+    {
+      "state": "genome g4471, generation 12: in-sample Sharpe 2.31 over 1,480 trades, out-of-sample Sharpe 2.18 on a held-out 30% window, max drawdown 7.4%.",
+      "label": "promote_to_oos",
+      "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+    },
+    {
+      "state": "EURUSD 30m lineage 88: IS profit factor 1.92, OOS profit factor 1.87, 2,204 trades, both windows positive for 6 consecutive months.",
+      "label": "promote_to_oos",
+      "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+    },
+    {
+      "state": "BTCUSDT 5m variant 1203: IS return 41.2%, OOS return 38.9%, ulcer index 0.041, deflated Sharpe 1.94 after 240 trials.",
+      "label": "promote_to_oos",
+      "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+    },
+    {
+      "state": "AAPL 1d genome 77b: IS Calmar 1.81, OOS Calmar 1.76, 388 trades, information ratio 0.62 and stable across both windows.",
+      "label": "promote_to_oos",
+      "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+    },
+    {
+      "state": "NQ 2h lineage 512: IS Sharpe 1.88, OOS Sharpe 1.91, 911 trades, no single trade over 3.1% of total profit.",
+      "label": "promote_to_oos",
+      "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+    },
+    {
+      "state": "genome m2210 gen 19: IS hit rate 58.4% on 1,102 trades, OOS hit rate 57.1%, profit factor within 4% across both windows.",
+      "label": "promote_to_oos",
+      "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+    },
+    {
+      "state": "GBPUSD 30m g9004: IS expectancy 0.0031, OOS expectancy 0.0029, 1,870 trades, drawdown within 1.2pp between windows.",
+      "label": "promote_to_oos",
+      "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+    },
+    {
+      "state": "ETHUSDT 1h lineage 331: IS Sharpe 2.02, OOS Sharpe 1.97, 640 trades, and it beats buy-and-hold on both windows by 12pp and 11pp.",
+      "label": "promote_to_oos",
+      "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+    },
+    {
+      "state": "USDJPY 4h genome 155: IS profit factor 2.11, OOS 2.04, 402 trades, deflated Sharpe 1.71 across 180 trials, drawdown 6.9%.",
+      "label": "promote_to_oos",
+      "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+    },
+    {
+      "state": "genome t8812 gen 22: IS return 27.4%, OOS 26.1%, 1,344 trades, ulcer index unchanged between windows at 0.036.",
+      "label": "promote_to_oos",
+      "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+    },
+    {
+      "state": "SPY 1d variant 4402: IS Sharpe 1.74, OOS 1.70, 502 trades, and OOS was measured on three separate held-out folds all positive.",
+      "label": "promote_to_oos",
+      "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+    },
+    {
+      "state": "genome k3301 gen 8: IS fitness 0.71, OOS fitness 0.69, 980 trades, consistency score 0.94 with no regime dependence detected.",
+      "label": "promote_to_oos",
+      "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+    },
+    {
+      "state": "genome g1120 gen 9: in-sample Sharpe 2.62 but out-of-sample Sharpe 0.11 on the held-out window, 1,204 trades, drawdown 22.4%.",
+      "label": "reject",
+      "option_text": "discard it; the gain is noise or below the survival threshold"
+    },
+    {
+      "state": "EURAUD 15m lineage 77: IS profit factor 2.41, OOS profit factor 0.88, 2,810 trades, edge disappears entirely out of sample.",
+      "label": "reject",
+      "option_text": "discard it; the gain is noise or below the survival threshold"
+    },
+    {
+      "state": "genome b9902 gen 14: IS return 58.1%, OOS return -7.3%, 1,102 trades - the in-sample curve is not reproducible.",
+      "label": "reject",
+      "option_text": "discard it; the gain is noise or below the survival threshold"
+    },
+    {
+      "state": "DOGEUSDT 5m variant 61: IS Sharpe 3.10, OOS Sharpe -0.42, 4,120 trades, almost certainly fitted to noise on a thin asset.",
+      "label": "reject",
+      "option_text": "discard it; the gain is noise or below the survival threshold"
+    },
+    {
+      "state": "genome r4410 gen 6: IS fitness 0.88, OOS fitness 0.09, 744 trades, below the survival threshold in the second window.",
+      "label": "reject",
+      "option_text": "discard it; the gain is noise or below the survival threshold"
+    },
+    {
+      "state": "CL 1h lineage 2201: IS expectancy 0.0089, OOS expectancy -0.0014, 1,660 trades, both windows disagree on sign.",
+      "label": "reject",
+      "option_text": "discard it; the gain is noise or below the survival threshold"
+    },
+    {
+      "state": "genome h7730 gen 11: IS profit factor 1.94 on 3,011 trades, OOS 0.79 on 402 trades - the trade count itself collapses out of sample.",
+      "label": "reject",
+      "option_text": "discard it; the gain is noise or below the survival threshold"
+    },
+    {
+      "state": "XRPUSDT 1h variant 914: IS Sharpe 2.44, OOS 0.21, 2,205 trades, deflated Sharpe 0.31 after 420 trials.",
+      "label": "reject",
+      "option_text": "discard it; the gain is noise or below the survival threshold"
+    },
+    {
+      "state": "genome p5520 gen 17: IS return 33.8%, OOS -2.1%, 1,909 trades, max drawdown 31.2% in the second window.",
+      "label": "reject",
+      "option_text": "discard it; the gain is noise or below the survival threshold"
+    },
+    {
+      "state": "AUDUSD 30m lineage 88: IS Calmar 1.62, OOS Calmar -0.11, 1,470 trades, information ratio negative out of sample.",
+      "label": "reject",
+      "option_text": "discard it; the gain is noise or below the survival threshold"
+    },
+    {
+      "state": "genome w2210 gen 5: IS hit rate 61.2% on 2,140 trades, OOS hit rate 47.8% - below a coin flip once costs are applied.",
+      "label": "reject",
+      "option_text": "discard it; the gain is noise or below the survival threshold"
+    },
+    {
+      "state": "GC 4h variant 3308: IS Sharpe 1.91, OOS 0.14, 388 trades, and the OOS window covers the same regime as in-sample.",
+      "label": "reject",
+      "option_text": "discard it; the gain is noise or below the survival threshold"
+    },
+    {
+      "state": "genome n1110 gen 2: IS fitness 0.41, OOS 0.39, only 180 trades - on the right track but far short of convergence.",
+      "label": "needs_more_generations",
+      "option_text": "keep evolving this lineage; it is not converged yet"
+    },
+    {
+      "state": "genome q8890 gen 1: IS fitness 0.22, OOS 0.24, 90 trades, first generation of a new lineage with no depth yet.",
+      "label": "needs_more_generations",
+      "option_text": "keep evolving this lineage; it is not converged yet"
+    },
+    {
+      "state": "lineage 604 gen 3: fitness climbed 0.18 to 0.44 to 0.51 across three generations, still rising, 620 trades.",
+      "label": "needs_more_generations",
+      "option_text": "keep evolving this lineage; it is not converged yet"
+    },
+    {
+      "state": "genome c2211 gen 2: IS fitness 0.38, population rank 74 of 200, improving 0.06 per generation, 410 trades.",
+      "label": "needs_more_generations",
+      "option_text": "keep evolving this lineage; it is not converged yet"
+    },
+    {
+      "state": "genome d1170 gen 4: fitness 0.47 with a positive slope across the last three generations, 880 trades, not yet at the survival bar.",
+      "label": "needs_more_generations",
+      "option_text": "keep evolving this lineage; it is not converged yet"
+    },
+    {
+      "state": "lineage 771 gen 1: fitness 0.19, 140 trades, too early to judge - the first generation is never converged.",
+      "label": "needs_more_generations",
+      "option_text": "keep evolving this lineage; it is not converged yet"
+    },
+    {
+      "state": "genome e5510 gen 3: IS 0.36, OOS 0.33, fitness rising 0.05 per generation, 502 trades, viability not yet established.",
+      "label": "needs_more_generations",
+      "option_text": "keep evolving this lineage; it is not converged yet"
+    },
+    {
+      "state": "genome f9901 gen 2: 640 trades, fitness 0.43, mutation still producing variance above noise in every generation.",
+      "label": "needs_more_generations",
+      "option_text": "keep evolving this lineage; it is not converged yet"
+    },
+    {
+      "state": "lineage 228 gen 5: fitness 0.52 flat for two generations, 1,010 trades, undecided between further search and rejection.",
+      "label": "needs_more_generations",
+      "option_text": "keep evolving this lineage; it is not converged yet"
+    },
+    {
+      "state": "genome a3340 gen 3: fitness 0.40, 780 trades, gains in the last three generations, no plateau observed yet.",
+      "label": "needs_more_generations",
+      "option_text": "keep evolving this lineage; it is not converged yet"
+    },
+    {
+      "state": "genome z7712 gen 1: fitness 0.25, 210 trades, freshly seeded lineage with one generation of evidence.",
+      "label": "needs_more_generations",
+      "option_text": "keep evolving this lineage; it is not converged yet"
+    },
+    {
+      "state": "lineage 915 gen 4: fitness trend positive at 0.49 with 1,140 trades, statistically alive but not yet convincing.",
+      "label": "needs_more_generations",
+      "option_text": "keep evolving this lineage; it is not converged yet"
+    },
+    {
+      "state": "genome g5510 gen 7: IS Sharpe 2.44, OOS Sharpe 2.41, but 1,902 trades and only 4 distinct entry conditions - suspiciously concentrated but performing.",
+      "label": "quarantine",
+      "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+    },
+    {
+      "state": "genome y1120 gen 9: IS profit factor 1.88, OOS 1.84, 2,204 trades, yet 71% of profit comes from 3 days in the window.",
+      "label": "quarantine",
+      "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+    },
+    {
+      "state": "EURUSD 30m lineage 440: IS and OOS both positive at Sharpe 1.9 and 1.8, but 4,100 trades is far above the asset's usual count - the cost model may be wrong.",
+      "label": "quarantine",
+      "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+    },
+    {
+      "state": "genome u8890 gen 12: IS fitness 0.66, OOS 0.69 - OOS ABOVE IS, with 1,340 trades, which is itself a red flag for a leak.",
+      "label": "quarantine",
+      "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+    },
+    {
+      "state": "genome i2210 gen 6: IS Sharpe 2.01, OOS 1.96, 1,120 trades, but the trade timestamp distribution is non-uniform in a way the sanity check flags.",
+      "label": "quarantine",
+      "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+    },
+    {
+      "state": "genome o3340 gen 10: metrics strong in both windows at 0.71 and 0.68, 1,880 trades, but the feature vector matches a retired leaky set.",
+      "label": "quarantine",
+      "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+    },
+    {
+      "state": "genome l7710 gen 8: IS 1.84, OOS 1.79, 1,402 trades, yet the pipeline reported the OOS window as 2 days shorter than configured.",
+      "label": "quarantine",
+      "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+    },
+    {
+      "state": "lineage 512 gen 13: IS 0.74, OOS 0.72, 2,010 trades, but the data-quality check failed on 0.4% of bars in the OOS window.",
+      "label": "quarantine",
+      "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+    },
+    {
+      "state": "genome s9900 gen 5: both windows positive at Sharpe 2.1, 900 trades, but the sign of one indicator is inverted against its own definition.",
+      "label": "quarantine",
+      "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+    },
+    {
+      "state": "genome v1101 gen 11: IS 0.69, OOS 0.70, 1,610 trades, yet the equity curve shows an unexplained step change mid-window.",
+      "label": "quarantine",
+      "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+    },
+    {
+      "state": "genome x4420 gen 7: strong at 0.75 and 0.73 on 1,290 trades, but the genome references a parameter slot that no longer exists in the schema.",
+      "label": "quarantine",
+      "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+    },
+    {
+      "state": "genome m3301 gen 9: IS 0.81, OOS 0.78, 1,140 trades, and the same genome id appears twice in the island buffer with different fitness values.",
+      "label": "quarantine",
+      "option_text": "hold it aside; the evidence contradicts itself and needs a closer look"
+    }
+  ]
+}

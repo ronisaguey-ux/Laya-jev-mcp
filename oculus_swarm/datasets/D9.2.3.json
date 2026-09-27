@@ -1,0 +1,59 @@
+{
+ "id": "D9.2.3",
+ "kind": "choice",
+ "question": "Should a summary in `state` be taken at face value?",
+ "options": {
+  "trust_with_check": "use it as a lead but confirm the key fact",
+  "trust_directly": "it is a mechanical report from a tool, not a model's prose",
+  "distrust": "a model summary of its own work; verify independently",
+  "ignore": "it is stale or about a different revision"
+ },
+ "label_counts": {
+  "trust_with_check": 2,
+  "trust_directly": 2,
+  "distrust": 2,
+  "ignore": 2
+ },
+ "samples": [
+  {
+   "state": "A model summarises its own work in prose and the key fact is checkable in one command.",
+   "label": "trust_with_check",
+   "option_text": "use it as a lead but confirm the key fact"
+  },
+  {
+   "state": "The text is the output of a formatter listing the files it rewrote.",
+   "label": "trust_directly",
+   "option_text": "it is a mechanical report from a tool, not a model's prose"
+  },
+  {
+   "state": "An agent describes what it changed in a file it also edited.",
+   "label": "distrust",
+   "option_text": "a model summary of its own work; verify independently"
+  },
+  {
+   "state": "The summary describes a revision that is three commits behind the branch.",
+   "label": "ignore",
+   "option_text": "it is stale or about a different revision"
+  },
+  {
+   "state": "A linter's own report of the rules it applied.",
+   "label": "trust_with_check",
+   "option_text": "use it as a lead but confirm the key fact"
+  },
+  {
+   "state": "The text is a checksum manifest emitted by the tool that computed it.",
+   "label": "trust_directly",
+   "option_text": "it is a mechanical report from a tool, not a model's prose"
+  },
+  {
+   "state": "A completion claim written by the same model that produced the code.",
+   "label": "distrust",
+   "option_text": "a model summary of its own work; verify independently"
+  },
+  {
+   "state": "The summary predates the merge that rewrote the module it describes.",
+   "label": "ignore",
+   "option_text": "it is stale or about a different revision"
+  }
+ ]
+}

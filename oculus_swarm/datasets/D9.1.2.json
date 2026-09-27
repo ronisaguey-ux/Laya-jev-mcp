@@ -1,0 +1,59 @@
+{
+ "id": "D9.1.2",
+ "kind": "choice",
+ "question": "How should the disagreement in `state` be settled?",
+ "options": {
+  "evidence_decides": "check the artefact itself; the fact settles it",
+  "more_samples": "gather more runs before deciding",
+  "human_decision": "escalate; the trade-off is not mechanical",
+  "prefer_conservative": "take the branch with the smaller blast radius"
+ },
+ "label_counts": {
+  "evidence_decides": 2,
+  "more_samples": 2,
+  "human_decision": 2,
+  "prefer_conservative": 2
+ },
+ "samples": [
+  {
+   "state": "Both cite the same file and the file's contents settle which is right.",
+   "label": "evidence_decides",
+   "option_text": "check the artefact itself; the fact settles it"
+  },
+  {
+   "state": "Both answers are stable across runs and the difference is inside the noise.",
+   "label": "more_samples",
+   "option_text": "gather more runs before deciding"
+  },
+  {
+   "state": "The choice trades latency against correctness in a way the brief does not settle.",
+   "label": "human_decision",
+   "option_text": "escalate; the trade-off is not mechanical"
+  },
+  {
+   "state": "Both are defensible and one would affect the live money path.",
+   "label": "prefer_conservative",
+   "option_text": "take the branch with the smaller blast radius"
+  },
+  {
+   "state": "The two agents quoted different line numbers from the same file, which can be read.",
+   "label": "evidence_decides",
+   "option_text": "check the artefact itself; the fact settles it"
+  },
+  {
+   "state": "Each agent's conclusion flipped between two runs on identical input.",
+   "label": "more_samples",
+   "option_text": "gather more runs before deciding"
+  },
+  {
+   "state": "The disagreement depends on risk appetite, which is the owner's call.",
+   "label": "human_decision",
+   "option_text": "escalate; the trade-off is not mechanical"
+  },
+  {
+   "state": "Both are plausible and one of them would delete a shared module.",
+   "label": "prefer_conservative",
+   "option_text": "take the branch with the smaller blast radius"
+  }
+ ]
+}

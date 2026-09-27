@@ -1,0 +1,59 @@
+{
+ "id": "D5.1.1",
+ "kind": "choice",
+ "question": "Is the bar or series in `state` trustworthy?",
+ "options": {
+  "trustworthy": "it passes the checks; compute on it",
+  "stale": "it has not updated when it should have; do not compute on it",
+  "corrupt": "it fails integrity checks; quarantine it",
+  "repaired": "it had gaps that were repaired; use with reduced confidence"
+ },
+ "label_counts": {
+  "trustworthy": 2,
+  "stale": 2,
+  "corrupt": 2,
+  "repaired": 2
+ },
+ "samples": [
+  {
+   "state": "The last tick is four seconds old, row counts match the venue's, and the checksum over the session matches.",
+   "label": "trustworthy",
+   "option_text": "it passes the checks; compute on it"
+  },
+  {
+   "state": "The series should print every second during the session but the newest row is eleven minutes old.",
+   "label": "stale",
+   "option_text": "it has not updated when it should have; do not compute on it"
+  },
+  {
+   "state": "Prices are negative on three rows and the session high is below the session low.",
+   "label": "corrupt",
+   "option_text": "it fails integrity checks; quarantine it"
+  },
+  {
+   "state": "Two hours are missing and were filled by linear interpolation between the surrounding prints.",
+   "label": "repaired",
+   "option_text": "it had gaps that were repaired; use with reduced confidence"
+  },
+  {
+   "state": "Every integrity check passes and the feed advanced within the expected interval.",
+   "label": "trustworthy",
+   "option_text": "it passes the checks; compute on it"
+  },
+  {
+   "state": "The venue clock has not advanced while the wall clock has, so nothing new has arrived.",
+   "label": "stale",
+   "option_text": "it has not updated when it should have; do not compute on it"
+  },
+  {
+   "state": "Duplicate timestamps carry conflicting prices and volumes that cannot both be real.",
+   "label": "corrupt",
+   "option_text": "it fails integrity checks; quarantine it"
+  },
+  {
+   "state": "A holiday gap was backfilled from the prior session's close, which the loader flagged.",
+   "label": "repaired",
+   "option_text": "it had gaps that were repaired; use with reduced confidence"
+  }
+ ]
+}

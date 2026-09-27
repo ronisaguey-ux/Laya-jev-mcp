@@ -1,0 +1,59 @@
+{
+ "id": "D4.1.2",
+ "kind": "choice",
+ "question": "Does the request in `state` increase or reduce exposure?",
+ "options": {
+  "reduce_exposure": "the request lowers or closes exposure, which may proceed",
+  "hold_exposure": "the request changes nothing and may proceed",
+  "increase_exposure": "the request raises exposure and must not be driven by a model score",
+  "unclear": "the effect on exposure cannot be determined; treat as an increase"
+ },
+ "label_counts": {
+  "reduce_exposure": 2,
+  "hold_exposure": 2,
+  "increase_exposure": 2,
+  "unclear": 2
+ },
+ "samples": [
+  {
+   "state": "The request closes an open long and returns the book to flat.",
+   "label": "reduce_exposure",
+   "option_text": "the request lowers or closes exposure, which may proceed"
+  },
+  {
+   "state": "The request cancels a working order that never filled, so no position changes.",
+   "label": "hold_exposure",
+   "option_text": "the request changes nothing and may proceed"
+  },
+  {
+   "state": "The request opens a new long at the maximum permitted size.",
+   "label": "increase_exposure",
+   "option_text": "the request raises exposure and must not be driven by a model score"
+  },
+  {
+   "state": "The request names an instrument but the direction and the size are both absent from the payload.",
+   "label": "unclear",
+   "option_text": "the effect on exposure cannot be determined; treat as an increase"
+  },
+  {
+   "state": "The request halves an existing position.",
+   "label": "reduce_exposure",
+   "option_text": "the request lowers or closes exposure, which may proceed"
+  },
+  {
+   "state": "The request replaces a stop with an identical stop at the same price.",
+   "label": "hold_exposure",
+   "option_text": "the request changes nothing and may proceed"
+  },
+  {
+   "state": "The request adds to a winning position and raises gross exposure by a third.",
+   "label": "increase_exposure",
+   "option_text": "the request raises exposure and must not be driven by a model score"
+  },
+  {
+   "state": "The request says to rebalance but the target weights are missing, so the sign of the change is unknown.",
+   "label": "unclear",
+   "option_text": "the effect on exposure cannot be determined; treat as an increase"
+  }
+ ]
+}

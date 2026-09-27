@@ -1,0 +1,162 @@
+[
+  {
+    "state": "audit finding: region.py reads a column by index 3 but the schema has no guarantee of that position; the writer is in the same file and can be fixed deterministically.",
+    "label": "actionable",
+    "option_text": "a real defect with a concrete fix available"
+  },
+  {
+    "state": "audit finding: save_state uses json.dump without a temp file and os.replace, so a crash mid-write leaves a truncated state file. The fix is a two-line change at one call site.",
+    "label": "actionable",
+    "option_text": "a real defect with a concrete fix available"
+  },
+  {
+    "state": "audit finding: three tests import a helper that was deleted; the helper has one remaining caller that was missed. Concrete, reproducible, single file.",
+    "label": "actionable",
+    "option_text": "a real defect with a concrete fix available"
+  },
+  {
+    "state": "audit finding: the retry gate matches only the string 'Timed out' but the stall error says 'stalled: no new output', so the retry is unreachable. Provable by reading two lines.",
+    "label": "actionable",
+    "option_text": "a real defect with a concrete fix available"
+  },
+  {
+    "state": "audit finding: a threshold is compared with > where the documented contract says >=, so the boundary case takes the wrong branch. One character.",
+    "label": "actionable",
+    "option_text": "a real defect with a concrete fix available"
+  },
+  {
+    "state": "audit finding: the config loader reads a key that no other file defines and silently defaults it, so a typo in the config is never reported.",
+    "label": "actionable",
+    "option_text": "a real defect with a concrete fix available"
+  },
+  {
+    "state": "audit finding: a lock file is written under /tmp with a fixed name shared by two accounts, so the second account can steal the first one's lock.",
+    "label": "actionable",
+    "option_text": "a real defect with a concrete fix available"
+  },
+  {
+    "state": "audit finding: a metrics aggregator reads f['sharpe'] from a nested dict where the value lives under 'result', so it aggregates nothing and reports zero.",
+    "label": "actionable",
+    "option_text": "a real defect with a concrete fix available"
+  },
+  {
+    "state": "audit finding: line 412 exceeds 100 characters by 3 characters. No behaviour is affected.",
+    "label": "noise",
+    "option_text": "not a real problem; exclude it from the work"
+  },
+  {
+    "state": "audit finding: a local variable is named data2. It is used twice within four lines and is perfectly clear in context.",
+    "label": "noise",
+    "option_text": "not a real problem; exclude it from the work"
+  },
+  {
+    "state": "audit finding: the module imports datetime at the top and again inside one function. Both work; the inner import shadows nothing.",
+    "label": "noise",
+    "option_text": "not a real problem; exclude it from the work"
+  },
+  {
+    "state": "audit finding: a docstring says 'returns a list' and the annotation is List[str]. They agree, so the finding is a false positive from a doc linter.",
+    "label": "noise",
+    "option_text": "not a real problem; exclude it from the work"
+  },
+  {
+    "state": "audit finding: a test file lacks a module docstring. The test itself is correct and passing.",
+    "label": "noise",
+    "option_text": "not a real problem; exclude it from the work"
+  },
+  {
+    "state": "audit finding: a comment is stale - it mentions a parameter that was removed. Nothing reads the comment.",
+    "label": "noise",
+    "option_text": "not a real problem; exclude it from the work"
+  },
+  {
+    "state": "audit finding: whitespace-only change in a file the audit already scanned. No semantic difference.",
+    "label": "noise",
+    "option_text": "not a real problem; exclude it from the work"
+  },
+  {
+    "state": "audit finding: a helper is defined but unused. It is public API re-exported for external callers and is referenced by docs.",
+    "label": "noise",
+    "option_text": "not a real problem; exclude it from the work"
+  },
+  {
+    "state": "audit finding: security_utils.py is empty and atomic_json_write is missing. The file now exists with the function implemented and 4 tests pass against it.",
+    "label": "already_fixed",
+    "option_text": "the described problem is already resolved in the code"
+  },
+  {
+    "state": "audit finding: the import chain fails on GENOME_SLOT_COUNT being undefined before use. The chain now imports cleanly at HEAD.",
+    "label": "already_fixed",
+    "option_text": "the described problem is already resolved in the code"
+  },
+  {
+    "state": "audit finding: pytest dies during collection. Collection now completes with 7,298 tests and 4 errors on unrelated missing plugins.",
+    "label": "already_fixed",
+    "option_text": "the described problem is already resolved in the code"
+  },
+  {
+    "state": "audit finding: git_status resolves repo paths one level too high. The path resolves correctly now and all three repos report their real branch.",
+    "label": "already_fixed",
+    "option_text": "the described problem is already resolved in the code"
+  },
+  {
+    "state": "audit finding: the SoT integrity pin holds the sha1 of an empty string so it can never fire. The pin now validates with sha256sum -c returning OK.",
+    "label": "already_fixed",
+    "option_text": "the described problem is already resolved in the code"
+  },
+  {
+    "state": "audit finding: a pre-commit hook is declared twice so it runs twice per commit. It is now declared once and the config parses.",
+    "label": "already_fixed",
+    "option_text": "the described problem is already resolved in the code"
+  },
+  {
+    "state": "audit finding: README.md was truncated to 0 bytes by an auto-sweep. The file has content again at the restored revision.",
+    "label": "already_fixed",
+    "option_text": "the described problem is already resolved in the code"
+  },
+  {
+    "state": "audit finding: a step retires landed work as yellow without reading the file. The retire path now reads the target first.",
+    "label": "already_fixed",
+    "option_text": "the described problem is already resolved in the code"
+  },
+  {
+    "state": "audit finding: a metric reads 0.0 on every run. It could be a genuine zero or a wiring bug; no caller can be found and no test covers it.",
+    "label": "needs_investigation",
+    "option_text": "cannot tell yet whether it is real; dig first"
+  },
+  {
+    "state": "audit finding: two modules define the same class name with different bodies. Which one is imported depends on a path choice that is not obvious.",
+    "label": "needs_investigation",
+    "option_text": "cannot tell yet whether it is real; dig first"
+  },
+  {
+    "state": "audit finding: a check has not fired in 30 days. It may be correct-and-quiet or dead code; there is no evidence either way yet.",
+    "label": "needs_investigation",
+    "option_text": "cannot tell yet whether it is real; dig first"
+  },
+  {
+    "state": "audit finding: the audit reports 39 blocked steps, all blocked by a solver that is disabled. Whether the blocker still applies is unverified.",
+    "label": "needs_investigation",
+    "option_text": "cannot tell yet whether it is real; dig first"
+  },
+  {
+    "state": "audit finding: a file appears in git as modified on every run. It may be a runtime artifact or a real edit; the diff is empty.",
+    "label": "needs_investigation",
+    "option_text": "cannot tell yet whether it is real; dig first"
+  },
+  {
+    "state": "audit finding: a lane is reported healthy while its gateway answers nothing. The health probe and the send path disagree.",
+    "label": "needs_investigation",
+    "option_text": "cannot tell yet whether it is real; dig first"
+  },
+  {
+    "state": "audit finding: a summary claims a test count that no command output supports. The claim needs checking against a real run before acting.",
+    "label": "needs_investigation",
+    "option_text": "cannot tell yet whether it is real; dig first"
+  },
+  {
+    "state": "audit finding: an untracked module is imported by tracked code, so a clone would break. Whether the module is truly needed is not yet established.",
+    "label": "needs_investigation",
+    "option_text": "cannot tell yet whether it is real; dig first"
+  }
+]

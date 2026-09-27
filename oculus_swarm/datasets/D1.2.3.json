@@ -1,0 +1,59 @@
+{
+ "id": "D1.2.3",
+ "kind": "choice",
+ "question": "How should the generation budget in `state` be spent next?",
+ "options": {
+  "continue": "keep the current allocation; progress is steady",
+  "increase_mutation": "spend more on exploration; the search has plateaued",
+  "increase_evaluation": "spend more on validation; results are unstable",
+  "stop": "halt the run; further spend looks wasteful"
+ },
+ "label_counts": {
+  "continue": 2,
+  "increase_mutation": 2,
+  "increase_evaluation": 2,
+  "stop": 2
+ },
+ "samples": [
+  {
+   "state": "Generations are still finding improvements every few rounds and the champion has been replaced twice in the last hundred generations.",
+   "label": "continue",
+   "option_text": "keep the current allocation; progress is steady"
+  },
+  {
+   "state": "Fitness has been flat for forty generations while every improvement comes from deeper search.",
+   "label": "increase_mutation",
+   "option_text": "spend more on exploration; the search has plateaued"
+  },
+  {
+   "state": "Generation-to-generation fitness swings by more than the improvement trend, so the ranking is not stable.",
+   "label": "increase_evaluation",
+   "option_text": "spend more on validation; results are unstable"
+  },
+  {
+   "state": "Fitness has declined for twenty generations and the last three replacements were all reverted.",
+   "label": "stop",
+   "option_text": "halt the run; further spend looks wasteful"
+  },
+  {
+   "state": "The population's best and median are rising together and diversity measures hold steady.",
+   "label": "continue",
+   "option_text": "keep the current allocation; progress is steady"
+  },
+  {
+   "state": "The search has converged onto one lineage and nothing new enters the population.",
+   "label": "increase_mutation",
+   "option_text": "spend more on exploration; the search has plateaued"
+  },
+  {
+   "state": "The same genome wins under different seeds, which suggests the evaluations themselves are noisy.",
+   "label": "increase_evaluation",
+   "option_text": "spend more on validation; results are unstable"
+  },
+  {
+   "state": "Every gated metric is worse than the champion it started from, and the trend is monotone down.",
+   "label": "stop",
+   "option_text": "halt the run; further spend looks wasteful"
+  }
+ ]
+}

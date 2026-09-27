@@ -1,0 +1,59 @@
+{
+ "id": "D5.1.2",
+ "kind": "choice",
+ "question": "What kind of gap does `state` show?",
+ "options": {
+  "expected": "the gap matches a known market closure",
+  "feed_dropout": "the gap looks like a data outage, not a real market pause",
+  "genuine_move": "the gap is a real price move, not missing data",
+  "unknown": "the gap cannot be classified; treat as missing data"
+ },
+ "label_counts": {
+  "expected": 2,
+  "feed_dropout": 2,
+  "genuine_move": 2,
+  "unknown": 2
+ },
+ "samples": [
+  {
+   "state": "The missing hours are the documented weekend closure for this instrument.",
+   "label": "expected",
+   "option_text": "the gap matches a known market closure"
+  },
+  {
+   "state": "The gap begins mid-session with no event and resumes at a price continuous with where it stopped.",
+   "label": "feed_dropout",
+   "option_text": "the gap looks like a data outage, not a real market pause"
+  },
+  {
+   "state": "The price jumps 2% across the gap and the venue's own records show trades inside it.",
+   "label": "genuine_move",
+   "option_text": "the gap is a real price move, not missing data"
+  },
+  {
+   "state": "The gap spans a period with no venue calendar to compare against.",
+   "label": "unknown",
+   "option_text": "the gap cannot be classified; treat as missing data"
+  },
+  {
+   "state": "The gap matches the daily maintenance window the venue publishes.",
+   "label": "expected",
+   "option_text": "the gap matches a known market closure"
+  },
+  {
+   "state": "Three symbols across different venues all go silent for the same ninety seconds.",
+   "label": "feed_dropout",
+   "option_text": "the gap looks like a data outage, not a real market pause"
+  },
+  {
+   "state": "An earnings release sits inside the gap and volume on the far side confirms trading continued.",
+   "label": "genuine_move",
+   "option_text": "the gap is a real price move, not missing data"
+  },
+  {
+   "state": "The gap is short, could be a session break or a dropout, and the calendar file is missing.",
+   "label": "unknown",
+   "option_text": "the gap cannot be classified; treat as missing data"
+  }
+ ]
+}

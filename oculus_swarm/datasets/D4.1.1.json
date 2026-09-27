@@ -1,0 +1,99 @@
+{
+  "id": "D4.1.1",
+  "kind": "leaf",
+  "question": "What risk posture fits the conditions in `state`?",
+  "options": {
+    "normal": "no change warranted; conditions are within the ordinary band",
+    "cautious": "reduce conviction and size while conditions are unclear",
+    "de_risk": "cut exposure now; the evidence points to elevated risk",
+    "halt": "stop opening new risk and escalate to a human"
+  },
+  "label_counts": {
+    "normal": 4,
+    "cautious": 4,
+    "de_risk": 4,
+    "halt": 4
+  },
+  "samples": [
+    {
+      "state": "equity -0.4% today against a 3% daily limit, 3 open positions each under 0.5% risk, realised vol at the 52nd percentile.",
+      "label": "normal",
+      "option_text": "no change warranted; conditions are within the ordinary band"
+    },
+    {
+      "state": "daily P&L +0.6%, drawdown from peak 1.1%, 4 open positions and all within their configured size bands.",
+      "label": "normal",
+      "option_text": "no change warranted; conditions are within the ordinary band"
+    },
+    {
+      "state": "equity flat, open risk 1.2% of capital against a 4% cap, realised vol at the 48th percentile and no halt conditions active.",
+      "label": "normal",
+      "option_text": "no change warranted; conditions are within the ordinary band"
+    },
+    {
+      "state": "daily loss 0.3%, max position 0.7% of capital, and the rolling 60-day drawdown sits at 2.1% against a 5% limit.",
+      "label": "normal",
+      "option_text": "no change warranted; conditions are within the ordinary band"
+    },
+    {
+      "state": "equity -1.8% today against a 3% daily limit, realised vol at the 88th percentile, and 4 open positions in correlated assets.",
+      "label": "cautious",
+      "option_text": "reduce conviction and size while conditions are unclear"
+    },
+    {
+      "state": "daily loss 2.1%, drawdown from peak 4.4% against a 5% rolling limit, and the regime label just flipped to transition.",
+      "label": "cautious",
+      "option_text": "reduce conviction and size while conditions are unclear"
+    },
+    {
+      "state": "open risk 3.4% of capital against a 4% cap with two positions in the same sector, vol at the 91st percentile.",
+      "label": "cautious",
+      "option_text": "reduce conviction and size while conditions are unclear"
+    },
+    {
+      "state": "equity -2.4% today, three of four open positions losing, and the data feed reported 0.4% late bars in the last hour.",
+      "label": "cautious",
+      "option_text": "reduce conviction and size while conditions are unclear"
+    },
+    {
+      "state": "equity -2.8% today against a 3% daily limit, drawdown 4.9% against a 5% rolling cap, 5 correlated positions open.",
+      "label": "de_risk",
+      "option_text": "cut exposure now; the evidence points to elevated risk"
+    },
+    {
+      "state": "open risk 3.9% of capital against a 4% cap, realised vol at the 97th percentile, and the feed is intermittent.",
+      "label": "de_risk",
+      "option_text": "cut exposure now; the evidence points to elevated risk"
+    },
+    {
+      "state": "daily loss 2.9%, the regime flipped to high-vol chop 2 bars ago, and four positions share the same underlying driver.",
+      "label": "de_risk",
+      "option_text": "cut exposure now; the evidence points to elevated risk"
+    },
+    {
+      "state": "drawdown 5.1% has breached the rolling limit and open exposure is still at 3.6% of capital.",
+      "label": "de_risk",
+      "option_text": "cut exposure now; the evidence points to elevated risk"
+    },
+    {
+      "state": "daily loss reached 3.2%, breaching the 3% daily limit, with 6 positions still open and the feed down for 4 minutes.",
+      "label": "halt",
+      "option_text": "stop opening new risk and escalate to a human"
+    },
+    {
+      "state": "static drawdown stands at 10.4% against a 10% hard limit, and new entries were still attempted in the last bar.",
+      "label": "halt",
+      "option_text": "stop opening new risk and escalate to a human"
+    },
+    {
+      "state": "the venue is unreachable, local and venue positions disagree by 3 contracts, and open risk is 3.8% of capital.",
+      "label": "halt",
+      "option_text": "stop opening new risk and escalate to a human"
+    },
+    {
+      "state": "two kill conditions are simultaneously active: 5.2% rolling drawdown and a feed that has not ticked in 90 seconds.",
+      "label": "halt",
+      "option_text": "stop opening new risk and escalate to a human"
+    }
+  ]
+}

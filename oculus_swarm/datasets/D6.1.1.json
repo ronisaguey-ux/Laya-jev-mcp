@@ -1,0 +1,59 @@
+{
+ "id": "D6.1.1",
+ "kind": "choice",
+ "question": "Which execution style suits the intent in `state`? (Classify only — this leaf never executes.)",
+ "options": {
+  "passive": "post and wait; the spread matters more than the fill certainty",
+  "aggressive": "cross the spread; certainty of fill matters more",
+  "wait": "do not send yet; conditions are unfavourable",
+  "split": "work the order in slices to limit impact"
+ },
+ "label_counts": {
+  "passive": 2,
+  "aggressive": 2,
+  "wait": 2,
+  "split": 2
+ },
+ "samples": [
+  {
+   "state": "The order is small relative to the book and the spread is wide compared with the expected edge.",
+   "label": "passive",
+   "option_text": "post and wait; the spread matters more than the fill certainty"
+  },
+  {
+   "state": "The signal decays within seconds and the spread is narrower than the expected move.",
+   "label": "aggressive",
+   "option_text": "cross the spread; certainty of fill matters more"
+  },
+  {
+   "state": "The market is in a halt-like condition and pricing is unreliable right now.",
+   "label": "wait",
+   "option_text": "do not send yet; conditions are unfavourable"
+  },
+  {
+   "state": "The order is forty times the visible size at the touch.",
+   "label": "split",
+   "option_text": "work the order in slices to limit impact"
+  },
+  {
+   "state": "The instrument is liquid and the edge persists for minutes, so posting is cheaper.",
+   "label": "passive",
+   "option_text": "post and wait; the spread matters more than the fill certainty"
+  },
+  {
+   "state": "A stale quote sits one tick wide and the edge is a fraction of a tick.",
+   "label": "aggressive",
+   "option_text": "cross the spread; certainty of fill matters more"
+  },
+  {
+   "state": "Volatility just spiked and the book is one-sided.",
+   "label": "wait",
+   "option_text": "do not send yet; conditions are unfavourable"
+  },
+  {
+   "state": "The order exceeds the average minute volume several times over.",
+   "label": "split",
+   "option_text": "work the order in slices to limit impact"
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "id": "D6.1.2",
+ "kind": "choice",
+ "question": "What is the failure in `state` and how urgent is it?",
+ "options": {
+  "rejected_retryable": "the venue rejected it and it can safely be retried",
+  "rejected_fatal": "the venue rejected it and retrying would repeat the failure",
+  "partial_fill": "the order filled only partly and the remainder needs a decision",
+  "disconnect": "connectivity was lost; positions must be reconciled before anything else"
+ },
+ "label_counts": {
+  "rejected_retryable": 2,
+  "rejected_fatal": 2,
+  "partial_fill": 2,
+  "disconnect": 2
+ },
+ "samples": [
+  {
+   "state": "The venue answered insufficient margin and the account has headroom on the next refresh.",
+   "label": "rejected_retryable",
+   "option_text": "the venue rejected it and it can safely be retried"
+  },
+  {
+   "state": "The venue answered unknown instrument, which will not change on retry.",
+   "label": "rejected_fatal",
+   "option_text": "the venue rejected it and retrying would repeat the failure"
+  },
+  {
+   "state": "Three hundred of the thousand shares filled before the order left the book.",
+   "label": "partial_fill",
+   "option_text": "the order filled only partly and the remainder needs a decision"
+  },
+  {
+   "state": "The socket dropped mid-order and the exchange's state is unknown.",
+   "label": "disconnect",
+   "option_text": "connectivity was lost; positions must be reconciled before anything else"
+  },
+  {
+   "state": "A transient rate limit rejected the order and the limit resets in a second.",
+   "label": "rejected_retryable",
+   "option_text": "the venue rejected it and it can safely be retried"
+  },
+  {
+   "state": "The venue answered price outside the permitted band for a limit far from the market.",
+   "label": "rejected_fatal",
+   "option_text": "the venue rejected it and retrying would repeat the failure"
+  },
+  {
+   "state": "The order filled in four slices and two hundred shares remain working.",
+   "label": "partial_fill",
+   "option_text": "the order filled only partly and the remainder needs a decision"
+  },
+  {
+   "state": "The session was lost after the order was acknowledged but before the fill was confirmed.",
+   "label": "disconnect",
+   "option_text": "connectivity was lost; positions must be reconciled before anything else"
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "id": "D2.2.2",
+ "kind": "choice",
+ "question": "Does the result in `state` show a signature of a pipeline artifact rather than an edge?",
+ "options": {
+  "clean": "no artifact signature; the result can be read at face value",
+  "lookahead_suspect": "the timings look too good; suspect lookahead bias",
+  "survivorship_suspect": "the asset set looks cherry-picked after the fact",
+  "cost_model_suspect": "assumed costs look too optimistic to be real"
+ },
+ "label_counts": {
+  "clean": 1,
+  "lookahead_suspect": 3,
+  "survivorship_suspect": 2,
+  "cost_model_suspect": 2
+ },
+ "samples": [
+  {
+   "state": "Signals are computed from closed bars only, entries fill at the next bar's open with modelled costs, and the fold boundaries were fixed before the run.",
+   "label": "clean",
+   "option_text": "no artifact signature; the result can be read at face value"
+  },
+  {
+   "state": "Returns spike on the exact bar of the earnings release and the entry price equals that bar's close.",
+   "label": "lookahead_suspect",
+   "option_text": "the timings look too good; suspect lookahead bias"
+  },
+  {
+   "state": "The traded universe is exactly the assets that survived to today, with the delisted names absent.",
+   "label": "survivorship_suspect",
+   "option_text": "the asset set looks cherry-picked after the fact"
+  },
+  {
+   "state": "The backtest assumes one basis point of slippage on a series whose tick spread is nine.",
+   "label": "cost_model_suspect",
+   "option_text": "assumed costs look too optimistic to be real"
+  },
+  {
+   "state": "The equity curve is smooth with no losing week, which no cost model here reproduces.",
+   "label": "lookahead_suspect",
+   "option_text": "the timings look too good; suspect lookahead bias"
+  },
+  {
+   "state": "Every asset in the set is one that still trades and every one that failed is missing.",
+   "label": "survivorship_suspect",
+   "option_text": "the asset set looks cherry-picked after the fact"
+  },
+  {
+   "state": "Fills are assumed at the mid price with zero fee on a venue that charges both.",
+   "label": "cost_model_suspect",
+   "option_text": "assumed costs look too optimistic to be real"
+  },
+  {
+   "state": "Feature scaling was fitted on the whole sample before the split.",
+   "label": "lookahead_suspect",
+   "option_text": "the timings look too good; suspect lookahead bias"
+  }
+ ]
+}

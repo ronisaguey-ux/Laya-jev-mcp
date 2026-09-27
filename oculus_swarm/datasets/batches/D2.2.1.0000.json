@@ -1,0 +1,102 @@
+[
+  {
+    "state": "deflated Sharpe 1.94 computed across 240 trials, against an IS Sharpe of 2.31 - the trial count is known and high.",
+    "label": "deflated_sharpe",
+    "option_text": "trust the deflated Sharpe; it already discounts trial count"
+  },
+  {
+    "state": "deflated Sharpe 1.71 over 420 trials on 1,204 trades; the raw Sharpe of 2.44 is inflated by selection.",
+    "label": "deflated_sharpe",
+    "option_text": "trust the deflated Sharpe; it already discounts trial count"
+  },
+  {
+    "state": "deflated Sharpe 1.62 with 380 trials recorded, and the raw metrics agree with it in direction.",
+    "label": "deflated_sharpe",
+    "option_text": "trust the deflated Sharpe; it already discounts trial count"
+  },
+  {
+    "state": "deflated Sharpe 1.88 after 300 trials on 2,010 trades, all trial results logged and countable.",
+    "label": "deflated_sharpe",
+    "option_text": "trust the deflated Sharpe; it already discounts trial count"
+  },
+  {
+    "state": "profit factor 1.92 on 2,204 trades with a symmetric win/loss distribution and no single trade above 2.1% of profit.",
+    "label": "profit_factor",
+    "option_text": "trust profit factor; the shape of the curve is reliable"
+  },
+  {
+    "state": "profit factor 2.11 on 1,880 trades, largest winner 1.4% of total profit, and the P&L is not fat-tailed.",
+    "label": "profit_factor",
+    "option_text": "trust profit factor; the shape of the curve is reliable"
+  },
+  {
+    "state": "profit factor 1.78 on 3,100 trades where gross win and gross loss are both large and well sampled.",
+    "label": "profit_factor",
+    "option_text": "trust profit factor; the shape of the curve is reliable"
+  },
+  {
+    "state": "profit factor 1.66 on 1,470 trades with the top 10 winners contributing under 18% of gross profit.",
+    "label": "profit_factor",
+    "option_text": "trust profit factor; the shape of the curve is reliable"
+  },
+  {
+    "state": "ulcer index 0.041 vs a peer median of 0.086 on 1,480 trades, and the equity curve recovers from every drawdown.",
+    "label": "ulcer_index",
+    "option_text": "trust the ulcer index; drawdown behaviour matters most here"
+  },
+  {
+    "state": "ulcer index 0.036 with max drawdown 6.9% on 2,010 trades - drawdown behaviour is the binding constraint here.",
+    "label": "ulcer_index",
+    "option_text": "trust the ulcer index; drawdown behaviour matters most here"
+  },
+  {
+    "state": "ulcer index 0.052 against a 10% max-drawdown limit, on 1,120 trades where time-under-water matters most.",
+    "label": "ulcer_index",
+    "option_text": "trust the ulcer index; drawdown behaviour matters most here"
+  },
+  {
+    "state": "ulcer index 0.029 on 1,660 trades while Sharpe is only moderate - risk-adjusted pain is the strongest signal.",
+    "label": "ulcer_index",
+    "option_text": "trust the ulcer index; drawdown behaviour matters most here"
+  },
+  {
+    "state": "information ratio 0.62 with tracking error 4.1% on 388 trades - consistency against the benchmark is the criterion.",
+    "label": "information_ratio",
+    "option_text": "trust the information ratio; consistency matters most here"
+  },
+  {
+    "state": "information ratio 0.58 on 2,204 trades, and the strategy beats the benchmark in 21 of 24 months.",
+    "label": "information_ratio",
+    "option_text": "trust the information ratio; consistency matters most here"
+  },
+  {
+    "state": "information ratio 0.71 with active return 3.2% on 1,340 trades, measured on the same window as the benchmark.",
+    "label": "information_ratio",
+    "option_text": "trust the information ratio; consistency matters most here"
+  },
+  {
+    "state": "information ratio 0.55 on 1,880 trades where the raw Sharpe overstates the edge against the benchmark.",
+    "label": "information_ratio",
+    "option_text": "trust the information ratio; consistency matters most here"
+  },
+  {
+    "state": "44 trials recorded but no deflated Sharpe computed; profit factor 1.3 on 61 trades; ulcer index undefined on 1 drawdown.",
+    "label": "none_reliable",
+    "option_text": "no metric here is reliable enough to decide on"
+  },
+  {
+    "state": "all seven metrics present but every window is under 90 trades and the trial count is unknown.",
+    "label": "none_reliable",
+    "option_text": "no metric here is reliable enough to decide on"
+  },
+  {
+    "state": "raw Sharpe 3.1 on 42 trades with no trial count, no OOS window and no cost model documented.",
+    "label": "none_reliable",
+    "option_text": "no metric here is reliable enough to decide on"
+  },
+  {
+    "state": "metrics disagree in sign across windows and the trial count is not recorded anywhere in the run.",
+    "label": "none_reliable",
+    "option_text": "no metric here is reliable enough to decide on"
+  }
+]

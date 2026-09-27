@@ -1,0 +1,59 @@
+{
+ "id": "D9.1.1",
+ "kind": "choice",
+ "question": "What kind of disagreement is described in `state`?",
+ "options": {
+  "real_conflict": "the agents reached genuinely incompatible conclusions",
+  "wording_only": "they agree and are describing it differently",
+  "different_scope": "they answered different questions; both can be right",
+  "one_is_wrong": "one is demonstrably wrong on the evidence"
+ },
+ "label_counts": {
+  "real_conflict": 2,
+  "wording_only": 2,
+  "different_scope": 2,
+  "one_is_wrong": 2
+ },
+ "samples": [
+  {
+   "state": "One agent says the change is safe and another says it removes a required guard, citing the same diff.",
+   "label": "real_conflict",
+   "option_text": "the agents reached genuinely incompatible conclusions"
+  },
+  {
+   "state": "Both agents agree the file is untracked and are phrasing it differently.",
+   "label": "wording_only",
+   "option_text": "they agree and are describing it differently"
+  },
+  {
+   "state": "One agent was asked about test coverage and the other about runtime behaviour.",
+   "label": "different_scope",
+   "option_text": "they answered different questions; both can be right"
+  },
+  {
+   "state": "An agent reports 12 callers and the file contains 3, which the grep output shows.",
+   "label": "one_is_wrong",
+   "option_text": "one is demonstrably wrong on the evidence"
+  },
+  {
+   "state": "Two reports disagree on whether the function is called at all, and both cite the same module.",
+   "label": "real_conflict",
+   "option_text": "the agents reached genuinely incompatible conclusions"
+  },
+  {
+   "state": "One says 'not present' and the other says 'absent from the tree'.",
+   "label": "wording_only",
+   "option_text": "they agree and are describing it differently"
+  },
+  {
+   "state": "The disagreement is between an answer about persistence and one about indexing.",
+   "label": "different_scope",
+   "option_text": "they answered different questions; both can be right"
+  },
+  {
+   "state": "An agent claims the tests pass while the pasted output shows a failure.",
+   "label": "one_is_wrong",
+   "option_text": "one is demonstrably wrong on the evidence"
+  }
+ ]
+}

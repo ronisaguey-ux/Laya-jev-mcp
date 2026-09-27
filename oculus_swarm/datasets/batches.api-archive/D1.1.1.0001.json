@@ -1,0 +1,502 @@
+[
+  {
+    "state": "ADAUSD 15\u2011min adaptive MACD attained a 13.6% net return in a 75\u2011day in\u2011sample period, 1,049 trades, and an expectancy of $225 per trade. The strategy shows robust out\u2011of\u2011sample stability.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "GLD 1H signals over 2000 bars produced a 9.4% in-sample return with a Sharpe ratio of 2.1 and maximum drawdown under 4%.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "QQQ daily bars across 3 calendar years show a 28% cumulative gain, profit factor of 1.9, and a win rate of 58%.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Henry Hub 15-minute candles over 6 months generated a 16.3% in-sample net profit with 64% winning trades and steady equity curve.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "ESM5 5-minute bars identify 3 distinct volatility regimes in-sample with an average gain of 11.7% per regime transition.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "CL1 weekly closes over 4 years reflect a 22% total return, 1.8 Sharpe, and no month with loss exceeding 3%.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "USDJPY 30-minute bars for 8 months show 7.2% gain, 55% win rate, and profit factor of 1.6 against 1.1 slippage estimate.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "RTY 15-minute data from Q2 2023 through Q1 2024 records 13.8% in-sample profit, Sharpe 1.7, and 61% hit ratio.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "ZN1 hourly candles over 10 months produced 6.5% return, 2.0 Sharpe, and consistent positive expectancy across all 52 weeks.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "KC1 4-hour bars since January show 19.1% net gain, 67% win rate, and average reward-risk of 2.3:1 on 140 trades.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "SI1 daily bars over 2 years generated 14.6% CAGR, 1.5 Sharpe, and 59% win rate with max 2.1% single-day drawdown.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "EURUSD 5-minute bars across 12 months yield 8.9% return, Sharpe 1.9, and 52% win rate with 1.4 profit factor.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Z1 weekly data from 2020 to 2023 records 25.4% total return, 1.7 Sharpe, and 3 consecutive profitable quarters in-sample.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "EUR/USD 5-minute scalp strategy realized 12 bps net per trade after fees over 3,200 round trips, with a win rate of 50.8% and Sharpe of 0.14 since March 2025.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "BTC long-only genome accumulated 2.3% annualized return with a maximum drawdown of 64% and a Calmar ratio of 0.04 over the last 18 months.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "S&P 500 weekly options genome produced 8% gross alpha but 6% transaction cost decay, netting 2% annualized with a p-value of 0.31 on the final 6-month holdout.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "WTI crude futures morning reversal genome showed 18% profit in the training window but zero PnL across the 3-month walk-forward validation starting January 2026.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Nikkei 225 intraday momentum genome generated 43 bps mean return per day yet a Sortino of -0.22 and 22% downside deviation on the 2024-2025 sample.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "USD/JPY carry genome realized 15 pips average gain per setup but only 47 trades over 4 months, yielding a t-statistic of 0.9 and information ratio of 0.05.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "HY bond spread trade genome returned 0.4% annualized with 14% volatility and a 35% max drawdown, surviving less than one recession cycle.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Gold futures term structure genome captured 9% of total PnL from a single outlier day in April 2026, with the remaining 89 days flat to negative.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "VIX futures contango genome posted gross 11% but 13% roll decay, resulting in a net negative 2% annualized return across 6 consecutive months.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Copper vs aluminum statarb genome shows Pearson correlation of 0.92 in-sample but cointegration half-life of 4 days and 0.03 information coefficient out-of-sample.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Russell 2000 liquidity-adjusted genome achieved 6% gross return but 5.8% market impact and slippage costs, netting 0.2% with a 0.6 beta to US small-cap momentum.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Crypto market-neutral genome maintained 40% gross leverage yet realized zero alpha and 8% funding cost bleed over the Q1 2026 period.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "SPY daily resampled 2018-2023, CAGR 4.1%, max drawdown 22%, Sharpe 0.12, 412 trades, t-stat 0.9",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "BTCUSD 1m genome A7f3 produced 0.8% gross in-sample return over 14 days with max drawdown 4.2% and Sharpe 0.31; cost-adjusted net is 0.1%.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "SPY weekly momentum genome M22q shows 1.2% alpha over 2023 but t-statistic 1.4 and 62% win rate on out-of-sample checks; p-value 0.16.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "EURUSD H4 genome K9x registered 18 trades, average profit 4 pips, average loss 3.8 pips, profit factor 1.04, Expectancy -$2.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "NASDAQ-100 futures genome R5t in-sample gain 0.05% per day over 3 months, but regime shift detected in last 20 sessions and Sharpe collapsed to 0.08.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Gold spot genome G4m has in-sample CAGR 2.1% vs benchmark 1.9%, information ratio 0.09, turnover 340% annually.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "S&P 500 options genome O11v sells 10-delta strangles, collect 0.45% premium per expiry, but 3 consecutive 5-sigma events wiped 4.1% in-sample; recovery incomplete.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Crude oil genome C8p mean-reversion on 200-day z-score >2, in-sample 3.4% return over 60 days, but half the wins from single 2020 spike; no repeat signal.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Russell 2000 genome S14d cross-sectional momentum, in-sample IC 0.03, t-stat 0.9, 12-month backtest shows 0 alpha after transaction costs.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Treasury futures genome T9y 2s10s flattener, in-sample yield 12bp over 45 days, but duration mismatch +3.2yr, max drawdown 2.1%.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "VIX futures genome V3m contango carry, 18 backtests average 0.6% monthly, but 2022 drawdown 22%, Sharpe -0.4 in last 6 months.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "JPY cross genome J15f carry trade long JPY against 14 G10 currencies, in-sample correlation 0.97 to USD/JPY, alpha 0.0%.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Bitcoin dominance genome D7x pairs trade vs ETH, 25 trades, win rate 52%, average win 1.1%, average loss 1.0%, net profit 0.03%.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "The mutated WTI crude oil 1-hour genome produced 14 trades averaging 0.12% each, p-value 0.34, Sharpe 0.08, noise dominates.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "USD/JPY 15-minute variant executed 112 positions with 0.09% mean win versus 0.11% mean loss, expectancy negative after slippage.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Gold spot daily genome returned 0.6% over 45 bars versus 1.1% benchmark, no edge persists after cost adjustment.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "S&P 500 E-mini 30-minute mutation averaged 0.9% but 6 trades lost over 2%, risk/reward below survival threshold.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Apple Inc 5-minute variant recorded 0.8% return over 18 trades, standard error 0.4%, high false discovery risk.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Natural gas 4-hour genome logged only 6 trades with 5 consecutive losses and 4x drawdown to profit, not converged.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Brazilian equity weekly genome gained 1.1% over 12 weeks with half from one outlier week, remainder noise.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Euro Stoxx 50 1-hour mutation achieved Sharpe 0.11 and Sortino 0.05 with 0.15% round-trip cost, no net edge.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "TLT 30-minute variant generated 0.003 alpha per trade, p-value 0.28, below significance for actionability.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Wheat 15-minute genome netted 1.5% against 19% volatility over 31 trades, below risk-free threshold.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Hang Seng daily mutation averaged 0.3% daily but 12 of 20 days negative, negative skewness invalidates signal.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "NVIDIA 5-minute options genome delivered 2.4% with kurtosis 8.2 and fat tails, no structural alpha.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Gold futures intraday genome showed 34% win rate over 1200 trades, Sharpe ratio 0.12, max drawdown 8.4% on 1.1% annual return.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Natural gas hourly genome executed 47 trades across 2023, p-value 0.31 on strategy significance test, profit factor 1.04.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Nikkei 225 daily swing genome achieved 4.2% total return but endured 14% peak-to-trough drawdown, Calmar ratio 0.30.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Crude oil weekly genome returned 2.8% with correlation 0.94 to benchmark, information ratio negative at -0.05.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "S&P 500 hourly genome posted 6.1% gain with negative Sortino ratio -0.22, downside deviation exceeding upside.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Bitcoin 15-minute genome netted 1.4% across 800 bars but suffered 3.2% maximum adverse excursion during evaluation.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "10-year Treasury futures genome delivered profit factor 1.08 after slippage, 23% of trades losing more than risk target.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "EM FX 30-minute genome produced 9.7% return on 212 trades with 0.82 correlation to previous generation, suspected overfit.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Semiconductor index weekly genome CAGR 0.9% with volatility 28%, Sharpe ratio 0.03 below survival threshold.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "VIX futures term structure genome showed negative expectancy -12 basis points per roll after transaction costs across 45 rolls.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Corn futures daily genome R-squared 0.04 on holdout period, t-statistic 1.12 on alpha, no persistent edge detected.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "EM debt daily genome realized 2.1% total return with Calmar ratio 0.11, three separate drawdown events exceeding 6%.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Gold futures directional model executed 120 trades with 47% win rate, average winner 1.2%, average loser 1.5%, profit factor 0.89, net loss -$3,400 after commissions",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Euro FX volatility arbitrage genome backtested 2019-2024, annualized return 5.2%, max drawdown 42%, recovery factor 0.12, ulcer index 8.5",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Japanese equity long-short genome TOPIX constituents 2020-2023, cumulative return 3.1%, benchmark return 4.8%, alpha -1.7%, t-stat -1.2",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Crude oil momentum genome WTI Brent 250 signals, hit rate 51%, average P&L -$85 per trade, expectancy -$4,250 total, profit factor 0.93",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Treasury bond mean reversion 10Y 30Y 180 observations return 1.8% volatility 6% Sharpe 0.3 max adverse excursion 3.5x average win",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "S&P 500 sector ETF pairs trading genome 12 pairs only 2 significant at 5% level cumulative return -2.3% false discovery rate 0.67",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Bitcoin futures cross-exchange arbitrage genome 2022-2024 89 opportunities execution success 67% average profit $45 total net -$1,200",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "FX carry trade portfolio 8 currency pairs annualized return 2.9% drawdown 18% Sharpe 0.16 correlation to risk assets 0.81 no diversification",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "European equities momentum genome STOXX 600 2018-2023 CAGR 3.4% beta 1.05 alpha 0.2% monthly information ratio 0.05 t-stat 0.9",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Commodity futures breakout genome 18 markets 2000-2024 CAGR 1.8% max drawdown 25% Calmar 0.07 fourteen of eighteen markets negative alpha",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "High-yield credit spread trading genome 250 trades win rate 44% average win 2.1% average loss 2.8% profit factor 0.78 net loss -$8,900",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Global macro factor timing genome 6 factors 2010-2024 annualized alpha 0.15% max drawdown 22% t-stat 1.1 p-value 0.14 not significant",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "The BTC/USD 15\u2011minute genome B9c logged a net gain of 0.04% across 12 trade simulations, with a win rate of 31% and a Sharpe ratio of 0.12, indicating performance below the survival threshold. It was evaluated using walk\u2011forward testing from 2022\u201107\u201101 to 2023\u201101\u201115.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "The ETH/USDT 1\u2011day genome T3k recorded a negative CAGR of -0.21% over 45 back\u2011tested periods, and its win rate was only 24%, making the profit implausible. The lineage was stress\u2011tested from 2021\u201109\u201101 through 2022\u201112\u201130 with a 3\u2011month out\u2011of\u2011sample validation.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "SPY 5\u2011minute genome S2r produced a total profit of $1,200 on 30 trades but its win rate was 34% and the maximum drawdown reached 5.1%, well above the allowable risk. The performance span covered the bull market rally of 2020\u201102 and the correction of 2021\u201110.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "GOLD futures (XAU/USD) hourly genome G8h showed a modest return of 0.07% with a precision of 41% on 58 signals, suggesting most gains were random. Backtesting was performed from 2019\u201106\u201101 to 2022\u201103\u201115 under fluctuating volatility conditions.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "The XAU/USD daily genome Q5m generated a profit of $800 over 12 trades, yet the maximum drawdown was 9.8% and the average losing trade exceeded the average winner. This test covered the post\u2011financial\u2011crisis period from 2015\u201101\u201101 to 2018\u201112\u201131.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "USD/CAD weekly genome W7n achieved a Sharpe ratio of -0.20 and a CAGR of -0.3%, indicating the strategy eroded capital. The simulation ran from 2020\u201103\u201115 to 2022\u201106\u201130, encompassing the early pandemic volatility.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "NASDAQ 15\u2011minute genome N4t posted a 0.02% gain but only 2 of 25 trades were profitable, and the average win was far smaller than the average loss. The test period spanned 2022\u201101\u201105 to 2022\u201109\u201120, a period of heightened market turbulence.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "AUD/USD 4\u2011hour genome A6z incurred a total loss of -$2,500, with a win rate of just 22% and a gross loss percentage of 68%. This lineage was backtested from 2018\u201107\u201101 to 2020\u201110\u201115, a timeframe of significant currency swings.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "WTI crude oil 30\u2011minute genome C1j produced a 0.1% gain but the p\u2011value of the t\u2011statistic was 0.48, showing the result is not statistically significant. The evaluation covered 2021\u201102\u201101 through 2021\u201112\u201130 during low volatility oil markets.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "SILVER spot 1\u2011hour genome S3p returned 0.03% while the maximum drawdown was 4.7% and the win rate only 28% across 37 trades. Testing was conducted from 2022\u201104\u201101 to 2022\u201112\u201115, a period of modest metal price movement.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "S&P500 daily genome R9w displayed a 0.5% CAGR but a Calmar ratio of 0.07 and frequent lagging signals, indicating the profit is unreliable. The out\u2011of\u2011sample window was 2020\u201103\u201101 to 2022\u201106\u201130, encompassing the pandemic rebound and subsequent slowdown.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "The DXY 1\u2011hour genome D2q registered a negative net profit of -$1,100, a volatility penalty of 12%, and a hit rate of 24%, deeming it unworthy of further evolution. This assessment was derived from a backtest between 2021\u201109\u201101 and 2022\u201103\u201115, a period of fluctuating dollar strength.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "A NASDAQ-100 quarterly rebalancing genome achieved a 1.2% gross return across 14 trades with a maximum drawdown of 22%, and its out-of-sample Sharpe ratio dropped to 0.1 on the subsequent two quarters.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "A silver futures intraday variant logged 38 trades with an average win of 0.03% and an average loss of 0.02%, yet the annualized return minus slippage and commission fell to 0.4% over the past nine months.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "The Ethereum 4-hour mean-reversion genome showed an in-sample profit factor of 1.8 on 212 bars, but the walk-forward test revealed a factor of 0.9 after transaction costs were included.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "Crude oil futures genome V2.9 reported a CAGR of 3.1% with 89% of its total profit coming from three outlier months, and the remaining months averaged a -1.5% monthly return.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "A GBP/JPY scalping variant executed 2,400 orders across 30 days; the net profit after spread was 11 pips per trade, but the sortino ratio was negative due to a 14% max drawdown.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "The coffee arabica weekly trend genome produced a 2024 YTD return of 2.1% on 5 positions, while the prior three years of backtests showed an average annual return of -4.7%.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "S&P 500 E-mini daily genome XQ17 registered 156 trades with a gross win rate of 52%, but the expectancy per contract was -$37 before accounting for slippage and funding costs.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "TSLA 15-minute momentum variant achieved a 5.2% return in Q1, yet the rolling 20-day Sharpe peaked at 0.9 and ended the period at -0.4 with a 9% drawdown.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "A Japanese Yen 1-hour arbitrage genome filled 847 positions with a 61% win rate, but the profit factor was 1.03 and the average trade size of $48,000 generated only $2,100 net profit after 4.2% brokerage fees.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "The natural gas 30-minute breakout variant accumulated 1,200 tick-returns with a standard deviation of 0.12%, yielding an annualized Sharpe of 0.22 against a benchmark of 0.6 for a generic trend-follower baseline.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "AUD/NZD 5-minute mean-reversion genome M4.1 showed a 7% return on 12 trades, but 11 of those trades occurred during a single 48-hour volatility spike, and the remaining 98% of the calendar year was flat.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "A European equity short-swing genome generated 9% annual return over 2022-2023 on a notional of \u20ac500,000, but the Ulcer Performance Index was 0.08 and the Calmar ratio was 0.31, both below the 0.5 survival floor.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "BTC/USDT 1h genome D9k2 realized a total return of 0.04% over 312 trades, with a Sharpe ratio of 0.21 and 84% of trades losing.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  },
+  {
+    "state": "SPX weekly options genome M5q3 generated a 0.12% gain across 58 contracts, but the winning trades accounted for only 22% of the total.",
+    "label": "reject",
+    "option_text": "discard it; the gain is noise or below the survival threshold"
+  }
+]

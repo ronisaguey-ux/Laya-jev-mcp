@@ -1,0 +1,502 @@
+[
+  {
+    "state": "BTCUSD 5min regime shows 14.2% in-sample return over 800 bars with Sharpe 2.13 and max drawdown 3.1%",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "ES 15min cumulative profit 22.4% with 85% winner ratio, 95% confidence interval excludes zero",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Weekly SPX options yield 15.1% return, 3.2 information ratio, 200 contracts tested in-sample",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "AAPL 5min profit factor 2.4, 13.0% gross return, 160 round trips, expectation $14.2",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "GBPUSD 15min statistical edge 12.4%, 130 samples, z-score 2.7, no autocorrelation",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "AAPL daily 18-month backtest shows 14% CAGR, Sharpe 1.8, max drawdown 9%, 72% win rate across 547 observations from 2023-01-15 to 2024-07-15.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "BTC/USD 4h chart over 12 weeks generated 22% return with profit factor 2.1 across 58 trades and stable volatility regime.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "ES 15m futures over 6-month walk-forward produced 8.5% alpha with t-statistic 3.2 and p-value 0.004 from 140 observations.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "TLT 1h resolution over 90 days delivered 6.2% gain, Sortino ratio 2.4, capturing only 40% of down days with upside beta 1.1.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "EUR/USD 5m pair across 30 trading days returned 4.8% with 65% win rate and 1.9 profit factor over 210 trades.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "SPY weekly 2-year sample exhibits 11% excess return, information ratio 1.5, tracking error 4.2% over 104 weeks.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "ETH/USD daily 6-month period realized 19% return, Sharpe 1.6, max drawdown 12%, 61% positive days.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "CL 30m futures 45-day sample posted 7.3% gain, beta to crude spike 0.9, 38 trades, profit factor 2.3.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "GBP/JPY 15m 8-week sample returned 5.5% with 70% win rate and average win 2x average loss across 96 trades.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "QQQ 4h 1-year sample shows 16% total return, alpha 4.2%, Sharpe 1.7 across 252 trading days.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "GLD 1h 60-day sample produced 3.9% gain, Sortino 1.9, max drawdown 5%, 42 trades, 62% win rate.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "AMZN daily 10-month sample generated 13% return, Calmar 1.4, max drawdown 8%, 210 observations.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "BTCUSD over a 14-day walk-forward achieved CAGR of 34%, Sharpe 2.1, max drawdown 6%.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "AAPL delta-neutral spreads closed over 45 trades in 5 days with 68% win rate and average PnL of $140.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "EURUSD M15 signals generated 1200 samples with precision 0.61, recall 0.58, F1 0.59, and profit factor 1.7.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "SPY put spreads over 22 days netted $0.85 credit with underlying move of 2.1% and IV rank at 30%.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "WTI crude 1H bars show 90 entries cumulative +9.2%, Calmar 3.4 across 60-day window.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "IWM weekly rebalance over 26 weeks produced monthly alpha 1.8%, t-value 2.9, residual vol 4%.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "10Y-2Y Treasury spread over 200 observations has slope -1.4, p-value 0.03, with basis points flattening.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "VIX term structure showed 8% backwardation over 30 contracts, strategy yield 12% annualized in 2-week test.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "ETHUSD 4H grid executed 350 trades with 0.4% edge, expectancy $12, and drawdown 3.1%.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "BRLUSD 5-minute signals produced 800 trades, ROC 14% over 10 days, Sharpe 1.9, outlier wins 3.2%.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "XLK/XLE ratio momentum over 60 days has z-score 2.3, backtest R2 0.71, turnover 15%.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Gold futures 30min bars over 180 days show Sortino 2.8, 57% win rate, profit per trade 0.25%.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "AAPL long/short strategy from 2019-2022 achieved a Sharpe ratio of 1.8 with a 62% win rate across 1500 trades.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "BTC/USD mean reversion system from Jan 2021 produced a profit factor of 2.1 with an 8% max drawdown over 450 trades.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "TLT momentum overlay in Q3 2023 generated an annualized return of 14% and a t-statistic of 3.4 across 120 trades.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "SPY trend following model during H2 2022 delivered a Sortino ratio of 2.5 and a Calmar ratio of 1.9 over 200 trades.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "EUR/USD statistical arbitrage lineage 2020-2023 yielded an alpha of 0.05 and beta of 0.1 with 3000 trades executed.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "NVDA high-frequency mutation in 2023-Q4 recorded a 58% win rate and an expectancy of $4.20 over 5000 trades.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Oil futures breakout strategy from 2022-2023 showed a 35% max gain and 65% hit ratio across 800 trades.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "S&P 500 PCA rotation genome in 2021 attained an R-squared of 0.72 and an 8% alpha with 150 trades.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Gold carry trade mechanism from 2018-2022 posted a Sharpe ratio of 1.5 and 55% win rate over 1200 trades.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Crude Oil pairs trading lineage in 2023-H1 maintained a 0.95 correlation and 1.8 profit factor across 600 trades.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Tesla mean reversion mutation from 2020-2021 achieved 12% annualized return and 10% max drawdown over 900 trades.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Eurodollar volatility arbitrage genome in 2022-Q4 recorded an R-squared of 0.81 and t-stat of 2.9 over 250 trades.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Momentum model on AAPL from 2020-2023 achieved 18% CAGR with Sharpe 2.1 across daily bars; maximum adverse excursion was 11%.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Mean-reversion system on SPY generated 15% annual return with 8% max drawdown over 2019-2022; z-score entry threshold held at 1.8.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Statistical arbitrage on ETH/BTC produced 22% yield with 0.8 correlation coefficient and 3.2-day half-life from 2021-2023.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Trend-following algorithm on EUR/USD recorded 12% return and 58% win rate from 2022-2024; average holding period 4.1 days.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Volatility harvesting on VIX delivered 25% annualized return with 1.9 Sharpe and 22% realized vol over 2020-2023.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Pairs strategy on XLE/XOP returned 19% CAGR with 0.85 R-squared and 1.6 z-score mean reversion from 2019-2023.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Carry trade on JPY crosses yielded 11% annual return with 1.8 Sharpe and 65% positive months from 2021-2024.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Volatility surface arbitrage on SPX captured 16% return with 95% confidence intervals and -0.4 skew exposure from 2020-2023.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Machine learning alpha model on Nasdaq composites generated 20% return with 1.5 information ratio using 34 features from 2022-2024.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Liquidity provision on SOL/USD earned 14% APY with 1.8% impermanent loss and 0.31% fee capture from 2023-2024.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Sector rotation on XLK/XLF achieved 17% annualized return with 45% turnover and 0.9 sector beta from 2021-2023.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Futures basis trade on crude oil delivered 9% return with 60% contango capture and 3.2% roll yield from 2022-2024.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "TSLA 15m regime exhibits 12.8% in-sample return with Sharpe 1.6 across 4200 trades.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Crude Oil daily bars over 9 months delivered an 18.4% net profit and a maximum drawdown of 6.2%.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "NVDA weekly signals generated a 9.5% return with a profit factor of 2.1 over 65 trades.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "XAUUSD 1h chart produced a 14.1% gain and a 1.8 risk-reward ratio over the last 8 weeks.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "SPY monthly data shows a 11.3% cumulative return with a beta of 0.4 over 24 months.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "EUR/JPY 5m strategy achieved 22.5% in-sample profit and a 1.9 win rate across 3100 samples.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "AMZN 30m backtest yielded 15.6% returns with an expectancy of +0.85 per trade over 18 months.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "IBM hourly regime registered a 10.2% return and a Calmar ratio of 2.3 during the 12-month test.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Corn futures daily signals generated 16.7% equity growth and a 1.5 Sortino ratio over 200 days.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "XAGUSD 15m signals realized a 13.9% profit and a 2.0 profit factor across 4500 trades.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "GOOGL 5m regime produced a 19.3% in-sample gain and a 1.4 drawdown over 90 days.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "QQQ weekly analysis shows a 10.8% return with a standard deviation of 4.2% over 52 weeks.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "BTC (15m) simulation delivered a 16.3% cumulative net gain over 22 days with a Sharpe ratio of 1.8 and 312 trades; the p-value is 0.004, indicating robust in\u2011sample performance.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "AAPL 1\u2011hour regime produced a 14.9% return over 60 days, 548 signals, hit rate 62%, max drawdown 11%; the result looks genuine.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "ES 5\u2011minute walk\u2011forward achieved a 23.5% cumulative profit across 180 trades in a 3\u2011month period, with a Sharpe of 2.1; the in\u2011sample fit is strong.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "SPX weekly options strategy generated an 18.7% net return over 9 months, 84 contracts, win rate 58%, average win/loss ratio 1.4; the statistical edge is confirmed.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "TSLA daily backtest over 18 months yielded 12.6% CAGR, 1240 trades, Sharpe 0.9; the result survived a walk\u2011forward robustness test.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "GLD 4\u2011hour regime recorded a 9.3% cumulative gain in 45 days, 210 trades, win rate 71%; the out\u2011of\u2011sample validation is pending.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "EURUSD 15\u2011minute signals produced a 15.2% in\u2011sample profit over 30 days, 1135 trades, average pip gain 12.3, max drawdown 6%; the performance appears genuine.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "IBM monthly options overlay added 7.8% return over a 2\u2011year horizon, 48 executions, Sharpe 1.5; the backtest shows no data\u2011snooping bias.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "NVDA intraday (1\u2011min) mean\u2011reversion system achieved a 19.4% net profit over 14 days, 8400 trades, 62% win rate, expectancy $0.31 per share; the metrics suggest a real edge.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "AUDCAD 30\u2011minute walk\u2011forward posted a 13.5% gain across 512 trades in 6 weeks, Sharpe 1.2; the in\u2011sample result is strong enough for OOS review.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "RDF commodities futures (Cl) 8\u2011hour regime realized an 11.2% cumulative return over 90 days, 274 trades, profit factor 1.78; the backtest passed walk\u2011forward and cross\u2011validation.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "META 4\u2011day periodic strategy recorded a 16.9% return over 120 days, 317 trades, win rate 59%, average R\u2011multiple 0.84; the in\u2011sample performance looks solid.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Gold futures 1H chart across 2021-2023: 23.4% in-sample CAGR, Sharpe 2.1, max drawdown 8%, 412 trades, profit factor 1.8.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "NVDA daily close data from 2020-2023: 31.2% annualized return, win rate 62%, 18% average profit per winning trade, 12% loss per losing trade.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "ETHUSD 30min timeframe over 90 days: 11.7% cumulative return, Calmar ratio 2.4, 340 entries, average hold 2.1 hours.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "S&P 500 weekly rebalancing 2015-2024: 14.3% CAGR, beta 0.92, alpha 4.1%, 120 weekly observations.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "GBPJPY 15min scalping strategy from Jan 2022 to Jun 2023: 18.9% return, 78% win rate, average R-multiple 1.6, 2100 trades.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "TSLA hourly bars across Q1-Q4 2023: 22.1% realized gain, 55% directional accuracy, profit factor 1.9, 890 positions.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Crude oil WTI 4h trend system 2019-2023: 16.5% annual return, correlation 0.3 to SPY, 4.2 Sharpe, 650 signals.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "SPY monthly signals generated 2005-2024: 12.8% average annual return, 72% positive months, 180-month sample, maximum backslide 15%.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "EURUSD 5min mean-reversion 2022-2024: 9.4% return, 58% win rate, avg trade 8 pips, 3100 trades, exposure 2% per entry.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "AMZN weekly options strangle 2021-2023: 25.6% annualized, 65% ITM avoidance rate, premium collection 1200 samples, theta decay positive 18 days avg.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "Gold ETF GLD daily 2018-2024: 13.2% CAGR, 5.6% volatility, Sortino 2.8, 1680 daily returns, positive skew 0.4.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "BTCUSD 15min breakout system 2023-2024: 19.3% in-sample, 52% win rate, avg winner 2.1x avg loser, 1400 trades, risk 1% per trade.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "BTCUSD 15-min regime shows a 14.3% in-sample CAGR over a 90\u2011day window, with 1,210 successful entries and a 93% win rate. The Sharpe ratio is 2.1.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "ETH/EUR 5\u2011min walk\u2011forward shows a 12.9% cumulative profit after 45 days, 845 trades executed and a 91% win ratio. The rolling CAGR remains stable across three validation segments.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "SPX 1\u2011hour momentum filter generated an 18.7% net return in\u2011sample over a 6\u2011month period, 1,574 trades, and a max drawdown of 7.3%.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "AAPL daily options delta\u2011neutral strategy yields a 15.5% net profit over a 12\u2011month backtest, 432 closed spreads, and a profit factor of 1.68.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "NVDA 15\u2011min intraday system achieved a 13.2% cumulative gain across a 3\u2011month walk\u2011forward, 2,031 trades, and a 95% hit rate. The Sharpe remains above 1.9.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "GLD 4h regime recorded a 16.8% return in\u2011sample over 9 weeks, 527 signals generated, with a 90% success rate. Drawdown capped at 6.1%.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "EURUSD M15 trend following model produced a 14.5% profit in\u2011sample over a 4\u2011month period, 1,872 trades, and a 92% win ratio. The expectancy is $310 per contract.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "MSFT weekly options strategy delivered a 17.3% net return over an 8\u2011month backtest, 312 contract cycles, and a 94% win rate. The strategy shows low correlation (0.12) with the S&P 500.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "RB (Sugar) 30\u2011min futures approach registered a 13.9% cumulative profit during a 5\u2011month walk\u2011forward, 987 trades, and a 91% hit rate. The Sharpe is 2.0.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "TSLA 5\u2011min mean reversion produced a 15.8% gain in\u2011sample over a 2\u2011month window, 720 trades, and an 89% win ratio. Volatility\u2011adjusted return is 0.24.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  },
+  {
+    "state": "BRENT crude 1\u2011day swing strategy amassed a 14.1% profit across a 10\u2011week backtest, 259 trades, and a profit factor of 1.73. Max drawdown 5.4%.",
+    "label": "promote_to_oos",
+    "option_text": "send it onward to out-of-sample review; in-sample gain looks real"
+  }
+]

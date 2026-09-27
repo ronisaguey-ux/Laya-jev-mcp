@@ -1,0 +1,62 @@
+[
+  {
+    "state": "population of 200 genomes: fitness spread 0.12 to 0.71, 84 distinct parameter sets, mean pairwise distance 0.41.",
+    "label": "healthy",
+    "option_text": "spread is adequate; continue as planned"
+  },
+  {
+    "state": "island 3 at generation 22: 200 members, 118 distinct, fitness standard deviation 0.14 across 2,010 trades evaluated.",
+    "label": "healthy",
+    "option_text": "spread is adequate; continue as planned"
+  },
+  {
+    "state": "population at gen 15: 200 genomes, 96 unique, mean pairwise Hamming distance 0.38 on the 240 parameter slots.",
+    "label": "healthy",
+    "option_text": "spread is adequate; continue as planned"
+  },
+  {
+    "state": "island 1 gen 30: 200 members, 132 distinct, fitness range 0.21 to 0.69, and 14 separate lineages above 0.50.",
+    "label": "healthy",
+    "option_text": "spread is adequate; continue as planned"
+  },
+  {
+    "state": "population of 200 genomes: fitness spread 0.63 to 0.71 but only 6 distinct parameter sets, mean pairwise distance 0.02.",
+    "label": "converged",
+    "option_text": "the population has collapsed onto one lineage and needs injection"
+  },
+  {
+    "state": "island 2 at generation 34: 189 of 200 members are clones of one genome, fitness standard deviation 0.008.",
+    "label": "converged",
+    "option_text": "the population has collapsed onto one lineage and needs injection"
+  },
+  {
+    "state": "population at gen 41: 200 genomes, 4 unique, mean pairwise distance 0.01 on the 240 slots - the search has collapsed.",
+    "label": "converged",
+    "option_text": "the population has collapsed onto one lineage and needs injection"
+  },
+  {
+    "state": "island 4 gen 28: 200 members, 7 distinct, and every genome shares the same 240-slot configuration with tiny weight offsets.",
+    "label": "converged",
+    "option_text": "the population has collapsed onto one lineage and needs injection"
+  },
+  {
+    "state": "population of 200 genomes: only 23 clear the survival threshold, fitness spread 0.02 to 0.58 with a gap in the middle.",
+    "label": "fragmented",
+    "option_text": "too few viable members survive; relax selection briefly"
+  },
+  {
+    "state": "island 1 at generation 19: 200 members but only 31 viable, and no genome above 0.60 survives to the next generation.",
+    "label": "fragmented",
+    "option_text": "too few viable members survive; relax selection briefly"
+  },
+  {
+    "state": "population at gen 26: 41 viable of 200, fitness median 0.11, and the death rate exceeds the reproduction rate for 4 generations.",
+    "label": "fragmented",
+    "option_text": "too few viable members survive; relax selection briefly"
+  },
+  {
+    "state": "island 2 gen 23: 200 members, 18 viable, and the survivors are unrelated singletons rather than a lineage.",
+    "label": "fragmented",
+    "option_text": "too few viable members survive; relax selection briefly"
+  }
+]

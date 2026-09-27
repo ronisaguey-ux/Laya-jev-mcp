@@ -1,0 +1,57 @@
+{
+ "id": "D3.1.3",
+ "kind": "choice",
+ "question": "Has the market in `state` shifted out of its previous regime?",
+ "options": {
+  "no_shift": "the state is unchanged; keep the current playbook",
+  "early_shift": "early signs of a change; reduce conviction",
+  "confirmed_shift": "the shift is established; the playbook must change"
+ },
+ "label_counts": {
+  "no_shift": 3,
+  "early_shift": 2,
+  "confirmed_shift": 3
+ },
+ "samples": [
+  {
+   "state": "Volatility, correlation and trend measures sit inside their previous ranges and the prior assignment still holds.",
+   "label": "no_shift",
+   "option_text": "the state is unchanged; keep the current playbook"
+  },
+  {
+   "state": "Two of the six regime features have left their previous range while the rest stay inside it.",
+   "label": "early_shift",
+   "option_text": "early signs of a change; reduce conviction"
+  },
+  {
+   "state": "Five of six features are outside their previous ranges and have stayed there for twenty sessions.",
+   "label": "confirmed_shift",
+   "option_text": "the shift is established; the playbook must change"
+  },
+  {
+   "state": "The regime assignment is unchanged and every feature is within one standard deviation of its prior mean.",
+   "label": "no_shift",
+   "option_text": "the state is unchanged; keep the current playbook"
+  },
+  {
+   "state": "One feature broke out yesterday and reverted today, with nothing else moving.",
+   "label": "early_shift",
+   "option_text": "early signs of a change; reduce conviction"
+  },
+  {
+   "state": "The volatility regime has changed and the correlation structure has changed with it, persisting for a month.",
+   "label": "confirmed_shift",
+   "option_text": "the shift is established; the playbook must change"
+  },
+  {
+   "state": "The features are drifting at the edge but none has left its band yet.",
+   "label": "no_shift",
+   "option_text": "the state is unchanged; keep the current playbook"
+  },
+  {
+   "state": "The trend feature crossed its threshold and the volatility feature followed within the same week.",
+   "label": "confirmed_shift",
+   "option_text": "the shift is established; the playbook must change"
+  }
+ ]
+}

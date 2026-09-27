@@ -1,0 +1,59 @@
+{
+ "id": "D2.2.3",
+ "kind": "choice",
+ "question": "Where should the result in `state` go next?",
+ "options": {
+  "accept": "accept it and let it proceed to champion review",
+  "rerun_validation": "re-run validation; the current evidence is incomplete",
+  "reject": "reject it; it fails a required bar",
+  "human_review": "send it to a human; the metrics conflict"
+ },
+ "label_counts": {
+  "accept": 2,
+  "rerun_validation": 2,
+  "reject": 2,
+  "human_review": 2
+ },
+ "samples": [
+  {
+   "state": "Deflated Sharpe clears the bar, the out-of-sample metrics hold, costs were modelled from real spread, and no artifact signature is present.",
+   "label": "accept",
+   "option_text": "accept it and let it proceed to champion review"
+  },
+  {
+   "state": "The result looks strong but the fold count is below the minimum the bar requires.",
+   "label": "rerun_validation",
+   "option_text": "re-run validation; the current evidence is incomplete"
+  },
+  {
+   "state": "The strategy fails the deflated Sharpe gate outright with the trial count applied.",
+   "label": "reject",
+   "option_text": "reject it; it fails a required bar"
+  },
+  {
+   "state": "Calmar is excellent and profit factor is below one, which no threshold resolves.",
+   "label": "human_review",
+   "option_text": "send it to a human; the metrics conflict"
+  },
+  {
+   "state": "Every gate passes on the pre-registered thresholds and the trial count was declared in advance.",
+   "label": "accept",
+   "option_text": "accept it and let it proceed to champion review"
+  },
+  {
+   "state": "The out-of-sample window is shorter than the gate requires, though nothing else fails.",
+   "label": "rerun_validation",
+   "option_text": "re-run validation; the current evidence is incomplete"
+  },
+  {
+   "state": "The edge is entirely inside the assumed transaction costs.",
+   "label": "reject",
+   "option_text": "reject it; it fails a required bar"
+  },
+  {
+   "state": "Two of the seven fitness metrics are the best ever recorded and the other five are unremarkable.",
+   "label": "human_review",
+   "option_text": "send it to a human; the metrics conflict"
+  }
+ ]
+}

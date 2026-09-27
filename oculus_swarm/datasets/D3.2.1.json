@@ -1,0 +1,59 @@
+{
+ "id": "D3.2.1",
+ "kind": "choice",
+ "question": "Is the asset in `state` tradeable under the current conditions?",
+ "options": {
+  "tradeable": "eligible now; data and liquidity support trading it",
+  "supporting_only": "it is a supporting series, never traded directly",
+  "not_tradeable": "it fails a requirement and must not be traded",
+  "needs_review": "eligibility is ambiguous and a human should confirm"
+ },
+ "label_counts": {
+  "tradeable": 2,
+  "supporting_only": 2,
+  "not_tradeable": 2,
+  "needs_review": 2
+ },
+ "samples": [
+  {
+   "state": "A tier-one FX pair with continuous tick bid/ask, tight spread, a live feed and no gaps in the last ninety days.",
+   "label": "tradeable",
+   "option_text": "eligible now; data and liquidity support trading it"
+  },
+  {
+   "state": "This series exists to condition a model on the dollar index; it is never routed an order.",
+   "label": "supporting_only",
+   "option_text": "it is a supporting series, never traded directly"
+  },
+  {
+   "state": "The feed has been dead for eleven hours and the last print predates the session.",
+   "label": "not_tradeable",
+   "option_text": "it fails a requirement and must not be traded"
+  },
+  {
+   "state": "The instrument trades but the venue reports it as restricted this month and the rule is ambiguous.",
+   "label": "needs_review",
+   "option_text": "eligibility is ambiguous and a human should confirm"
+  },
+  {
+   "state": "A major index future with deep book, current data and no restrictions.",
+   "label": "tradeable",
+   "option_text": "eligible now; data and liquidity support trading it"
+  },
+  {
+   "state": "A sentiment series joined onto the bars for context, never held as a position.",
+   "label": "supporting_only",
+   "option_text": "it is a supporting series, never traded directly"
+  },
+  {
+   "state": "The pair is delisted from the venue the execution path uses.",
+   "label": "not_tradeable",
+   "option_text": "it fails a requirement and must not be traded"
+  },
+  {
+   "state": "Two symbols share the ticker and the data files disagree on which is meant.",
+   "label": "needs_review",
+   "option_text": "eligibility is ambiguous and a human should confirm"
+  }
+ ]
+}

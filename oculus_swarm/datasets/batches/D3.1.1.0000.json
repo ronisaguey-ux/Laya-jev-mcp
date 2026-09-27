@@ -1,0 +1,102 @@
+[
+  {
+    "state": "EURUSD 30m over 200 bars: ADX 34, price above a rising 50-period mean, higher highs on 78% of the last 40 bars.",
+    "label": "trend_up",
+    "option_text": "a sustained directional move upward"
+  },
+  {
+    "state": "BTCUSDT 1h: 200 bars, slope of the 100-period regression +0.42% per 10 bars, drawdown from peak under 3%.",
+    "label": "trend_up",
+    "option_text": "a sustained directional move upward"
+  },
+  {
+    "state": "SPY 1d over 180 bars: 21-day return +6.1%, price above the 200-day mean for 31 consecutive sessions.",
+    "label": "trend_up",
+    "option_text": "a sustained directional move upward"
+  },
+  {
+    "state": "NQ 2h: ADX 31, 78% of bars closing above the prior close, and the 20-period mean above the 60-period mean.",
+    "label": "trend_up",
+    "option_text": "a sustained directional move upward"
+  },
+  {
+    "state": "GBPUSD 30m over 200 bars: ADX 36, price below a falling 50-period mean, lower lows on 74% of the last 40 bars.",
+    "label": "trend_down",
+    "option_text": "a sustained directional move downward"
+  },
+  {
+    "state": "ETHUSDT 1h: 200 bars, regression slope -0.51% per 10 bars, and every rally in 30 bars failed to reclaim the mean.",
+    "label": "trend_down",
+    "option_text": "a sustained directional move downward"
+  },
+  {
+    "state": "AAPL 1d over 180 bars: 21-day return -8.4%, price below the 200-day mean for 26 consecutive sessions.",
+    "label": "trend_down",
+    "option_text": "a sustained directional move downward"
+  },
+  {
+    "state": "CL 1h: ADX 33, 71% of bars closing below the prior close, and the 20-period mean below the 60-period mean.",
+    "label": "trend_down",
+    "option_text": "a sustained directional move downward"
+  },
+  {
+    "state": "EURUSD 15m over 200 bars: ADX 14, price oscillating within a 38-pip band, direction changes every 9 bars on average.",
+    "label": "range",
+    "option_text": "price oscillates without a directional drift"
+  },
+  {
+    "state": "AUDUSD 30m: 200 bars, no net move over 5 days, 60-period mean flat to within 0.02%.",
+    "label": "range",
+    "option_text": "price oscillates without a directional drift"
+  },
+  {
+    "state": "MSFT 1d over 150 bars: price between 398 and 412 for 6 weeks, ADX 11, mean reversion at both edges.",
+    "label": "range",
+    "option_text": "price oscillates without a directional drift"
+  },
+  {
+    "state": "USDJPY 1h: 200 bars, band width 44 pips, and 8 of the last 10 swings reversed inside the band.",
+    "label": "range",
+    "option_text": "price oscillates without a directional drift"
+  },
+  {
+    "state": "XRPUSDT 15m over 200 bars: realised volatility in the 96th percentile, 12 reversals in 40 bars, no persistence in either direction.",
+    "label": "high_vol_chop",
+    "option_text": "large moves in both directions with no persistence"
+  },
+  {
+    "state": "BTCUSDT 5m: 200 bars, ATR at 4.2x its 30-day median, and the 20-bar return alternates sign 14 times.",
+    "label": "high_vol_chop",
+    "option_text": "large moves in both directions with no persistence"
+  },
+  {
+    "state": "ES 5m: 200 bars, realised vol 3.1x the monthly average, ADX 9 with daily ranges above the 95th percentile.",
+    "label": "high_vol_chop",
+    "option_text": "large moves in both directions with no persistence"
+  },
+  {
+    "state": "EURUSD 5m during an ECB release: 200 bars spanning 3 hours, 18 reversals, and no bar within 2 ATR of the previous close.",
+    "label": "high_vol_chop",
+    "option_text": "large moves in both directions with no persistence"
+  },
+  {
+    "state": "EURUSD 30m: ADX rising from 12 to 24 over 30 bars while band width expands 40% - the character is changing now.",
+    "label": "transition",
+    "option_text": "the character of the market is changing right now"
+  },
+  {
+    "state": "SPY 1d over 60 bars: 30-day realised volatility doubled in the last 8 sessions and the mean has just started to slope.",
+    "label": "transition",
+    "option_text": "the character of the market is changing right now"
+  },
+  {
+    "state": "BTCUSDT 1h: the regime model's top two clusters are 0.44 and 0.41, and the label changed twice in the last 10 bars.",
+    "label": "transition",
+    "option_text": "the character of the market is changing right now"
+  },
+  {
+    "state": "NQ 2h: range behaviour for 120 bars then two consecutive closes outside the band, with ADX turning up from 13.",
+    "label": "transition",
+    "option_text": "the character of the market is changing right now"
+  }
+]

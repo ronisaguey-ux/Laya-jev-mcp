@@ -1,0 +1,122 @@
+[
+  {
+    "state": "The strategy's 10-day Sharpe ratio for AAPL options is 1.3, exceeding the required minimum of 1.0 for survival, and the cumulative profit reached $45,000.",
+    "label": "cleared",
+    "option_text": "fitness is at or above the threshold required this generation"
+  },
+  {
+    "state": "For the ETH futures contract over the past month, the model generated a net profit of $120,000, representing an 18% total return, which is above the required 15% threshold.",
+    "label": "cleared",
+    "option_text": "fitness is at or above the threshold required this generation"
+  },
+  {
+    "state": "The MSFT stock backtest over a 60-day window achieved a profit factor of 2.1, surpassing the required profit factor of 2.0.",
+    "label": "cleared",
+    "option_text": "fitness is at or above the threshold required this generation"
+  },
+  {
+    "state": "The GOLD ETF signal recorded a gross profit of $250,000 with a win rate of 62% during the last week, exceeding the required win rate of 60%.",
+    "label": "cleared",
+    "option_text": "fitness is at or above the threshold required this generation"
+  },
+  {
+    "state": "The BTC/USD strategy logged an average daily return of 0.08% for 90 days, accumulating a total return of 7.2%, meeting the 7% target for this generation.",
+    "label": "cleared",
+    "option_text": "fitness is at or above the threshold required this generation"
+  },
+  {
+    "state": "The EUR/USD model limited maximum drawdown to 8% over the past 45 days, staying within the allowed drawdown limit of 10%.",
+    "label": "cleared",
+    "option_text": "fitness is at or above the threshold required this generation"
+  },
+  {
+    "state": "The natural gas futures backtest produced an information ratio of 0.9 over the last quarter, meeting the required information ratio of 0.8.",
+    "label": "cleared",
+    "option_text": "fitness is at or above the threshold required this generation"
+  },
+  {
+    "state": "The leveraged S&P 500 strategy posted a 20-day Sharpe ratio of 1.4, exceeding the required 1.3 Sharpe threshold for this generation.",
+    "label": "cleared",
+    "option_text": "fitness is at or above the threshold required this generation"
+  },
+  {
+    "state": "The model generated a Sharpe ratio of 0.48 over a 45\u2011day backtest on Microsoft (MSFT) options, which is below the required 0.70 for survival.",
+    "label": "below",
+    "option_text": "fitness sits under the threshold and it will not survive"
+  },
+  {
+    "state": "During the last 30 days the bot executed 18 trades on Ethereum (ETH) with a win rate of 42%, falling short of the mandated 55% win rate needed to clear the threshold.",
+    "label": "below",
+    "option_text": "fitness sits under the threshold and it will not survive"
+  },
+  {
+    "state": "Cumulative profit for the gold futures strategy was $85,000 in the past week, under the minimum $120,000 profit target required for this generation.",
+    "label": "below",
+    "option_text": "fitness sits under the threshold and it will not survive"
+  },
+  {
+    "state": "The average expected return of the diversified ETF portfolio (symbols: VXX, IWM, TLK) over the 3\u2011month window was 6.2%, which sits below the 8% return threshold.",
+    "label": "below",
+    "option_text": "fitness sits under the threshold and it will not survive"
+  },
+  {
+    "state": "The strategy's maximum drawdown reached 18% over the last 10 days on Tesla (TSLA) stock, exceeding the allowable 12% drawdown limit and thus staying below the survival criterion.",
+    "label": "below",
+    "option_text": "fitness sits under the threshold and it will not survive"
+  },
+  {
+    "state": "Only 14 out of 30 required signals were validated for the currency pair GBP/USD within the 7\u2011day evaluation, producing a signal accuracy of 46.7%, which is under the 50% accuracy bar.",
+    "label": "below",
+    "option_text": "fitness sits under the threshold and it will not survive"
+  },
+  {
+    "state": "The average holding time for the SPX intraday positions was 2.3 days, whereas the survival threshold demands an average hold of at least 4 days, so the genome does not meet the requirement.",
+    "label": "below",
+    "option_text": "fitness sits under the threshold and it will not survive"
+  },
+  {
+    "state": "Total transaction costs incurred by the algorithm over the recent 5\u2011day period were 0.28% of total volume, which exceeds the 0.22% cost ceiling and therefore remains below the accepted level.",
+    "label": "below",
+    "option_text": "fitness sits under the threshold and it will not survive"
+  },
+  {
+    "state": "The strategy delivered an 11.9% annual return over 252 trading days, a Sharpe ratio of 0.88, and a win rate of 42.3% (158 wins out of 374 trades). Its maximum drawdown was 15.6% and it executed 374 trades.",
+    "label": "borderline_review",
+    "option_text": "it sits on the line; a human should set the bar"
+  },
+  {
+    "state": "In the most recent 30\u2011day window, the BTC\u2011focused bot posted a 9.5% total gain, a Sharpe of 0.95, and a win rate of 48.1% (41 wins of 85 trades). Its drawdowns hit 12.3% and the trade count was 85.",
+    "label": "borderline_review",
+    "option_text": "it sits on the line; a human should set the bar"
+  },
+  {
+    "state": "Across a six\u2011month backtest of the S&P 500 straddle strategy, the portfolio achieved a 13.1% cumulative return, a Sharpe of 0.71, and a win rate of 35.4% (71 wins of 200 trades). Maximum drawdown was 19.2% and the strategy logged 200 trades.",
+    "label": "borderline_review",
+    "option_text": "it sits on the line; a human should set the bar"
+  },
+  {
+    "state": "The crude\u2011oil futures model recorded an 8.9% return over 252 days, a Sharpe ratio of 0.86, and a win rate of 44.2% (113 wins of 255 trades). Its peak drawdown reached 17.5% and 255 trades were placed.",
+    "label": "borderline_review",
+    "option_text": "it sits on the line; a human should set the bar"
+  },
+  {
+    "state": "During a 90\u2011day EUR/USD carry trade period, the bot generated a -0.2% net result, a Sharpe of -0.12, and a win rate of 48.3% (29 wins of 60 trades). Drawdown peaked at 9.8% and 60 trades were executed.",
+    "label": "borderline_review",
+    "option_text": "it sits on the line; a human should set the bar"
+  },
+  {
+    "state": "The diversified multi\u2011asset portfolio had an 11.5% two\u2011year return, a Sharpe of 0.92, and a win rate of 41.0% (205 wins of 500 trades). Maximum drawdown was 13.9% and the strategy completed 500 trades.",
+    "label": "borderline_review",
+    "option_text": "it sits on the line; a human should set the bar"
+  },
+  {
+    "state": "A crypto\u2011ETF swing approach posted a 15.2% 180\u2011day return, a Sharpe of 0.78, and a win rate of 39.5% (47 wins of 119 trades). Drawdown was 14.4% and the trade count reached 119.",
+    "label": "borderline_review",
+    "option_text": "it sits on the line; a human should set the bar"
+  },
+  {
+    "state": "The TSLA option spread strategy yielded a 9.8% 45\u2011day gain, a Sharpe of 0.81, and a win rate of 46.2% (29 wins of 63 trades). Max drawdown was 12.1% and 63 trades were taken.",
+    "label": "borderline_review",
+    "option_text": "it sits on the line; a human should set the bar"
+  }
+]

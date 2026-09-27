@@ -1,0 +1,59 @@
+{
+ "id": "D5.2.2",
+ "kind": "choice",
+ "question": "What class of anomaly is the event in `state`?",
+ "options": {
+  "market_event": "a genuine market event that must be handled as such",
+  "system_fault": "an internal fault in our own pipeline",
+  "upstream_issue": "a problem at the venue or data provider",
+  "benign_noise": "ordinary variation; nothing to act on"
+ },
+ "label_counts": {
+  "market_event": 2,
+  "system_fault": 2,
+  "upstream_issue": 2,
+  "benign_noise": 2
+ },
+ "samples": [
+  {
+   "state": "A central bank statement moved the currency and the same move is visible in the futures.",
+   "label": "market_event",
+   "option_text": "a genuine market event that must be handled as such"
+  },
+  {
+   "state": "Our own bar builder divided by a zero volume and emitted a null row.",
+   "label": "system_fault",
+   "option_text": "an internal fault in our own pipeline"
+  },
+  {
+   "state": "The venue's gateway returned 503 for twenty minutes and its status page confirms it.",
+   "label": "upstream_issue",
+   "option_text": "a problem at the venue or data provider"
+  },
+  {
+   "state": "A single print is slightly outside the recent range with nothing else unusual.",
+   "label": "benign_noise",
+   "option_text": "ordinary variation; nothing to act on"
+  },
+  {
+   "state": "A correlated move across several currencies following a rate decision.",
+   "label": "market_event",
+   "option_text": "a genuine market event that must be handled as such"
+  },
+  {
+   "state": "The risk service returned stale exposure because its cache was not invalidated.",
+   "label": "system_fault",
+   "option_text": "an internal fault in our own pipeline"
+  },
+  {
+   "state": "Order acknowledgements stopped arriving while the market data stream stayed healthy and other clients reported the same.",
+   "label": "upstream_issue",
+   "option_text": "a problem at the venue or data provider"
+  },
+  {
+   "state": "One bar is a few ticks wider than its neighbours and the next bar reverses it.",
+   "label": "benign_noise",
+   "option_text": "ordinary variation; nothing to act on"
+  }
+ ]
+}

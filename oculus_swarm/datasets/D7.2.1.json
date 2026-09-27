@@ -1,0 +1,59 @@
+{
+ "id": "D7.2.1",
+ "kind": "choice",
+ "question": "How hard is the task in `state`?",
+ "options": {
+  "trivial": "a lookup or a one-line change; no reasoning needed",
+  "routine": "a small well-understood change in familiar code",
+  "moderate": "several steps, some judgement about approach",
+  "hard": "multi-file reasoning, design decisions, or novel debugging"
+ },
+ "label_counts": {
+  "trivial": 2,
+  "routine": 2,
+  "moderate": 2,
+  "hard": 2
+ },
+ "samples": [
+  {
+   "state": "Bumping a version string in one file.",
+   "label": "trivial",
+   "option_text": "a lookup or a one-line change; no reasoning needed"
+  },
+  {
+   "state": "Adding an optional parameter with a default to a small function and its test.",
+   "label": "routine",
+   "option_text": "a small well-understood change in familiar code"
+  },
+  {
+   "state": "Splitting one module into three while keeping the public API stable.",
+   "label": "moderate",
+   "option_text": "several steps, some judgement about approach"
+  },
+  {
+   "state": "Tracing an intermittent failure through four subsystems with no reproduction.",
+   "label": "hard",
+   "option_text": "multi-file reasoning, design decisions, or novel debugging"
+  },
+  {
+   "state": "Changing a constant to the value the documentation already states.",
+   "label": "trivial",
+   "option_text": "a lookup or a one-line change; no reasoning needed"
+  },
+  {
+   "state": "Renaming a variable within one function and updating its docstring.",
+   "label": "routine",
+   "option_text": "a small well-understood change in familiar code"
+  },
+  {
+   "state": "Adding a new endpoint with validation, a test and error handling.",
+   "label": "moderate",
+   "option_text": "several steps, some judgement about approach"
+  },
+  {
+   "state": "Deciding on a data model that three future features will be built on.",
+   "label": "hard",
+   "option_text": "multi-file reasoning, design decisions, or novel debugging"
+  }
+ ]
+}

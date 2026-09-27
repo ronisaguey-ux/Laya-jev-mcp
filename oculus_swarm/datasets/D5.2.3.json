@@ -1,0 +1,59 @@
+{
+ "id": "D5.2.3",
+ "kind": "choice",
+ "question": "Which source should be trusted for `state`?",
+ "options": {
+  "primary": "use the primary source; it is healthy",
+  "secondary": "the primary is suspect; use the secondary",
+  "reconcile": "the sources disagree; reconcile before computing",
+  "none": "no source is trustworthy enough; do not compute"
+ },
+ "label_counts": {
+  "primary": 2,
+  "secondary": 2,
+  "reconcile": 2,
+  "none": 2
+ },
+ "samples": [
+  {
+   "state": "The primary feed is current and its checksums match.",
+   "label": "primary",
+   "option_text": "use the primary source; it is healthy"
+  },
+  {
+   "state": "The primary feed is eleven minutes stale while the secondary is current and clean.",
+   "label": "secondary",
+   "option_text": "the primary is suspect; use the secondary"
+  },
+  {
+   "state": "The two feeds agree on level but disagree by six basis points on the last tick.",
+   "label": "reconcile",
+   "option_text": "the sources disagree; reconcile before computing"
+  },
+  {
+   "state": "Both feeds are stale and a third source reports neither is reachable.",
+   "label": "none",
+   "option_text": "no source is trustworthy enough; do not compute"
+  },
+  {
+   "state": "The primary is healthy by every measure and the secondary is not configured.",
+   "label": "primary",
+   "option_text": "use the primary source; it is healthy"
+  },
+  {
+   "state": "The primary has been dropping messages and the secondary has full coverage for the window.",
+   "label": "secondary",
+   "option_text": "the primary is suspect; use the secondary"
+  },
+  {
+   "state": "Both sources are live but they disagree on the session high by more than the spread.",
+   "label": "reconcile",
+   "option_text": "the sources disagree; reconcile before computing"
+  },
+  {
+   "state": "Neither source has produced a message since the session opened.",
+   "label": "none",
+   "option_text": "no source is trustworthy enough; do not compute"
+  }
+ ]
+}

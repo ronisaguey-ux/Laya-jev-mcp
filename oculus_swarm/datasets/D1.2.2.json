@@ -1,0 +1,59 @@
+{
+ "id": "D1.2.2",
+ "kind": "choice",
+ "question": "Should the registered champion in `state` be replaced by this challenger?",
+ "options": {
+  "replace": "the challenger is better on every gated metric",
+  "keep_incumbent": "the champion still wins; the challenger is not better",
+  "run_both": "carry both while evidence accumulates",
+  "escalate_human": "the margin is too thin to automate a swap"
+ },
+ "label_counts": {
+  "replace": 2,
+  "keep_incumbent": 2,
+  "run_both": 2,
+  "escalate_human": 2
+ },
+ "samples": [
+  {
+   "state": "The challenger beats the incumbent on Calmar, profit factor and deflated Sharpe, and all four gated metrics favour it by more than the noise band. Both were run over the same folds on the same data.",
+   "label": "replace",
+   "option_text": "the challenger is better on every gated metric"
+  },
+  {
+   "state": "The challenger carries a higher return but a worse drawdown than the champion, so one gated metric is worse and the rest are level.",
+   "label": "keep_incumbent",
+   "option_text": "the champion still wins; the challenger is not better"
+  },
+  {
+   "state": "Challenger and champion each win two of the four gated metrics, and the differences sit inside the fold-to-fold spread.",
+   "label": "run_both",
+   "option_text": "carry both while evidence accumulates"
+  },
+  {
+   "state": "The challenger wins three metrics by a margin of 0.004 against a fold spread of 0.06, and the two disagree on which regime they perform in.",
+   "label": "escalate_human",
+   "option_text": "the margin is too thin to automate a swap"
+  },
+  {
+   "state": "The challenger's out-of-sample Sharpe is 1.9 against the champion's 1.1, its drawdown is shallower, and its profit factor is higher on the identical holdout.",
+   "label": "replace",
+   "option_text": "the challenger is better on every gated metric"
+  },
+  {
+   "state": "The challenger was evaluated on a shorter window and its Calmar is lower once the windows are matched.",
+   "label": "keep_incumbent",
+   "option_text": "the champion still wins; the challenger is not better"
+  },
+  {
+   "state": "The challenger is better on the most recent year and the champion is better over the full history.",
+   "label": "run_both",
+   "option_text": "carry both while evidence accumulates"
+  },
+  {
+   "state": "The two differ only in the fourth decimal and the challenger's edge vanishes when the worst fold is dropped.",
+   "label": "escalate_human",
+   "option_text": "the margin is too thin to automate a swap"
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "id": "D7.1.3",
+ "kind": "choice",
+ "question": "Can the items in `state` be worked in parallel?",
+ "options": {
+  "independent": "they touch disjoint files and can run together",
+  "serial_required": "they touch the same files and must be ordered",
+  "batch_safe": "they are independent enough to batch with care",
+  "single_thread": "do one at a time; the risk of collision is high"
+ },
+ "label_counts": {
+  "independent": 2,
+  "serial_required": 2,
+  "batch_safe": 2,
+  "single_thread": 2
+ },
+ "samples": [
+  {
+   "state": "Nine steps each touch a different file and none of them imports another.",
+   "label": "independent",
+   "option_text": "they touch disjoint files and can run together"
+  },
+  {
+   "state": "Three steps all rewrite the same configuration file.",
+   "label": "serial_required",
+   "option_text": "they touch the same files and must be ordered"
+  },
+  {
+   "state": "Two steps touch the same package but different modules and neither changes a shared interface.",
+   "label": "batch_safe",
+   "option_text": "they are independent enough to batch with care"
+  },
+  {
+   "state": "Four steps each edit the same function from a different direction.",
+   "label": "single_thread",
+   "option_text": "do one at a time; the risk of collision is high"
+  },
+  {
+   "state": "The steps target disjoint directories with no shared state.",
+   "label": "independent",
+   "option_text": "they touch disjoint files and can run together"
+  },
+  {
+   "state": "Every step appends to the same changelog file.",
+   "label": "serial_required",
+   "option_text": "they touch the same files and must be ordered"
+  },
+  {
+   "state": "The steps are independent by file but two of them both regenerate the same derived index.",
+   "label": "batch_safe",
+   "option_text": "they are independent enough to batch with care"
+  },
+  {
+   "state": "Each step would rewrite the same core module that everything else imports.",
+   "label": "single_thread",
+   "option_text": "do one at a time; the risk of collision is high"
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "id": "D5.2.1",
+ "kind": "choice",
+ "question": "What is the state of the feed in `state`?",
+ "options": {
+  "healthy": "messages are arriving on time and well formed",
+  "degraded": "messages arrive late or out of order but are usable",
+  "disconnected": "the feed is down; work from the last known good state",
+  "unknown": "feed health cannot be determined; assume it is down"
+ },
+ "label_counts": {
+  "healthy": 2,
+  "degraded": 2,
+  "disconnected": 2,
+  "unknown": 2
+ },
+ "samples": [
+  {
+   "state": "Heartbeat latency is two milliseconds and every message parses.",
+   "label": "healthy",
+   "option_text": "messages are arriving on time and well formed"
+  },
+  {
+   "state": "Messages are arriving three hundred milliseconds late in bursts and occasionally out of sequence.",
+   "label": "degraded",
+   "option_text": "messages arrive late or out of order but are usable"
+  },
+  {
+   "state": "No message has arrived in four minutes and the socket is closed.",
+   "label": "disconnected",
+   "option_text": "the feed is down; work from the last known good state"
+  },
+  {
+   "state": "The health endpoint returns nothing and the collector's own status is unavailable.",
+   "label": "unknown",
+   "option_text": "feed health cannot be determined; assume it is down"
+  },
+  {
+   "state": "The feed is advancing normally and the sequence numbers are contiguous.",
+   "label": "healthy",
+   "option_text": "messages are arriving on time and well formed"
+  },
+  {
+   "state": "Sequence gaps appear every few minutes and are filled by the next batch.",
+   "label": "degraded",
+   "option_text": "messages arrive late or out of order but are usable"
+  },
+  {
+   "state": "The venue has posted a maintenance notice and the connection is refused.",
+   "label": "disconnected",
+   "option_text": "the feed is down; work from the last known good state"
+  },
+  {
+   "state": "The monitoring process itself is down, so nothing can be said about the feed.",
+   "label": "unknown",
+   "option_text": "feed health cannot be determined; assume it is down"
+  }
+ ]
+}

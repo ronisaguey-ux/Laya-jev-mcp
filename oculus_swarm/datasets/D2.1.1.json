@@ -1,0 +1,99 @@
+{
+  "id": "D2.1.1",
+  "kind": "leaf",
+  "question": "Is the backtest result in `state` robust or curve-fit?",
+  "options": {
+    "robust": "in-sample and out-of-sample agree; the result looks real",
+    "curve_fit": "the edge disappears out of sample; it is fitted to noise",
+    "inconclusive": "the evidence is too thin to call either way",
+    "overfit_mild": "some degradation out of sample but the core survives"
+  },
+  "label_counts": {
+    "robust": 4,
+    "curve_fit": 4,
+    "inconclusive": 4,
+    "overfit_mild": 4
+  },
+  "samples": [
+    {
+      "state": "IS Sharpe 2.31 over 1,480 trades, OOS Sharpe 2.18 over 620 trades, max drawdown 7.4% and 8.1% in the two windows.",
+      "label": "robust",
+      "option_text": "in-sample and out-of-sample agree; the result looks real"
+    },
+    {
+      "state": "IS profit factor 1.92, OOS 1.87, 2,204 trades total, and both windows positive in each of the last 6 months.",
+      "label": "robust",
+      "option_text": "in-sample and out-of-sample agree; the result looks real"
+    },
+    {
+      "state": "IS Calmar 1.81, OOS Calmar 1.76 on 388 trades, deflated Sharpe 1.94 after 240 trials, information ratio 0.62.",
+      "label": "robust",
+      "option_text": "in-sample and out-of-sample agree; the result looks real"
+    },
+    {
+      "state": "IS return 27.4%, OOS 26.1% on 1,344 trades, ulcer index 0.036 and 0.038 - the degradation is inside noise.",
+      "label": "robust",
+      "option_text": "in-sample and out-of-sample agree; the result looks real"
+    },
+    {
+      "state": "IS Sharpe 2.62, OOS Sharpe 0.11 on 1,204 trades - the edge does not survive the held-out window at all.",
+      "label": "curve_fit",
+      "option_text": "the edge disappears out of sample; it is fitted to noise"
+    },
+    {
+      "state": "IS profit factor 2.41, OOS 0.88 on 2,810 trades, and 71% of in-sample profit comes from 4 days.",
+      "label": "curve_fit",
+      "option_text": "the edge disappears out of sample; it is fitted to noise"
+    },
+    {
+      "state": "IS return 58.1%, OOS -7.3% on 1,102 trades, deflated Sharpe 0.31 after 420 trials.",
+      "label": "curve_fit",
+      "option_text": "the edge disappears out of sample; it is fitted to noise"
+    },
+    {
+      "state": "IS expectancy 0.0089, OOS -0.0014 on 1,660 trades - the sign flips between windows.",
+      "label": "curve_fit",
+      "option_text": "the edge disappears out of sample; it is fitted to noise"
+    },
+    {
+      "state": "IS Sharpe 1.91, OOS 1.44 but only 96 OOS trades - too few to separate a real decay from noise.",
+      "label": "inconclusive",
+      "option_text": "the evidence is too thin to call either way"
+    },
+    {
+      "state": "IS and OOS both positive at 1.6 and 1.3 on 140 trades, and the OOS window is 3 weeks long.",
+      "label": "inconclusive",
+      "option_text": "the evidence is too thin to call either way"
+    },
+    {
+      "state": "IS 0.71, OOS 0.48 with 210 trades, and the two windows cover materially different volatility regimes.",
+      "label": "inconclusive",
+      "option_text": "the evidence is too thin to call either way"
+    },
+    {
+      "state": "IS profit factor 1.7, OOS 1.2 on 88 trades, and the deflated Sharpe was never computed.",
+      "label": "inconclusive",
+      "option_text": "the evidence is too thin to call either way"
+    },
+    {
+      "state": "IS Sharpe 1.88, OOS 1.41 on 1,102 trades - out of sample is weaker by 25% but stays clearly positive.",
+      "label": "overfit_mild",
+      "option_text": "some degradation out of sample but the core survives"
+    },
+    {
+      "state": "IS profit factor 2.1, OOS 1.6 on 1,880 trades, with the core edge intact and only the tail trades missing.",
+      "label": "overfit_mild",
+      "option_text": "some degradation out of sample but the core survives"
+    },
+    {
+      "state": "IS return 31%, OOS 19% on 2,010 trades, and every OOS month is positive except one.",
+      "label": "overfit_mild",
+      "option_text": "some degradation out of sample but the core survives"
+    },
+    {
+      "state": "IS Calmar 1.6, OOS 1.1 on 640 trades - real degradation, but the strategy still earns out of sample.",
+      "label": "overfit_mild",
+      "option_text": "some degradation out of sample but the core survives"
+    }
+  ]
+}

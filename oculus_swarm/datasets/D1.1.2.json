@@ -1,0 +1,197 @@
+{
+  "id": "D1.1.2",
+  "kind": "leaf",
+  "question": "Did the genome in `state` clear the survival threshold for its generation?",
+  "options": {
+    "cleared": "fitness is at or above the threshold required this generation",
+    "below": "fitness sits under the threshold and it will not survive",
+    "borderline_review": "it sits on the line; a human should set the bar"
+  },
+  "label_counts": {
+    "cleared": 12,
+    "below": 12,
+    "borderline_review": 12
+  },
+  "samples": [
+    {
+      "state": "genome g2201, generation 14: fitness 0.640 against a survival threshold of 0.58 for this generation, 1,204 trades.",
+      "label": "cleared",
+      "option_text": "fitness is at or above the threshold required this generation"
+    },
+    {
+      "state": "lineage 88 gen 11: fitness 0.712 versus a required 0.66, 1,880 trades, above the bar set for the eleventh generation.",
+      "label": "cleared",
+      "option_text": "fitness is at or above the threshold required this generation"
+    },
+    {
+      "state": "genome b5510 gen 6: fitness 0.521 against a threshold of 0.48, 902 trades, margin of 0.041.",
+      "label": "cleared",
+      "option_text": "fitness is at or above the threshold required this generation"
+    },
+    {
+      "state": "genome r7710 gen 9: fitness 0.688 versus 0.62 required, 1,340 trades, clears by 0.068.",
+      "label": "cleared",
+      "option_text": "fitness is at or above the threshold required this generation"
+    },
+    {
+      "state": "lineage 331 gen 16: fitness 0.741 against 0.70 for this generation, 2,010 trades.",
+      "label": "cleared",
+      "option_text": "fitness is at or above the threshold required this generation"
+    },
+    {
+      "state": "genome h1120 gen 4: fitness 0.462 against a 0.42 bar, 610 trades, above the line by 0.042.",
+      "label": "cleared",
+      "option_text": "fitness is at or above the threshold required this generation"
+    },
+    {
+      "state": "genome p8890 gen 12: fitness 0.702 versus 0.64 required, 1,470 trades, comfortably through.",
+      "label": "cleared",
+      "option_text": "fitness is at or above the threshold required this generation"
+    },
+    {
+      "state": "lineage 604 gen 8: fitness 0.611 against 0.56, 1,120 trades, margin 0.051.",
+      "label": "cleared",
+      "option_text": "fitness is at or above the threshold required this generation"
+    },
+    {
+      "state": "genome x2210 gen 15: fitness 0.766 against a 0.72 threshold, 2,240 trades.",
+      "label": "cleared",
+      "option_text": "fitness is at or above the threshold required this generation"
+    },
+    {
+      "state": "genome d3301 gen 7: fitness 0.548 versus a required 0.50, 788 trades, clears by 0.048.",
+      "label": "cleared",
+      "option_text": "fitness is at or above the threshold required this generation"
+    },
+    {
+      "state": "lineage 915 gen 13: fitness 0.694 against 0.64, 1,660 trades, above the bar.",
+      "label": "cleared",
+      "option_text": "fitness is at or above the threshold required this generation"
+    },
+    {
+      "state": "genome w4420 gen 5: fitness 0.487 against a 0.44 threshold, 540 trades, through by 0.047.",
+      "label": "cleared",
+      "option_text": "fitness is at or above the threshold required this generation"
+    },
+    {
+      "state": "genome q1120 gen 14: fitness 0.412 against a survival threshold of 0.58, 1,204 trades - well short.",
+      "label": "below",
+      "option_text": "fitness sits under the threshold and it will not survive"
+    },
+    {
+      "state": "lineage 2201 gen 11: fitness 0.398 versus a required 0.66, 1,880 trades, below by 0.262.",
+      "label": "below",
+      "option_text": "fitness sits under the threshold and it will not survive"
+    },
+    {
+      "state": "genome n5510 gen 6: fitness 0.291 against a threshold of 0.48, 902 trades, fails by a wide margin.",
+      "label": "below",
+      "option_text": "fitness sits under the threshold and it will not survive"
+    },
+    {
+      "state": "genome y7710 gen 9: fitness 0.402 versus 0.62 required, 1,340 trades, below the line.",
+      "label": "below",
+      "option_text": "fitness sits under the threshold and it will not survive"
+    },
+    {
+      "state": "lineage 888 gen 16: fitness 0.511 against 0.70, 2,010 trades, short by 0.189.",
+      "label": "below",
+      "option_text": "fitness sits under the threshold and it will not survive"
+    },
+    {
+      "state": "genome c1120 gen 4: fitness 0.238 against a 0.42 bar, 610 trades, clearly under.",
+      "label": "below",
+      "option_text": "fitness sits under the threshold and it will not survive"
+    },
+    {
+      "state": "genome e8890 gen 12: fitness 0.377 versus 0.64 required, 1,470 trades, fails.",
+      "label": "below",
+      "option_text": "fitness sits under the threshold and it will not survive"
+    },
+    {
+      "state": "lineage 604 gen 8: fitness 0.401 against 0.56, 1,120 trades, below by 0.159.",
+      "label": "below",
+      "option_text": "fitness sits under the threshold and it will not survive"
+    },
+    {
+      "state": "genome k2210 gen 15: fitness 0.489 versus a 0.72 threshold, 2,240 trades, well short.",
+      "label": "below",
+      "option_text": "fitness sits under the threshold and it will not survive"
+    },
+    {
+      "state": "genome t3301 gen 7: fitness 0.311 against a required 0.50, 788 trades, under the bar.",
+      "label": "below",
+      "option_text": "fitness sits under the threshold and it will not survive"
+    },
+    {
+      "state": "lineage 771 gen 13: fitness 0.442 versus 0.64, 1,660 trades, fails the generation requirement.",
+      "label": "below",
+      "option_text": "fitness sits under the threshold and it will not survive"
+    },
+    {
+      "state": "genome z4420 gen 5: fitness 0.276 against a 0.44 threshold, 540 trades, below.",
+      "label": "below",
+      "option_text": "fitness sits under the threshold and it will not survive"
+    },
+    {
+      "state": "genome m1120 gen 14: fitness 0.579 against a survival threshold of 0.58, 1,204 trades - over by 0.001, effectively on the line.",
+      "label": "borderline_review",
+      "option_text": "it sits on the line; a human should set the bar"
+    },
+    {
+      "state": "lineage 3301 gen 11: fitness 0.658 versus 0.66 required, 1,880 trades, short by 0.002.",
+      "label": "borderline_review",
+      "option_text": "it sits on the line; a human should set the bar"
+    },
+    {
+      "state": "genome v5510 gen 6: fitness 0.481 against a 0.48 bar, 902 trades, clears by 0.001.",
+      "label": "borderline_review",
+      "option_text": "it sits on the line; a human should set the bar"
+    },
+    {
+      "state": "genome j7710 gen 9: fitness 0.619 versus 0.62 required, 1,340 trades, short by 0.001.",
+      "label": "borderline_review",
+      "option_text": "it sits on the line; a human should set the bar"
+    },
+    {
+      "state": "lineage 221 gen 16: fitness 0.699 against 0.70, 2,010 trades, under by 0.001 - the call changes with rounding.",
+      "label": "borderline_review",
+      "option_text": "it sits on the line; a human should set the bar"
+    },
+    {
+      "state": "genome s1120 gen 4: fitness 0.421 against a 0.42 bar, 610 trades, over by 0.001.",
+      "label": "borderline_review",
+      "option_text": "it sits on the line; a human should set the bar"
+    },
+    {
+      "state": "genome u8890 gen 12: fitness 0.638 versus 0.64 required, 1,470 trades, short by 0.002.",
+      "label": "borderline_review",
+      "option_text": "it sits on the line; a human should set the bar"
+    },
+    {
+      "state": "lineage 909 gen 8: fitness 0.559 against 0.56, 1,120 trades, over by 0.001.",
+      "label": "borderline_review",
+      "option_text": "it sits on the line; a human should set the bar"
+    },
+    {
+      "state": "genome i2210 gen 15: fitness 0.719 versus a 0.72 threshold, 2,240 trades, short by 0.001.",
+      "label": "borderline_review",
+      "option_text": "it sits on the line; a human should set the bar"
+    },
+    {
+      "state": "genome o3301 gen 7: fitness 0.499 against a required 0.50, 788 trades, under by 0.001.",
+      "label": "borderline_review",
+      "option_text": "it sits on the line; a human should set the bar"
+    },
+    {
+      "state": "lineage 415 gen 13: fitness 0.641 versus 0.64, 1,660 trades, clears by 0.001.",
+      "label": "borderline_review",
+      "option_text": "it sits on the line; a human should set the bar"
+    },
+    {
+      "state": "genome l4420 gen 5: fitness 0.439 against a 0.44 threshold, 540 trades, short by 0.001.",
+      "label": "borderline_review",
+      "option_text": "it sits on the line; a human should set the bar"
+    }
+  ]
+}

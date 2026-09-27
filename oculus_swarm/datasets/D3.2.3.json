@@ -1,0 +1,59 @@
+{
+ "id": "D3.2.3",
+ "kind": "choice",
+ "question": "Which timeframe best matches the intent in `state`?",
+ "options": {
+  "fast": "a short horizon suits this decision",
+  "medium": "an intraday-to-daily horizon suits this decision",
+  "slow": "a multi-day horizon suits this decision",
+  "no_preference": "the horizon does not change the answer"
+ },
+ "label_counts": {
+  "fast": 2,
+  "slow": 2,
+  "medium": 2,
+  "no_preference": 2
+ },
+ "samples": [
+  {
+   "state": "The question is whether a single entry should be taken in the next few hours and the thesis decays within the session.",
+   "label": "fast",
+   "option_text": "a short horizon suits this decision"
+  },
+  {
+   "state": "The decision concerns a position that will be held for several days and the signal is built from daily closes.",
+   "label": "slow",
+   "option_text": "a multi-day horizon suits this decision"
+  },
+  {
+   "state": "The question is whether to rebalance a book that turns over intraday into a multi-day hold.",
+   "label": "medium",
+   "option_text": "an intraday-to-daily horizon suits this decision"
+  },
+  {
+   "state": "All three horizons agree on the answer, so the choice changes nothing.",
+   "label": "no_preference",
+   "option_text": "the horizon does not change the answer"
+  },
+  {
+   "state": "The signal is a microstructure imbalance that is stale within the hour.",
+   "label": "fast",
+   "option_text": "a short horizon suits this decision"
+  },
+  {
+   "state": "The intent is a weekly rebalance driven by fundamentals.",
+   "label": "slow",
+   "option_text": "a multi-day horizon suits this decision"
+  },
+  {
+   "state": "The holding period is one to three sessions and the signal is computed on hourly bars.",
+   "label": "medium",
+   "option_text": "an intraday-to-daily horizon suits this decision"
+  },
+  {
+   "state": "The question is about which venue to route to, which is horizon-independent.",
+   "label": "no_preference",
+   "option_text": "the horizon does not change the answer"
+  }
+ ]
+}

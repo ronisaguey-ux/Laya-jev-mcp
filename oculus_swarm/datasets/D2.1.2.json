@@ -1,0 +1,59 @@
+{
+ "id": "D2.1.2",
+ "kind": "choice",
+ "question": "How far do the in-sample and out-of-sample results in `state` diverge?",
+ "options": {
+  "consistent": "the two agree closely; no divergence to explain",
+  "mild_decay": "out-of-sample is weaker but still positive",
+  "severe_decay": "out-of-sample collapses; treat the result as unreliable",
+  "inverted": "out-of-sample outperforms in-sample, which itself is suspicious"
+ },
+ "label_counts": {
+  "consistent": 2,
+  "mild_decay": 2,
+  "severe_decay": 2,
+  "inverted": 2
+ },
+ "samples": [
+  {
+   "state": "In-sample Sharpe 1.42, out-of-sample Sharpe 1.38 over the same folds and same asset set.",
+   "label": "consistent",
+   "option_text": "the two agree closely; no divergence to explain"
+  },
+  {
+   "state": "In-sample Sharpe 1.6, out-of-sample 0.7, both positive over the holdout.",
+   "label": "mild_decay",
+   "option_text": "out-of-sample is weaker but still positive"
+  },
+  {
+   "state": "In-sample Sharpe 2.1, out-of-sample -0.3 on the identical portfolio construction.",
+   "label": "severe_decay",
+   "option_text": "out-of-sample collapses; treat the result as unreliable"
+  },
+  {
+   "state": "In-sample Sharpe 0.4, out-of-sample 1.5 on the same configuration.",
+   "label": "inverted",
+   "option_text": "out-of-sample outperforms in-sample, which itself is suspicious"
+  },
+  {
+   "state": "The two agree to within one standard error across every fold.",
+   "label": "consistent",
+   "option_text": "the two agree closely; no divergence to explain"
+  },
+  {
+   "state": "Out-of-sample retains a third of the in-sample edge and the drawdown widens as expected.",
+   "label": "mild_decay",
+   "option_text": "out-of-sample is weaker but still positive"
+  },
+  {
+   "state": "The equity curve flattens completely out of sample and the profit factor falls below one.",
+   "label": "severe_decay",
+   "option_text": "out-of-sample collapses; treat the result as unreliable"
+  },
+  {
+   "state": "The held-out period shows a better result than the period the parameters were fitted on.",
+   "label": "inverted",
+   "option_text": "out-of-sample outperforms in-sample, which itself is suspicious"
+  }
+ ]
+}

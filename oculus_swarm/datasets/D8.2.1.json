@@ -1,0 +1,59 @@
+{
+ "id": "D8.2.1",
+ "kind": "choice",
+ "question": "What should happen to the step in `state` now?",
+ "options": {
+  "retry": "a real attempt failed on a transient cause; try again",
+  "escalate": "the worker cannot do it; a human or stronger model must",
+  "retire_green": "the work is verifiably present; close it as done",
+  "retire_yellow": "it cannot be done as specified; close it with the reason"
+ },
+ "label_counts": {
+  "retry": 2,
+  "escalate": 2,
+  "retire_green": 2,
+  "retire_yellow": 2
+ },
+ "samples": [
+  {
+   "state": "The lane call died on a socket timeout before any edit was produced.",
+   "label": "retry",
+   "option_text": "a real attempt failed on a transient cause; try again"
+  },
+  {
+   "state": "The step needs a credential only the owner holds.",
+   "label": "escalate",
+   "option_text": "the worker cannot do it; a human or stronger model must"
+  },
+  {
+   "state": "The lane's new_string is present in the target file and its commit is on the branch.",
+   "label": "retire_green",
+   "option_text": "the work is verifiably present; close it as done"
+  },
+  {
+   "state": "The plan describes a defect that no longer exists in the code, confirmed by reading the file.",
+   "label": "retire_yellow",
+   "option_text": "it cannot be done as specified; close it with the reason"
+  },
+  {
+   "state": "The gateway returned 429 and the same call succeeded on the next attempt.",
+   "label": "retry",
+   "option_text": "a real attempt failed on a transient cause; try again"
+  },
+  {
+   "state": "Four rounds have failed with four different lanes on a task that is not well specified.",
+   "label": "escalate",
+   "option_text": "the worker cannot do it; a human or stronger model must"
+  },
+  {
+   "state": "The file on disk holds the exact text the step asked for.",
+   "label": "retire_green",
+   "option_text": "the work is verifiably present; close it as done"
+  },
+  {
+   "state": "The plan's target path does not exist under any prefix and the step is unworkable as written.",
+   "label": "retire_yellow",
+   "option_text": "it cannot be done as specified; close it with the reason"
+  }
+ ]
+}

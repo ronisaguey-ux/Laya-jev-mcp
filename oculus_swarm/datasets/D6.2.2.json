@@ -1,0 +1,59 @@
+{
+ "id": "D6.2.2",
+ "kind": "choice",
+ "question": "How risky is the change in `state` to apply?",
+ "options": {
+  "low_risk": "isolated and reversible; apply it",
+  "moderate_risk": "touches shared behaviour; apply with a staged rollout",
+  "high_risk": "touches money or state; require review before applying",
+  "forbidden": "crosses an architecture boundary; do not apply"
+ },
+ "label_counts": {
+  "low_risk": 2,
+  "moderate_risk": 2,
+  "high_risk": 2,
+  "forbidden": 2
+ },
+ "samples": [
+  {
+   "state": "The change edits one private helper with no callers outside its module and reverts cleanly.",
+   "label": "low_risk",
+   "option_text": "isolated and reversible; apply it"
+  },
+  {
+   "state": "The change alters a shared validation function every caller depends on.",
+   "label": "moderate_risk",
+   "option_text": "touches shared behaviour; apply with a staged rollout"
+  },
+  {
+   "state": "The change touches the order-sizing path that reaches the exchange.",
+   "label": "high_risk",
+   "option_text": "touches money or state; require review before applying"
+  },
+  {
+   "state": "The change would make the execution layer import from the reporting layer.",
+   "label": "forbidden",
+   "option_text": "crosses an architecture boundary; do not apply"
+  },
+  {
+   "state": "The change adds a log line inside a single function.",
+   "label": "low_risk",
+   "option_text": "isolated and reversible; apply it"
+  },
+  {
+   "state": "The change alters the default value of a parameter used across the package.",
+   "label": "moderate_risk",
+   "option_text": "touches shared behaviour; apply with a staged rollout"
+  },
+  {
+   "state": "The change edits the kill-switch condition and the position state.",
+   "label": "high_risk",
+   "option_text": "touches money or state; require review before applying"
+  },
+  {
+   "state": "The change would let the backtester call live venue code.",
+   "label": "forbidden",
+   "option_text": "crosses an architecture boundary; do not apply"
+  }
+ ]
+}

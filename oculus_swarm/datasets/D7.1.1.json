@@ -1,0 +1,61 @@
+{
+ "id": "D7.1.1",
+ "kind": "choice",
+ "question": "Which kind of worker should take the task in `state`?",
+ "options": {
+  "local_fast_lane": "a cheap local lane; the task is narrow and well specified",
+  "strong_reasoning_lane": "a strong model; the task needs real reasoning or design",
+  "specialist_tool": "a purpose-built tool rather than an agent; deterministic work",
+  "human_owner": "a human; the task needs authority a model does not have",
+  "no_worker": "nothing should take it; it is not actionable"
+ },
+ "label_counts": {
+  "local_fast_lane": 2,
+  "strong_reasoning_lane": 2,
+  "specialist_tool": 2,
+  "human_owner": 1,
+  "no_worker": 1
+ },
+ "samples": [
+  {
+   "state": "A rename across twelve files where every location is already known.",
+   "label": "local_fast_lane",
+   "option_text": "a cheap local lane; the task is narrow and well specified"
+  },
+  {
+   "state": "Deciding how to structure a module that four other modules will depend on.",
+   "label": "strong_reasoning_lane",
+   "option_text": "a strong model; the task needs real reasoning or design"
+  },
+  {
+   "state": "Counting occurrences of a symbol across the tree.",
+   "label": "specialist_tool",
+   "option_text": "a purpose-built tool rather than an agent; deterministic work"
+  },
+  {
+   "state": "Approving a change that spends the owner's money.",
+   "label": "human_owner",
+   "option_text": "a human; the task needs authority a model does not have"
+  },
+  {
+   "state": "The request asks to make something better without naming what.",
+   "label": "no_worker",
+   "option_text": "nothing should take it; it is not actionable"
+  },
+  {
+   "state": "A one-line typo fix in a file whose path is given.",
+   "label": "local_fast_lane",
+   "option_text": "a cheap local lane; the task is narrow and well specified"
+  },
+  {
+   "state": "Diagnosing why a test fails intermittently under load.",
+   "label": "strong_reasoning_lane",
+   "option_text": "a strong model; the task needs real reasoning or design"
+  },
+  {
+   "state": "Reformatting a file with the project's formatter.",
+   "label": "specialist_tool",
+   "option_text": "a purpose-built tool rather than an agent; deterministic work"
+  }
+ ]
+}

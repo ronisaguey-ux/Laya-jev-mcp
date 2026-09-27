@@ -1,0 +1,57 @@
+{
+ "id": "D5.1.3",
+ "kind": "choice",
+ "question": "Is the extreme value in `state` a real print or an error?",
+ "options": {
+  "real_move": "a genuine market move; keep it",
+  "data_error": "a bad print; exclude it from computation",
+  "needs_review": "ambiguous; a human should inspect the raw record"
+ },
+ "label_counts": {
+  "real_move": 3,
+  "data_error": 2,
+  "needs_review": 3
+ },
+ "samples": [
+  {
+   "state": "The spike appears on the venue's own tape and in the consolidated feed, with matching volume.",
+   "label": "real_move",
+   "option_text": "a genuine market move; keep it"
+  },
+  {
+   "state": "The print is nine standard deviations out, appears on one venue only, and reverts on the next tick.",
+   "label": "data_error",
+   "option_text": "a bad print; exclude it from computation"
+  },
+  {
+   "state": "The value is plausible for the instrument but the timestamp is out of order relative to its neighbours.",
+   "label": "needs_review",
+   "option_text": "ambiguous; a human should inspect the raw record"
+  },
+  {
+   "state": "A flash move confirmed by volume across venues and by the bar that followed.",
+   "label": "real_move",
+   "option_text": "a genuine market move; keep it"
+  },
+  {
+   "state": "The bar's high is below both its open and its close, which cannot happen in a real print.",
+   "label": "data_error",
+   "option_text": "a bad print; exclude it from computation"
+  },
+  {
+   "state": "The outlier sits at a plausible level and the surrounding ticks neither confirm nor contradict it.",
+   "label": "needs_review",
+   "option_text": "ambiguous; a human should inspect the raw record"
+  },
+  {
+   "state": "A limit-up move that held for the rest of the session with heavy volume.",
+   "label": "real_move",
+   "option_text": "a genuine market move; keep it"
+  },
+  {
+   "state": "Two sources disagree on the tick's price by forty basis points with no third source to break the tie.",
+   "label": "needs_review",
+   "option_text": "ambiguous; a human should inspect the raw record"
+  }
+ ]
+}
