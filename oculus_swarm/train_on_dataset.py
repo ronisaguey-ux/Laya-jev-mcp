@@ -34,7 +34,7 @@ TAXONOMY = os.path.join(HERE, "taxonomy_map.json")
 DATA = os.path.join(HERE, "datasets")
 ADAPTERS = os.path.join(HERE, "adapters")
 
-BATCH = 2
+BATCH = 16         # measured on this box: 2.44s/row at 16 vs 13.44s at 1
 MAX_LEN = 448
 HEAD_MAX_LEN = 192
 
