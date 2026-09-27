@@ -191,6 +191,8 @@ def main():
     ap.add_argument("--lr", type=float, default=5e-4)
     ap.add_argument("--rank", type=int, default=16)
     ap.add_argument("--threads", type=int, default=6)
+    ap.add_argument("--no-base", action="store_true",
+                    help="skip the base-model eval; it is 2 passes over the held-out set")
     ap.add_argument("--data-dir", default=None,
                     help="dataset directory; defaults to datasets/, use datasets_tier1 or datasets_tier2 for a tier")
     ap.add_argument("--holdout", type=float, default=0.25,
@@ -229,8 +231,12 @@ def main():
 
     # Captured BEFORE get_peft_model: it rewrites `base` in place, so a read taken after
     # the attach reports the adapter against itself.
-    base_tr = recall(agent, base, tok, leaf, device, samples=tr_rows)
-    base_te = recall(agent, base, tok, leaf, device, samples=te_rows) if te_rows else {}
+    if args.no_base:
+        base_tr, base_te = {}, {}
+        print("\n  base eval skipped (--no-base)")
+    else:
+        base_tr = recall(agent, base, tok, leaf, device, samples=tr_rows)
+        base_te = recall(agent, base, tok, leaf, device, samples=te_rows) if te_rows else {}
     print("\n  BEFORE (base model):")
     for name, got in (("train", base_tr), ("held-out", base_te)):
         if not got:
