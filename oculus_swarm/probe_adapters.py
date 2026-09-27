@@ -25,6 +25,27 @@ UNSEEN = {
     "D9.2.2": (
         "The engine reported the step green. No command output was attached and the claim "
         "rests on the summary text alone. A commit exists but its diff was not read."),
+    "D2.2.3": (
+        "The strategy clears every gate on the visible metrics and the run predates the fix to "
+        "the survivorship filter, which has since been corrected."),
+    "D3.2.1": (
+        "Deep book, live tick data, no venue restrictions and the instrument is in scope for "
+        "the strategy. Nothing about its feed is unusual."),
+    "D4.1.2": (
+        "The request names an instrument and a size but no side, and the payload has no target "
+        "weights attached."),
+    "D4.1.3": (
+        "The position feed has not updated for forty minutes and there is no cached daily loss "
+        "figure, so today's realised loss cannot be computed."),
+    "D1.2.1": (
+        "The candidate beat the champion on five of six gated metrics and lost on drawdown, on "
+        "identical folds over the same window."),
+    "D10.1.2": (
+        "The step asked for one function to be fixed and the diff also renames four unrelated "
+        "variables and reformats the file."),
+    "D10.1.3": (
+        "The report attaches the raw command output and the artefact shows exactly what the "
+        "claim says it shows."),
     "D4.2.1": (
         "Portfolio drawdown has crossed the hard threshold the rules define as a stop and the "
         "book is still carrying the losing strategy. No operator has acknowledged it."),
