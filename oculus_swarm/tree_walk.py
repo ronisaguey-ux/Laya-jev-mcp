@@ -135,8 +135,17 @@ def walk(state: Any, tax: Optional[Dict[str, Any]] = None, *, backend_name: Opti
                 pol = policy_for(lf)
                 opts = [{"label": lab, "description": desc}
                         for lab, desc in lf["options"].items()]
-                res = decide(state, opts, lf["question"], backend_name=backend_name,
-                             policy=pol, context_label="state")
+                # A leaf's own adapter when one has been trained, base otherwise. The
+                # result carries `adapter_used` so a base answer is never mistaken for a
+                # fine-tuned one.
+                try:
+                    from adapter_pool import decide_leaf as _decide_leaf
+                    res = _decide_leaf(state, lf, opts, pol, caller=caller)
+                except Exception as exc:  # an adapter must never break the walk
+                    res = decide(state, opts, lf["question"], backend_name=backend_name,
+                                 policy=pol, context_label="state")
+                    res = dict(res, adapter_used=None,
+                               adapter_error=f"{type(exc).__name__}: {exc}")
                 top_label, top_p = max(res["probabilities"].items(), key=lambda kv: kv[1])
                 log.append({"tier": "T3_ask", "leaf": lf["id"], "escalated": res["decision"] == "escalate",
                             "why": res["reason"], "confidence": res.get("confidence"),
@@ -149,6 +158,12 @@ def walk(state: Any, tax: Optional[Dict[str, Any]] = None, *, backend_name: Opti
             acted = [c for c in candidates if c[1]["decision"] == "act"]
             pool = acted or candidates
             chosen_leaf, final, _ = max(pool, key=lambda c: c[2])
+            try:
+                from adapter_pool import available_leaves as _avail
+                _with_adapters = [c[0]["id"] for c in candidates if c[0]["id"] in _avail()]
+            except Exception:
+                _with_adapters = []
+            log.append({"tier": "T3_adapter", "using": _with_adapters})
             log.append({"tier": "T3_leaf", "leaf": chosen_leaf["id"],
                         "escalated": final["decision"] == "escalate" and not acted,
                         "why": final["reason"], "confidence": final.get("confidence")})
