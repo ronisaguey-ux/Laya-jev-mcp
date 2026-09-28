@@ -283,10 +283,14 @@ def main():
     tr = sum(p.numel() for p in peft_model.parameters() if p.requires_grad)
     print(f"  LoRA trainable: {tr/1e6:.2f}M")
 
-    before = recall(agent, base, tok, leaf, device)
-    print("\n  BEFORE (base model), per-class recall:")
-    for k, (c, n, r) in before.items():
-        print(f"    {k:<22} {c}/{n} = {r:.2f}")
+    if args.no_base:
+        before = {}
+        print("\n  BEFORE (base model): skipped (--no-base)")
+    else:
+        before = recall(agent, base, tok, leaf, device)
+        print("\n  BEFORE (base model), per-class recall:")
+        for k, (c, n, r) in before.items():
+            print(f"    {k:<22} {c}/{n} = {r:.2f}")
 
     rows = [(leaf, s["state"], s["label"]) for s in tr_rows]
     print(f"  training on {len(rows)} rows, {args.epochs} epochs, batch {BATCH}")
