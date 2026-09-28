@@ -203,3 +203,41 @@ Read this table carefully rather than optimistically:
   split right and the adapter did not change it. Not a failure, not evidence either.
 - The rows with eight held-out rows (D2.2.3 7/9, D4.1.2 6/8, D4.1.3 4/8, D4.2.3 7/8) are
   the only ones here whose held-out number is a measurement rather than a coin flip.
+
+## Input verification (2026-09-28) — what the model ACTUALLY receives
+
+Driven by the Laya guide's two bolded rules: verify the state reaches the model, and verify
+every option label survives. Checked with `layajev`'s own builder (`T.encode` → `as_question`),
+tokenizer only, model never loaded. All 1,737 T1 rows:
+
+```
+option labels MISSING from the rendered sequence: none (all 10 present in all 1737 rows)
+state tail missing (truncated before the model saw it): 0/1737
+sequence length: min 101 / max 144   (cap 448  -> no truncation possible)
+marker slots:    min 10 / max 10     (option budget 192)
+```
+
+So the format is sound: nothing is being silently cut before the model sees it, and all ten
+labels are distinct and present. The guide's #1 failure (a 900-word requirement arriving as
+`[SEP]Write a complete[SEP]`, with the only symptom a low score) does NOT apply here.
+
+## The collapse rate — the bar a real score must beat (Laya guide #6)
+
+```
+COLLAPSE RATE: always answering 'D1' scores 223/1737 = 0.128
+class counts: D1 223, D2 172, D3 215, D4 196, D5 185, D6 193, D7 192, D8 129, D9 160, D10 72
+```
+
+This reframes the earlier "base model is broken" reading. The base T1 per-class recall was
+
+```
+D1 165/223=0.74   D2 44/172=0.26   D3 61/215=0.28   D4 30/196=0.15   D5 28/185=0.15
+D6 15/193=0.08    D7 1/192=0.01    D8 10/129=0.08   D9 2/160=0.01    D10 3/72=0.04
+overall = 359/1737 = 0.207
+```
+
+i.e. **0.207 overall against a 0.128 collapse rate.** The base model is better than a constant
+answer, but by 8 points on a 10-class problem — it is barely routing at all, which is exactly
+why the walk escalated every state. Earlier I described it as "answers D1 regardless of input";
+the honest version is "bears the constant baseline by 8 points and gets 9 of 10 areas wrong".
+The adapter has to clear 0.128 before it has learned anything.
