@@ -157,9 +157,12 @@ def save_adapter(model, leaf, tag=""):
 def fit(rows, tok, model, epochs, lr, device, ckpt=None):
     params = [p for p in model.parameters() if p.requires_grad]
     opt = torch.optim.AdamW(params, lr=lr)
+    import time as _t
+    nbatches = (len(rows) + BATCH - 1) // BATCH
     for ep in range(epochs):
         random.shuffle(rows)
         tot, nb = 0.0, 0
+        _t0 = _t.time()
         for i in range(0, len(rows), BATCH):
             built = make_batch(tok, rows[i:i + BATCH], device)
             if built is None:
@@ -172,6 +175,13 @@ def fit(rows, tok, model, epochs, lr, device, ckpt=None):
             torch.nn.utils.clip_grad_norm_(params, 1.0)
             opt.step()
             tot += float(loss.detach()); nb += 1
+            if nb % 10 == 0 or nb == 1:
+                import time as _t
+                _now = _t.time()
+                _rate = (_now - _t0) / nb
+                print(f"      batch {nb}/{nbatches}  loss={float(loss.detach()):.4f}"
+                      f"  {_rate:.1f}s/step  eta {(nbatches - nb) * _rate / 60:.0f}min",
+                      flush=True)
         print(f"    epoch {ep+1}/{epochs}  loss={tot/max(1,nb):.4f}", flush=True)
         # Bank the weights at every epoch. An epoch is ~90 minutes on this CPU and the
         # eval that follows has already killed one whole run, so a crash must never cost
