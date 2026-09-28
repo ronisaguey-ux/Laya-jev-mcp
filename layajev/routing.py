@@ -102,8 +102,15 @@ def _pick_dict(p) -> Dict[str, Any]:
 
 
 def pick_model(task: str, band: str = "auto",
-               capabilities: Optional[List[str]] = None) -> Dict[str, Any]:
+               capabilities: Optional[List[str]] = None,
+               spec: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
     """The cheapest model that is still good enough for `task`.
+
+    `spec` is the full task definition when the caller has one — a dict carrying the
+    task's `check` block, the same shape the router's task files use. Pass it if you have
+    it: the adapter is trained on a DIGEST derived from that spec, and `task` alone forces
+    the router to recover a weaker digest from prose. The two are not equivalent, and the
+    response says which one was used so a caller can tell them apart.
 
     Returns `model: None` with a `note` explaining why when nothing in the requested
     band can meet the capability — that is an answer, not an error, and the note names
@@ -122,20 +129,38 @@ def pick_model(task: str, band: str = "auto",
         return {"error": "unknown_capability", "unknown": sorted(unknown),
                 "known": sorted(known)}
     router = r.Router()
-    p = router.pick(task, band, caps or None)
-    return _pick_dict(p)
+    p = router.pick(task, band, caps or None, spec=spec)
+    out = _pick_dict(p)
+    # Report what the router actually read. A digest recovered from prose is weaker than
+    # one taken from a spec, and the caller is the only one who can supply the spec — so
+    # say which happened rather than letting both paths look identical.
+    out["state"] = getattr(router, "_last_state", None)
+    out["state_from"] = "spec" if spec else "text"
+    return out
 
 
-def pick_many(tasks: List[str], band: str = "auto") -> Dict[str, Any]:
+def pick_many(tasks: List[str], band: str = "auto",
+              specs: Optional[List[Optional[Dict[str, Any]]]] = None) -> Dict[str, Any]:
     """Route several independent tasks in one call.
 
     Each task is routed on its own; batching is an I/O saving here, not a shared
     forward pass, because the option set and the target differ per task. Kept in the
     same shape as `decide_many` so a caller who knows that idiom is not surprised.
+
+    `specs` is optional and positional: `specs[i]` is the full task definition for
+    `tasks[i]`, or None to fall back to prose for that entry. ★ WITHOUT THIS, THE ONE
+    PATH THAT ROUTES MANY TASKS COULD NOT USE THE BETTER INPUT — `pick_model` gained a
+    `spec` because the adapter is trained on a digest derived from a task's definition,
+    and routing from prose alone yields a weaker state. A caller holding real task
+    definitions (the farm's tasks have a `check` block) had to drop them to batch.
     """
     if not isinstance(tasks, list) or not tasks:
         return {"error": "empty_tasks", "reason": "pass a non-empty list of task strings"}
+    if specs is not None and len(specs) != len(tasks):
+        return {"error": "specs_length_mismatch",
+                "reason": f"got {len(specs)} specs for {len(tasks)} tasks"}
     out = []
-    for t in tasks:
-        out.append({"task": t[:120], **pick_model(t, band)})
+    for i, t in enumerate(tasks):
+        spec = specs[i] if specs is not None else None
+        out.append({"task": t[:120], **pick_model(t, band, spec=spec)})
     return {"n": len(out), "band": band, "results": out}

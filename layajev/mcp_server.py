@@ -265,12 +265,13 @@ def tool_judge(args: Mapping[str, Any]) -> Dict[str, Any]:
 def tool_pick_model(args: Mapping[str, Any]) -> Dict[str, Any]:
     """Cheapest model still good enough for one task."""
     return pick_model(args.get("task", ""), args.get("band", "auto"),
-                      args.get("capabilities"))
+                      args.get("capabilities"), args.get("spec"))
 
 
 def tool_pick_many(args: Mapping[str, Any]) -> Dict[str, Any]:
     """Route several independent tasks in one call."""
-    return pick_many(args.get("tasks", []), args.get("band", "auto"))
+    return pick_many(args.get("tasks", []), args.get("band", "auto"),
+                     args.get("specs"))
 
 
 def tool_router_status(_args: Mapping[str, Any]) -> Dict[str, Any]:
@@ -434,8 +435,13 @@ def _tools() -> Dict[str, Dict[str, Any]]:
                 "low model; a trivial task on 'high' gets the CHEAPEST high model; 'auto' "
                 "has no ceiling. `capabilities` names a modality the task needs (image, "
                 "audio, video, file) and is a HARD filter applied before cost — a model "
-                "that cannot perceive the input is not a cheap option. If nothing in the "
-                "band can do it, the answer names the cheapest band that would."
+                "that cannot perceive the input is not a cheap option, it is not an option. "
+                "Pass `spec` (the full task dict with its `check` block) when you have it: "
+                "the router reads a compact digest of the spec, and a digest recovered from "
+                "prose alone is weaker. The reply reports `state` and `state_from` so you can "
+                "see which was used. A model that cannot perceive the input is not a cheap "
+                "option, it is not an option — if nothing in the band can do the work, the "
+                "answer names the cheapest band that would."
             ),
             "inputSchema": {
                 "type": "object",
@@ -447,6 +453,13 @@ def _tools() -> Dict[str, Dict[str, Any]]:
                     "capabilities": {
                         "type": "array", "items": {"type": "string"},
                         "description": "Modalities the task requires: image, audio, video, file. Omit for text.",
+                    },
+                    "spec": {
+                        "type": "object",
+                        "description": ("The full task definition when you have one — a dict with the "
+                                        "task's `check` block. The router is trained on a compact digest "
+                                        "of it; prose alone yields a weaker digest, and the reply says "
+                                        "which was used via `state_from`."),
                     },
                 },
                 "required": ["task"],
@@ -465,6 +478,17 @@ def _tools() -> Dict[str, Dict[str, Any]]:
                 "properties": {
                     "tasks": {"type": "array", "items": {"type": "string"},
                               "description": "Task texts to route."},
+                    "specs": {
+                        "type": "array",
+                        "items": {"type": ["object", "null"]},
+                        "description": (
+                            "Optional, one entry per task: the task's full definition (what "
+                            "the task asks for, its constraints, its difficulty). The router "
+                            "is trained on a digest derived from that definition, so prose "
+                            "alone gives a weaker decision. Pass null for any task you only "
+                            "have text for."
+                        ),
+                    },
                     "band": {"type": "string", "enum": ["auto", "low", "medium", "high"]},
                 },
                 "required": ["tasks"],
