@@ -268,6 +268,15 @@ def main():
     print(f"  training on {len(rows)} rows, {args.epochs} epochs, batch {BATCH}")
     fit(rows, tok, peft_model, args.epochs, args.lr, device)
 
+    # Save BEFORE the eval. T1 trained three epochs to convergence and then died in its
+    # final scoring pass, losing the whole run because the save sat after it. The eval is
+    # the expensive and least important half; the weights are the deliverable.
+    os.makedirs(ADAPTERS, exist_ok=True)
+    out = os.path.join(ADAPTERS, f"t3_{leaf['id']}")
+    peft_model.save_pretrained(out)
+    size = sum(os.path.getsize(os.path.join(out, f)) for f in os.listdir(out))
+    print(f"  adapter saved BEFORE the eval: {out}  ({size/1e6:.1f} MB)")
+
     print("\n  AFTER (adapter) - per-class recall:")
     moved = 0
     for label_name, sample_set in (("TRAIN (seen)", tr_rows), ("HELD-OUT (never trained on)", te_rows)):
