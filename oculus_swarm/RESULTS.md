@@ -241,3 +241,46 @@ answer, but by 8 points on a 10-class problem — it is barely routing at all, w
 why the walk escalated every state. Earlier I described it as "answers D1 regardless of input";
 the honest version is "bears the constant baseline by 8 points and gets 9 of 10 areas wrong".
 The adapter has to clear 0.128 before it has learned anything.
+
+## Input verification across EVERY dataset (2026-09-28)
+
+Same two checks run over all 56 datasets (54 leaves + T1 + T2), 5,215 rows total:
+
+```
+datasets checked: 56      rows: 5215
+option labels missing from the rendered sequence: 0   (all labels present everywhere)
+state tails truncated: 0                              (nothing cut before the model sees it)
+sequences at/over the 448 cap: 0
+longest sequence seen: 242 / 448     widest marker set: 19 / 192
+```
+
+So the format is sound across the whole corpus, not just T1. Nothing is silently truncated and
+no option label collides with another. The guide's #1 and #2 failure modes do not apply here.
+
+## The highest collapse rates in the corpus (the real bar per leaf)
+
+A leaf where one answer is 33% of the data will show a 33% score for a model that has learned
+nothing. These are the leaves where that matters most:
+
+```
+D2.1.3  always 'acceptable'         = 0.355   (3 options)
+D1.1.2  always 'cleared'            = 0.333   (3 options)
+D1.1.4  always 'healthy'            = 0.333   (3 options)
+D3.1.3  always 'no_shift'           = 0.333   (3 options)
+D5.1.3  always 'real_move'          = 0.333   (3 options)
+D2.2.2  always 'lookahead_suspect'  = 0.300   (4 options)
+D4.2.1  always 'fire'               = 0.300   (4 options)
+D2.2.3  always 'accept'             = 0.286   (4 options)
+```
+
+CORRECTION to an earlier reading of my own results: several trained leaves were reported as
+"better than base" on numbers that sit at or below their collapse rate, so those improvements
+may be the model collapsing onto the majority answer rather than learning. D4.2.1 is the clearest
+case - it was reported 1/5 -> 4/5 on held-out, and its collapse rate is 0.300, so the honest
+question is whether it learned the boundary or learned to always say 'fire'. `fire` recall did
+go 0.00 -> 1.00 while `escalate_human` also went 0.00 -> 1.00, which a pure collapse cannot do,
+so that one is probably real - but it needs the per-class split read against 0.300, not against
+the base number, to say so.
+
+Every future held-out result must be reported as (score, collapse rate, margin) or it is not a
+result.
