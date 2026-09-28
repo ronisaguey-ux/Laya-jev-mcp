@@ -145,7 +145,16 @@ def recall(agent, model, tok, leaf, device, samples=None):
     return {k: (v[1], v[0], v[1] / v[0] if v[0] else 0.0) for k, v in hits.items()}
 
 
-def fit(rows, tok, model, epochs, lr, device):
+def save_adapter(model, leaf, tag=""):
+    os.makedirs(ADAPTERS, exist_ok=True)
+    out = os.path.join(ADAPTERS, f"t3_{leaf['id']}")
+    model.save_pretrained(out)
+    size = sum(os.path.getsize(os.path.join(out, f)) for f in os.listdir(out))
+    print(f"  adapter saved{' ' + tag if tag else ''}: {out}  ({size/1e6:.1f} MB)", flush=True)
+    return out
+
+
+def fit(rows, tok, model, epochs, lr, device, ckpt=None):
     params = [p for p in model.parameters() if p.requires_grad]
     opt = torch.optim.AdamW(params, lr=lr)
     for ep in range(epochs):
@@ -164,6 +173,11 @@ def fit(rows, tok, model, epochs, lr, device):
             opt.step()
             tot += float(loss.detach()); nb += 1
         print(f"    epoch {ep+1}/{epochs}  loss={tot/max(1,nb):.4f}", flush=True)
+        # Bank the weights at every epoch. An epoch is ~90 minutes on this CPU and the
+        # eval that follows has already killed one whole run, so a crash must never cost
+        # more than the epoch in flight.
+        if ckpt is not None:
+            ckpt(ep + 1)
 
 
 def stratified_split(samples, frac, seed=1337):
@@ -266,16 +280,14 @@ def main():
 
     rows = [(leaf, s["state"], s["label"]) for s in tr_rows]
     print(f"  training on {len(rows)} rows, {args.epochs} epochs, batch {BATCH}")
-    fit(rows, tok, peft_model, args.epochs, args.lr, device)
+    fit(rows, tok, peft_model, args.epochs, args.lr, device,
+        ckpt=lambda ep: save_adapter(peft_model, leaf,
+                                     f"after epoch {ep}/{args.epochs}"))
 
     # Save BEFORE the eval. T1 trained three epochs to convergence and then died in its
     # final scoring pass, losing the whole run because the save sat after it. The eval is
     # the expensive and least important half; the weights are the deliverable.
-    os.makedirs(ADAPTERS, exist_ok=True)
-    out = os.path.join(ADAPTERS, f"t3_{leaf['id']}")
-    peft_model.save_pretrained(out)
-    size = sum(os.path.getsize(os.path.join(out, f)) for f in os.listdir(out))
-    print(f"  adapter saved BEFORE the eval: {out}  ({size/1e6:.1f} MB)")
+    save_adapter(peft_model, leaf, "BEFORE the eval")
 
     print("\n  AFTER (adapter) - per-class recall:")
     moved = 0
