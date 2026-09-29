@@ -34,7 +34,10 @@ TAXONOMY = os.path.join(HERE, "taxonomy_map.json")
 DATA = os.environ.get("TRAIN_DATA_DIR") or os.path.join(HERE, "datasets")
 ADAPTERS = os.path.join(HERE, "adapters")
 
-BATCH = 16         # training: measured on this box, 2.44s/row at 16 vs 13.44s at 1
+# Training batch is settable because this trainer GROWS: measured 8.8GB RSS on a
+# 1.7GB model at batch 16, which spills the box to swap and kills the run. The Laya
+# guide (#14, a throttled heavy trainer) prescribes fewer threads and a smaller batch.
+BATCH = int(os.environ.get("TRAIN_BATCH", "16"))
 EVAL_BATCH = 16    # eval: no backward pass, so batch just as wide
 MAX_LEN = 448
 HEAD_MAX_LEN = 192
