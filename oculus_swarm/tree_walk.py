@@ -175,12 +175,42 @@ def walk(state: Any, tax: Optional[Dict[str, Any]] = None, *, backend_name: Opti
                                   log, node, caller)
             break
 
-        result = decide(state,
-                        [{"label": lab, "description": desc} for lab, desc in criteria.items()],
-                        instructions, backend_name=backend_name,
-                        policy=NOMONEY_POLICY, context_label="state")
+        opts = [{"label": lab, "description": desc} for lab, desc in criteria.items()]
+        # The T1 and T2 hops have trainable adapters of their own (t3_T1_domain,
+        # t3_T2_router). They used to go through the BASE model via decide(),
+        # which meant both adapters were trained, banked, and never attached -
+        # the routing tiers were the one place a fine-tune could not help. Ask
+        # them through the same adapter-aware path the leaves use, falling back
+        # to the base call when no adapter exists for that tier.
+        # Measured 2026-09-29: attaching the T1 adapter made routing WORSE, not
+        # better. On the three probe states the base model gave T1 confidences
+        # 0.2462 / 0.9055 / 0.2186 (the 0.9055 clearing the bar and reaching T3),
+        # while t3_T1_domain gave 0.3422 / 0.4170 / 0.5079 - the strong case
+        # collapsed and every state then escalated at the first hop. One epoch on
+        # a small dataset was not enough to beat the base router, so the tier
+        # adapters stay OFF by default and are opt-in for evaluation only. The
+        # wiring is kept so a retrained adapter can be measured without editing
+        # the walk again.
+        use_tier_adapters = str(os.environ.get("SWARM_TIER_ADAPTERS", "")).lower() in ("1", "true", "yes")
+        tier_adapter = ({"T1_overlord": "T1_domain", "T2_router": "T2_router"}.get(tier)
+                        if use_tier_adapters else None)
+        result = None
+        if tier_adapter:
+            try:
+                from adapter_pool import decide_leaf as _decide_leaf, has_adapter as _has
+                if _has(tier_adapter):
+                    synthetic = {"id": tier_adapter, "question": instructions,
+                                 "options": criteria, "touches_money": False}
+                    result = _decide_leaf(state, synthetic, opts,
+                                          policy_for(synthetic), caller=caller)
+            except Exception as exc:  # an adapter must never break the walk
+                log.append({"tier": tier, "adapter_error": f"{type(exc).__name__}: {exc}"})
+        if result is None:
+            result = decide(state, opts, instructions, backend_name=backend_name,
+                            policy=NOMONEY_POLICY, context_label="state")
         log.append({"tier": tier, "escalated": result["decision"] == "escalate",
-                    "why": result["reason"], "confidence": result.get("confidence")})
+                    "why": result["reason"], "confidence": result.get("confidence"),
+                    "adapter_used": result.get("adapter_used")})
         if result["decision"] == "escalate":
             return _escalated(tier, result["reason"], log, node, caller)
         node = children[result["recommendation"]]

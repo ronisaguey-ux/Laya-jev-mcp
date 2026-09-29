@@ -57,11 +57,22 @@ def available_leaves() -> List[str]:
 
 
 def agent():
-    """The one base model, loaded on first use."""
+    """The one base model, loaded on first use.
+
+    This MUST be the same object the decide path scores through. It used to be a
+    private ``laya.load()``, while ``LayajevBackend._load()`` kept a runner of its
+    own - two separate loads of the same checkpoint. Attaching an adapter to this
+    one therefore changed nothing that any decision could see. Prefer the
+    backend's runner so there is exactly one model in the process.
+    """
     global _AGENT
     if _AGENT is None:
-        import laya
-        _AGENT = laya.load()
+        try:
+            from layajev.backends import LayaBackend
+            _AGENT = LayaBackend()._load()
+        except Exception:
+            import laya
+            _AGENT = laya.load()
     return _AGENT
 
 
@@ -84,15 +95,32 @@ def use_adapter(leaf_id: Optional[str]):
         if _ATTACHED is not None and _ATTACHED != leaf_id:
             # Detach the previous leaf before attaching the next. Leaving two LoRA
             # wrappers stacked makes the second one score through the first.
+            # `model` here is the wrapper now, so peel the LoRA off and restore the
+            # base DecisionModel on the agent before wrapping for the next leaf.
+            base = getattr(model, "get_base_model", None)
+            base = base() if callable(base) else model
             if hasattr(model, "unload"):
                 try:
                     model.unload()
                 except Exception:
                     pass
+            a.model = base
+            # Rebind BOTH names. `model` is still the wrapper we just unloaded;
+            # wrapping it again would build the next adapter on a dead parent and
+            # silently leave the second and every later leaf answering from base
+            # (measured: only the FIRST adapter in a process changed a score).
+            model = base
             _ATTACHED = None
         if _ATTACHED is None:
             wrapped = PeftModel.from_pretrained(model, adapter_dir(leaf_id))
             wrapped.eval()
+            # The wrapper has to go BACK onto the agent. Building it in a local
+            # and never assigning it meant every adapter load was discarded: the
+            # decision path kept scoring through the base DecisionModel, so all
+            # 56 adapters produced byte-identical answers (measured: base and
+            # every adapter returned demand_evidence at conf 0.5626). Assigning
+            # it here is what makes the adapter actually influence the answer.
+            a.model = wrapped
             _ATTACHED = leaf_id
         try:
             yield _ATTACHED

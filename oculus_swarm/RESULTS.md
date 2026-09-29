@@ -284,3 +284,64 @@ the base number, to say so.
 
 Every future held-out result must be reported as (score, collapse rate, margin) or it is not a
 result.
+
+## 2026-09-29 - THE ADAPTERS WERE NEVER ACTUALLY ATTACHED (fixed)
+
+Three defects, each of which alone made every one of the 56 trained adapters a no-op.
+Found while chasing a stale note that the walk reported `adapter_used=None` everywhere.
+
+**1. `adapter_pool.use_adapter` built the wrapper into a local and never assigned it.**
+```python
+wrapped = PeftModel.from_pretrained(model, adapter_dir(leaf_id))
+wrapped.eval()
+_ATTACHED = leaf_id          # <- `wrapped` is discarded here
+```
+The decision path kept scoring through the base `DecisionModel`. Fix: `a.model = wrapped`.
+
+**2. `adapter_pool.agent()` was a SECOND load of the same checkpoint.**
+It called its own `laya.load()`, while the decide path scored through
+`LayaBackend._runner` - a different object in the same process. Verified:
+`adapter_pool.agent() is LayaBackend()._load()` was **False**. So even a correct
+assignment on the pool's agent would have changed nothing a decision could see.
+Fix: `agent()` now prefers `LayaBackend()._load()`, so there is one model.
+
+**3. The detach path re-wrapped the wrapper it had just unloaded.**
+On switching leaves, `model` was still bound to the old PeftModel, so the next leaf was
+built on a dead parent. The observable signature was that **only the FIRST adapter in a
+process changed any score**; every later leaf silently answered from base. Fix: rebind
+`model = base` after restoring the agent.
+
+### Proof
+
+Same state, same options, same policy, three different adapters:
+
+| call | recommendation | confidence |
+| --- | --- | --- |
+| base | demand_evidence | 0.5626 |
+| `t3_T1_domain` | demand_evidence | **0.5495** |
+| `t3_T2_router` | **reject** | **0.3867** |
+| `t3_D1.1.1` | demand_evidence | **0.6891** |
+
+Before the fix all four returned `demand_evidence` at exactly `0.5626` - byte-identical,
+which is what gave it away. After it, every adapter moves the answer or the confidence.
+
+### Consequence for the tier adapters (kept OFF by default)
+
+With the tier adapters now reachable, the walk was re-measured on the three probe states.
+`t3_T1_domain` makes routing **worse than base**:
+
+| state | base T1 conf | `t3_T1_domain` T1 conf |
+| --- | --- | --- |
+| completion-no-evidence | 0.2462 | 0.3422 |
+| capital-allocation | **0.9055** (clears the bar, reaches T3) | **0.4170** (escalates at T1) |
+| drawdown-breach | 0.2186 | 0.5079 |
+
+The one state that used to route all the way now escalates at the first hop. One epoch on a
+small dataset did not beat the base router, so tier adapters are **opt-in**
+(`SWARM_TIER_ADAPTERS=1`) rather than default. The wiring is kept so a retrained adapter can
+be measured without touching the walk again.
+
+Leaf adapters are a different story and are ON: with them attached, `capital-allocation`
+now completes end to end - `decision=act leaf=D1.2.3`, D1.2.3 at **0.9163** against the
+0.5092 it gave when its adapter was being silently discarded. That is the first time a walk
+has reached a decision rather than escalating.
